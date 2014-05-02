@@ -3,8 +3,6 @@
 Planets is an application which uses a navigation drawer layout to display information about all the planets in the solar system. Planets is now in production and open to the general public. It is still undergoing development but I want it out in production for ratings and feedback. The Google+ community (See [Helpful Links](https://github.com/AMQTech/Planets#helpful-links)) is still active so feel free to join. <br>
 After you've downloaded the app, please head back to the Play Store and leave a review as well as a +1.
 
-# ![Nexus 4 Rendered](https://raw.github.com/AMQTech/Graphics/master/Renders/Nexus_4_Planets_updated_2_11_14.jpg?token=6075028__eyJzY29wZSI6IlJhd0Jsb2I6QU1RVGVjaC9HcmFwaGljcy9tYXN0ZXIvUmVuZGVycy9OZXh1c180X1BsYW5ldHNfdXBkYXRlZF8yXzExXzE0LmpwZyIsImV4cGlyZXMiOjEzOTUyNTc2Mzd9--b6eb4589ee4582c87ae22b58452a65dae6d4682b)
-
 <h2><b>Using the Issues Section</b></h2>
 
 I, the maintainer, have set up the issues section to not only be a place to report bugs and wrong things, but also a place for people to suggest new ideas for the app. If you want anything changed or have new ideas, put them under the correct label and I'll see what I can do. I designed it like this so that the people who <u>don't</u> know how to code there ideas can still have them out there. Of course, if you can code your ideas then fork the repo and edit accordingly. Then submit your changes in the form of a pull request and I'll review your work.
@@ -198,7 +196,7 @@ I, the maintainer, have set up the issues section to not only be a place to repo
           same "printed page" as the copyright notice for easier
           identification within third-party archives.
     
-       Copyright {2014} {Andrew Quebe}
+       Copyright {2014} {Andrew M. Quebe}
     
        Licensed under the Apache License, Version 2.0 (the "License");
        you may not use this file except in compliance with the License.
