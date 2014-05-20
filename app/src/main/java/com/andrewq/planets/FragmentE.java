@@ -111,24 +111,6 @@ public class FragmentE extends Fragment {
                                 .show();
                     }
                 });
-
-                Thread t = new Thread(new Runnable() {
-
-                    @Override
-                    public void run() {
-                        imageView.setOnClickListener(new View.OnClickListener() {
-
-                            @Override
-                            public void onClick(View v) {
-                                Toast.makeText(getActivity(), "NOTE: This is still in Beta!",
-                                        Toast.LENGTH_LONG).show();
-                                startActivity(new Intent(getActivity(), SunGLActivity.class));
-                            }
-                        });
-                    }
-                });
-
-                t.start();
                 break;
             case Configuration.SCREENLAYOUT_SIZE_SMALL:
                 button.setOnClickListener(new View.OnClickListener() {

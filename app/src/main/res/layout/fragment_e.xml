@@ -33,7 +33,7 @@
                 android:contentDescription="@string/mars_image"
                 android:src="@drawable/mars" />
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/image_caption_mars"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -44,13 +44,13 @@
                 android:paddingTop="5dp"
                 android:text="@string/image_caption"
                 android:textSize="12sp"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold|italic" />-->
 
             <TextView
                 android:id="@+id/mars_sub_title_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/image_caption_mars"
+                android:layout_below="@+id/mars"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:paddingTop="4dp"

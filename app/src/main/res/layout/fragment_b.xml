@@ -35,7 +35,7 @@
                 android:paddingBottom="3dp"
                 android:src="@drawable/mercury" />
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/image_caption_mercury"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -46,13 +46,13 @@
                 android:paddingTop="5dp"
                 android:text="@string/image_caption"
                 android:textSize="12sp"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold|italic" />-->
 
             <TextView
                 android:id="@+id/mercury_sub_title_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/image_caption_mercury"
+                android:layout_below="@+id/mercury"
                 android:layout_centerHorizontal="false"
                 android:paddingBottom="3dp"
                 android:paddingLeft="5dp"

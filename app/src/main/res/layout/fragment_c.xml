@@ -1,6 +1,6 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scrollView3"
+    android:id="@+id/venus_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="top">
@@ -33,7 +33,7 @@
                 android:contentDescription="@string/venus_image"
                 android:src="@drawable/venus" />
 
-            <TextView
+           <!--<TextView
                 android:id="@+id/image_caption_venus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -44,13 +44,13 @@
                 android:paddingTop="5dp"
                 android:text="@string/image_caption"
                 android:textSize="12sp"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold|italic" />-->
 
             <TextView
                 android:id="@+id/venus_sub_title_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/image_caption_venus"
+                android:layout_below="@+id/venus"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:paddingTop="4dp"

@@ -16,15 +16,18 @@
         <item>Phobos</item>
         <item>Deimos</item>
     </string-array>
-
     <string-array name="fragments">
         <item>Home</item>
         <item>Our Solar System</item>
         <item>Image Gallery</item>
+        <item>Other Celestial Bodies</item>
         <item>Send Feedback</item>
         <item>Settings</item>
     </string-array>
 
+    <string-array name="settings">
+        <item>Settings</item>
+    </string-array>
     <string-array name="themes">
         <item name="1">Red</item>
         <item name="2">Orange</item>
@@ -33,7 +36,6 @@
         <item name="5">Purple</item>
         <item name="6">Dark</item>
     </string-array>
-
     <string-array name="themesEntries">
         <item name="1">1</item>
         <item name="2">2</item>
@@ -42,7 +44,6 @@
         <item name="5">5</item>
         <item name="6">6</item>
     </string-array>
-
 
     <!-- Preferences Titles -->
     <string name="pref_cate_title_1">General</string>
@@ -280,5 +281,18 @@ Although smaller in diameter than Uranus, Neptune has a greater mass.</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="image_caption">(Tap on the Image to See 3D View)</string>
     <string name="quote_message">Food for Thought:</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_sun_image_view">SunImageView</string>
+    <string name="title_activity_mercury_image_view">MercuryImageView</string>
+
+
+    <string name="pluto_title">Pluto</string>
+    <string name="pluto_image">Image of Pluto</string>
+    <string name="pluto_description">Gravity: 0.658 m/s squared\nDiscovered: February 18th, 1930\nDensity: 2.03 g/cm\ cubed\nCircumference: 4,494 miles (7,232 km)</string>
+    <string name="pluto_description_2">Pluto is the only dwarf planet to once have been considered a major planet. Once thought of as the ninth planet and the one most distant from the sun, Pluto is now seen as one of the largest known members of the Kuiper Belt, a shadowy disk-like zone beyond the orbit of Neptune populated by a trillion or more comets. Pluto was reclassified as a dwarf planet in 2006, a change widely thought of as a demotion that has attracted controversy and debate.\nAmerican astronomer Percival Lowell first caught hints of Pluto\'s existence in 1905 from odd deviations he observed in the orbits of Neptune and Uranus, suggesting that another world\'s gravity was tugging at them from beyond. He predicted its location in 1915, but died without finding it. Its discovery came in 1930 from Clyde Tombaugh at the Lowell Observatory, based on predictions from Lowell and other astronomers.\nPluto is the only world named by an 11-year-old girl, Venetia Burney of Oxford, England, who suggested to her grandfather that it get its name from the Roman god of the underworld. Her grandfather then passed the name on to Lowell Observatory. The name also honors Percival Lowell, whose initials are the first two letters of Pluto.</string>
+    <string name="h_comet_image">Image of Halley\'s Comet</string>
+    <string name="h_comet_description">Orbital Period: 75 Years\nDiscovered: 1705\nLast Perihelion: February 9th, 1986\nPredicted Next Perihelion: July 28th, 2061</string>
+    <string name="h_comet_description_2">Halley\'s Comet is arguably the most famous comet. It is a \"periodic\" comet and returns to Earth\'s vicinity about every 75 years, making it possible for a human to see it twice in his or her lifetime. The last time it was here was in 1986, and it is projected to return in 2061.\nThe comet is named after English astronomer Edmond Halley, who examined reports of a comet approaching Earth in 1531, 1607 and 1682. He concluded that these three comets were actually the same comet returning over and over again, and predicted the comet would come again in 1758.\nHalley didn\'t live to see the comet\'s return, but his discovery led to the comet being named after him. (The traditional pronunciation of the name usually rhymes with valley.) Halley\'s calculations showed that at least some comets orbit the sun.\nFurther, the first Halley\'s Comet of the space age – in 1986 – saw several spacecraft approach its vicinity to sample its composition. High-powered telescopes also observed the telescope as it swung by Earth.</string>
 
 </resources>

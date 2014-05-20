@@ -30,15 +30,9 @@ import com.google.analytics.tracking.android.EasyTracker;
  */
 public class Main extends FragmentActivity {
 
-    /* Things to do:
-     * Put in more quotes
-     * Fix Gallery issues
-     * Work on sun image view (large)
-     */
-
     //Variables
     private DrawerLayout mDrawerLayout;
-    private ListView mLeftDrawer;
+    private ListView mainItemsList;
     private ActionBarDrawerToggle mDrawerToggle;
 
     private CharSequence mDrawerTitle;
@@ -62,11 +56,11 @@ public class Main extends FragmentActivity {
         mTitle = mDrawerTitle = getTitle();
         mFragmentTitles = getResources().getStringArray(R.array.fragments);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
-        mLeftDrawer = (ListView) findViewById(R.id.left_drawer);
+        mainItemsList = (ListView) findViewById(R.id.main_items_drawer);
 
-        mLeftDrawer.setAdapter(new ArrayAdapter<String>(this,
+        mainItemsList.setAdapter(new ArrayAdapter<String>(this,
                 R.layout.drawer_list_item, mFragmentTitles));
-        mLeftDrawer.setOnItemClickListener(new DrawerItemClickListener());
+        mainItemsList.setOnItemClickListener(new DrawerItemClickListener());
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
@@ -195,7 +189,7 @@ public class Main extends FragmentActivity {
     @SuppressWarnings("unused")
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        boolean drawerOpen = mDrawerLayout.isDrawerOpen(mLeftDrawer);
+        boolean drawerOpen = mDrawerLayout.isDrawerOpen(mainItemsList);
         return super.onPrepareOptionsMenu(menu);
     }
 
@@ -220,10 +214,10 @@ public class Main extends FragmentActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                if (mDrawerLayout.isDrawerOpen(mLeftDrawer)) {
-                    mDrawerLayout.closeDrawer(mLeftDrawer);
+                if (mDrawerLayout.isDrawerOpen(mainItemsList)) {
+                    mDrawerLayout.closeDrawer(mainItemsList);
                 } else {
-                    mDrawerLayout.openDrawer(mLeftDrawer);
+                    mDrawerLayout.openDrawer(mainItemsList);
                 }
                 return true;
 
@@ -252,16 +246,21 @@ public class Main extends FragmentActivity {
                 newFragment = new FragmentPlanets();
                 break;
             case 2:
-                newFragment = new ImageGallery();
+                Intent intent1 = new Intent(getApplicationContext(), ImageGallery.class);
+                startActivity(intent1);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
                 break;
             case 3:
+                newFragment = new OtherBodiesFragment();
+                break;
+            case 4:
                 String url = "mailto:andrewquebe.14@gmail.com?subject=RE: Planets Feedback/Suggestion&body=Dear Developer,%0D%0A";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
                 break;
-            case 4:
+            case 5:
                 Intent intent = new Intent(getApplicationContext(), Settings.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
@@ -270,9 +269,9 @@ public class Main extends FragmentActivity {
 
         fm.beginTransaction().replace(R.id.content_frame, newFragment).commit();
 
-        mLeftDrawer.setItemChecked(position, true);
+        mainItemsList.setItemChecked(position, true);
         setTitle(mFragmentTitles[position]);
-        mDrawerLayout.closeDrawer(mLeftDrawer);
+        mDrawerLayout.closeDrawer(mainItemsList);
     }
 
     //Set the title of the nav drawer
