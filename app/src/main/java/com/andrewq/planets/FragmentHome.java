@@ -1,5 +1,6 @@
 package com.andrewq.planets;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -7,12 +8,15 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.analytics.tracking.android.EasyTracker;
+import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 public class FragmentHome extends Fragment {
 
+    RelativeLayout fragmentHome;
     TextView mQuoteView;
     Handler handler = new Handler();
     Runnable updateTextRunnable = new Runnable() {
@@ -23,6 +27,7 @@ public class FragmentHome extends Fragment {
             mQuoteView.setText(quotes);
         }
     };
+
     private RandomQuotes mRandomQuotes = new RandomQuotes();
 
     public FragmentHome() {
@@ -32,6 +37,11 @@ public class FragmentHome extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        fragmentHome = (RelativeLayout) getView().findViewById(R.id.fragment_home);
+
+        fragmentHome.setClipToPadding(false);
+        setInsets(getActivity(), fragmentHome);
     }
 
     @Override
@@ -55,6 +65,15 @@ public class FragmentHome extends Fragment {
     public void onStop() {
         super.onStop();
         EasyTracker.getInstance(getActivity()).activityStop(getActivity());  // Add this method.
+    }
+
+    public void setInsets(Activity context, View transView) {
+
+        SystemBarTintManager tintManager = new SystemBarTintManager(context);
+
+        SystemBarTintManager.SystemBarConfig config = tintManager.getConfig();
+
+        transView.setPadding(5, config.getPixelInsetTop(true), 5, config.getPixelInsetBottom());
     }
 
 }

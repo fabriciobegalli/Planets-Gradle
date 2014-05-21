@@ -1,11 +1,13 @@
 package com.andrewq.planets;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 
 import com.google.analytics.tracking.android.EasyTracker;
+import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 public class Settings extends PreferenceActivity {
 
@@ -15,6 +17,13 @@ public class Settings extends PreferenceActivity {
         getActionBar().setDisplayHomeAsUpEnabled(true);
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.layout.settings);
+
+        SystemBarTintManager tintManager = new SystemBarTintManager(this);
+
+        tintManager.setStatusBarTintEnabled(true);
+
+        int actionBarColor = Color.parseColor("#292929");
+        tintManager.setStatusBarTintColor(actionBarColor);
     }
 
     @Override

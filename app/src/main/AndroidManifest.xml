@@ -30,6 +30,7 @@
         <activity
             android:name="com.andrewq.planets.Main"
             android:label="@string/app_name"
+            android:theme="@style/TranslucentNavigation"
             android:screenOrientation="sensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -117,7 +118,7 @@
             android:label="@string/action_settings"
             android:parentActivityName="com.andrewq.planets.Settings"
             android:screenOrientation="sensor"
-            android:theme="@style/Roboto">
+            android:theme="@style/TranslucentNavigationRoboto">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.andrewq.planets.MainActivity" />

@@ -8,8 +8,8 @@
         <option name="gradleHome" value="$APPLICATION_HOME_DIR$/plugins/gradle" />
         <option name="modules">
           <set>
-            <option value="C:\Users\Andrew Quebe\Documents\Android Development\Projects\Planets-Gradle" />
-            <option value="C:\Users\Andrew Quebe\Documents\Android Development\Projects\Planets-Gradle\app" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
       </GradleProjectSettings>
