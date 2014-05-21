@@ -19,7 +19,7 @@
     <string-array name="fragments">
         <item>Home</item>
         <item>Our Solar System</item>
-        <item>Image Gallery</item>
+        <item>Planetarium</item>
         <item>Other Celestial Bodies</item>
         <item>Send Feedback</item>
         <item>Settings</item>

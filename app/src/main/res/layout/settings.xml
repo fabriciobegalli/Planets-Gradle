@@ -6,7 +6,7 @@
     <PreferenceCategory android:title="@string/pref_cate_title_1">
 
         <ListPreference
-            android:defaultValue="1"
+            android:defaultValue="3"
             android:entries="@array/themes"
             android:entryValues="@array/themesEntries"
             android:key="prefSetTheme"

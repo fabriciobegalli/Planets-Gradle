@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NavUtils;
@@ -25,6 +26,8 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,27 +45,48 @@ public class ImageGallery extends Activity {
 
         SharedPreferences getPrefs = PreferenceManager
                 .getDefaultSharedPreferences(getBaseContext());
-        int theme_chooser = Integer.parseInt(getPrefs.getString("prefSetTheme", "1"));
+        int theme_chooser = Integer.parseInt(getPrefs.getString("prefSetTheme", "3"));
         mActionBar = getActionBar();
+        SystemBarTintManager tintManager = new SystemBarTintManager(this);
+
+        tintManager.setStatusBarTintEnabled(true);
 
         if (theme_chooser == 1) {
             //Red
             mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#cc0202")));
+
+            int actionBarColor = Color.parseColor("#cc0202");
+            tintManager.setStatusBarTintColor(actionBarColor);
         } else if (theme_chooser == 2) {
             //Orange
             mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ff8801")));
+
+            int actionBarColor = Color.parseColor("#ff8801");
+            tintManager.setStatusBarTintColor(actionBarColor);
         } else if (theme_chooser == 3) {
             //Blue
             mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0497c9")));
+
+            int actionBarColor = Color.parseColor("#0497c9");
+            tintManager.setStatusBarTintColor(actionBarColor);
         } else if (theme_chooser == 4) {
             //Green
             mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#679a03")));
+
+            int actionBarColor = Color.parseColor("#679a03");
+            tintManager.setStatusBarTintColor(actionBarColor);
         } else if (theme_chooser == 5) {
             //Purple
             mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#9832cb")));
+
+            int actionBarColor = Color.parseColor("#9832cb");
+            tintManager.setStatusBarTintColor(actionBarColor);
         } else {
             //Black
             mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#292929")));
+
+            int actionBarColor = Color.parseColor("#292929");
+            tintManager.setStatusBarTintColor(actionBarColor);
         }
 
         GridView gridView = (GridView) findViewById(R.id.gridview);
@@ -174,6 +198,8 @@ public class ImageGallery extends Activity {
                 }
             }
         });
+
+
     }
 
     @Override

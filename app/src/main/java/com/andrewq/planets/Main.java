@@ -117,7 +117,7 @@ public class Main extends FragmentActivity {
                 .getDefaultSharedPreferences(getBaseContext());
 
         //Give theme_chooser the preference key defined in XML
-        int theme_chooser = Integer.parseInt(getPrefs.getString("prefSetTheme", "1"));
+        int theme_chooser = Integer.parseInt(getPrefs.getString("prefSetTheme", "3"));
         //Get an instance of the ActionBar
         mActionBar = getActionBar();
 
