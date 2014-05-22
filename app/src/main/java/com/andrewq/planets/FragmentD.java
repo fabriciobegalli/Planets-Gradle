@@ -129,16 +129,6 @@ public class FragmentD extends Fragment {
         int screenSize = getResources().getConfiguration().screenLayout &
                 Configuration.SCREENLAYOUT_SIZE_MASK;
 
-        switch (screenSize) {
-            case Configuration.SCREENLAYOUT_SIZE_LARGE:
-                return inflater.inflate(R.layout.fragment_d_no_opengl, container, false);
-            case Configuration.SCREENLAYOUT_SIZE_NORMAL:
-                return inflater.inflate(R.layout.fragment_d, container, false);
-            case Configuration.SCREENLAYOUT_SIZE_SMALL:
-                return inflater.inflate(R.layout.fragment_d_no_opengl, container, false);
-            default:
-        }
-
         return inflater.inflate(R.layout.fragment_d, container, false);
     }
 

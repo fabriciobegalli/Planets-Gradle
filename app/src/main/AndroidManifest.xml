@@ -20,7 +20,7 @@
 
     <application
         android:allowBackup="true"
-        android:debuggable="true"
+        android:debuggable="false"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
@@ -118,7 +118,7 @@
             android:label="@string/action_settings"
             android:parentActivityName="com.andrewq.planets.Settings"
             android:screenOrientation="sensor"
-            android:theme="@style/TranslucentNavigationRoboto">
+            android:theme="@style/Roboto">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.andrewq.planets.MainActivity" />
@@ -134,6 +134,7 @@
         <activity
             android:name="com.andrewq.planets.SatelliteEarth"
             android:label="Moon"
+            android:theme="@style/TranslucentNavigation"
             android:parentActivityName="com.andrewq.planets.SatelliteEarth"
             android:screenOrientation="sensor">
             <meta-data
@@ -152,6 +153,7 @@
         <activity
             android:name="com.andrewq.planets.Phobos"
             android:label="Phobos"
+            android:theme="@style/TranslucentNavigation"
             android:parentActivityName="com.andrewq.planets.Phobos"
             android:screenOrientation="sensor">
             <meta-data
@@ -170,6 +172,7 @@
         <activity
             android:name="com.andrewq.planets.Deimos"
             android:label="Deimos"
+            android:theme="@style/TranslucentNavigation"
             android:parentActivityName="com.andrewq.planets.Deimos"
             android:screenOrientation="sensor">
             <meta-data

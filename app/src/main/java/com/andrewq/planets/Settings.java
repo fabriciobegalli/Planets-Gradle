@@ -1,15 +1,22 @@
 package com.andrewq.planets;
 
+import android.app.ActionBar;
+import android.app.Activity;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
+import android.preference.PreferenceScreen;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.analytics.tracking.android.EasyTracker;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 public class Settings extends PreferenceActivity {
+
+    private ActionBar mActionBar;
 
     @SuppressWarnings("deprecation")
     @Override
@@ -18,12 +25,8 @@ public class Settings extends PreferenceActivity {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.layout.settings);
 
-        SystemBarTintManager tintManager = new SystemBarTintManager(this);
-
-        tintManager.setStatusBarTintEnabled(true);
-
-        int actionBarColor = Color.parseColor("#292929");
-        tintManager.setStatusBarTintColor(actionBarColor);
+        mActionBar = getActionBar();
+        mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#292929")));
     }
 
     @Override
@@ -53,5 +56,14 @@ public class Settings extends PreferenceActivity {
     public void onStop() {
         super.onStop();
         EasyTracker.getInstance(this).activityStop(this);  // Add this method.
+    }
+
+    public void setInsets(Activity context, View transView) {
+
+        SystemBarTintManager tintManager = new SystemBarTintManager(context);
+
+        SystemBarTintManager.SystemBarConfig config = tintManager.getConfig();
+
+        transView.setPadding(0, config.getPixelInsetTop(true), config.getPixelInsetRight(), config.getPixelInsetBottom());
     }
 }

@@ -296,7 +296,12 @@ public class Main extends FragmentActivity {
         fm.beginTransaction().replace(R.id.content_frame, newFragment).commit();
 
         mainItemsList.setItemChecked(position, true);
-        setTitle(mFragmentTitles[position]);
+        if (position == 2 || position == 4 || position == 5) {
+            setTitle("Home");
+        }
+        else {
+            setTitle(mFragmentTitles[position]);
+        }
         mDrawerLayout.closeDrawer(mainItemsList);
     }
 

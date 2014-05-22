@@ -1,5 +1,6 @@
 package com.andrewq.planets;
 
+import android.app.Activity;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.google.analytics.tracking.android.EasyTracker;
+import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 /**
  * Created by Andrew Quebe on 5/18/2014.
@@ -21,6 +23,7 @@ import com.google.analytics.tracking.android.EasyTracker;
 public class OtherBodiesFragment extends Fragment {
 
     private ViewPager viewPager;
+    private ViewPager viewPagerTrans;
     private PagerTitleStrip pagerTitleStrip;
 
     public OtherBodiesFragment() {
@@ -30,6 +33,11 @@ public class OtherBodiesFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        viewPagerTrans = (ViewPager) getView().findViewById(R.id.pager_bodies);
+
+        viewPagerTrans.setClipToPadding(false);
+        setInsets(getActivity(), viewPagerTrans);
     }
 
     @Override
@@ -77,6 +85,15 @@ public class OtherBodiesFragment extends Fragment {
             //Black
             pagerTitleStrip.setBackgroundColor(Color.parseColor("#767676"));
         }
+    }
+
+    public void setInsets(Activity context, View transView) {
+
+        SystemBarTintManager tintManager = new SystemBarTintManager(context);
+
+        SystemBarTintManager.SystemBarConfig config = tintManager.getConfig();
+
+        transView.setPadding(0, config.getPixelInsetTop(true), 0, config.getPixelInsetBottom());
     }
 
     @Override

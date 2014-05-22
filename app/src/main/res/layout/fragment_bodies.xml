@@ -3,7 +3,9 @@
     android:id="@+id/pager_bodies"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false">
 
     <android.support.v4.view.PagerTitleStrip
         android:id="@+id/pager_title_strip_bodies"

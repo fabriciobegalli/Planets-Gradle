@@ -1,5 +1,6 @@
 package com.andrewq.planets;
 
+import android.app.Activity;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -12,12 +13,15 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import com.google.analytics.tracking.android.EasyTracker;
+import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 public class FragmentPlanets extends Fragment {
 
     private ViewPager viewPager;
+    private ViewPager viewPagerTrans;
     private PagerTitleStrip pagerTitleStrip;
 
     public FragmentPlanets() {
@@ -27,6 +31,11 @@ public class FragmentPlanets extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        viewPagerTrans = (ViewPager) getView().findViewById(R.id.pager);
+
+        viewPagerTrans.setClipToPadding(false);
+        setInsets(getActivity(), viewPagerTrans);
     }
 
     @Override
@@ -74,6 +83,15 @@ public class FragmentPlanets extends Fragment {
             //Black
             pagerTitleStrip.setBackgroundColor(Color.parseColor("#767676"));
         }
+    }
+
+    public void setInsets(Activity context, View transView) {
+
+        SystemBarTintManager tintManager = new SystemBarTintManager(context);
+
+        SystemBarTintManager.SystemBarConfig config = tintManager.getConfig();
+
+        transView.setPadding(0, config.getPixelInsetTop(true), 0, config.getPixelInsetBottom());
     }
 
     @Override

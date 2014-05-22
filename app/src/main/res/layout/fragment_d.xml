@@ -3,7 +3,9 @@
     android:id="@+id/scrollView4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="top">
+    android:layout_gravity="top"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false">
 
     <RelativeLayout
         android:layout_width="match_parent"
