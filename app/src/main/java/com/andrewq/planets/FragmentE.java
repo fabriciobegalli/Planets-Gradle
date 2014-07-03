@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.google.analytics.tracking.android.EasyTracker;
 
@@ -37,106 +36,66 @@ public class FragmentE extends Fragment {
         button2 = (Button) getView().findViewById(R.id.mars_satellite);
         imageView = (ImageView) getView().findViewById(R.id.mars);
 
-        int screenSize = getResources().getConfiguration().screenLayout &
-                Configuration.SCREENLAYOUT_SIZE_MASK;
+        button.setOnClickListener(new View.OnClickListener() {
 
-        switch (screenSize) {
-            case Configuration.SCREENLAYOUT_SIZE_LARGE:
-                button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-                    @Override
-                    public void onClick(View v) {
+                String url = "http://space-facts.com/mars/";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
 
-                        String url = "http://space-facts.com/mars/";
-                        Intent i = new Intent(Intent.ACTION_VIEW);
-                        i.setData(Uri.parse(url));
-                        startActivity(i);
+                getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+            }
+        });
 
-                        getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
-                    }
-                });
-                break;
-            case Configuration.SCREENLAYOUT_SIZE_NORMAL:
+        //Allow the user to be able to select which moon they want to view for mars
+        button2.setOnClickListener(new View.OnClickListener() {
+            //Handle the button being pressed
+            @Override
+            public void onClick(View v) {
+                //Make a new alert dialog
+                new AlertDialog.Builder(getActivity())
+                        //Set the title
+                        .setTitle("Select Moon")
+                                //Set it's items to an array
+                        .setItems(R.array.mars_moons, new DialogInterface.OnClickListener() {
+                            //Handle what happens when each item is pressed
+                            public void onClick(DialogInterface dialog, int which) {
+                                //If the user pressed the first item
+                                if (which == 0) {
+                                    //Open the first moon activity
+                                    Intent phobos = new Intent(getActivity(), Phobos.class);
+                                    startActivity(phobos);
+                                }
+                                //Otherwise
+                                else {
+                                    //In this case, open the other moon activity
+                                    Intent deimos = new Intent(getActivity(), Deimos.class);
+                                    startActivity(deimos);
+                                }
+                            }
+                        })
+                                //Create a cancel button
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            //Handle when it's clicked. Here we don't need it to do anything
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //Do nothing!
+                            }
+                        })
 
-                button.setOnClickListener(new View.OnClickListener() {
-
-                    @Override
-                    public void onClick(View v) {
-
-                        String url = "http://space-facts.com/mars/";
-                        Intent i = new Intent(Intent.ACTION_VIEW);
-                        i.setData(Uri.parse(url));
-                        startActivity(i);
-
-                        getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
-                    }
-                });
-
-                //Allow the user to be able to select which moon they want to view for mars
-                button2.setOnClickListener(new View.OnClickListener() {
-                    //Handle the button being pressed
-                    @Override
-                    public void onClick(View v) {
-                        //Make a new alert dialog
-                        new AlertDialog.Builder(getActivity())
-                                //Set the title
-                                .setTitle("Select Moon")
-                                        //Set it's items to an array
-                                .setItems(R.array.mars_moons, new DialogInterface.OnClickListener() {
-                                    //Handle what happens when each item is pressed
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        //If the user pressed the first item
-                                        if (which == 0) {
-                                            //Open the first moon activity
-                                            Intent phobos = new Intent(getActivity(), Phobos.class);
-                                            startActivity(phobos);
-                                        }
-                                        //Otherwise
-                                        else {
-                                            //In this case, open the other moon activity
-                                            Intent deimos = new Intent(getActivity(), Deimos.class);
-                                            startActivity(deimos);
-                                        }
-                                    }
-                                })
-                                        //Create a cancel button
-                                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                                    //Handle when it's clicked. Here we don't need it to do anything
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        //Do nothing!
-                                    }
-                                })
-                                        //Show the dialog after an item is pressed
-                                .show();
-                    }
-                });
-                break;
-            case Configuration.SCREENLAYOUT_SIZE_SMALL:
-                button.setOnClickListener(new View.OnClickListener() {
-
-                    @Override
-                    public void onClick(View v) {
-
-                        String url = "http://space-facts.com/mars/";
-                        Intent i = new Intent(Intent.ACTION_VIEW);
-                        i.setData(Uri.parse(url));
-                        startActivity(i);
-
-                        getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
-                    }
-                });
-                break;
-            default:
-        }
+                                //Show the dialog after an item is pressed
+                        .show();
+            }
+        });
     }
 
     //Called when the view is first created; Called before onViewCreated()
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        int screenSize = getResources().getConfiguration().screenLayout &
-                Configuration.SCREENLAYOUT_SIZE_MASK;
 
         return inflater.inflate(R.layout.fragment_e, container, false);
     }

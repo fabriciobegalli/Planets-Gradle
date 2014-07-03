@@ -9,12 +9,8 @@ import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.NavUtils;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -22,200 +18,185 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.google.analytics.tracking.android.EasyTracker;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ImageGallery extends Activity {
+public class ImageGallery extends Fragment {
 
     private ActionBar mActionBar;
 
+    private FrameLayout galleryView;
+
+    public ImageGallery() {
+        // Required empty public constructor
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.gallery_main);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.gallery_main, container, false);
+    }
 
-        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
 
-        SharedPreferences getPrefs = PreferenceManager
-                .getDefaultSharedPreferences(getBaseContext());
-        int theme_chooser = Integer.parseInt(getPrefs.getString("prefSetTheme", "3"));
-        mActionBar = getActionBar();
-        SystemBarTintManager tintManager = new SystemBarTintManager(this);
+        galleryView = (FrameLayout) getView().findViewById(R.id.gallery_main);
 
-        tintManager.setStatusBarTintEnabled(true);
+        galleryView.setClipToPadding(false);
+        setInsets(getActivity(), galleryView);
 
-        if (theme_chooser == 1) {
-            //Red
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#cc0202")));
+        getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
 
-            int actionBarColor = Color.parseColor("#cc0202");
-            tintManager.setStatusBarTintColor(actionBarColor);
-        } else if (theme_chooser == 2) {
-            //Orange
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ff8801")));
-
-            int actionBarColor = Color.parseColor("#ff8801");
-            tintManager.setStatusBarTintColor(actionBarColor);
-        } else if (theme_chooser == 3) {
-            //Blue
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0497c9")));
-
-            int actionBarColor = Color.parseColor("#0497c9");
-            tintManager.setStatusBarTintColor(actionBarColor);
-        } else if (theme_chooser == 4) {
-            //Green
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#679a03")));
-
-            int actionBarColor = Color.parseColor("#679a03");
-            tintManager.setStatusBarTintColor(actionBarColor);
-        } else if (theme_chooser == 5) {
-            //Purple
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#9832cb")));
-
-            int actionBarColor = Color.parseColor("#9832cb");
-            tintManager.setStatusBarTintColor(actionBarColor);
-        } else {
-            //Black
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#292929")));
-
-            int actionBarColor = Color.parseColor("#292929");
-            tintManager.setStatusBarTintColor(actionBarColor);
-        }
-
-        GridView gridView = (GridView) findViewById(R.id.gridview);
-        gridView.setAdapter(new MyAdapter(this));
+        GridView gridView = (GridView) getView().findViewById(R.id.gridview);
+        gridView.setAdapter(new MyAdapter(getActivity()));
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 
                 switch (position) {
                     case 0:
-                        Intent i1 = new Intent(getApplicationContext(),
+                        Intent i1 = new Intent(getActivity().getApplicationContext(),
                                 SunImageView.class);
                         //Scale animation is sent as a bundle to the next activity.
                         Bundle scaleBundle = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
                         //then start the activity, and send the bundle
-                        startActivity(i1, scaleBundle);
+                        getActivity().startActivity(i1, scaleBundle);
                         break;
                     case 1:
-                        Intent i2 = new Intent(getApplicationContext(),
+                        Intent i2 = new Intent(getActivity().getApplicationContext(),
                                 MercuryImageView.class);
                         //Scale animation is sent as a bundle to the next activity.
                         Bundle scaleBundle2 = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
                         //then start the activity, and send the bundle
-                        startActivity(i2, scaleBundle2);
+                        getActivity().startActivity(i2, scaleBundle2);
                         break;
                     case 2:
-                        Intent i3 = new Intent(getApplicationContext(),
+                        Intent i3 = new Intent(getActivity().getApplicationContext(),
                                 VenusImageView.class);
                         //Scale animation is sent as a bundle to the next activity.
                         Bundle scaleBundle3 = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
                         //then start the activity, and send the bundle
-                        startActivity(i3, scaleBundle3);
+                        getActivity().startActivity(i3, scaleBundle3);
                         break;
                     case 3:
-                        Intent i4 = new Intent(getApplicationContext(),
+                        Intent i4 = new Intent(getActivity().getApplicationContext(),
                                 EarthImageView.class);
                         //Scale animation is sent as a bundle to the next activity.
                         Bundle scaleBundle4 = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
                         //then start the activity, and send the bundle
-                        startActivity(i4, scaleBundle4);
+                        getActivity().startActivity(i4, scaleBundle4);
                         break;
                     case 4:
-                        Intent i5 = new Intent(getApplicationContext(),
+                        Intent i5 = new Intent(getActivity().getApplicationContext(),
                                 MarsImageView.class);
                         //Scale animation is sent as a bundle to the next activity.
                         Bundle scaleBundle5 = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
                         //then start the activity, and send the bundle
-                        startActivity(i5, scaleBundle5);
+                        getActivity().startActivity(i5, scaleBundle5);
                         break;
                     case 5:
-                        Intent i6 = new Intent(getApplicationContext(),
+                        Intent i6 = new Intent(getActivity().getApplicationContext(),
                                 JupiterImageView.class);
                         //Scale animation is sent as a bundle to the next activity.
                         Bundle scaleBundle6 = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
                         //then start the activity, and send the bundle
-                        startActivity(i6, scaleBundle6);
+                        getActivity().startActivity(i6, scaleBundle6);
                         break;
                     case 6:
-                        Intent i7 = new Intent(getApplicationContext(),
+                        Intent i7 = new Intent(getActivity().getApplicationContext(),
                                 SaturnImageView.class);
                         //Scale animation is sent as a bundle to the next activity.
                         Bundle scaleBundle7 = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
                         //then start the activity, and send the bundle
-                        startActivity(i7, scaleBundle7);
+                        getActivity().startActivity(i7, scaleBundle7);
                         break;
                     case 7:
-                        Intent i8 = new Intent(getApplicationContext(),
+                        Intent i8 = new Intent(getActivity().getApplicationContext(),
                                 UranusImageView.class);
                         //Scale animation is sent as a bundle to the next activity.
                         Bundle scaleBundle8 = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
                         //then start the activity, and send the bundle
-                        startActivity(i8, scaleBundle8);
+                        getActivity().startActivity(i8, scaleBundle8);
                         break;
                     case 8:
-                        Intent i9 = new Intent(getApplicationContext(),
+                        Intent i9 = new Intent(getActivity().getApplicationContext(),
                                 NeptuneImageView.class);
                         //Scale animation is sent as a bundle to the next activity.
                         Bundle scaleBundle9 = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
                         //then start the activity, and send the bundle
-                        startActivity(i9, scaleBundle9);
+                        getActivity().startActivity(i9, scaleBundle9);
                         break;
                     case 9:
-                        Intent i10 = new Intent(getApplicationContext(),
+                        Intent i10 = new Intent(getActivity().getApplicationContext(),
                                 PlutoImageView.class);
                         //Scale animation is sent as a bundle to the next activity.
                         Bundle scaleBundle10 = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
                         //then start the activity, and send the bundle
-                        startActivity(i10, scaleBundle10);
+                        getActivity().startActivity(i10, scaleBundle10);
                         break;
                     case 10:
-                        Intent i11 = new Intent(getApplicationContext(),
+                        Intent i11 = new Intent(getActivity().getApplicationContext(),
                                 HCometImageView.class);
                         //Scale animation is sent as a bundle to the next activity.
                         Bundle scaleBundle11 = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
                         //then start the activity, and send the bundle
-                        startActivity(i11, scaleBundle11);
+                        getActivity().startActivity(i11, scaleBundle11);
                         break;
                 }
             }
         });
     }
 
+    public void setInsets(Activity context, View transView) {
+
+        SystemBarTintManager tintManager = new SystemBarTintManager(context);
+
+        SystemBarTintManager.SystemBarConfig config = tintManager.getConfig();
+
+        transView.setPadding(0, config.getPixelInsetTop(true), 0, config.getPixelInsetBottom());
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        EasyTracker.getInstance(getActivity()).activityStart(getActivity());  // Add this method.
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        EasyTracker.getInstance(getActivity()).activityStop(getActivity());  // Add this method.
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
+                NavUtils.navigateUpFromSameTask(getActivity());
+                getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
                 return true;
         }
 
         return true;
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
     }
 
     private class MyAdapter extends BaseAdapter {

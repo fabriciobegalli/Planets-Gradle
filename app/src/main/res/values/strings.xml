@@ -17,11 +17,9 @@
         <item>Deimos</item>
     </string-array>
     <string-array name="fragments">
-        <item>Home</item>
-        <item>Our Solar System</item>
+        <item>Milky Way</item>
+        <item>Objects of Interest</item>
         <item>Planetarium</item>
-        <item>Other Celestial Bodies</item>
-        <item>Send Feedback</item>
         <item>Settings</item>
     </string-array>
 
@@ -99,7 +97,7 @@ After searching without success, a frustrated Hall was about to give up but his 
     <!-- Objects Names -->
     <string name="home_title">Home</string>
     <string name="home_info_1">Welcome to Planets!</string>
-    <string name="sun_title">Sun (Sol)</string>
+    <string name="sun_title">Sun</string>
     <string name="sun_sub_title_1">Specific Information:</string>
     <string name="sun_description">Age: 4.6 Billion Years\nType: Yellow Dwarf (G2V)\nDiameter: 1,392,684 km\nCircumference at Equator: 4,370,005.6 km\nMass: 1,989,100,000,000,000,000,000 billion kg (333,060 x Earth)\nSurface Temperature: 5500 °C</string>
     <string name="sun_sub_title_2">General Information:</string>

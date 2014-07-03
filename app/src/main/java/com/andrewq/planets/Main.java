@@ -7,7 +7,6 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -125,7 +124,7 @@ public class Main extends FragmentActivity {
         int theme_chooser = Integer.parseInt(getPrefs.getString("prefSetTheme", "3"));
         //Get an instance of the ActionBar
         mActionBar = getActionBar();
-        SystemBarTintManager tintManager = new SystemBarTintManager(this);
+        final SystemBarTintManager tintManager = new SystemBarTintManager(this);
 
         tintManager.setStatusBarTintEnabled(true);
 
@@ -160,7 +159,7 @@ public class Main extends FragmentActivity {
 
             int actionBarColor = Color.parseColor("#9832cb");
             tintManager.setStatusBarTintColor(actionBarColor);
-        } else {
+        } else if (theme_chooser == 6) {
             //Black
             mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#292929")));
 
@@ -223,15 +222,6 @@ public class Main extends FragmentActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
-
-        // Associate searchable configuration with the SearchView
-        /*SearchManager searchManager =
-                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView =
-                (SearchView) menu.findItem(R.id.search).getActionView();
-        searchView.setSearchableInfo(
-                searchManager.getSearchableInfo(getComponentName()));*/
-
         return true;
     }
 
@@ -246,47 +236,26 @@ public class Main extends FragmentActivity {
                     mDrawerLayout.openDrawer(mainItemsList);
                 }
                 return true;
-
-            //Search feature coming soon
-            /*case R.id.search:
-                searchMenuItem();
-                break;*/
         }
 
         return true;
     }
 
-    /*private void searchMenuItem() {
-
-    }*/
-
     //Handle what happens when each nav drawer item is pressed
     private void selectItem(int position) {
-        Fragment newFragment = new FragmentHome();
+        Fragment newFragment = new FragmentPlanets();
         FragmentManager fm = getSupportFragmentManager();
         switch (position) {
             case 0:
-                newFragment = new FragmentHome();
-                break;
-            case 1:
                 newFragment = new FragmentPlanets();
                 break;
-            case 2:
-                Intent intent1 = new Intent(getApplicationContext(), ImageGallery.class);
-                startActivity(intent1);
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
-                break;
-            case 3:
+            case 1:
                 newFragment = new OtherBodiesFragment();
                 break;
-            case 4:
-                String url = "mailto:andrewquebe.14@gmail.com?subject=RE: Planets Feedback/Suggestion&body=Dear Developer,%0D%0A";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+            case 2:
+                newFragment = new ImageGallery();
                 break;
-            case 5:
+            case 3:
                 Intent intent = new Intent(getApplicationContext(), Settings.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
@@ -296,10 +265,9 @@ public class Main extends FragmentActivity {
         fm.beginTransaction().replace(R.id.content_frame, newFragment).commit();
 
         mainItemsList.setItemChecked(position, true);
-        if (position == 2 || position == 4 || position == 5) {
-            setTitle("Home");
-        }
-        else {
+        if (position == 0 || position == 3) {
+            setTitle("Milky Way");
+        } else {
             setTitle(mFragmentTitles[position]);
         }
         mDrawerLayout.closeDrawer(mainItemsList);
