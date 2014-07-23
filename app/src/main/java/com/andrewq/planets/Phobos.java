@@ -1,101 +1,87 @@
 package com.andrewq.planets;
 
-import android.app.ActionBar;
 import android.app.Activity;
-import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.app.ActivityOptions;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.support.v4.app.NavUtils;
-import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ScrollView;
 
 import com.google.analytics.tracking.android.EasyTracker;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 public class Phobos extends Activity {
 
-    private ActionBar mActionBar;
+   ImageView imgV;
+
+    private Drawable mActionBarBackgroundDrawable;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.phobos);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.phobos);
 
-        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+        mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_phobos);
+        mActionBarBackgroundDrawable.setAlpha(0);
 
-        SharedPreferences getPrefs = PreferenceManager
-                .getDefaultSharedPreferences(getBaseContext());
-        int theme_chooser = Integer.parseInt(getPrefs.getString("prefSetTheme", "1"));
-        mActionBar = getActionBar();
+        getActionBar().setBackgroundDrawable(mActionBarBackgroundDrawable);
 
-        SystemBarTintManager tintManager = new SystemBarTintManager(this);
+        ((NotifyingScrollView) findViewById(R.id.scroll_view_phobos)).setOnScrollChangedListener(mOnScrollChangedListener);
 
-        tintManager.setStatusBarTintEnabled(true);
+        imgV = (ImageView) findViewById(R.id.image_header_phobos);
 
-        if (theme_chooser == 1) {
-            //Red
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#cc0202")));
+        View.OnTouchListener upDownListener = new View.OnTouchListener() {
 
-            int actionBarColor = Color.parseColor("#cc0202");
-            tintManager.setStatusBarTintColor(actionBarColor);
-        } else if (theme_chooser == 2) {
-            //Orange
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ff8801")));
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
 
-            int actionBarColor = Color.parseColor("#ff8801");
-            tintManager.setStatusBarTintColor(actionBarColor);
-        } else if (theme_chooser == 3) {
-            //Blue
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0497c9")));
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    imgV.setAlpha(0.8f);
+                    return true;
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    imgV.setAlpha(1.0f);
+                    Intent i = new Intent(getBaseContext(), PhobosImageView.class);
+                    Bundle scaleBundle = ActivityOptions.makeScaleUpAnimation(
+                            v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                    startActivity(i, scaleBundle);
+                    return true;
+                }
 
-            int actionBarColor = Color.parseColor("#0497c9");
-            tintManager.setStatusBarTintColor(actionBarColor);
-        } else if (theme_chooser == 4) {
-            //Green
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#679a03")));
+                return false;
+            }
 
-            int actionBarColor = Color.parseColor("#679a03");
-            tintManager.setStatusBarTintColor(actionBarColor);
-        } else if (theme_chooser == 5) {
-            //Purple
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#9832cb")));
+        };
 
-            int actionBarColor = Color.parseColor("#9832cb");
-            tintManager.setStatusBarTintColor(actionBarColor);
-        } else {
-            //Black
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#292929")));
+        imgV.setOnTouchListener(upDownListener);
 
-            int actionBarColor = Color.parseColor("#292929");
-            tintManager.setStatusBarTintColor(actionBarColor);
-        }
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
-                return true;
+    public boolean onTouchEvent(MotionEvent event) {
+
+        imgV = (ImageView) findViewById(R.id.image_header_phobos);
+
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            imgV.setAlpha(0.8f);
+        } else if (event.getAction() == MotionEvent.ACTION_UP) {
+            imgV.setAlpha(1.0f);
         }
 
-        return true;
+        return super.onTouchEvent(event);
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
-    }
-
-    @Override
-    public void finish() {
-        super.finish();
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
-    }
+    private NotifyingScrollView.OnScrollChangedListener mOnScrollChangedListener = new NotifyingScrollView.OnScrollChangedListener() {
+        public void onScrollChanged(ScrollView who, int l, int t, int oldl, int oldt) {
+            final int headerHeight = findViewById(R.id.image_header_phobos).getHeight() - getActionBar().getHeight();
+            final float ratio = (float) Math.min(Math.max(t, 0), headerHeight) / headerHeight;
+            final int newAlpha = (int) (ratio * 255);
+            mActionBarBackgroundDrawable.setAlpha(newAlpha);
+        }
+    };
 
     @Override
     public void onStart() {
@@ -108,5 +94,4 @@ public class Phobos extends Activity {
         super.onStop();
         EasyTracker.getInstance(this).activityStop(this);  // Add this method.
     }
-
 }

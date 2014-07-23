@@ -8,12 +8,10 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
-import android.preference.PreferenceScreen;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-
 import com.google.analytics.tracking.android.EasyTracker;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
@@ -26,7 +24,7 @@ public class Settings extends PreferenceActivity {
     protected void onCreate(Bundle savedInstanceState) {
         getActionBar().setDisplayHomeAsUpEnabled(true);
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.layout.settings);
+        addPreferencesFromResource(R.xml.settings);
 
         setContentView(R.layout.custom_preferences); // uses the listview in custom_preferences as the preferenceresource
 
@@ -103,6 +101,11 @@ public class Settings extends PreferenceActivity {
     public void onStop() {
         super.onStop();
         EasyTracker.getInstance(this).activityStop(this);  // Add this method.
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     public void setInsets(Activity context, View transView) {

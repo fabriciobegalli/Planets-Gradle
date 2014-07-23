@@ -1,30 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.andrewq.planets">
+    package="com.andrewq.planets" >
 
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <!--<uses-feature
-        android:glEsVersion="0x00020000"
-        android:required="true" />-->
-
-    <!--<supports-gl-texture android:name="GL_OES_compressed_ETC1_RGB8_texture" />
-    <supports-gl-texture android:name="GL_OES_compressed_paletted_texture" />-->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.android.vending.BILLING" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
 
         <!-- Main Activity -->
         <activity
-            android:name="com.andrewq.planets.Main"
+            android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/TranslucentNavigationRoboto"
-            android:screenOrientation="sensor">
+            android:screenOrientation="sensor"
+            android:theme="@style/Roboto" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.SEARCH" />
@@ -35,17 +29,17 @@
 
         <!-- Settings Activity -->
         <activity
-            android:name="com.andrewq.planets.Settings"
+            android:name=".Settings"
             android:label="@string/action_settings"
-            android:parentActivityName="com.andrewq.planets.Settings"
+            android:parentActivityName=".Settings"
             android:screenOrientation="sensor"
-            android:theme="@style/Roboto">
+            android:theme="@style/Roboto" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.andrewq.planets.MainActivity" />
+                android:value="com.andrewq.planets.ImageGalleryActivity" />
 
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.ImageGallery" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -53,17 +47,17 @@
 
         <!-- Earth Moon Activity -->
         <activity
-            android:name="com.andrewq.planets.SatelliteEarth"
+            android:name=".SatelliteEarth"
             android:label="Moon"
-            android:theme="@style/TranslucentNavigationRoboto"
-            android:parentActivityName="com.andrewq.planets.SatelliteEarth"
-            android:screenOrientation="sensor">
+            android:parentActivityName=".SatelliteEarth"
+            android:screenOrientation="sensor"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.andrewq.planets.MainActivity" />
+                android:value="com.andrewq.planets.ImageGalleryActivity" />
 
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.ImageGallery" />
                 <action android:name="android.intent.action.SEARCH" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -72,152 +66,291 @@
 
         <!-- Phobos Activity -->
         <activity
-            android:name="com.andrewq.planets.Phobos"
+            android:name=".Phobos"
             android:label="Phobos"
-            android:theme="@style/TranslucentNavigationRoboto"
-            android:parentActivityName="com.andrewq.planets.Phobos"
-            android:screenOrientation="sensor">
+            android:parentActivityName=".Phobos"
+            android:screenOrientation="sensor"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.andrewq.planets.MainActivity" />
+                android:value="com.andrewq.planets.ImageGalleryActivity" />
 
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.ImageGallery" />
                 <action android:name="android.intent.action.SEARCH" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".PhobosImageView"
+            android:label="Phobos"
+            android:parentActivityName=".MarsActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.andrewq.planets.MarsActivity" />
         </activity>
 
         <!-- Deimos Activity -->
         <activity
-            android:name="com.andrewq.planets.Deimos"
+            android:name=".Deimos"
             android:label="Deimos"
-            android:theme="@style/TranslucentNavigationRoboto"
-            android:parentActivityName="com.andrewq.planets.Deimos"
-            android:screenOrientation="sensor">
+            android:parentActivityName=".Deimos"
+            android:screenOrientation="sensor"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.andrewq.planets.MainActivity" />
+                android:value="com.andrewq.planets.ImageGalleryActivity" />
 
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.SEARCH" />
+                <action android:name="android.intent.action.ImageGallery" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <!-- Sun Image View -->
         <activity
-            android:name="com.andrewq.planets.SunImageView"
-            android:label="Sun"
-            android:parentActivityName="com.andrewq.planets.Main">
+            android:name=".DeimosImageView"
+            android:label="Phobos"
+            android:parentActivityName=".MarsActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.andrewq.planets.Main" />
+                android:value="com.andrewq.planets.MarsActivity" />
+        </activity>
+
+        <!-- Moon Activity -->
+        <activity
+            android:name=".MoonImageView"
+            android:label="Moon"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.andrewq.planets.EarthActivity" />
+        </activity>
+
+        <!-- Sun Image View -->
+        <activity
+            android:name=".SunImageView"
+            android:label="Sun"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.andrewq.planets.ImageGallery" />
+        </activity>
+
+        <!-- Sun Activity -->
+        <activity
+            android:name=".SunActivity"
+            android:label="Sun"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.andrewq.planets.ImageGallery" />
         </activity>
 
         <!-- Mercury Image View -->
         <activity
-            android:name="com.andrewq.planets.MercuryImageView"
+            android:name=".MercuryImageView"
             android:label="Mercury"
-            android:parentActivityName="com.andrewq.planets.Main">
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.andrewq.planets.Main" />
+                android:value="com.andrewq.planets.ImageGallery" />
+        </activity>
+
+        <!-- Mercury Activity -->
+        <activity
+            android:name=".MercuryActivity"
+            android:label="Mercury"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.andrewq.planets.ImageGallery" />
         </activity>
 
         <!-- Venus Image View -->
         <activity
-            android:name="com.andrewq.planets.VenusImageView"
+            android:name=".VenusImageView"
             android:label="Venus"
-            android:parentActivityName="com.andrewq.planets.Main">
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.andrewq.planets.Main" />
+                android:value="com.andrewq.planets.ImageGallery" />
+        </activity>
+
+        <!-- Venus Activity -->
+        <activity
+            android:name=".VenusActivity"
+            android:label="Venus"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.andrewq.planets.ImageGallery" />
         </activity>
 
         <!-- Earth Image View -->
         <activity
-            android:name="com.andrewq.planets.EarthImageView"
+            android:name=".EarthImageView"
             android:label="Earth"
-            android:parentActivityName="com.andrewq.planets.Main">
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.andrewq.planets.Main" />
+                android:value="com.andrewq.planets.ImageGallery" />
+        </activity>
+
+        <!-- Earth Image View -->
+        <activity
+            android:name=".EarthActivity"
+            android:label="Earth"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.andrewq.planets.ImageGallery" />
         </activity>
 
         <!-- Mars Image View -->
         <activity
-            android:name="com.andrewq.planets.MarsImageView"
+            android:name=".MarsImageView"
             android:label="Mars"
-            android:parentActivityName="com.andrewq.planets.Main">
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.andrewq.planets.Main" />
+                android:value="com.andrewq.planets.ImageGallery" />
+        </activity>
+
+        <activity
+            android:name=".MarsActivity"
+            android:label="Mars"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.andrewq.planets.ImageGallery" />
         </activity>
 
         <!-- Jupiter Image View -->
         <activity
-            android:name="com.andrewq.planets.JupiterImageView"
+            android:name=".JupiterActivity"
             android:label="Jupiter"
-            android:parentActivityName="com.andrewq.planets.Main">
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay"
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.andrewq.planets.Main" />
+                android:value="com.andrewq.planets.ImageGallery" />
+        </activity>
+
+        <activity
+            android:name=".JupiterImageView"
+            android:label="Jupiter"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.andrewq.planets.ImageGallery" />
         </activity>
 
         <!-- Saturn Image View -->
         <activity
-            android:name="com.andrewq.planets.SaturnImageView"
+            android:name=".SaturnActivity"
             android:label="Saturn"
-            android:parentActivityName="com.andrewq.planets.Main">
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay"
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.andrewq.planets.Main" />
+                android:value="com.andrewq.planets.ImageGallery" />
+        </activity>
+
+        <activity
+            android:name=".SaturnImageView"
+            android:label="Saturn"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.andrewq.planets.ImageGallery" />
         </activity>
 
         <!-- Uranus Image View -->
         <activity
-            android:name="com.andrewq.planets.UranusImageView"
+            android:name=".UranusActivity"
             android:label="Uranus"
-            android:parentActivityName="com.andrewq.planets.Main">
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay"
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.andrewq.planets.Main" />
+                android:value="com.andrewq.planets.ImageGallery" />
+        </activity>
+
+        <activity
+            android:name=".UranusImageView"
+            android:label="Uranus"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.andrewq.planets.ImageGallery" />
         </activity>
 
         <!-- Neptune Image View -->
         <activity
-            android:name="com.andrewq.planets.NeptuneImageView"
+            android:name=".NeptuneActivity"
             android:label="Neptune"
-            android:parentActivityName="com.andrewq.planets.Main">
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay"
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.andrewq.planets.Main" />
+                android:value="com.andrewq.planets.ImageGallery" />
+        </activity>
+
+        <activity
+            android:name=".NeptuneImageView"
+            android:label="Neptune"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.andrewq.planets.ImageGallery" />
         </activity>
 
         <!-- Pluto Image View -->
         <activity
-            android:name="com.andrewq.planets.PlutoImageView"
+            android:name=".PlutoActivity"
             android:label="Pluto"
-            android:parentActivityName="com.andrewq.planets.Main">
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay"
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.andrewq.planets.Main" />
+                android:value="com.andrewq.planets.ImageGallery" />
+        </activity>
+
+        <activity
+            android:name=".PlutoImageView"
+            android:label="Pluto"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.andrewq.planets.ImageGallery" />
         </activity>
 
         <!-- Halley's Comet Image View -->
         <activity
-            android:name="com.andrewq.planets.HCometImageView"
-            android:label="Halley's Comet"
-            android:parentActivityName="com.andrewq.planets.Main">
+            android:name=".HCometActivity"
+            android:label="Halley&apos;s Comet"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay"
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.andrewq.planets.Main" />
+                android:value="com.andrewq.planets.ImageGallery" />
         </activity>
 
+        <activity
+            android:name=".HCometImageView"
+            android:label="Halley&apos;s Comet"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.andrewq.planets.ImageGallery" />
+        </activity>
     </application>
-
 </manifest>

@@ -17,12 +17,17 @@
         <item>Deimos</item>
     </string-array>
     <string-array name="fragments">
+
+        <!--
         <item>Milky Way</item>
         <item>Objects of Interest</item>
+        -->
         <item>Planetarium</item>
+        <!--
         <item>Settings</item>
+        <item>Testing</item>
+        -->
     </string-array>
-
     <string-array name="settings">
         <item>Settings</item>
     </string-array>
@@ -42,14 +47,26 @@
         <item name="5">5</item>
         <item name="6">6</item>
     </string-array>
+    <string-array name="donations">
+        <item name="1">$1</item>
+        <item name="2">$5</item>
+        <item name="3">$10</item>
+        <item name="4">$25</item>
+        <item name="5">$50</item>
+    </string-array>
+    <string-array name="donationEntries">
+        <item name="1">1</item>
+        <item name="2">2</item>
+        <item name="3">3</item>
+        <item name="4">4</item>
+        <item name="5">5</item>
+    </string-array>
 
     <!-- Preferences Titles -->
-    <string name="pref_cate_title_1">General</string>
-    <string name="pref_1">Rate on the Play Store</string>
-    <string name="pref_2">Other Apps</string>
+    <string name="pref_cate_title_1">Design</string>
+    <string name="pref_5">Theme</string>
     <string name="pref_cate_title_2">Paid</string>
     <string name="pref_3">Donate</string>
-    <string name="pref_5">Theme</string>
 
     <!-- Accessibility Titles -->
     <string name="sun_image">Picture of Sun</string>
@@ -66,9 +83,9 @@
     <string name="earth_satellite">Satellite (1)</string>
     <string name="moon_title">Moon</string>
     <string name="moon_image">Picture of the Moon</string>
-    <string name="moon_sub_title_1">Specific Information:</string>
+    <string name="moon_sub_title_1">Data</string>
     <string name="moon_description">Circumference at Equator: 10,917.0 km\nDiameter: 3,475 km\nMass: 73,476,730,924,573,500 million kg (0.0123 x Earth)\nAverage Distance from Earth: 384,400 km\nLength of Orbit: 27.3 Earth days\nSurface Temperature: -233 to 123 °C</string>
-    <string name="moon_sub_title_2">General Information:</string>
+    <string name="moon_sub_title_2">Facts</string>
     <string name="moon_description_2">The Moon (or Luna) is the Earth’s only natural satellite and was formed 4.6 billion years ago around some 30–50 million years after the formation of the solar system. The Moon is in synchronous rotation with Earth meaning the same side is always facing the Earth. The first unmanned mission to the Moon was in 1959 by the Soviet Lunar Program with the first manned landing being Apollo 11 in 1969.</string>
     <string name="moon_button">Satellite (1)</string>
 
@@ -76,9 +93,9 @@
     <string name="mars_satellite">Satellite (2)</string>
     <string name="phobos_title">Phobos</string>
     <string name="phobos_image">Picture of Phobos</string>
-    <string name="phobos_sub_title_1">Specific Information:</string>
+    <string name="phobos_sub_title_1">Data</string>
     <string name="phobos_description">Dimensions: 27 × 22 × 18 km\nMean radius: 11.2667 km (1.76941 mEarths)\nMass: 1.0659×1016 kg (17.8477 nEarths)\nMean density: 1.876 g/cm cubed\nEquatorial Surface Gravity: 0.0057 m/s squared (581.4 µg)\nEscape Velocity: 11.39 m/s (41 km/h)\nTemperature ≈ 233 K\nApparent magnitude: 11.3</string>
-    <string name="phobos_sub_title_2">General Information:</string>
+    <string name="phobos_sub_title_2">Facts</string>
     <string name="phobos_description_2">In the early 17th century, German astronomer Johannes Kepler proposed that Mars might host two moons, given that it lay between the Earth and Jupiter, which were known to have one and four satellites. No evidence of such moons could be found. Although most people thought that Mars had no moons, American astronomer Asaph Hall performed a methodical study from the U.S. Naval Observatory in Washington, D.C., searching closer to the planet than previous surveys.
 After searching without success, a frustrated Hall was about to give up but his wife, Angelina, urged him to continue. The next night, August 12, 1877, he discovered the moon that would later be known as Deimos. Six days later, he found Phobos as well. The two moons lay so close to their primary that they were hidden by the planet\'s glare. Asteroid-sized, they are also two of the smallest moons in the solar system, with the larger Phobos 7.24 times as massive as its companion, Deimos.</string>
 
@@ -86,9 +103,9 @@ After searching without success, a frustrated Hall was about to give up but his 
     <string name="deimos_satellite">Satellite (2)</string>
     <string name="deimos_title">Deimos</string>
     <string name="deimos_image">Picture of Deimos</string>
-    <string name="deimos_sub_title_1">Specific Information:</string>
+    <string name="deimos_sub_title_1">Data</string>
     <string name="deimos_description">Dimensions: 7.8 × 6.0 × 5.1 km\nMean Radius: 6.2  ±  0.18 km  (0.97316 mEarths)\nMass: 1.4762×1015 kg (24.7179 nEarths)\nMean Density: 1.471±0.166 g/cm cubed\nEquatorial Surface Gravity: 0.003 m/s squared (306 µg)\nEscape Velocity: 5.556 m/s (20 km/h)\nTemperature ≈ 233 K\nApparent Magnitude: 12.45 ± 0.05 </string>
-    <string name="deimos_sub_title_2">General Information:</string>
+    <string name="deimos_sub_title_2">Facts</string>
     <string name="deimos_description_2">On August 12, 1877, the focused search for Martian moons by American astronomer Asaph Hall resulted in the discovery of Deimos. Six days later, he identified the second Martian moon, Phobos.\nThe existence of the moons had been suggested years before, when Johannes Kepler proposed that since Earth hosted one moon and Jupiter four (as only the Galilean moons were known at the time), Mars might have two moons in orbit around it. However, no signs of such moons existed until Hall undertook his careful search.\nUsing a 26-inch refractor at the U.S. Naval Observatory in Washington, D.C., Hall made a methodical study of the region around the red planet. Peering closer to Mars than previous astronomers, he found Deimos circling only 14,576 miles (23,458 kilometers) from the center of the planet, traveling around its equator. Phobos orbited even closer in. Their close proximity and small size had kept them hidden in the glare from the planet.\nLike many objects in the solar system, the Martian moons take their names from Greek mythology. In Homer\'s ancient poem, \"The Iliad,\" Deimos (Flight) and Phobos (Fear) were the twin sons of Mars (Ares to the Greeks), and accompany him into battle.</string>
 
     <!-- Sources -->
@@ -98,177 +115,50 @@ After searching without success, a frustrated Hall was about to give up but his 
     <string name="home_title">Home</string>
     <string name="home_info_1">Welcome to Planets!</string>
     <string name="sun_title">Sun</string>
-    <string name="sun_sub_title_1">Specific Information:</string>
+    <string name="sun_sub_title_1">Data</string>
     <string name="sun_description">Age: 4.6 Billion Years\nType: Yellow Dwarf (G2V)\nDiameter: 1,392,684 km\nCircumference at Equator: 4,370,005.6 km\nMass: 1,989,100,000,000,000,000,000 billion kg (333,060 x Earth)\nSurface Temperature: 5500 °C</string>
-    <string name="sun_sub_title_2">General Information:</string>
-    <string name="sun_description_2">One million Earths could fit inside the Sun.
-If a hollow Sun was filled up with spherical Earths then around 960,000 would fit inside. On the other hand if these Earths were squished inside with no wasted space then around 1,300,000 would fit inside. The Suns surface area is 11,990 times that of the Earth’s.
-
-Eventually, the Sun will consume the Earth.
-When all the Hydrogen has been burned, the Sun will continue for about 130 million more years, burning Helium, during which time it will expand to the point that it will engulf Mercury and Venus and the Earth. At this stage it will have become a red giant
-
-The Sun will one day be about the size of Earth.
-After its red giant phase, the Sun will collapse, retaining its enormous mass, but containing the approximate volume of our planet. When this happens, it will be called a white dwarf.
-
-The Sun contains 99.86% of the mass in the Solar System.
-The mass of the Sun is approximately 330,000 times greater than that of Earth. It is almost three quarters Hydrogen, whilst most of the remaining mass is Helium.
-
-The Sun is an almost perfect sphere.
-There is only a 10 kilometre difference in its polar diameter compared to its equatorial diameter. Considering the vast expanse of the Sun, this means it is the closest thing to a perfect sphere that has been observed in nature.
-
-Light from the Sun takes eight minutes to reach Earth.
-With a mean average distance of 150 million kilometres from Earth and with light travelling at 300,000 kilometres per second, dividing one by the other gives us an approximate time of 500 seconds, or eight minutes and 20 seconds. Although this energy reaches Earth in a few minutes, it will already have taken millions of years to travel from the Sun’s core to its surface.
-
-The Sun travels at 220 kilometres per second.
-The Sun is 24,000-26,000 light years from the galactic centre and it takes the Sun 225-250 million years to complete an orbit of the centre of the Milky Way.
-
-The distance from the Sun to Earth changes throughout the year.
-Because the Earth travels on an elliptical orbit around the Sun, the distance between the two bodies varies from 147 to 152 million kilometres. The distance between the Earth and the Sun is called an Astronomical Unit (AU).
-
-The Sun is middle-aged.
-At around 4.5 billion years old, the Sun has already burned off about half of its store of Hydrogen. It has enough left to continue to burn Hydrogen for approximately another 5 billion years. The Sun is currently a type of star known as a Yellow Dwarf
-
-The Sun has a very strong magnetic field.
-Solar flares occur when magnetic energy is released by the Sun during magnetic storms, which we see as sunspots. In sunspots, the magnetic lines are twisted and they spin, much like a tornado would on Earth.
-
-The temperature inside the Sun can reach 15 million degrees Celsius.
-At the Sun’s core, energy is generated by nuclear fusion, as Hydrogen converts to Helium. Because hot objects generally expand, the Sun would explode like a giant bomb if it weren’t for its enormous gravitational force.
-
-The Sun generates solar wind.
-This is a stream of charged particles, which travels through the Solar System at approximately 450 kilometres per second. Solar wind occurs where the magnetic field of the Sun extends into space instead of following its surface.</string>
+    <string name="sun_sub_title_2">Facts</string>
+    <string name="sun_description_2">One million Earths could fit inside the Sun. If a hollow Sun was filled up with spherical Earths then around 960,000 would fit inside. On the other hand if these Earths were squished inside with no wasted space then around 1,300,000 would fit inside. The Suns surface area is 11,990 times that of the Earth’s.\n\nEventually, the Sun will consume the Earth. When all the Hydrogen has been burned, the Sun will continue for about 130 million more years, burning Helium, during which time it will expand to the point that it will engulf Mercury and Venus and the Earth. At this stage it will have become a red giant.\n\nThe Sun will one day be about the size of Earth. After its red giant phase, the Sun will collapse, retaining its enormous mass, but containing the approximate volume of our planet. When this happens, it will be called a white dwarf.\n\nThe Sun contains 99.86% of the mass in the Solar System. The mass of the Sun is approximately 330,000 times greater than that of Earth. It is almost three quarters Hydrogen, whilst most of the remaining mass is Helium.\n\nThe Sun is an almost perfect sphere. There is only a 10 kilometre difference in its polar diameter compared to its equatorial diameter. Considering the vast expanse of the Sun, this means it is the closest thing to a perfect sphere that has been observed in nature.\n\nLight from the Sun takes eight minutes to reach Earth. With a mean average distance of 150 million kilometres from Earth and with light travelling at 300,000 kilometres per second, dividing one by the other gives us an approximate time of 500 seconds, or eight minutes and 20 seconds. Although this energy reaches Earth in a few minutes, it will already have taken millions of years to travel from the Sun’s core to its surface.\n\nThe Sun travels at 220 kilometres per second. The Sun is 24,000-26,000 light years from the galactic centre and it takes the Sun 225-250 million years to complete an orbit of the centre of the Milky Way.\n\nThe distance from the Sun to Earth changes throughout the year. Because the Earth travels on an elliptical orbit around the Sun, the distance between the two bodies varies from 147 to 152 million kilometres. The distance between the Earth and the Sun is called an Astronomical Unit (AU).\n\nThe Sun is middle-aged. At around 4.5 billion years old, the Sun has already burned off about half of its store of Hydrogen. It has enough left to continue to burn Hydrogen for approximately another 5 billion years. The Sun is currently a type of star known as a Yellow Dwarf.\n\nThe Sun has a very strong magnetic field. Solar flares occur when magnetic energy is released by the Sun during magnetic storms, which we see as sunspots. In sunspots, the magnetic lines are twisted and they spin, much like a tornado would on Earth. The temperature inside the Sun can reach 15 million degrees Celsius.\n\nAt the Sun’s core, energy is generated by nuclear fusion, as Hydrogen converts to Helium. Because hot objects generally expand, the Sun would explode like a giant bomb if it weren’t for its enormous gravitational force.\n\nThe Sun generates solar wind. This is a stream of charged particles, which travels through the Solar System at approximately 450 kilometres per second. Solar wind occurs where the magnetic field of the Sun extends into space instead of following its surface.</string>
     <string name="mercury_title">Mercury</string>
-    <string name="mercury_sub_title_1">Specific Information:</string>
+    <string name="mercury_sub_title_1">Data</string>
     <string name="mercury_description">Mass: 330,104,000,000,000 billion kg (0.055 x Earth)\nEquatorial Diameter: 4,879\nPolar Diameter: 4,879\nEquatorial Circumference: 15,329 km\nKnown Satellites: none\nNotable Satellites: none\nOrbit Distance: 57,909,227 km (0.39 AU)\nOrbit Period: 87.97 Earth days\nSurface Temperature: -173 to 427°C\nFirst Record: 14th century BC\nRecorded By: Assyrian astronomers</string>
-    <string name="mercury_sub_title_2">General Information:</string>
-    <string name="mercury_description_2">A year in Mercury is just 88 days long.
-One day on Mercury lasts the equivalent of 176 Earth days. Mercury is nearly tidally locked to the Sun and over time this has slowed the rotation of the planet to almost match its orbit around the Sun. Mercury also has the highest orbital eccentricity of all the planets with its distance from the Sun ranging from 46 to 70 million km
-
-Mercury is the smallest planet in the Solar System.
-One of five planets visible with the naked eye a, Mercury is just 4,879 Kilometres across its equator, compared with 12,742 Kilometres for the Earth.
-
-Mercury is the second densest planet.
-Even though the planet is small, Mercury is very dense. Each cubic centimetre has a density of 5.4 grams, with only the Earth having a higher density. This is largely due to Mercury being composed mainly of heavy metals and rock.
-
-Mercury has wrinkles.
-As the iron core of the planet cooled and contracted, the surface of the planet became wrinkled. Scientist have named these wrinkles, Lobate Scarps. These Scarps can be up to a mile high and hundreds of miles long.</string>
+    <string name="mercury_sub_title_2">Facts</string>
+    <string name="mercury_description_2">A year in Mercury is just 88 days long. One day on Mercury lasts the equivalent of 176 Earth days. Mercury is nearly tidally locked to the Sun and over time this has slowed the rotation of the planet to almost match its orbit around the Sun. Mercury also has the highest orbital eccentricity of all the planets with its distance from the Sun ranging from 46 to 70 million km.\n\nMercury is the smallest planet in the Solar System. One of five planets visible with the naked eye a, Mercury is just 4,879 Kilometres across its equator, compared with 12,742 Kilometres for the Earth.\n\nMercury is the second densest planet. Even though the planet is small, Mercury is very dense. Each cubic centimetre has a density of 5.4 grams, with only the Earth having a higher density. This is largely due to Mercury being composed mainly of heavy metals and rock.\n\nMercury has wrinkles. As the iron core of the planet cooled and contracted, the surface of the planet became wrinkled. Scientist have named these wrinkles, Lobate Scarps. These Scarps can be up to a mile high and hundreds of miles long.</string>
     <string name="venus_title">Venus</string>
-    <string name="venus_sub_title_1">Specific Information:</string>
+    <string name="venus_sub_title_1">Data</string>
     <string name="venus_description">Mass: 4,867,320,000,000,000 billion kg (0.815 x Earth)\nEquatorial Diameter: 12,104 km\nPolar Diameter: 12,104 km\nEquatorial Circumference: 38,025 km\nKnown Satellites: none\nNotable Satellites: none\nOrbit Distance: 108,209,475 km (0.73 AU)\nOrbit Period: 224.70 Earth days\nSurface Temperature: 462 °C\nFirst Record: 17th century BC\nRecorded By: Babylonian astronomers</string>
-    <string name="venus_sub_title_2">General Information:</string>
-    <string name="venus_description_2">A day on Venus lasts longer than a year:
-It takes 243 Earth days to make rotate once on its axis. The planet’s orbit around the Sun takes 225 Earth days, compared to the Earth’s 365.
-
-Venus is often called the Earth’s sister planet:
-Earth and Venus are very similar in size with only a 638 km difference in diameter, Venus having 81.5% of the Earth’s mass. Both also have a central core, a molten mantle and a crust.
-
-Venus rotates counter-clockwise:
-Also known as retrograde rotation. A possible reason might be a collision in the past with an asteroid or other object that caused the planet to alter its rotational path. It also differs from most other planets in our solar system by having no natural satellites.
-
-Venus is the second brightest object in the night sky:
-Only the Moon is brighter. With a magnitude of between -3.8 to -4.6 Venus is so bright it can be seen during daytime on a clear day.
-
-Atmospheric pressure on Venus is 92 times greater than the Earth’s:
-While its size and mass are similar to Earth, the small asteroids are crushed when entering its atmosphere, meaning no small craters lie on the surface of the planet. The pressure felt by a human on the surface would be equivalent to that experienced deep beneath the sea on Earth.
-
-Venus is also known as the Morning Star and the Evening Star:
-Early civilisations thought Venus was two different bodies, called Phosphorus and Hesperus by the Greeks, and Lucifer and Vesper by the Romans. This is because when its orbit around the Sun overtakes Earth’s orbit, it changes from being visible after sunset to being visible before sunrise. Mayan astronomers made detailed observations of Venus as early as 650 AD.
-
-Venus is the hottest planet in our solar system:
-The average surface temperature is 462 °C, and because Venus does not tilt on its axis, there is no seasonal variation. The dense atmosphere of around 96.5 percent carbon dioxide traps heat and causes a greenhouse effect.
-
-A detailed study of Venus is currently underway:
-In 2006, the Venus Express space shuttle was sent into orbit around Venus by the European Space Agency, and is sending back information about the planet. Originally planned to last five hundred Earth days, the mission has been extended several times. More than 1,000 volcanoes or volcanic centres larger than 20 km have been found on the surface of Venus.
-
-The Russians sent the first mission to Venus:
-The Venera 1 space probe was launched in 1961, but lost contact with base. The USA also lost their first probe to Venus, Mariner 1, although Mariner 2 was able to take measurements of the planet in 1962. The Soviet Union’s Venera 3 was the first man-made craft to land on Venus in 1966.
-
-At one point it was thought Venus might be a tropical paradise:
-The dense clouds of sulphuric acid surrounding Venus make it impossible to view its surface from outside its atmosphere. It was only when radio mapping was developed in the 1960s that scientists were able to observe and measure the extreme temperatures and hostile environment. It is thought Venus did once have oceans but these evaporated as the planets temperature increased</string>
+    <string name="venus_sub_title_2">Facts</string>
+    <string name="venus_description_2">A day on Venus lasts longer than a year: It takes 243 Earth days to make rotate once on its axis. The planet’s orbit around the Sun takes 225 Earth days, compared to the Earth’s 365.\n\nVenus is often called the Earth’s sister planet: Earth and Venus are very similar in size with only a 638 km difference in diameter, Venus having 81.5% of the Earth’s mass. Both also have a central core, a molten mantle and a crust.\n\nVenus rotates counter-clockwise: Also known as retrograde rotation. A possible reason might be a collision in the past with an asteroid or other object that caused the planet to alter its rotational path. It also differs from most other planets in our solar system by having no natural satellites.\n\nVenus is the second brightest object in the night sky: Only the Moon is brighter. With a magnitude of between -3.8 to -4.6 Venus is so bright it can be seen during daytime on a clear day.\n\nAtmospheric pressure on Venus is 92 times greater than the Earth’s: While its size and mass are similar to Earth, the small asteroids are crushed when entering its atmosphere, meaning no small craters lie on the surface of the planet. The pressure felt by a human on the surface would be equivalent to that experienced deep beneath the sea on Earth.\n\nVenus is also known as the Morning Star and the Evening Star: Early civilisations thought Venus was two different bodies, called Phosphorus and Hesperus by the Greeks, and Lucifer and Vesper by the Romans. This is because when its orbit around the Sun overtakes Earth’s orbit, it changes from being visible after sunset to being visible before sunrise. Mayan astronomers made detailed observations of Venus as early as 650 AD.\n\nVenus is the hottest planet in our solar system: The average surface temperature is 462 °C, and because Venus does not tilt on its axis, there is no seasonal variation. The dense atmosphere of around 96.5 percent carbon dioxide traps heat and causes a greenhouse effect.\n\nA detailed study of Venus is currently underway: In 2006, the Venus Express space shuttle was sent into orbit around Venus by the European Space Agency, and is sending back information about the planet. Originally planned to last five hundred Earth days, the mission has been extended several times. More than 1,000 volcanoes or volcanic centres larger than 20 km have been found on the surface of Venus.\n\nThe Russians sent the first mission to Venus: The Venera 1 space probe was launched in 1961, but lost contact with base. The USA also lost their first probe to Venus, Mariner 1, although Mariner 2 was able to take measurements of the planet in 1962. The Soviet Union’s Venera 3 was the first man-made craft to land on Venus in 1966.\n\nAt one point it was thought Venus might be a tropical paradise: The dense clouds of sulphuric acid surrounding Venus make it impossible to view its surface from outside its atmosphere. It was only when radio mapping was developed in the 1960s that scientists were able to observe and measure the extreme temperatures and hostile environment. It is thought Venus did once have oceans but these evaporated as the planets temperature increased.</string>
     <string name="earth_title">Earth</string>
-    <string name="earth_sub_title_1">Specific Information:</string>
+    <string name="earth_sub_title_1">Data</string>
     <string name="earth_description">Mass: 5,972,190,000,000,000 billion kg\nEquatorial Diameter: 12,756 km\nPolar Diameter: 12,714 km\nEquatorial Circumference: 40,030 km\nKnown Satellites: 1\nNotable Satellites: The Moon\nOrbit Distance: 149,598,262 km (1 AU)\nOrbit Period: 365.26 Earth days\nSurface Temperature: -88 to 58°C</string>
-    <string name="earth_sub_title_2">General Information:</string>
-    <string name="earth_description_2">The Earth’s rotation is gradually slowing:
-This deceleration is happening almost imperceptibly, at approximately 17 milliseconds per hundred years, although the rate at which it occurs is not perfectly uniform. This has the effect of lengthening our days, but it happens so slowly that it could be as much as 140 million years before the length of a day will have increased to 25 hours.
-
-The Earth was once believed to be the centre of the universe:
-Due to the apparent movements of the Sun and planets in relation to their viewpoint, ancient scientists insisted that the Earth remained static, whilst other celestial bodies travelled in circular orbits around it. Eventually, the view that the Sun was at the centre of the universe was postulated by Copernicus and this was eventually shown to be the case.
-
-Earth has a powerful magnetic field:
-This phenomenon is caused by the nickel-iron core of the planet, coupled with its rapid rotation. This field protects the Earth from the effects of solar wind.
-
-There is only one natural satellite of the planet Earth:
-As a percentage of the size of the body it orbits, the Moon is the largest satellite of any planet in our solar system. In real terms, however, it is only the fifth largest natural satellite.
-
-Earth is the only planet not named after a god:
-The other seven planets in our solar system are all named after Roman gods or goddesses. Although only Mercury, Venus, Mars, Jupiter and Saturn were named during ancient times, because they were visible to the naked eye, the Roman method of naming planets was retained after the discovery of Uranus and Neptune.
-
-Of all the planets in our solar system, the Earth has the greatest density:
-This varies according to the part of the planet; for example, the metallic core is denser than the crust. The average density of the Earth is approximately 5.52 grams per cubic centimetre.</string>
+    <string name="earth_sub_title_2">Facts</string>
+    <string name="earth_description_2">The Earth’s rotation is gradually slowing: This deceleration is happening almost imperceptibly, at approximately 17 milliseconds per hundred years, although the rate at which it occurs is not perfectly uniform. This has the effect of lengthening our days, but it happens so slowly that it could be as much as 140 million years before the length of a day will have increased to 25 hours.\n\nThe Earth was once believed to be the centre of the universe: Due to the apparent movements of the Sun and planets in relation to their viewpoint, ancient scientists insisted that the Earth remained static, whilst other celestial bodies travelled in circular orbits around it. Eventually, the view that the Sun was at the centre of the universe was postulated by Copernicus and this was eventually shown to be the case.\n\nEarth has a powerful magnetic field: This phenomenon is caused by the nickel-iron core of the planet, coupled with its rapid rotation. This field protects the Earth from the effects of solar wind.\n\nThere is only one natural satellite of the planet Earth: As a percentage of the size of the body it orbits, the Moon is the largest satellite of any planet in our solar system. In real terms, however, it is only the fifth largest natural satellite.\n\nEarth is the only planet not named after a god: The other seven planets in our solar system are all named after Roman gods or goddesses. Although only Mercury, Venus, Mars, Jupiter and Saturn were named during ancient times, because they were visible to the naked eye, the Roman method of naming planets was retained after the discovery of Uranus and Neptune.\n\nOf all the planets in our solar system, the Earth has the greatest density: This varies according to the part of the planet; for example, the metallic core is denser than the crust. The average density of the Earth is approximately 5.52 grams per cubic centimetre.</string>
     <string name="mars_title">Mars</string>
-    <string name="mars_sub_title_1">Specific Information:</string>
+    <string name="mars_sub_title_1">Data</string>
     <string name="mars_description">Mass: 641,693,000,000,000 billion kg (0.107 x Earth)\nEquatorial Diameter: 6,805\nPolar Diameter: 6,755\nEquatorial Circumference: 21,297 kmKnown Satellites: 2\nNotable Satellites: Phobos and Deimos\nOrbit Distance: 227,943,824 km (1.38 AU)\nOrbit Period: 686.98 Earth days (1.88 Earth years)\nSurface Temperature: -87 to -5 °C\nFirst Record: 2nd millennium BC\nRecorded By: Egyptian astronomers</string>
-    <string name="mars_sub_title_2">General Information:</string>
-    <string name="mars_description_2" formatted="false">Mars and Earth have approximately the same landmass:
-Even though Mars has only has 15% of the Earth’s volume and just over 10% of the Earth’s, around two thirds of the Earths surface is covered in water. Martian surface gravity is only 37% of Earth’s (meaning you could leap nearly three times higher on Mars).
-
-Mars is home to the tallest mountain in the solar system.
-Olympus Mons, a shield volcano, is 21km high and 600km in diameter. Despite having formed over billions of years, evidence from volcanic lava flows is so recent many scientists believe it could still be active.
-
-Only 16 missions to Mars have been successful.
-Including orbiters, landers and rovers there have been 39 missions to Mars, not including flybys or the attempt to return a sample of Phobos. Since the first, USSR’s Marsnik 1, was launched in 1960. Europe’s Exobiology on Mars program (scheduled launch 2016) plans to: search for possible traces of Martian life; study the surface environment; map potential hazards to manned missions in the future and begin preparations for an eventual return flight.
-
-Mars has the largest dust storms in the solar system:
-They can last for months and cover the entire planet on. The seasons are extreme because its elliptical, oval-shaped orbital path around the sun is more elongated than most other planets in the solar system.
-
-On Mars the Sun appears about half the size as it does on Earth:
-At the closest point to the Sun, the Martian southern hemisphere leans towards the Sun, causing a short, intensely hot summer, while the northern hemisphere endures a brief, cold winter: at its farthest point from the Sun, the Martian northern hemisphere leans towards the Sun, causing a long, mild summer, while the southern hemisphere endures a lengthy, cold winter.
-
-Pieces of Mars have fallen to Earth:
-Scientists have found tiny traces of Martian atmosphere within meteorites violently ejected from Mars, then orbiting the solar system amongst galactic debris for millions of years, before crash landing on Earth. This allowed scientists to begin studying Mars prior to launching space missions.
-
-Mars takes its name from the Roman god of war:
-The ancient Greeks called the planet Ares, after their god of war; the Romans then did likewise, associating the planet’s blood-red colour with Mars, their own god of war. Interestingly, other ancient cultures also focused on colour – to China’s astronomers it was ‘the fire star’, whilst Egyptian priests called on ‘Her Desher’, or ‘the red one’. The red colour Mars is known for is due to the rock and dust covering its surface being rich in iron.</string>
+    <string name="mars_sub_title_2">Facts</string>
+    <string name="mars_description_2" formatted="false">Mars and Earth have approximately the same landmass: Even though Mars has only has 15% of the Earth’s volume and just over 10% of the Earth’s, around two thirds of the Earths surface is covered in water. Martian surface gravity is only 37% of Earth’s (meaning you could leap nearly three times higher on Mars).\n\nMars is home to the tallest mountain in the solar system. Olympus Mons, a shield volcano, is 21km high and 600km in diameter. Despite having formed over billions of years, evidence from volcanic lava flows is so recent many scientists believe it could still be active.\n\nOnly 16 missions to Mars have been successful. Including orbiters, landers and rovers there have been 39 missions to Mars, not including flybys or the attempt to return a sample of Phobos. Since the first, USSR’s Marsnik 1, was launched in 1960. Europe’s Exobiology on Mars program (scheduled launch 2016) plans to: search for possible traces of Martian life; study the surface environment; map potential hazards to manned missions in the future and begin preparations for an eventual return flight.\n\nMars has the largest dust storms in the solar system: They can last for months and cover the entire planet on. The seasons are extreme because its elliptical, oval-shaped orbital path around the sun is more elongated than most other planets in the solar system.\n\nOn Mars the Sun appears about half the size as it does on Earth: At the closest point to the Sun, the Martian southern hemisphere leans towards the Sun, causing a short, intensely hot summer, while the northern hemisphere endures a brief, cold winter: at its farthest point from the Sun, the Martian northern hemisphere leans towards the Sun, causing a long, mild summer, while the southern hemisphere endures a lengthy, cold winter.\n\nPieces of Mars have fallen to Earth: Scientists have found tiny traces of Martian atmosphere within meteorites violently ejected from Mars, then orbiting the solar system amongst galactic debris for millions of years, before crash landing on Earth. This allowed scientists to begin studying Mars prior to launching space missions.\n\nMars takes its name from the Roman god of war: The ancient Greeks called the planet Ares, after their god of war; the Romans then did likewise, associating the planet’s blood-red colour with Mars, their own god of war.\n\nInterestingly, other ancient cultures also focused on colour – to China’s astronomers it was ‘the fire star’, whilst Egyptian priests called on ‘Her Desher’, or ‘the red one’. The red color Mars is known for is due to the rock and dust covering its surface being rich in iron.</string>
     <string name="jupiter_title">Jupiter</string>
-    <string name="jupiter_sub_title_1">Specific Information:</string>
+    <string name="jupiter_sub_title_1">Data</string>
     <string name="jupiter_description">Mass: 1,898,130,000,000,000,000 billion kg (317.83 x Earth)\nEquatorial Diameter: 142,984 km\nPolar Diameter: 133,709 km\nEquatorial Circumference: 439,264 km\nKnown Satellites: 67\nNotable Satellites: Io, Europa, Ganymede, and Callisto\nOrbit Distance: 778,340,821 km (5.20 AU)\nOrbit Period: 4,332.82 Earth days (11.86 Earth years)\nSurface Temperature: -108°C\nFirst Record: 7th or 8th century BC\nRecorded By: Babylonian astronomers</string>
-    <string name="jupiter_sub_title_2">General Information:</string>
-    <string name="jupiter_description_2" formatted="false">Jupiter is named after the king of the Roman gods – Jupiter has also been known as Zeus the Greek god of thunder and Marduk the Mesopotamian god and patron of the city of Babylon.
-
-Jupiter’s most recognisable feature is the Great Red Storm – This is a storm that has been raging for at least 350 years and is large enough for two Earths to fit inside of.
-
-Jupiter’s larger moon Ganymede is the largest moon in the solar system – It’s has a diameter of 5,268 km making it larger than the planet Mercury.
-
-Jupiter had two rings – These are thought to be composed of material from it’s moons where they have been struck by meteorites.
-
-Jupiter is the third brightest object in the solar system – It is one of five planets that can be seen with the naked eye, the others are Mercury, Venus, Mars and Saturn.</string>
+    <string name="jupiter_sub_title_2">Facts</string>
+    <string name="jupiter_description_2" formatted="false">Jupiter is named after the king of the Roman gods – Jupiter has also been known as Zeus the Greek god of thunder and Marduk the Mesopotamian god and patron of the city of Babylon. Jupiter’s most recognisable feature is the Great Red Storm – This is a storm that has been raging for at least 350 years and is large enough for two Earths to fit inside of.\n\nJupiter’s larger moon Ganymede is the largest moon in the solar system – It’s has a diameter of 5,268 km making it larger than the planet Mercury.\n\nJupiter had two rings – These are thought to be composed of material from it’s moons where they have been struck by meteorites.\n\nJupiter is the third brightest object in the solar system – It is one of five planets that can be seen with the naked eye, the others are Mercury, Venus, Mars and Saturn.</string>
     <string name="saturn_title">Saturn</string>
-    <string name="saturn_sub_title_1">Specific Information:</string>
+    <string name="saturn_sub_title_1">Data</string>
     <string name="saturn_description">Mass: 568,319,000,000,000,000 billion kg (95.16 x Earth)\nEquatorial Diameter: 120,536 km\nPolar Diameter: 108,728 km\nEquatorial Circumference: 365,882 km\nKnown Satellites: 62\nNotable Satellites: Titan, Rhea and Enceladus\nOrbit Distance: 1,426,666,422 km (9.58 AU)\nOrbit Period: 10,755.70 Earth days (29.45 Earth years)\nSurface Temperature: -139 °C\nFirst Record: 8th century BC\nRecorded By: Assyrians</string>
-    <string name="saturn_sub_title_2">General Information:</string>
-    <string name="saturn_description_2" formatted="false">Saturn is the sixth planet from the Sun and is named after the Roman god of wealth. Saturn is the second largest planet in the solar system and is best known for its fabulous rings. The rings were not known to exist until Galileo first observed them in 1610.</string>
+    <string name="saturn_sub_title_2">Facts</string>
+    <string name="saturn_description_2" formatted="false">Saturn is the sixth planet from the Sun and is named after the Roman god of wealth.\n\nSaturn is the second largest planet in the solar system and is best known for its fabulous rings. The rings were not known to exist until Galileo first observed them in 1610.</string>
     <string name="uranus_title">Uranus</string>
-    <string name="uranus_sub_title_1">Specific Information:</string>
+    <string name="uranus_sub_title_1">Data</string>
     <string name="uranus_description">Mass: 86,810,300,000,000,000 billion kg (14.536 x Earth)\nEquatorial Diameter: 51,118 km\nPolar Diameter: 49,946 km\nEquatorial Circumference: 159,354 km\nKnown Satellites: 27\nNotable Satellites: Oberon, Titania, Miranda, Ariel and Umbriel\nOrbit Distance: 2,870,658,186 km (19.22 AU)\nOrbit Period: 30,687.15 Earth days (84.02 Earth years)\nSurface Temperature: -197 °C\nDiscover Date: March 13th 1781\nDiscovered By: William Herschel</string>
-    <string name="uranus_sub_title_2">General Information:</string>
-    <string name="uranus_description_2" formatted="false">Uranus is the seventh planet from the Sun and was the first planet to be discovered with the use of a telescope. Uranus’ most unique feature is that its axis sideways in comparison to other planets i.e. its north and south poles are in line with where other planets have their equators. Uranus is named after the Greek god of the sky.
-        Uranus was discovered by William Herschel on the 13th of March 1781 who initially believed it was a comet.
-William Herschel tried to have his discovery named Georgian Sidus after King George III.
-The atmosphere of Uranus is composed mostly of Hydrogen and Helium with a small amount of Methane (H2, He and CH4).
-There are several different pronunciations of Uranus the most common being “u-ra-nus” followed by “ur-unus”.
-On the surface of Uranus gravity would be 89% of that on Earth (however as a gas planet with a liquid centre Uranus does not have definable surface).
-The minimum atmospheric temperature of Uranus is -224°C making it the coldest planet in the solar system.
-Uranus’ moons are named after characters created by William Shakespeare and Alaxander Pope these include Oberon, Titania and Miranda.
-The only spacecraft to visit Uranus is Voyager 2 which passed in 1986 passing at a distance of 81,500 km.
-Uranus has two sets of rings, nine inner rings and two outer rings.
-The first set of rings was discovered in 1977 and the second set was discovered in 2003 by the Hubble Space Telescope.</string>
+    <string name="uranus_sub_title_2">Facts</string>
+    <string name="uranus_description_2" formatted="false">Uranus is the seventh planet from the Sun and was the first planet to be discovered with the use of a telescope. Uranus’ most unique feature is that its axis sideways in comparison to other planets i.e. its north and south poles are in line with where other planets have their equators. Uranus is named after the Greek god of the sky.\n\nUranus was discovered by William Herschel on the 13th of March 1781 who initially believed it was a comet.\n\nWilliam Herschel tried to have his discovery named Georgian Sidus after King George III. The atmosphere of Uranus is composed mostly of Hydrogen and Helium with a small amount of Methane (H2, He and CH4).\n\nThere are several different pronunciations of Uranus the most common being “u-ra-nus” followed by “ur-unus”.\n\nOn the surface of Uranus gravity would be 89% of that on Earth (however as a gas planet with a liquid centre Uranus does not have definable surface).\n\nThe minimum atmospheric temperature of Uranus is -224°C making it the coldest planet in the solar system. Uranus’ moons are named after characters created by William Shakespeare and Alaxander Pope these include Oberon, Titania and Miranda.\n\nThe only spacecraft to visit Uranus is Voyager 2 which passed in 1986 passing at a distance of 81,500 km. Uranus has two sets of rings, nine inner rings and two outer rings.\n\nThe first set of rings was discovered in 1977 and the second set was discovered in 2003 by the Hubble Space Telescope.</string>
     <string name="neptune_title">Neptune</string>
-    <string name="neptune_sub_title_1">Specific Information:</string>
+    <string name="neptune_sub_title_1">Data</string>
     <string name="neptune_description">Mass: 102,410,000,000,000,000 billion kg (17.15x Earth)\nEquatorial Diameter: 49,528 km\nPolar Diameter: 48,682 km\nEquatorial Circumference: 155,600 km\nKnown Satellites: 14\nNotable Satellites: Tritan\nOrbit Distance: 4,498,396,441 km (30.10 AU)\nOrbit Period: 60,190.03 Earth days (164.79 Earth years)\nSurface Temperature: -201 °C\nDiscover Date: September 23rd 1846\nDiscovered By: Urbain Le Verrier and Johann Galle</string>
-    <string name="neptune_sub_title_2">General Information:</string>
-    <string name="neptune_description_2" formatted="false">Neptune is the eighth planet from the Sun and the smallest of the gas giants. Neptune was the first planet found by mathematical prediction after unexpected changes in the orbit of Uranus were observed. Neptune is named after the Roman god of the sea.
-        Neptune has only been passed by one spacecraft, Voyager 2 which flew by on the 25th of August 1989.
-Although smaller in diameter than Uranus, Neptune has a greater mass.</string>
+    <string name="neptune_sub_title_2">Facts</string>
+    <string name="neptune_description_2" formatted="false">Neptune is the eighth planet from the Sun and the smallest of the gas giants. Neptune was the first planet found by mathematical prediction after unexpected changes in the orbit of Uranus were observed. Neptune is named after the Roman god of the sea.\n\nNeptune has only been passed by one spacecraft, Voyager 2 which flew by on the 25th of August 1989. Although smaller in diameter than Uranus, Neptune has a greater mass.</string>
     <string name="home_welcome">Welcome! </string>
     <string name="home_message">This application is for learning about the universe around you. It is intended for all ages to learn about the planets in our solar system and soon, other solar systems that we know of. If you find this useful, please leave a rating. Thanks!</string>
     <string name="coming_soon">Coming Soon</string>
@@ -283,14 +173,14 @@ Although smaller in diameter than Uranus, Neptune has a greater mass.</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_sun_image_view">SunImageView</string>
     <string name="title_activity_mercury_image_view">MercuryImageView</string>
-
-
     <string name="pluto_title">Pluto</string>
     <string name="pluto_image">Image of Pluto</string>
     <string name="pluto_description">Gravity: 0.658 m/s squared\nDiscovered: February 18th, 1930\nDensity: 2.03 g/cm\ cubed\nCircumference: 4,494 miles (7,232 km)</string>
-    <string name="pluto_description_2">Pluto is the only dwarf planet to once have been considered a major planet. Once thought of as the ninth planet and the one most distant from the sun, Pluto is now seen as one of the largest known members of the Kuiper Belt, a shadowy disk-like zone beyond the orbit of Neptune populated by a trillion or more comets. Pluto was reclassified as a dwarf planet in 2006, a change widely thought of as a demotion that has attracted controversy and debate.\nAmerican astronomer Percival Lowell first caught hints of Pluto\'s existence in 1905 from odd deviations he observed in the orbits of Neptune and Uranus, suggesting that another world\'s gravity was tugging at them from beyond. He predicted its location in 1915, but died without finding it. Its discovery came in 1930 from Clyde Tombaugh at the Lowell Observatory, based on predictions from Lowell and other astronomers.\nPluto is the only world named by an 11-year-old girl, Venetia Burney of Oxford, England, who suggested to her grandfather that it get its name from the Roman god of the underworld. Her grandfather then passed the name on to Lowell Observatory. The name also honors Percival Lowell, whose initials are the first two letters of Pluto.</string>
+    <string name="pluto_description_2">Pluto is the only dwarf planet to once have been considered a major planet. Once thought of as the ninth planet and the one most distant from the sun, Pluto is now seen as one of the largest known members of the Kuiper Belt, a shadowy disk-like zone beyond the orbit of Neptune populated by a trillion or more comets. Pluto was reclassified as a dwarf planet in 2006, a change widely thought of as a demotion that has attracted controversy and debate.\n\nAmerican astronomer Percival Lowell first caught hints of Pluto\'s existence in 1905 from odd deviations he observed in the orbits of Neptune and Uranus, suggesting that another world\'s gravity was tugging at them from beyond. He predicted its location in 1915, but died without finding it. Its discovery came in 1930 from Clyde Tombaugh at the Lowell Observatory, based on predictions from Lowell and other astronomers.\n\nPluto is the only world named by an 11-year-old girl, Venetia Burney of Oxford, England, who suggested to her grandfather that it get its name from the Roman god of the underworld. Her grandfather then passed the name on to Lowell Observatory. The name also honors Percival Lowell, whose initials are the first two letters of Pluto.</string>
     <string name="h_comet_image">Image of Halley\'s Comet</string>
     <string name="h_comet_description">Orbital Period: 75 Years\nDiscovered: 1705\nLast Perihelion: February 9th, 1986\nPredicted Next Perihelion: July 28th, 2061</string>
     <string name="h_comet_description_2">Halley\'s Comet is arguably the most famous comet. It is a \"periodic\" comet and returns to Earth\'s vicinity about every 75 years, making it possible for a human to see it twice in his or her lifetime. The last time it was here was in 1986, and it is projected to return in 2061.\nThe comet is named after English astronomer Edmond Halley, who examined reports of a comet approaching Earth in 1531, 1607 and 1682. He concluded that these three comets were actually the same comet returning over and over again, and predicted the comet would come again in 1758.\nHalley didn\'t live to see the comet\'s return, but his discovery led to the comet being named after him. (The traditional pronunciation of the name usually rhymes with valley.) Halley\'s calculations showed that at least some comets orbit the sun.\nFurther, the first Halley\'s Comet of the space age – in 1986 – saw several spacecraft approach its vicinity to sample its composition. High-powered telescopes also observed the telescope as it swung by Earth.</string>
+    <string name="action_share">Share</string>
+    <string name="action_reply">Reply</string>
 
 </resources>

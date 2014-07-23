@@ -1,0 +1,38 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pref_screen"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="8dp"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false">
+
+    <PreferenceCategory android:title="@string/pref_cate_title_1">
+
+        <!--<CheckBoxPreference
+            android:defaultValue="false"
+            android:key="prefStatusTint"
+            android:summary="When checked, status bar will be tinted with selected color below."
+            android:title="Status Bar Tint" />-->
+
+        <ListPreference
+            android:defaultValue="3"
+            android:entries="@array/themes"
+            android:entryValues="@array/themesEntries"
+            android:key="prefSetTheme"
+            android:enabled="true"
+            android:summary="Tap here to change the design of the app."
+            android:title="@string/pref_5" />
+    </PreferenceCategory>
+
+    <!--<PreferenceCategory android:title="@string/pref_cate_title_2">
+
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/donations"
+            android:entryValues="@array/donationEntries"
+            android:key="prefDonate"
+            android:summary="Tap here to donate to the developer."
+            android:title="Donate" />
+    </PreferenceCategory>-->
+
+</PreferenceScreen>

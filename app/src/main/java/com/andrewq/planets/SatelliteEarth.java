@@ -1,123 +1,112 @@
 package com.andrewq.planets;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.support.v4.app.NavUtils;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ScrollView;
 
 import com.google.analytics.tracking.android.EasyTracker;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 public class SatelliteEarth extends Activity {
 
     Button button;
-    private ActionBar mActionBar;
+    ImageView imgV;
+
+    private Drawable mActionBarBackgroundDrawable;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.satellite_earth);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.satellite_earth);
 
-        button = (Button) findViewById(R.id.moon_button);
+        mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_moon);
+        mActionBarBackgroundDrawable.setAlpha(0);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        getActionBar().setBackgroundDrawable(mActionBarBackgroundDrawable);
+
+        ((NotifyingScrollView) findViewById(R.id.scroll_view_moon)).setOnScrollChangedListener(mOnScrollChangedListener);
+
+        imgV = (ImageView) findViewById(R.id.image_header_moon);
+
+        View.OnTouchListener upDownListener = new View.OnTouchListener() {
 
             @Override
-            public void onClick(View v) {
+            public boolean onTouch(View v, MotionEvent event) {
 
-                String url = "http://space-facts.com/the-moon/";
-                Bundle scaleBundle = ActivityOptions.makeScaleUpAnimation(
-                        v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i, scaleBundle);
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    imgV.setAlpha(0.8f);
+                    return true;
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    imgV.setAlpha(1.0f);
+                    Intent i = new Intent(getBaseContext(), MoonImageView.class);
+                    Bundle scaleBundle = ActivityOptions.makeScaleUpAnimation(
+                            v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                    startActivity(i, scaleBundle);
+                    return true;
+                }
 
-                //overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+                return false;
             }
-        });
 
-        SharedPreferences getPrefs = PreferenceManager
-                .getDefaultSharedPreferences(getBaseContext());
-        int theme_chooser = Integer.parseInt(getPrefs.getString("prefSetTheme", "1"));
-        mActionBar = getActionBar();
+        };
 
-        SystemBarTintManager tintManager = new SystemBarTintManager(this);
+        imgV.setOnTouchListener(upDownListener);
 
-        tintManager.setStatusBarTintEnabled(true);
-
-        if (theme_chooser == 1) {
-            //Red
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#cc0202")));
-
-            int actionBarColor = Color.parseColor("#cc0202");
-            tintManager.setStatusBarTintColor(actionBarColor);
-        } else if (theme_chooser == 2) {
-            //Orange
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ff8801")));
-
-            int actionBarColor = Color.parseColor("#ff8801");
-            tintManager.setStatusBarTintColor(actionBarColor);
-        } else if (theme_chooser == 3) {
-            //Blue
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0497c9")));
-
-            int actionBarColor = Color.parseColor("#0497c9");
-            tintManager.setStatusBarTintColor(actionBarColor);
-        } else if (theme_chooser == 4) {
-            //Green
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#679a03")));
-
-            int actionBarColor = Color.parseColor("#679a03");
-            tintManager.setStatusBarTintColor(actionBarColor);
-        } else if (theme_chooser == 5) {
-            //Purple
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#9832cb")));
-
-            int actionBarColor = Color.parseColor("#9832cb");
-            tintManager.setStatusBarTintColor(actionBarColor);
-        } else {
-            //Black
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#292929")));
-
-            int actionBarColor = Color.parseColor("#292929");
-            tintManager.setStatusBarTintColor(actionBarColor);
-        }
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
-                return true;
-        }
-
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.source_menu, menu);
         return true;
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.source:
+                String url = "http://space-facts.com/the-moon/";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
-    public void finish() {
-        super.finish();
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
+    public boolean onTouchEvent(MotionEvent event) {
+
+        imgV = (ImageView) findViewById(R.id.image_header_moon);
+
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            imgV.setAlpha(0.8f);
+        } else if (event.getAction() == MotionEvent.ACTION_UP) {
+            imgV.setAlpha(1.0f);
+        }
+
+        return super.onTouchEvent(event);
     }
+
+    private NotifyingScrollView.OnScrollChangedListener mOnScrollChangedListener = new NotifyingScrollView.OnScrollChangedListener() {
+        public void onScrollChanged(ScrollView who, int l, int t, int oldl, int oldt) {
+            final int headerHeight = findViewById(R.id.image_header_moon).getHeight() - getActionBar().getHeight();
+            final float ratio = (float) Math.min(Math.max(t, 0), headerHeight) / headerHeight;
+            final int newAlpha = (int) (ratio * 255);
+            mActionBarBackgroundDrawable.setAlpha(newAlpha);
+        }
+    };
 
     @Override
     public void onStart() {
