@@ -211,7 +211,7 @@ I, the maintainer, have set up the issues section to not only be a place to repo
        limitations under the License.
 
 <h2><b>Helpful Links</b></h2>
-> [Google+ Community](https://plus.google.com/u/0/communities/105711742765525315663) <br>
+> [Google+ Community](https://plus.google.com/u/0/communities/107180423023319882341) <br>
 > [View Issues Section](https://github.com/AMQTech/Planets/issues?milestone=1&state=open) <br>
 > [View Milestones](https://github.com/AMQTech/Planets/issues/milestones) <br>
 > [View Raw LICENSE File](https://raw.github.com/AMQTech/Planets/master/License) <br>
