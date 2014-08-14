@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -22,6 +23,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
@@ -33,12 +35,15 @@ import com.andrewq.planets.util.IabHelper;
 import com.andrewq.planets.util.IabResult;
 import com.andrewq.planets.util.Inventory;
 import com.andrewq.planets.util.Purchase;
+import com.nhaarman.listviewanimations.swinginadapters.prepared.ScaleInAnimationAdapter;
+import com.nhaarman.listviewanimations.swinginadapters.prepared.SwingBottomInAnimationAdapter;
 import com.parse.Parse;
 import com.parse.ParseAnalytics;
 import com.parse.ParseInstallation;
 import com.parse.PushService;
 
 import com.google.analytics.tracking.android.EasyTracker;
+import com.readystatesoftware.systembartint.SystemBarTintManager;
 import com.suredigit.inappfeedback.FeedbackDialog;
 
 import java.util.ArrayList;
@@ -68,18 +73,8 @@ public class MainActivity extends Activity {
     static final String SKU_25_DOLLARS = "donate_25_dollars";
     static final String SKU_50_DOLLARS = "donate_50_dollars";
 
-
-    // SKU for our subscription (infinite gas)
-    static final String SKU_INFINITE_GAS = "infinite_gas";
-
     // (arbitrary) request code for the purchase flow
     static final int RC_REQUEST = 10001;
-
-    // How many units (1/4 tank is our unit) fill in the tank.
-    static final int TANK_MAX = 4;
-
-    // Current amount of gas in tank, in units
-    int mTank;
 
     // The helper object
     IabHelper mHelper;
@@ -87,6 +82,10 @@ public class MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        }
 
         setContentView(R.layout.gallery_main);
 
@@ -117,7 +116,19 @@ public class MainActivity extends Activity {
 
 
         GridView gridView = (GridView) findViewById(R.id.gridview);
-        gridView.setAdapter(new MyAdapter(con));
+
+        ScaleInAnimationAdapter scaleInAnimationAdapter = new ScaleInAnimationAdapter(new MyAdapter(con));
+
+        scaleInAnimationAdapter.setAbsListView(gridView);
+
+        scaleInAnimationAdapter.setInitialDelayMillis(500);
+        scaleInAnimationAdapter.setAnimationDurationMillis(300);
+
+        /*SwingBottomInAnimationAdapter swingBottomInAnimationAdapter = new SwingBottomInAnimationAdapter(new MyAdapter(con), 100, 300);
+
+        swingBottomInAnimationAdapter.setAbsListView(gridView);*/
+
+        gridView.setAdapter(scaleInAnimationAdapter);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -392,6 +403,7 @@ public class MainActivity extends Activity {
     private class MyAdapter extends BaseAdapter {
         private List<Item> items = new ArrayList<Item>();
         private LayoutInflater inflater;
+
 
         public MyAdapter(Context context) {
             inflater = LayoutInflater.from(getApplicationContext());

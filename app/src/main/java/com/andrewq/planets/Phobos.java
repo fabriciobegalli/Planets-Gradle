@@ -1,11 +1,14 @@
 package com.andrewq.planets;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +19,7 @@ import com.google.analytics.tracking.android.EasyTracker;
 
 public class Phobos extends Activity {
 
-   ImageView imgV;
+    ImageView imgV;
 
     private Drawable mActionBarBackgroundDrawable;
 
@@ -25,7 +28,33 @@ public class Phobos extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.phobos);
 
-        mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_phobos);
+        SharedPreferences getPrefs2 = PreferenceManager
+                .getDefaultSharedPreferences(getBaseContext());
+
+        //Give theme_chooser the preference key defined in XML
+        int theme_chooser = Integer.parseInt(getPrefs2.getString("prefSetTheme", "3"));
+
+        //Set the action bar colors to whatever the user selects from the ListPreference
+        if (theme_chooser == 1) {
+            //Red
+            mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_red);
+        } else if (theme_chooser == 2) {
+            //Orange
+            mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_orange);
+        } else if (theme_chooser == 3) {
+            //Blue
+            mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_blue);
+        } else if (theme_chooser == 4) {
+            //Green
+            mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_green);
+        } else if (theme_chooser == 5) {
+            //Purple
+            mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_purple);
+        } else if (theme_chooser == 6) {
+            //Black
+            mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_black);
+        }
+
         mActionBarBackgroundDrawable.setAlpha(0);
 
         getActionBar().setBackgroundDrawable(mActionBarBackgroundDrawable);

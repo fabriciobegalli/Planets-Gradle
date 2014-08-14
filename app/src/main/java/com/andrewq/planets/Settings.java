@@ -74,7 +74,7 @@ public class Settings extends PreferenceActivity {
         mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#292929")));
     }
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
@@ -89,7 +89,7 @@ public class Settings extends PreferenceActivity {
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
-    }
+    }*/
 
     @Override
     public void onStart() {

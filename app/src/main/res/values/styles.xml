@@ -18,7 +18,7 @@
     </style>
 
     <style name="Widget.ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">@drawable/ab_background_sun</item>
+        <item name="android:background">@drawable/ab_background_red</item>
         <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
         <item name="android:buttonStyle">@style/RobotoButtonStyle</item>
     </style>
