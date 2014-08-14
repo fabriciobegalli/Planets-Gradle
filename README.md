@@ -1,6 +1,6 @@
 <h1><b>Welcome to the Planets README</b></h1>
 
-Planets is an application which uses a navigation drawer layout to display information about all the planets in the solar system. Planets is now in production and open to the general public. It is still undergoing development but I want it out in production for ratings and feedback. The Google+ community (See [Helpful Links](https://github.com/AMQTech/Planets#helpful-links)) is still active so feel free to join. <br>
+Planets is an application which uses a sleek card layout to display information about all the planets in the solar system. Planets is in production and open to the general public. It is still undergoing development but I want it out in production for ratings and feedback. The Google+ community (See [Helpful Links](https://github.com/AMQTech/Planets#helpful-links)) is still active so feel free to join. <br>
 After you've downloaded the app, please head back to the Play Store and leave a review as well as a +1.
 
 <h2><b>Using the Issues Section</b></h2>
@@ -211,7 +211,7 @@ I, the maintainer, have set up the issues section to not only be a place to repo
        limitations under the License.
 
 <h2><b>Helpful Links</b></h2>
-> [Google+ Community](https://plus.google.com/u/0/communities/105711742765525315663) <br>
+> [Google+ Community](https://plus.google.com/u/0/communities/107180423023319882341) <br>
 > [View Issues Section](https://github.com/AMQTech/Planets/issues?milestone=1&state=open) <br>
 > [View Milestones](https://github.com/AMQTech/Planets/issues/milestones) <br>
 > [View Raw LICENSE File](https://raw.github.com/AMQTech/Planets/master/License) <br>
