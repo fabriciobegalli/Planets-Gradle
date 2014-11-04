@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Android TV/Android TV.iml" filepath="$PROJECT_DIR$/Android TV/Android TV.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mobile App/Mobile App.iml" filepath="$PROJECT_DIR$/Mobile App/Mobile App.iml" />
       <module fileurl="file://$PROJECT_DIR$/Planets-Gradle.iml" filepath="$PROJECT_DIR$/Planets-Gradle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>

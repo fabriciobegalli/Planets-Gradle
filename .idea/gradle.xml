@@ -9,7 +9,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/Android TV" />
+            <option value="$PROJECT_DIR$/Mobile App" />
           </set>
         </option>
       </GradleProjectSettings>

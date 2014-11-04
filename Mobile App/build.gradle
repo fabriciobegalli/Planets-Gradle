@@ -1,0 +1,34 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion '21.1'
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 21
+        versionCode 25
+        versionName "2.6"
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    // You must install or update the Support Repository through the SDK manager to use this dependency.
+    //noinspection GradleDynamicVersion
+    compile 'com.android.support:support-v4:21.0.+'
+    compile 'com.viewpagerindicator:library:2.4.1@aar'
+    compile 'uk.me.lewisdeane.ldialogs:app@aar'
+}
+
+repositories{
+    flatDir{
+        dirs 'libs'
+    }
+}
