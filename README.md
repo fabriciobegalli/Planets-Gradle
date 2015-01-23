@@ -196,7 +196,7 @@ I, the maintainer, have set up the issues section to not only be a place to repo
           same "printed page" as the copyright notice for easier
           identification within third-party archives.
     
-       Copyright {2014} {Andrew M. Quebe}
+       Copyright {2015} {Andrew M. Quebe}
     
        Licensed under the Apache License, Version 2.0 (the "License");
        you may not use this file except in compliance with the License.
