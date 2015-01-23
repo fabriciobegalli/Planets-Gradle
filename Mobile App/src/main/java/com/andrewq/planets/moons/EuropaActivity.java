@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 
 import com.andrewq.planets.R;
-import com.andrewq.planets.image_views.DeimosImageView;
 import com.andrewq.planets.image_views.EuropaImageView;
 import com.andrewq.planets.util.NotifyingScrollView;
 import com.google.analytics.tracking.android.EasyTracker;
@@ -30,9 +29,10 @@ public class EuropaActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.europa);
+        setContentView(R.layout.europa_activity);
 
         mActionBar = getActionBar();
+        assert mActionBar != null;
         mActionBar.setCustomView(R.layout.custom_actionbar_europa);
         mActionBar.setDisplayShowCustomEnabled(true);
         mActionBar.setDisplayHomeAsUpEnabled(false);
@@ -123,7 +123,7 @@ public class EuropaActivity extends Activity {
 
     private NotifyingScrollView.OnScrollChangedListener mOnScrollChangedListener = new NotifyingScrollView.OnScrollChangedListener() {
         public void onScrollChanged(ScrollView who, int l, int t, int oldl, int oldt) {
-            final int headerHeight = findViewById(R.id.image_header_europa).getHeight() - getActionBar().getHeight();
+            @SuppressWarnings("ConstantConditions") final int headerHeight = findViewById(R.id.image_header_europa).getHeight() - getActionBar().getHeight();
             final float ratio = (float) Math.min(Math.max(t, 0), headerHeight) / headerHeight;
             final int newAlpha = (int) (ratio * 255);
             mActionBarBackgroundDrawable.setAlpha(newAlpha);

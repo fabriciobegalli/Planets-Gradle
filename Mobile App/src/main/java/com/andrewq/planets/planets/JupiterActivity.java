@@ -21,16 +21,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 
-import com.andrewq.planets.image_views.JupiterImageView;
-import com.andrewq.planets.moons.DeimosActivity;
-import com.andrewq.planets.moons.EuropaActivity;
-import com.andrewq.planets.moons.PhobosActivity;
-import com.andrewq.planets.util.NotifyingScrollView;
 import com.andrewq.planets.R;
+import com.andrewq.planets.image_views.JupiterImageView;
+import com.andrewq.planets.moons.EuropaActivity;
+import com.andrewq.planets.util.NotifyingScrollView;
 import com.google.analytics.tracking.android.EasyTracker;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -53,6 +50,7 @@ public class JupiterActivity extends Activity {
         setContentView(R.layout.jupiter_activity);
 
         mActionBar = getActionBar();
+        assert mActionBar != null;
         mActionBar.setCustomView(R.layout.custom_actionbar_jupiter);
         mActionBar.setDisplayShowCustomEnabled(true);
         mActionBar.setDisplayHomeAsUpEnabled(false);
@@ -131,6 +129,43 @@ public class JupiterActivity extends Activity {
             //Handle the button being pressed
             @Override
             public void onClick(View v) {
+
+                new AlertDialog.Builder(con)
+
+                        //Set the title
+                        .setTitle("Select Moon")
+
+                                //Set it's items to an array
+                        .setItems(R.array.jupiter_moons, new DialogInterface.OnClickListener() {
+                            //Handle what happens when each item is pressed
+                            public void onClick(DialogInterface dialog, int which) {
+                                //If the user pressed the first item
+                                if (which == 0) {
+                                    //Open the first moon activity
+                                    Intent phobos = new Intent(getBaseContext(), EuropaActivity.class);
+                                    startActivity(phobos);
+                                }
+                                //Otherwise
+                                else {
+                                    //In this case, open the other moon activity
+                                    Intent deimos = new Intent(getBaseContext(), EuropaActivity.class);
+                                    startActivity(deimos);
+                                }
+                            }
+                        })
+
+                                //Create a cancel button
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            //Handle when it's clicked. Here we don't need it to do anything
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //Do nothing!
+                            }
+                        })
+
+                                //Show the dialog after an item is pressed
+                        .show();
+
                 Intent europa = new Intent(getBaseContext(), EuropaActivity.class);
                 startActivity(europa);
             }
@@ -183,7 +218,7 @@ public class JupiterActivity extends Activity {
     public static File takeTempScreenshot(Context context)
     //takes a screenshot and stores it in the app's cache, returns the image
     {
-        Activity activity = (Activity)context;
+        Activity activity = (Activity) context;
         try {
             File outputDir = context.getExternalCacheDir(); // context being the Activity pointer
             File imageFile = File.createTempFile("pfb_jupiter", ".jpeg", outputDir);
@@ -199,8 +234,6 @@ public class JupiterActivity extends Activity {
             fout.flush();
             fout.close();
             return imageFile;
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -223,7 +256,7 @@ public class JupiterActivity extends Activity {
 
     private NotifyingScrollView.OnScrollChangedListener mOnScrollChangedListener = new NotifyingScrollView.OnScrollChangedListener() {
         public void onScrollChanged(ScrollView who, int l, int t, int oldl, int oldt) {
-            final int headerHeight = findViewById(R.id.image_header_jupiter).getHeight() - getActionBar().getHeight();
+            @SuppressWarnings("ConstantConditions") final int headerHeight = findViewById(R.id.image_header_jupiter).getHeight() - getActionBar().getHeight();
             final float ratio = (float) Math.min(Math.max(t, 0), headerHeight) / headerHeight;
             final int newAlpha = (int) (ratio * 255);
             mActionBarBackgroundDrawable.setAlpha(newAlpha);
