@@ -83,13 +83,14 @@
     <string name="moon_button">Satellite (1)</string>
 
     <!-- Europa -->
-    <string name="jupiter_sat_1">Satellite (4)</string>
+    <string name="jupiter_sat_1">Satellite (1)</string>
     <string name="europa_title">Europa</string>
     <string name="europa_image">Picture of Europa</string>
     <string name="europa_sub_title_1">Data</string>
-    <string name="europa_description"></string>
+    <string name="europa_description">Discovered by: Galileo Galilei, Simon Marius\nDiscovery date: 8 January 1610\nPeriapsis: 664,862 km\nApoapsis: 676,938 km\nMean orbit radius: 670,900 km\nEccentricity: 0.009\nOrbital period: 3.551181 days\nAverage orbital speed: 13.740 km/s\nInclination: 0.470° (to Jupiter\'s equator)</string>
+    <string name="titan_description">Discovered by: Christiaan Huygens\nDiscovery date: March 25, 1655\nPeriapsis: 1,186,680 km\nApoapsis: 1,257,060 km\nSemi-major axis: 1,221,870 km\nEccentricity: 0.0288\nOrbital period: 15.945 days\nAverage orbital speed: 5.57 km/s (calculated)\nInclination: 0.34854° (to Saturn\'s equator)</string>
     <string name="europa_sub_title_2">Facts</string>
-    <string name="europa_description_2"></string>
+    <string name="europa_description_2">In Greek mythology, Europa was abducted by Zeus, who had taken the form of a spotless white bull to seduce her. She decorated the “bull” with flowers and rode on its back to Crete. Once in Crete, Zeus-who is a counterpart of the Roman god Jupiter-then transformed back to his original form and was seduced by Zeus. Europa as the queen of Crete and bore Zeus many children.\nFor centuries, the four largest moons of Jupiter didn\'t have actual names. Instead, Galileo gave each moon a number, from one through four. Of the four large moons, Europa was believed to be the second closest to Jupiter, which is why Galileo also called it Jupiter II.\n\nThe Galileo mission, launched by NASA in 1989, is responsible for much of the information we have on Jupiter and the bodies surrounding it. It took more than six years for the unmanned Galileo spacecraft to reach its destination. The craft stayed in orbit of Jupiter from December 8, 1995 until Sept. 21, 2003.\n\nA prominent feature of Europa is its high degree of reflectivity. Europa\'s icy crust gives it an albedo-light reflectivity—of 0.64, one of the highest of all of the moons in the entire solar system.\nScientists estimate that Europa’s surface is about 20 million to 180 million years old, which makes it fairly young.\nObserving pictures taken by the Galileo spacecraft, scientists believe Europa is made of silicate rock, and has an iron core and rocky mantle, much like the Earth does. Unlike the interior of Earth, however, the rocky interior of Europa is surrounded by a layer of ice that is approximately 62 miles (or 100 km) thick.</string>
 
     <!-- Phobos -->
     <string name="mars_sat_1">Satellite (2)</string>
@@ -180,5 +181,8 @@
     <string name="pluto_image">Image of Pluto</string>
     <string name="pluto_description">Gravity: 0.658 m/s squared\nDiscovered: February 18th, 1930\nDensity: 2.03 g/cm\ cubed\nCircumference: 4,494 miles (7,232 km)</string>
     <string name="pluto_description_2">Pluto is the only dwarf planet to once have been considered a major planet. Once thought of as the ninth planet and the one most distant from the sun, Pluto is now seen as one of the largest known members of the Kuiper Belt, a shadowy disk-like zone beyond the orbit of Neptune populated by a trillion or more comets. Pluto was reclassified as a dwarf planet in 2006, a change widely thought of as a demotion that has attracted controversy and debate.\n\nAmerican astronomer Percival Lowell first caught hints of Pluto\'s existence in 1905 from odd deviations he observed in the orbits of Neptune and Uranus, suggesting that another world\'s gravity was tugging at them from beyond. He predicted its location in 1915, but died without finding it. Its discovery came in 1930 from Clyde Tombaugh at the Lowell Observatory, based on predictions from Lowell and other astronomers.\n\nPluto is the only world named by an 11-year-old girl, Venetia Burney of Oxford, England, who suggested to her grandfather that it get its name from the Roman god of the underworld. Her grandfather then passed the name on to Lowell Observatory. The name also honors Percival Lowell, whose initials are the first two letters of Pluto.</string>
+
+    <string name="support_email">andrewmquebe@gmail.com</string>
+    <string name="send_feedback">Send using...</string>
 
 </resources>

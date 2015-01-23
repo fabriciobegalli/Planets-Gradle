@@ -85,7 +85,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/jupiter_description_2"
                         android:layout_centerHorizontal="true"
-                        android:text="Moons (4)"/>
+                        android:text="Moons (1)"/>
                 </RelativeLayout>
             </RelativeLayout>
         </FrameLayout>

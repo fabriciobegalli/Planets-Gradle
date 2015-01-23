@@ -12,8 +12,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -55,6 +57,10 @@ import com.readystatesoftware.systembartint.SystemBarTintManager;
 import com.suredigit.inappfeedback.FeedbackDialog;
 import com.suredigit.inappfeedback.FeedbackSettings;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -101,7 +107,9 @@ public class MainActivity extends Activity {
 
         setContentView(R.layout.gallery_main);
 
-        String base64EncodedPublicKey = "<hidden>";
+        String base64EncodedPublicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjkBL90CQz/fVfOoKDFHTo4y/AWKOuKHK60Wjz+y8mPIUF2AU3uJ5c3ofu1SoGTY6+lpowpeHruMlVzwQ5fk31vAKGSRApcdWjmPh2w7dYmLldV1MTnxz0UiJydENj1O1Ci7MBJiGYigjS+wXG1kFL1LS1BIVoBiodeC+oh9u+eqKZASyA5b5ZUfK8kBQk4EtswnUSq6q5m+oj1SALK/2Nu3ZtRMPKX54dBhs1DHhOY3o9oI+7kl/pLN9d2tARmjJev06bbXlgfVDBum0ghaRI8JS6BZSgJch8inALx6677pOzCnZ49uW+CugyIGp3fe9cwbQDXIvQ8qSDoDjcmv/iwIDAQAB";
+
+        //TODO: Re-enable donation code
 
         /*mHelper = new IabHelper(this, base64EncodedPublicKey);
 
@@ -330,6 +338,8 @@ public class MainActivity extends Activity {
         boolean sendUsage = getPrefs.getBoolean("pref_send_usage", false);
 
 
+        //TODO: fix landscape translucent status bar bug
+
         boolean isChecked = getPrefs.getBoolean("pref_translucent", false);
 
         if (isChecked) {
@@ -437,7 +447,10 @@ public class MainActivity extends Activity {
                         .show();
                 break;
             case R.id.sendFeedback:
-                FeedbackSettings fbs = new FeedbackSettings();
+
+                sendFeedback(this);
+
+                /*FeedbackSettings fbs = new FeedbackSettings();
                 fbs.setText("Use this to send feedback, suggestions, and bugs to the developer. " +
                         "All feedback/suggestions are appreciated!");
                 fbs.setYourComments("Your message here...");
@@ -457,7 +470,7 @@ public class MainActivity extends Activity {
                 fbs.setModal(true);
 
                 fbd = new FeedbackDialog(this, "AF-FD2E2AEF7F0A-27", fbs);
-                fbd.show();
+                fbd.show();*/
                 break;
             case R.id.settings:
                 Intent intent = new Intent(getApplicationContext(), Settings.class);
@@ -488,6 +501,50 @@ public class MainActivity extends Activity {
         if (sendUsage)
             EasyTracker.getInstance(this).activityStop(this);  // Add this method.
     }
+
+    public static void sendFeedback(Context context)
+    //opens an email intent with a screenshot and preloaded email
+    {
+        context.getApplicationContext();
+        final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+        Uri uri = Uri.fromFile(takeTempScreenshot(context));
+            /* Fill it with Data */
+        emailIntent.setType("plain/text");
+        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{context.getResources().getString(R.string.support_email)});
+        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Feedback: Main Activity");
+        emailIntent.putExtra(Intent.EXTRA_STREAM, uri);
+        //emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Text");
+        context.startActivity(Intent.createChooser(emailIntent, context.getResources().getString(R.string.send_feedback)));
+        //activity.startActivityForResult(Intent.createChooser(emailIntent, getResources().getString(R.string.send_feedback)));
+
+    } //end sendFeedback()
+
+    public static File takeTempScreenshot(Context context)
+    //takes a screenshot and stores it in the app's cache, returns the image
+    {
+        Activity activity = (Activity)context;
+        try {
+            File outputDir = context.getExternalCacheDir(); // context being the Activity pointer
+            File imageFile = File.createTempFile("p_main", ".jpeg", outputDir);
+            // image naming and path  to include sd card  appending name you choose for file
+            View v1 = activity.getWindow().getDecorView().getRootView();
+
+            v1.setDrawingCacheEnabled(true);
+            // create bitmap screen capture
+            Bitmap bitmap = Bitmap.createBitmap(v1.getDrawingCache());
+            v1.setDrawingCacheEnabled(false);
+            FileOutputStream fout = new FileOutputStream(imageFile);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fout);
+            fout.flush();
+            fout.close();
+            return imageFile;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    } //end takeScreenshot
 
     public void setInsets(Activity context, View transView) {
 

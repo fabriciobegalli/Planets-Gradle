@@ -113,7 +113,7 @@ public class PlanetsFragment extends BrowseFragment {
         // set fastLane (or headers) background color
         setBrandColor(getResources().getColor(R.color.fastlane_background));
         // set search icon color
-        setSearchAffordanceColor(getResources().getColor(R.color.search_opaque));
+        //setSearchAffordanceColor(getResources().getColor(R.color.search_opaque));
     }
 
     private void setupEventListeners() {

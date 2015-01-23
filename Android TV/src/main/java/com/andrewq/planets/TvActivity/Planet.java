@@ -7,7 +7,7 @@ import java.net.URISyntaxException;
 import android.util.Log;
 
 public class Planet implements Serializable {
-    static final long serialVersionUID = 727566175075960653L;
+    static final long serialVersionUID = 72756612075960653L;
     private static long count = 0;
     private long id;
     private String title;

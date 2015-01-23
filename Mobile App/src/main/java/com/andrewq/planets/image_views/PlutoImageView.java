@@ -1,4 +1,4 @@
-package com.andrewq.planets.other_bodies;
+package com.andrewq.planets.image_views;
 
 import android.app.Activity;
 import android.os.Bundle;

@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -26,6 +27,11 @@ import com.andrewq.planets.moons.PhobosActivity;
 import com.andrewq.planets.util.NotifyingScrollView;
 import com.andrewq.planets.R;
 import com.google.analytics.tracking.android.EasyTracker;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class MarsActivity extends Activity {
 
@@ -178,9 +184,57 @@ public class MarsActivity extends Activity {
 
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
                 break;
+
+            case R.id.sendFeedback:
+                sendFeedback(this);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
+
+    public static void sendFeedback(Context context)
+    //opens an email intent with a screenshot and preloaded email
+    {
+        context.getApplicationContext();
+        final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+        Uri uri = Uri.fromFile(takeTempScreenshot(context));
+            /* Fill it with Data */
+        emailIntent.setType("plain/text");
+        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{context.getResources().getString(R.string.support_email)});
+        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Feedback: Mars");
+        emailIntent.putExtra(Intent.EXTRA_STREAM, uri);
+        //emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Text");
+        context.startActivity(Intent.createChooser(emailIntent, context.getResources().getString(R.string.send_feedback)));
+        //activity.startActivityForResult(Intent.createChooser(emailIntent, getResources().getString(R.string.send_feedback)));
+
+    } //end sendFeedback()
+
+    public static File takeTempScreenshot(Context context)
+    //takes a screenshot and stores it in the app's cache, returns the image
+    {
+        Activity activity = (Activity)context;
+        try {
+            File outputDir = context.getExternalCacheDir(); // context being the Activity pointer
+            File imageFile = File.createTempFile("pfb_mars", ".jpeg", outputDir);
+            // image naming and path  to include sd card  appending name you choose for file
+            View v1 = activity.getWindow().getDecorView().getRootView();
+
+            v1.setDrawingCacheEnabled(true);
+            // create bitmap screen capture
+            Bitmap bitmap = Bitmap.createBitmap(v1.getDrawingCache());
+            v1.setDrawingCacheEnabled(false);
+            FileOutputStream fout = new FileOutputStream(imageFile);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fout);
+            fout.flush();
+            fout.close();
+            return imageFile;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    } //end takeScreenshot
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
