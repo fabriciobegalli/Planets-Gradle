@@ -18,13 +18,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 
+import com.andrewq.planets.R;
 import com.andrewq.planets.image_views.MoonImageView;
 import com.andrewq.planets.util.NotifyingScrollView;
-import com.andrewq.planets.R;
 import com.google.analytics.tracking.android.EasyTracker;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -42,6 +41,7 @@ public class MoonActivity extends Activity {
         setContentView(R.layout.moon_activity);
 
         mActionBar = getActionBar();
+        assert mActionBar != null;
         mActionBar.setCustomView(R.layout.custom_actionbar_moon);
         mActionBar.setDisplayShowCustomEnabled(true);
         mActionBar.setDisplayHomeAsUpEnabled(false);
@@ -126,15 +126,6 @@ public class MoonActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
-            case R.id.source:
-                String url = "http://space-facts.com/the-moon/";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
-
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
-                break;
-
             case R.id.sendFeedback:
                 sendFeedback(this);
                 break;
@@ -162,7 +153,7 @@ public class MoonActivity extends Activity {
     public static File takeTempScreenshot(Context context)
     //takes a screenshot and stores it in the app's cache, returns the image
     {
-        Activity activity = (Activity)context;
+        Activity activity = (Activity) context;
         try {
             File outputDir = context.getExternalCacheDir(); // context being the Activity pointer
             File imageFile = File.createTempFile("pfb_moon", ".jpeg", outputDir);
@@ -178,8 +169,6 @@ public class MoonActivity extends Activity {
             fout.flush();
             fout.close();
             return imageFile;
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -202,7 +191,7 @@ public class MoonActivity extends Activity {
 
     private NotifyingScrollView.OnScrollChangedListener mOnScrollChangedListener = new NotifyingScrollView.OnScrollChangedListener() {
         public void onScrollChanged(ScrollView who, int l, int t, int oldl, int oldt) {
-            final int headerHeight = findViewById(R.id.image_header_moon).getHeight() - getActionBar().getHeight();
+            @SuppressWarnings("ConstantConditions") final int headerHeight = findViewById(R.id.image_header_moon).getHeight() - getActionBar().getHeight();
             final float ratio = (float) Math.min(Math.max(t, 0), headerHeight) / headerHeight;
             final int newAlpha = (int) (ratio * 255);
             mActionBarBackgroundDrawable.setAlpha(newAlpha);

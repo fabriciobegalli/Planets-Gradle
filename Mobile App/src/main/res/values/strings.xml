@@ -114,7 +114,7 @@
     <string name="deimos_description_2">On August 12, 1877, the focused search for Martian moons by American astronomer Asaph Hall resulted in the discovery of Deimos. Six days later, he identified the second Martian moon, Phobos.\nThe existence of the moons had been suggested years before, when Johannes Kepler proposed that since Earth hosted one moon and Jupiter four (as only the Galilean moons were known at the time), Mars might have two moons in orbit around it. However, no signs of such moons existed until Hall undertook his careful search.\nUsing a 26-inch refractor at the U.S. Naval Observatory in Washington, D.C., Hall made a methodical study of the region around the red planet. Peering closer to Mars than previous astronomers, he found Deimos circling only 14,576 miles (23,458 kilometers) from the center of the planet, traveling around its equator. Phobos orbited even closer in. Their close proximity and small size had kept them hidden in the glare from the planet.\nLike many objects in the solar system, the Martian moons take their names from Greek mythology. In Homer\'s ancient poem, \"The Iliad,\" Deimos (Flight) and Phobos (Fear) were the twin sons of Mars (Ares to the Greeks), and accompany him into battle.</string>
 
     <!-- Sources Button -->
-    <string name="button_source">Source</string>
+    <!--<string name="button_source">Source</string>-->
 
     <!-- Objects Names and Info -->
     <string name="sun_title">Sun</string>

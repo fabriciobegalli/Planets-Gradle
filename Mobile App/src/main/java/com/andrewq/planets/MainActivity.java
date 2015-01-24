@@ -1,9 +1,5 @@
 package com.andrewq.planets;
 
-/**
- * Created by Andrew Quebe on 5/10/2014.
- */
-
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ActivityOptions;
@@ -20,22 +16,23 @@ import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.andrewq.planets.iab.IabHelper;
+import com.andrewq.planets.iab.IabResult;
+import com.andrewq.planets.iab.Inventory;
+import com.andrewq.planets.iab.Purchase;
 import com.andrewq.planets.misc.Settings;
 import com.andrewq.planets.other_bodies.PlutoActivity;
 import com.andrewq.planets.planets.EarthActivity;
@@ -47,30 +44,17 @@ import com.andrewq.planets.planets.SaturnActivity;
 import com.andrewq.planets.planets.SunActivity;
 import com.andrewq.planets.planets.UranusActivity;
 import com.andrewq.planets.planets.VenusActivity;
-import com.andrewq.planets.iab.IabHelper;
-import com.andrewq.planets.iab.IabResult;
-import com.andrewq.planets.iab.Inventory;
-import com.andrewq.planets.iab.Purchase;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.nhaarman.listviewanimations.swinginadapters.prepared.ScaleInAnimationAdapter;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
-import com.suredigit.inappfeedback.FeedbackDialog;
-import com.suredigit.inappfeedback.FeedbackSettings;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends Activity {
-
-    private ActionBar mActionBar;
-
-    public FeedbackDialog fbd;
-
-    private Context con = getBaseContext();
 
     // Debug tag, for logging
     static final String TAG = "Planets Donations";
@@ -102,6 +86,7 @@ public class MainActivity extends Activity {
 
         ab = getActionBar();
 
+        assert ab != null;
         ab.setCustomView(R.layout.custom_actionbar_main);
         ab.setDisplayShowCustomEnabled(true);
 
@@ -111,7 +96,7 @@ public class MainActivity extends Activity {
 
         //TODO: Re-enable donation code
 
-        /*mHelper = new IabHelper(this, base64EncodedPublicKey);
+        mHelper = new IabHelper(this, base64EncodedPublicKey);
 
         mHelper.enableDebugLogging(false);
 
@@ -132,12 +117,12 @@ public class MainActivity extends Activity {
                 Log.d(TAG, "Setup successful. Querying inventory.");
                 mHelper.queryInventoryAsync(mGotInventoryListener);
             }
-        });*/
+        });
 
 
         gridView = (GridView) findViewById(R.id.gridview);
 
-        ScaleInAnimationAdapter scaleInAnimationAdapter = new ScaleInAnimationAdapter(new MyAdapter(con));
+        ScaleInAnimationAdapter scaleInAnimationAdapter = new ScaleInAnimationAdapter(new MyAdapter());
 
         scaleInAnimationAdapter.setAbsListView(gridView);
 
@@ -247,27 +232,23 @@ public class MainActivity extends Activity {
                 }
             }
         });
-
-        SharedPreferences getPrefs = PreferenceManager
-                .getDefaultSharedPreferences(getBaseContext());
-
-        boolean isChecked = getPrefs.getBoolean("pref_translucent", false);
-
-
     }
 
     // Listener that's called when we finish querying the items and subscriptions we own
-    IabHelper.QueryInventoryFinishedListener mGotInventoryListener = new IabHelper.QueryInventoryFinishedListener() {
-        public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
+    IabHelper.QueryInventoryFinishedListener mGotInventoryListener;
 
-            if (mHelper == null) return;
+    {
+        mGotInventoryListener = new IabHelper.QueryInventoryFinishedListener() {
+            public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
 
-            if (result.isFailure()) {
-                Toast.makeText(getBaseContext(), "Failed to query items", Toast.LENGTH_LONG).show();
-                return;
+                if (mHelper == null) return;
+
+                if (result.isFailure()) {
+                    Toast.makeText(getBaseContext(), "Failed to query items", Toast.LENGTH_LONG).show();
+                }
             }
-        }
-    };
+        };
+    }
 
     @Override
     protected void onDestroy() {
@@ -284,7 +265,8 @@ public class MainActivity extends Activity {
      * Verifies the developer payload of a purchase.
      */
     boolean verifyDeveloperPayload(Purchase p) {
-        String payload = p.getDeveloperPayload();
+        String payload;
+        payload = p.getDeveloperPayload();
         return true;
     }
 
@@ -319,15 +301,19 @@ public class MainActivity extends Activity {
         }
     };
 
-    IabHelper.OnConsumeFinishedListener mConsumeFinishedListener = new IabHelper.OnConsumeFinishedListener() {
-        public void onConsumeFinished(Purchase purchase, IabResult result) {
-            Log.d(TAG, "Consumption finished. Purchase: " + purchase + ", result: " + result);
+    IabHelper.OnConsumeFinishedListener mConsumeFinishedListener;
 
-            if (mHelper == null) return;
+    {
+        mConsumeFinishedListener = new IabHelper.OnConsumeFinishedListener() {
+            public void onConsumeFinished(Purchase purchase, IabResult result) {
+                Log.d(TAG, "Consumption finished. Purchase: " + purchase + ", result: " + result);
 
-            Log.d(TAG, "End consumption flow.");
-        }
-    };
+                if (mHelper == null) return;
+
+                Log.d(TAG, "End consumption flow.");
+            }
+        };
+    }
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
@@ -335,8 +321,8 @@ public class MainActivity extends Activity {
         SystemBarTintManager tintManager = new SystemBarTintManager(this);
         SharedPreferences getPrefs = PreferenceManager
                 .getDefaultSharedPreferences(getBaseContext());
-        boolean sendUsage = getPrefs.getBoolean("pref_send_usage", false);
-
+        boolean sendUsage;
+        sendUsage = getPrefs.getBoolean("pref_send_usage", false);
 
         //TODO: fix landscape translucent status bar bug
 
@@ -365,44 +351,50 @@ public class MainActivity extends Activity {
         //Give theme_chooser the preference key defined in XML
         int theme_chooser = Integer.parseInt(getPrefs2.getString("prefSetTheme", "3"));
         //Get an instance of the ActionBar
-        mActionBar = getActionBar();
+        ActionBar mActionBar = getActionBar();
 
         //Set the action bar colors to whatever the user selects from the ListPreference
         if (theme_chooser == 1) {
             //Red
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#cc0202")));
+            assert mActionBar != null;
+            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#D32F2F")));
 
-            int actionBarColor = Color.parseColor("#cc0202");
+            int actionBarColor = Color.parseColor("#D32F2F");
             tintManager.setStatusBarTintColor(actionBarColor);
         } else if (theme_chooser == 2) {
             //Orange
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ff8801")));
+            assert mActionBar != null;
+            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#E64A19")));
 
-            int actionBarColor = Color.parseColor("#ff8801");
+            int actionBarColor = Color.parseColor("#E64A19");
             tintManager.setStatusBarTintColor(actionBarColor);
         } else if (theme_chooser == 3) {
             //Blue
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0497c9")));
+            assert mActionBar != null;
+            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#1976D2")));
 
-            int actionBarColor = Color.parseColor("#0497c9");
+            int actionBarColor = Color.parseColor("#1976D2");
             tintManager.setStatusBarTintColor(actionBarColor);
         } else if (theme_chooser == 4) {
             //Green
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#679a03")));
+            assert mActionBar != null;
+            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#388E3C")));
 
-            int actionBarColor = Color.parseColor("#679a03");
+            int actionBarColor = Color.parseColor("#388E3C");
             tintManager.setStatusBarTintColor(actionBarColor);
         } else if (theme_chooser == 5) {
             //Purple
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#9832cb")));
+            assert mActionBar != null;
+            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#512DA8")));
 
-            int actionBarColor = Color.parseColor("#9832cb");
+            int actionBarColor = Color.parseColor("#512DA8");
             tintManager.setStatusBarTintColor(actionBarColor);
         } else if (theme_chooser == 6) {
             //Black
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#292929")));
+            assert mActionBar != null;
+            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#212121")));
 
-            int actionBarColor = Color.parseColor("#292929");
+            int actionBarColor = Color.parseColor("#212121");
             tintManager.setStatusBarTintColor(actionBarColor);
         }
     }
@@ -522,7 +514,7 @@ public class MainActivity extends Activity {
     public static File takeTempScreenshot(Context context)
     //takes a screenshot and stores it in the app's cache, returns the image
     {
-        Activity activity = (Activity)context;
+        Activity activity = (Activity) context;
         try {
             File outputDir = context.getExternalCacheDir(); // context being the Activity pointer
             File imageFile = File.createTempFile("p_main", ".jpeg", outputDir);
@@ -538,8 +530,6 @@ public class MainActivity extends Activity {
             fout.flush();
             fout.close();
             return imageFile;
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -556,11 +546,11 @@ public class MainActivity extends Activity {
     }
 
     private class MyAdapter extends BaseAdapter {
-        private List<Item> items = new ArrayList<Item>();
+        private List<Item> items = new ArrayList<>();
         private LayoutInflater inflater;
 
 
-        public MyAdapter(Context context) {
+        public MyAdapter() {
             inflater = LayoutInflater.from(getApplicationContext());
 
             items.add(new Item("The Sun", R.drawable.sun));

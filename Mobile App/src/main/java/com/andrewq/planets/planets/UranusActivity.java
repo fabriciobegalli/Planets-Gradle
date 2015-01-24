@@ -18,16 +18,16 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 
+import com.andrewq.planets.R;
 import com.andrewq.planets.image_views.UranusImageView;
 import com.andrewq.planets.util.NotifyingScrollView;
-import com.andrewq.planets.R;
 import com.google.analytics.tracking.android.EasyTracker;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+@SuppressWarnings("ConstantConditions")
 public class UranusActivity extends Activity {
 
     ImageView imgV;
@@ -43,6 +43,7 @@ public class UranusActivity extends Activity {
         setContentView(R.layout.uranus_activity);
 
         mActionBar = getActionBar();
+        assert mActionBar != null;
         mActionBar.setCustomView(R.layout.custom_actionbar_uranus);
         mActionBar.setDisplayShowCustomEnabled(true);
         mActionBar.setDisplayHomeAsUpEnabled(false);
@@ -127,15 +128,6 @@ public class UranusActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
-            case R.id.source:
-                String url = "http://space-facts.com/uranus/";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
-
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
-                break;
-
             case R.id.sendFeedback:
                 sendFeedback(this);
                 break;
@@ -163,7 +155,7 @@ public class UranusActivity extends Activity {
     public static File takeTempScreenshot(Context context)
     //takes a screenshot and stores it in the app's cache, returns the image
     {
-        Activity activity = (Activity)context;
+        Activity activity = (Activity) context;
         try {
             File outputDir = context.getExternalCacheDir(); // context being the Activity pointer
             File imageFile = File.createTempFile("pfb_uranus", ".jpeg", outputDir);
@@ -179,8 +171,6 @@ public class UranusActivity extends Activity {
             fout.flush();
             fout.close();
             return imageFile;
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

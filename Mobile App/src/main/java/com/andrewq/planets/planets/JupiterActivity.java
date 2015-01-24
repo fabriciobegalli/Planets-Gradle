@@ -183,14 +183,6 @@ public class JupiterActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
-            case R.id.source:
-                String url = "http://space-facts.com/jupiter/";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
-
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
-                break;
             case R.id.sendFeedback:
                 sendFeedback(this);
                 break;

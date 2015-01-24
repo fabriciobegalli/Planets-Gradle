@@ -3,7 +3,6 @@ package com.andrewq.planets.planets;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ActivityOptions;
-import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,27 +11,23 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.speech.tts.TextToSpeech;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ScrollView;
-import android.widget.Toast;
 
+import com.andrewq.planets.R;
 import com.andrewq.planets.image_views.SunImageView;
 import com.andrewq.planets.util.NotifyingScrollView;
-import com.andrewq.planets.R;
 import com.google.analytics.tracking.android.EasyTracker;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Locale;
 
+@SuppressWarnings("ConstantConditions")
 public class SunActivity extends Activity {
 
     private ImageView imgV;
@@ -40,12 +35,14 @@ public class SunActivity extends Activity {
 
     private ImageView img;
     private ActionBar mActionBar;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sun_activity);
 
         mActionBar = getActionBar();
+        assert mActionBar != null;
         mActionBar.setCustomView(R.layout.custom_actionbar_the_sun);
         mActionBar.setDisplayShowCustomEnabled(true);
         mActionBar.setDisplayHomeAsUpEnabled(false);
@@ -130,15 +127,6 @@ public class SunActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
-            case R.id.source:
-                String url = "http://space-facts.com/the-sun/";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
-
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
-
-                break;
             case R.id.sendFeedback:
                 sendFeedback(this);
                 break;
@@ -166,7 +154,7 @@ public class SunActivity extends Activity {
     public static File takeTempScreenshot(Context context)
     //takes a screenshot and stores it in the app's cache, returns the image
     {
-        Activity activity = (Activity)context;
+        Activity activity = (Activity) context;
         try {
             File outputDir = context.getExternalCacheDir(); // context being the Activity pointer
             File imageFile = File.createTempFile("pfb_sun", ".jpeg", outputDir);
@@ -182,8 +170,6 @@ public class SunActivity extends Activity {
             fout.flush();
             fout.close();
             return imageFile;
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
