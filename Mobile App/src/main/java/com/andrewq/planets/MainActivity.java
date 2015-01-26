@@ -41,7 +41,7 @@ import com.andrewq.planets.planets.MarsActivity;
 import com.andrewq.planets.planets.MercuryActivity;
 import com.andrewq.planets.planets.NeptuneActivity;
 import com.andrewq.planets.planets.SaturnActivity;
-import com.andrewq.planets.planets.SunActivity;
+import com.andrewq.planets.other_bodies.SunActivity;
 import com.andrewq.planets.planets.UranusActivity;
 import com.andrewq.planets.planets.VenusActivity;
 import com.google.analytics.tracking.android.EasyTracker;
@@ -94,13 +94,11 @@ public class MainActivity extends Activity {
 
         String base64EncodedPublicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjkBL90CQz/fVfOoKDFHTo4y/AWKOuKHK60Wjz+y8mPIUF2AU3uJ5c3ofu1SoGTY6+lpowpeHruMlVzwQ5fk31vAKGSRApcdWjmPh2w7dYmLldV1MTnxz0UiJydENj1O1Ci7MBJiGYigjS+wXG1kFL1LS1BIVoBiodeC+oh9u+eqKZASyA5b5ZUfK8kBQk4EtswnUSq6q5m+oj1SALK/2Nu3ZtRMPKX54dBhs1DHhOY3o9oI+7kl/pLN9d2tARmjJev06bbXlgfVDBum0ghaRI8JS6BZSgJch8inALx6677pOzCnZ49uW+CugyIGp3fe9cwbQDXIvQ8qSDoDjcmv/iwIDAQAB";
 
-        //TODO: Re-enable donation code
-
         mHelper = new IabHelper(this, base64EncodedPublicKey);
 
         mHelper.enableDebugLogging(false);
 
-        mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
+        /*mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
             public void onIabSetupFinished(IabResult result) {
                 Log.d(TAG, "Setup finished.");
 
@@ -117,7 +115,7 @@ public class MainActivity extends Activity {
                 Log.d(TAG, "Setup successful. Querying inventory.");
                 mHelper.queryInventoryAsync(mGotInventoryListener);
             }
-        });
+        });*/
 
 
         gridView = (GridView) findViewById(R.id.gridview);

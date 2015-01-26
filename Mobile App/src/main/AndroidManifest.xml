@@ -134,7 +134,7 @@
 
         <!-- Sun Activity -->
         <activity
-            android:name=".planets.SunActivity"
+            android:name=".other_bodies.SunActivity"
             android:label="Sun"
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay"></activity>

@@ -1,4 +1,4 @@
-package com.andrewq.planets.planets;
+package com.andrewq.planets.other_bodies;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ import com.andrewq.planets.R;
 import com.andrewq.planets.image_views.SunImageView;
 import com.andrewq.planets.util.NotifyingScrollView;
 import com.google.analytics.tracking.android.EasyTracker;
+import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -35,6 +37,8 @@ public class SunActivity extends Activity {
 
     private ImageView img;
     private ActionBar mActionBar;
+
+    private SystemBarTintManager tintManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,6 +60,10 @@ public class SunActivity extends Activity {
             }
         });
 
+        tintManager = new SystemBarTintManager(this);
+
+        int actionBarColor;
+
         SharedPreferences getPrefs2 = PreferenceManager
                 .getDefaultSharedPreferences(getBaseContext());
 
@@ -66,21 +74,39 @@ public class SunActivity extends Activity {
         if (theme_chooser == 1) {
             //Red
             mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_red);
+
+            actionBarColor = Color.parseColor("#D32F2F");
+            tintManager.setStatusBarTintColor(actionBarColor);
         } else if (theme_chooser == 2) {
             //Orange
             mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_orange);
+
+            actionBarColor = Color.parseColor("#E64A19");
+            tintManager.setStatusBarTintColor(actionBarColor);
         } else if (theme_chooser == 3) {
             //Blue
             mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_blue);
+
+            actionBarColor = Color.parseColor("#1976D2");
+            tintManager.setStatusBarTintColor(actionBarColor);
         } else if (theme_chooser == 4) {
             //Green
             mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_green);
+
+            actionBarColor = Color.parseColor("#388E3C");
+            tintManager.setStatusBarTintColor(actionBarColor);
         } else if (theme_chooser == 5) {
             //Purple
             mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_purple);
+
+            actionBarColor = Color.parseColor("#512DA8");
+            tintManager.setStatusBarTintColor(actionBarColor);
         } else if (theme_chooser == 6) {
             //Black
             mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_black);
+
+            actionBarColor = Color.parseColor("#212121");
+            tintManager.setStatusBarTintColor(actionBarColor);
         }
 
         mActionBarBackgroundDrawable.setAlpha(0);
