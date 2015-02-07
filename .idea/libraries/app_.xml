@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="app-">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/Mobile App/build/intermediates/exploded-aar/uk.me.lewisdeane.ldialogs/app/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/Mobile App/build/intermediates/exploded-aar/uk.me.lewisdeane.ldialogs/app/res" />
+      <root url="jar://$PROJECT_DIR$/App/build/intermediates/exploded-aar/uk.me.lewisdeane.ldialogs/app/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/App/build/intermediates/exploded-aar/uk.me.lewisdeane.ldialogs/app/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

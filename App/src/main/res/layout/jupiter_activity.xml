@@ -1,0 +1,95 @@
+<com.andrewq.planets.util.NotifyingScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll_view_6"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/image_header_jupiter"
+            android:layout_width="match_parent"
+            android:background="@null"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/jupiter" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="#D8D8D8">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/jupiterCard1"
+                    android:background="@drawable/layer_card_background"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:padding="16dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/jupiter_sub_title_1"
+                        android:paddingBottom="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="false"
+                        android:text="@string/jupiter_sub_title_1"
+                        android:textSize="27sp" />
+
+                    <TextView
+                        android:id="@+id/jupiter_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/jupiter_sub_title_1"
+                        android:layout_centerHorizontal="false"
+                        android:text="@string/jupiter_description"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/jupiterCard2"
+                    android:background="@drawable/layer_card_background"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/jupiterCard1"
+                    android:padding="16dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/jupiter_sub_title_2"
+                        android:paddingBottom="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="false"
+                        android:text="@string/jupiter_sub_title_2"
+                        android:textSize="27sp" />
+
+                    <TextView
+                        android:id="@+id/jupiter_description_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/jupiter_sub_title_2"
+                        android:layout_centerHorizontal="false"
+                        android:text="@string/jupiter_description_2"
+                        android:textSize="17sp" />
+
+                    <Button
+                        android:id="@+id/jupiter_satellite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/jupiter_description_2"
+                        android:layout_centerHorizontal="true"
+                        android:text="Moons (1)" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+
+</com.andrewq.planets.util.NotifyingScrollView>

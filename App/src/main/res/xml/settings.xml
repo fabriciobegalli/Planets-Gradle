@@ -1,0 +1,88 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pref_screen"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="8dp"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false">
+
+    <PreferenceCategory android:title="General">
+        <CheckBoxPreference
+            android:id="@+id/send_usage"
+            android:key="pref_send_usage"
+            android:defaultValue="false"
+            android:title="Send Anonymous Data"
+            android:summary="When checked, information about device, country location, language, and other anonymous data will be sent to a Google Analytics account for statistics monitoring." />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_cate_title_1">
+
+        <ListPreference
+            android:defaultValue="3"
+            android:entries="@array/themes"
+            android:entryValues="@array/themesEntries"
+            android:key="prefSetTheme"
+            android:enabled="true"
+            android:summary="Tap here to change the design of the app."
+            android:title="@string/pref_5" />
+
+        <CheckBoxPreference
+            android:id="@+id/translucent_pref"
+            android:key="pref_translucent"
+            android:defaultValue="false"
+            android:title="Translucent Status Bar"
+            android:summary="When checked, status bar will be colored on devices running Android 4.4 and up." />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Open Source Licenses">
+
+        <Preference
+            android:title="ListViewAnimations"
+            android:summary="by Niek Haarman"
+            android:key="pref_listlicense" />
+
+        <Preference
+            android:title="SystemBarTint"
+            android:summary="by jgilfelt"
+            android:key="pref_systembartint" />
+
+        <Preference
+            android:title="L-Dialogs"
+            android:summary="by Lewis Deane"
+            android:key="pref_ldialogs" />
+
+        <Preference
+            android:title="Google Analytics"
+            android:summary="by Google, Inc."
+            android:key="pref_analytics" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Authors">
+
+        <Preference
+            android:title="Andrew Quebe"
+            android:icon="@drawable/andrew_q">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://plus.google.com/u/0/+AndrewQuebe/about" />
+        </Preference>
+
+        <Preference
+            android:title="Delyn Wagenknecht"
+            android:icon="@drawable/wknecht">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://wordknecht.wordpress.com" />
+        </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Version">
+
+        <Preference
+            android:title="Planets"
+            android:icon="@drawable/ic_launcher"
+            android:summary="2.6 (25)"
+            android:key="pref_whatsnew"></Preference>
+    </PreferenceCategory>
+
+</PreferenceScreen>

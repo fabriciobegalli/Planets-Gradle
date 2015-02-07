@@ -1,1 +1,1 @@
-include ':Mobile App', ':Android TV'
+include ':App', ':Android TV'

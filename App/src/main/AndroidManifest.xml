@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.andrewq.planets">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:banner="@drawable/planets_banner"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Roboto"
+        tools:ignore="UnusedAttribute">
+
+        <!-- Main Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/TranslucentNavigationRoboto">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- TV Activity -->
+        <activity
+            android:name=".tv.TVActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Leanback"
+            android:windowActionBar="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Settings Activity -->
+        <activity
+            android:name=".misc.Settings"
+            android:label="@string/action_settings"
+            android:parentActivityName=".misc.Settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/Roboto">
+            <intent-filter>
+                <action android:name="android.intent.action.ImageGallery" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- Earth Moon Activity -->
+        <activity
+            android:name=".moons.MoonActivity"
+            android:label="Moon"
+            android:parentActivityName=".moons.MoonActivity"
+            android:screenOrientation="sensor"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay">
+            <intent-filter>
+                <action android:name="android.intent.action.ImageGallery" />
+                <action android:name="android.intent.action.SEARCH" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- Phobos Activity -->
+        <activity
+            android:name=".moons.PhobosActivity"
+            android:label="Phobos"
+            android:parentActivityName=".moons.PhobosActivity"
+            android:screenOrientation="sensor"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay">
+            <intent-filter>
+                <action android:name="android.intent.action.ImageGallery" />
+                <action android:name="android.intent.action.SEARCH" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".image_views.PhobosImageView"
+            android:label="Phobos"
+            android:parentActivityName=".planets.MarsActivity" />
+
+        <!-- Europa Activity -->
+        <activity
+            android:name=".moons.EuropaActivity"
+            android:label="Europa"
+            android:parentActivityName=".planets.JupiterActivity"
+            android:screenOrientation="sensor"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay">
+            <intent-filter>
+                <action android:name="android.intent.action.ImageGallery" />
+                <action android:name="android.intent.action.SEARCH" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".image_views.EuropaImageView"
+            android:label="Phobos"
+            android:parentActivityName=".planets.MarsActivity" />
+
+        <!-- Deimos Activity -->
+        <activity
+            android:name=".moons.DeimosActivity"
+            android:label="Deimos"
+            android:parentActivityName=".moons.DeimosActivity"
+            android:screenOrientation="sensor"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay">
+            <intent-filter>
+                <action android:name="android.intent.action.ImageGallery" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".image_views.DeimosImageView"
+            android:label="Phobos"
+            android:parentActivityName=".planets.MarsActivity" />
+
+        <!-- Moon Activity -->
+        <activity
+            android:name=".image_views.MoonImageView"
+            android:label="Moon"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Sun Image View -->
+        <activity
+            android:name=".image_views.SunImageView"
+            android:label="Sun"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Sun Activity -->
+        <activity
+            android:name=".other_bodies.SunActivity"
+            android:label="Sun"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay" />
+
+        <!-- Mercury Image View -->
+        <activity
+            android:name=".image_views.MercuryImageView"
+            android:label="Mercury"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Mercury Activity -->
+        <activity
+            android:name=".planets.MercuryActivity"
+            android:label="Mercury"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay" />
+
+        <!-- Venus Image View -->
+        <activity
+            android:name=".image_views.VenusImageView"
+            android:label="Venus"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Venus Activity -->
+        <activity
+            android:name=".planets.VenusActivity"
+            android:label="Venus"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay" />
+
+        <!-- Earth Image View -->
+        <activity
+            android:name=".image_views.EarthImageView"
+            android:label="Earth"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Earth Image View -->
+        <activity
+            android:name=".planets.EarthActivity"
+            android:label="Earth"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay" />
+
+        <!-- Mars Image View -->
+        <activity
+            android:name=".image_views.MarsImageView"
+            android:label="Mars"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".planets.MarsActivity"
+            android:label="Mars"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay" />
+
+        <!-- Jupiter Image View -->
+        <activity
+            android:name=".planets.JupiterActivity"
+            android:label="Jupiter"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay" />
+        <activity
+            android:name=".image_views.JupiterImageView"
+            android:label="Jupiter"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Saturn Image View -->
+        <activity
+            android:name=".planets.SaturnActivity"
+            android:label="Saturn"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay" />
+        <activity
+            android:name=".image_views.SaturnImageView"
+            android:label="Saturn"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Uranus Image View -->
+        <activity
+            android:name=".planets.UranusActivity"
+            android:label="Uranus"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay" />
+        <activity
+            android:name=".image_views.UranusImageView"
+            android:label="Uranus"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Neptune Image View -->
+        <activity
+            android:name=".planets.NeptuneActivity"
+            android:label="Neptune"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay" />
+        <activity
+            android:name=".image_views.NeptuneImageView"
+            android:label="Neptune"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Pluto Image View -->
+        <activity
+            android:name=".other_bodies.PlutoActivity"
+            android:label="Pluto"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay" />
+        <activity
+            android:name=".image_views.PlutoImageView"
+            android:label="Pluto"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".tv.TVSunActivity"
+            android:label="@string/title_activity_tvsun"></activity>
+    </application>
+
+</manifest>

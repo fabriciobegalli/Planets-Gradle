@@ -1,0 +1,86 @@
+<com.andrewq.planets.util.NotifyingScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll_view_3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/image_header_venus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/venus" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="#D8D8D8">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/venusCard1"
+                    android:background="@drawable/layer_card_background"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:padding="16dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/venus_sub_title_1"
+                        android:paddingBottom="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="false"
+                        android:text="@string/venus_sub_title_1"
+                        android:textSize="29sp" />
+
+                    <TextView
+                        android:id="@+id/venus_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/venus_sub_title_1"
+                        android:layout_centerHorizontal="false"
+                        android:text="@string/venus_description"
+                        android:textSize="19sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/venusCard2"
+                    android:background="@drawable/layer_card_background"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/venusCard1"
+                    android:padding="16dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/venus_sub_title_2"
+                        android:paddingBottom="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="false"
+                        android:text="@string/venus_sub_title_2"
+                        android:textSize="29sp" />
+
+                    <TextView
+                        android:id="@+id/venus_description_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/venus_sub_title_2"
+                        android:layout_centerHorizontal="false"
+                        android:text="@string/venus_description_2"
+                        android:textSize="19sp" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+
+</com.andrewq.planets.util.NotifyingScrollView>
