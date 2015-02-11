@@ -19,7 +19,12 @@
     <color name="detail_background_dark">#212121</color>
 
 
-    <color name="search_opaque">#19768E</color>
+    <color name="search_opaque_red">#ffff3838</color>
+    <color name="search_opaque_orange">#ffff511a</color>
+    <color name="search_opaque_blue">#ff25bbde</color>
+    <color name="search_opaque_green">#ff55d959</color>
+    <color name="search_opaque_purple">#ff6c41f3</color>
+    <color name="search_opaque_dark">#ff828282</color>
 
 
     <color name="soft_opaque">#30000000</color>

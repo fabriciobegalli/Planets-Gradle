@@ -1,9 +1,11 @@
 package com.andrewq.planets.tv;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.preference.PreferenceManager;
 import android.support.v17.leanback.widget.ImageCardView;
 import android.support.v17.leanback.widget.Presenter;
 import android.util.Log;
@@ -20,7 +22,7 @@ public class CardPresenter extends Presenter {
 
     private static Context mContext;
     private static int CARD_WIDTH = 313;
-    private static int CARD_HEIGHT = 176;
+    private static int CARD_HEIGHT = 200;
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent) {
@@ -30,7 +32,25 @@ public class CardPresenter extends Presenter {
         ImageCardView cardView = new ImageCardView(mContext);
         cardView.setFocusable(true);
         cardView.setFocusableInTouchMode(true);
-        cardView.setBackgroundColor(mContext.getResources().getColor(R.color.fastlane_background_blue));
+
+        SharedPreferences getPrefs2 = PreferenceManager
+                .getDefaultSharedPreferences(mContext);
+
+        int theme_chooser = Integer.parseInt(getPrefs2.getString("prefSetTheme", "3"));
+
+        if (theme_chooser == 1)
+            cardView.setBackgroundColor(mContext.getResources().getColor(R.color.fastlane_background_red));
+        else if (theme_chooser == 2)
+            cardView.setBackgroundColor(mContext.getResources().getColor(R.color.fastlane_background_orange));
+        else if (theme_chooser == 3)
+            cardView.setBackgroundColor(mContext.getResources().getColor(R.color.fastlane_background_blue));
+        else if (theme_chooser == 4)
+            cardView.setBackgroundColor(mContext.getResources().getColor(R.color.fastlane_background_green));
+        else if (theme_chooser == 5)
+            cardView.setBackgroundColor(mContext.getResources().getColor(R.color.fastlane_background_purple));
+        else if (theme_chooser == 6)
+            cardView.setBackgroundColor(mContext.getResources().getColor(R.color.fastlane_background_dark));
+
         return new ViewHolder(cardView);
     }
 

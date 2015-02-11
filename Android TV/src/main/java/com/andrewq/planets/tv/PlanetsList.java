@@ -18,7 +18,13 @@ public final class PlanetsList {
                 "Sun"
         };
 
-        String description = "This is a test!";
+        String description = "The sun is the center of our solar system, " +
+                "and the Earth revolves around " +
+                "it at a distance of about 93 million miles, " +
+                "although this distance varies throughout the year because of " +
+                "the Earth’s elliptical orbit around the sun. " +
+                "The distance between the Earth and the Sun " +
+                "is called an Astronomical Unit or AU.";
 
         String bgImageUrl[] = {
                 "http://amqtech.com/planets_pics/sun.jpg"

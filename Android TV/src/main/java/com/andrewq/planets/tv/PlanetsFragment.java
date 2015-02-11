@@ -143,21 +143,25 @@ public class PlanetsFragment extends BrowseFragment {
 
         int theme_chooser = Integer.parseInt(getPrefs2.getString("prefSetTheme", "3"));
 
-        if (theme_chooser == 1)
+        if (theme_chooser == 1) {
             setBrandColor(getResources().getColor(R.color.fastlane_background_red));
-        else if (theme_chooser == 2)
+            setSearchAffordanceColor(getResources().getColor(R.color.search_opaque_red));
+        } else if (theme_chooser == 2) {
             setBrandColor(getResources().getColor(R.color.fastlane_background_orange));
-        else if (theme_chooser == 3)
+            setSearchAffordanceColor(getResources().getColor(R.color.search_opaque_orange));
+        } else if (theme_chooser == 3) {
             setBrandColor(getResources().getColor(R.color.fastlane_background_blue));
-        else if (theme_chooser == 4)
+            setSearchAffordanceColor(getResources().getColor(R.color.search_opaque_blue));
+        } else if (theme_chooser == 4) {
             setBrandColor(getResources().getColor(R.color.fastlane_background_green));
-        else if (theme_chooser == 5)
+            setSearchAffordanceColor(getResources().getColor(R.color.search_opaque_green));
+        } else if (theme_chooser == 5) {
             setBrandColor(getResources().getColor(R.color.fastlane_background_purple));
-        else if (theme_chooser == 6)
+            setSearchAffordanceColor(getResources().getColor(R.color.search_opaque_purple));
+        } else if (theme_chooser == 6) {
             setBrandColor(getResources().getColor(R.color.fastlane_background_dark));
-
-        // set search icon color
-        setSearchAffordanceColor(getResources().getColor(R.color.search_opaque));
+            setSearchAffordanceColor(getResources().getColor(R.color.search_opaque_dark));
+        }
     }
 
     private void setupEventListeners() {
