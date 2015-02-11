@@ -1,10 +1,10 @@
-package com.andrewq.planets.TvActivity;
+package com.andrewq.planets.tv;
+
+import android.util.Log;
 
 import java.io.Serializable;
 import java.net.URI;
 import java.net.URISyntaxException;
-
-import android.util.Log;
 
 public class Planet implements Serializable {
     static final long serialVersionUID = 72756612075960653L;

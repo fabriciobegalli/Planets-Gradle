@@ -1,4 +1,4 @@
-package com.andrewq.planets.TvActivity;
+package com.andrewq.planets.tv;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

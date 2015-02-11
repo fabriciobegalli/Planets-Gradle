@@ -1,9 +1,27 @@
 <resources>
     <color name="background_gradient_start">#000000</color>
     <color name="background_gradient_end">#DDDDDD</color>
-    <color name="fastlane_background">#1976D2</color>
-    <color name="search_opaque">#ffaa3f</color>
-    <color name="detail_background">#1976D2</color>
+
+
+    <color name="fastlane_background_red">#D32F2F</color>
+    <color name="fastlane_background_orange">#E64A19</color>
+    <color name="fastlane_background_blue">#1976D2</color>
+    <color name="fastlane_background_green">#388E3C</color>
+    <color name="fastlane_background_purple">#512DA8</color>
+    <color name="fastlane_background_dark">#212121</color>
+
+
+    <color name="detail_background_red">#D32F2F</color>
+    <color name="detail_background_orange">#E64A19</color>
+    <color name="detail_background_blue">#1976D2</color>
+    <color name="detail_background_green">#388E3C</color>
+    <color name="detail_background_purple">#512DA8</color>
+    <color name="detail_background_dark">#212121</color>
+
+
+    <color name="search_opaque">#19768E</color>
+
+
     <color name="soft_opaque">#30000000</color>
     <color name="img_soft_opaque">#30FF0000</color>
     <color name="img_full_opaque">#00000000</color>
