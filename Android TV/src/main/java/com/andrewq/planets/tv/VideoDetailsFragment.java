@@ -3,13 +3,13 @@ package com.andrewq.planets.tv;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v17.leanback.app.BackgroundManager;
 import android.support.v17.leanback.app.DetailsFragment;
+import android.support.v17.leanback.widget.Action;
 import android.support.v17.leanback.widget.ArrayObjectAdapter;
 import android.support.v17.leanback.widget.ClassPresenterSelector;
 import android.support.v17.leanback.widget.DetailsOverviewRow;
@@ -17,15 +17,16 @@ import android.support.v17.leanback.widget.DetailsOverviewRowPresenter;
 import android.support.v17.leanback.widget.HeaderItem;
 import android.support.v17.leanback.widget.ListRow;
 import android.support.v17.leanback.widget.ListRowPresenter;
+import android.support.v17.leanback.widget.OnActionClickedListener;
 import android.support.v17.leanback.widget.OnItemClickedListener;
 import android.support.v17.leanback.widget.Row;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
-import java.io.IOException;
 import java.net.URI;
 import java.util.Collections;
 import java.util.List;
@@ -98,6 +99,7 @@ public class VideoDetailsFragment extends DetailsFragment {
                 .load(uri.toString())
                 .resize(mMetrics.widthPixels, mMetrics.heightPixels)
                 .error(mDefaultBackground)
+                .centerCrop()
                 .into(mBackgroundTarget);
     }
 
@@ -107,7 +109,7 @@ public class VideoDetailsFragment extends DetailsFragment {
             selectedPlanet = movies[0];
 
             DetailsOverviewRow row = new DetailsOverviewRow(selectedPlanet);
-            try {
+            /*try {
                 Bitmap poster = Picasso.with(getActivity())
                         .load(selectedPlanet.getCardImageUrl())
                         .resize(dpToPx(DETAIL_THUMB_WIDTH, getActivity().getApplicationContext()),
@@ -116,7 +118,10 @@ public class VideoDetailsFragment extends DetailsFragment {
                         .get();
                 row.setImageBitmap(getActivity(), poster);
             } catch (IOException e) {
-            }
+            }*/
+
+            //row.addAction(new Action(ACTION_WATCH_TRAILER, "Test!", "Test!"));
+
             return row;
         }
 
@@ -145,20 +150,17 @@ public class VideoDetailsFragment extends DetailsFragment {
                 dorPresenter.setBackgroundColor(getResources().getColor(R.color.detail_background_dark));
 
             dorPresenter.setStyleLarge(true);
-            /*dorPresenter.setOnActionClickedListener(new OnActionClickedListener() {
+            dorPresenter.setOnActionClickedListener(new OnActionClickedListener() {
                 @Override
                 public void onActionClicked(Action action) {
                     if (action.getId() == ACTION_WATCH_TRAILER) {
-                        Intent intent = new Intent(getActivity(), PlayerActivity.class);
-                        intent.putExtra(getResources().getString(R.string.movie), selectedPlanet);
-                        intent.putExtra(getResources().getString(R.string.should_start), true);
-                        startActivity(intent);
+
                     }
                     else {
                         Toast.makeText(getActivity(), action.toString(), Toast.LENGTH_SHORT).show();
                     }
                 }
-            });*/
+            });
 
             ps.addClassPresenter(DetailsOverviewRow.class, dorPresenter);
             ps.addClassPresenter(ListRow.class,
@@ -173,6 +175,7 @@ public class VideoDetailsFragment extends DetailsFragment {
             List<Planet> list = PlanetsList.planetList;
             Collections.shuffle(list);
             ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new CardPresenter());
+
             for (int j = 0; j < NUM_COLS; j++) {
                 listRowAdapter.add(list.get(j));
             }

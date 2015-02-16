@@ -48,6 +48,10 @@ public class PlanetsFragment extends BrowseFragment {
 
     private static final int NUM_ROWS_PLANET = 1;
     private static final int NUM_COLS_PLANET = 8;
+
+    private static final int NUM_ROWS_MOON = 1;
+    private static final int NUM_COLS_MOON = 4;
+
     private final Handler mHandler = new Handler();
     CardPresenter mCardPresenter;
     private ArrayObjectAdapter mRowsAdapter;
@@ -74,6 +78,7 @@ public class PlanetsFragment extends BrowseFragment {
     private void loadRows() {
         List<Planet> sList = PlanetsList.setupSun();
         List<Planet> pList = PlanetsList.setupPlanets();
+        List<Planet> mList = PlanetsList.setupMoons();
 
         mRowsAdapter = new ArrayObjectAdapter(new ListRowPresenter());
         mCardPresenter = new CardPresenter();
@@ -105,6 +110,21 @@ public class PlanetsFragment extends BrowseFragment {
             HeaderItem planet = new HeaderItem(i, "Planets", null);
             mRowsAdapter.add(new ListRow(planet, listRowAdapter));
         }
+
+        int m;
+        for (m = 0; m < NUM_ROWS_MOON; m++) {
+            if (m != 0) {
+                Collections.shuffle(mList);
+            }
+            ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(mCardPresenter);
+            for (int d = 0; d < NUM_COLS_MOON; d++) {
+                listRowAdapter.add(mList.get(d));
+            }
+
+            HeaderItem planet = new HeaderItem(i, "Moons", null);
+            mRowsAdapter.add(new ListRow(planet, listRowAdapter));
+        }
+
 
         HeaderItem gridHeader = new HeaderItem(i, "Other", null);
 
@@ -286,13 +306,21 @@ public class PlanetsFragment extends BrowseFragment {
                     }
                 }
             });
-
         }
     }
 
     private class GridItemPresenter extends Presenter {
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent) {
+
+            /*ImageView img = new ImageView(parent.getContext());
+            img.setLayoutParams(new ViewGroup.LayoutParams(200, 200));
+            img.setFocusable(true);
+            img.setFocusableInTouchMode(true);
+            img.setBackgroundColor(getResources().getColor(R.color.default_background));
+            img.setPadding(40, 40, 40, 40);*/
+
+
             TextView view = new TextView(parent.getContext());
             view.setLayoutParams(new ViewGroup.LayoutParams(200, 200));
             view.setFocusable(true);
@@ -300,6 +328,7 @@ public class PlanetsFragment extends BrowseFragment {
             view.setBackgroundColor(getResources().getColor(R.color.default_background));
             view.setTextColor(Color.WHITE);
             view.setGravity(Gravity.CENTER);
+
             return new ViewHolder(view);
         }
 
