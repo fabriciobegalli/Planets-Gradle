@@ -13,18 +13,6 @@
         <dex
             dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/Android TV/build/intermediates/pre-dexed/debug/classes-8a602dc2fa80e9103ee6f1ebd66a01f0ffce7bf4.jar" />
     </item>
-    <item
-        jar="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/libs/com.haarman.listviewanimations-2.6.0.jar"
-        jumboMode="false" revision="21.1.2" sha1="59351ccb0a1631d30358f6a92749a072f2df7602">
-        <dex
-            dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/build/intermediates/pre-dexed/debug/com.haarman.listviewanimations-2.6.0-df35e29790632ec9e0d3a3ac9285c23c116a0a15.jar" />
-    </item>
-    <item
-        jar="/Users/andrew/Documents/Git Repos/Planets-Gradle/Android TV/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
-        jumboMode="false" revision="21.0.1" sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex
-            dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/Android TV/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-b2d96d3f91af115195c1a32c2a64ed21e6f0bde1.jar" />
-    </item>
     <item jar="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/libs/nineoldandroids-2.4.0.jar"
         jumboMode="false" revision="21.1.2" sha1="59f19e43354d32de831379c23ce03bb259a4c2b7">
         <dex
@@ -37,46 +25,16 @@
             dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/build/intermediates/pre-dexed/debug/libGoogleAnalyticsServices-dbf4043e4040aa40005378a1d1cf7af3befac730.jar" />
     </item>
     <item
-        jar="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/build/intermediates/exploded-aar/uk.me.lewisdeane.ldialogs/app/classes.jar"
-        jumboMode="false" revision="21.1.2" sha1="21448fcae4a5bfa73c1f2bcaed60663f37051208">
-        <dex
-            dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/build/intermediates/pre-dexed/debug/classes-a6def9077c22a32cd7330cea56bc6920558426e4.jar" />
-    </item>
-    <item
-        jar="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/build/intermediates/exploded-aar/com.android.support/leanback-v17/21.0.3/classes.jar"
-        jumboMode="false" revision="21.1.2" sha1="6c0c79d3d18fea9d6c5fbf5820768dae9c35c9e2">
-        <dex
-            dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/build/intermediates/pre-dexed/debug/classes-d05ba308279284e464480293673e45ce6c0c6a1b.jar" />
-    </item>
-    <item
         jar="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
         jumboMode="false" revision="21.1.2" sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
         <dex
             dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/build/intermediates/pre-dexed/debug/classes-4dbb31a004e81dc38dac4c076b7189898dc1f7fd.jar" />
     </item>
     <item
-        jar="/Users/andrew/Documents/Git Repos/Planets-Gradle/Android TV/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.3/classes.jar"
-        jumboMode="false" revision="21.0.1" sha1="4b8945fc23a7461c6fdde15753456d64b0a9358b">
-        <dex
-            dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/Android TV/build/intermediates/pre-dexed/debug/classes-1a5c080f10597174df4c779c8d187e2f32ef213a.jar" />
-    </item>
-    <item
-        jar="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
-        jumboMode="false" revision="21.1.2" sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex
-            dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/build/intermediates/pre-dexed/debug/classes-df17eaf180690623685b0c6f67de7a086e146387.jar" />
-    </item>
-    <item
         jar="/Users/andrew/Documents/Git Repos/Planets-Gradle/Android TV/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
         jumboMode="false" revision="21.0.1" sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
         <dex
             dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/Android TV/build/intermediates/pre-dexed/debug/classes-a7cf76126eb8acefee720e609225d0f294011b1a.jar" />
-    </item>
-    <item
-        jar="/Users/andrew/Documents/Git Repos/Planets-Gradle/Android TV/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
-        jumboMode="false" revision="21.0.1" sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex
-            dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/Android TV/build/intermediates/pre-dexed/debug/classes-734e2a2ed7e721e27665f0b04465d5e16cc4ce13.jar" />
     </item>
     <item jar="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/libs/systembartint-1.0.3.jar"
         jumboMode="false" revision="21.1.2" sha1="de4f7404e2f58d8f6e83cb1e85d0c2d6c2987287">
@@ -91,12 +49,6 @@
     </item>
     <item
         jar="/Users/andrew/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
-        jumboMode="false" revision="21.1.2" sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex
-            dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-160253f1dd5a220df36f57383b0a19c455939d1d.jar" />
-    </item>
-    <item
-        jar="/Users/andrew/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
         jumboMode="false" revision="21.0.1" sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
         <dex
             dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/Android TV/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-160253f1dd5a220df36f57383b0a19c455939d1d.jar" />
@@ -106,6 +58,59 @@
         jumboMode="false" revision="21.1.2" sha1="d6b7f0093cec6c9faf65dbfd6a6a345d0ed25e27">
         <dex
             dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/build/intermediates/pre-dexed/debug/picasso-2.3.2-d0234f96969ff920cd6d97b4c538ce0629ab5f6a.jar" />
+    </item>
+    <item jar="/Users/andrew/Documents/Git Repos/Planets-Gradle/Android TV/libs/feedback_v6.jar"
+        jumboMode="false" revision="21.0.1" sha1="21e8cf4719568f3a82309d6c8b8b740da6ab2311">
+        <dex
+            dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/Android TV/build/intermediates/pre-dexed/debug/feedback_v6-3008234a1ccc0fb24dc6e952d6a895494d077761.jar" />
+    </item>
+    <item
+        jar="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/libs/com.haarman.listviewanimations-2.6.0.jar"
+        jumboMode="false" revision="21.1.2" sha1="59351ccb0a1631d30358f6a92749a072f2df7602">
+        <dex
+            dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/build/intermediates/pre-dexed/debug/com.haarman.listviewanimations-2.6.0-df35e29790632ec9e0d3a3ac9285c23c116a0a15.jar" />
+    </item>
+    <item
+        jar="/Users/andrew/Documents/Git Repos/Planets-Gradle/Android TV/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false" revision="21.0.1" sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex
+            dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/Android TV/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-b2d96d3f91af115195c1a32c2a64ed21e6f0bde1.jar" />
+    </item>
+    <item
+        jar="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/build/intermediates/exploded-aar/uk.me.lewisdeane.ldialogs/app/classes.jar"
+        jumboMode="false" revision="21.1.2" sha1="21448fcae4a5bfa73c1f2bcaed60663f37051208">
+        <dex
+            dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/build/intermediates/pre-dexed/debug/classes-a6def9077c22a32cd7330cea56bc6920558426e4.jar" />
+    </item>
+    <item
+        jar="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/build/intermediates/exploded-aar/com.android.support/leanback-v17/21.0.3/classes.jar"
+        jumboMode="false" revision="21.1.2" sha1="6c0c79d3d18fea9d6c5fbf5820768dae9c35c9e2">
+        <dex
+            dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/build/intermediates/pre-dexed/debug/classes-d05ba308279284e464480293673e45ce6c0c6a1b.jar" />
+    </item>
+    <item
+        jar="/Users/andrew/Documents/Git Repos/Planets-Gradle/Android TV/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.3/classes.jar"
+        jumboMode="false" revision="21.0.1" sha1="4b8945fc23a7461c6fdde15753456d64b0a9358b">
+        <dex
+            dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/Android TV/build/intermediates/pre-dexed/debug/classes-1a5c080f10597174df4c779c8d187e2f32ef213a.jar" />
+    </item>
+    <item
+        jar="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false" revision="21.1.2" sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex
+            dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/build/intermediates/pre-dexed/debug/classes-df17eaf180690623685b0c6f67de7a086e146387.jar" />
+    </item>
+    <item
+        jar="/Users/andrew/Documents/Git Repos/Planets-Gradle/Android TV/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false" revision="21.0.1" sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex
+            dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/Android TV/build/intermediates/pre-dexed/debug/classes-734e2a2ed7e721e27665f0b04465d5e16cc4ce13.jar" />
+    </item>
+    <item
+        jar="/Users/andrew/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false" revision="21.1.2" sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex
+            dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-160253f1dd5a220df36f57383b0a19c455939d1d.jar" />
     </item>
     <item
         jar="/Users/andrew/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.3.2/d6b7f0093cec6c9faf65dbfd6a6a345d0ed25e27/picasso-2.3.2.jar"
@@ -123,11 +128,6 @@
         jumboMode="false" revision="21.1.2" sha1="21e8cf4719568f3a82309d6c8b8b740da6ab2311">
         <dex
             dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/App/build/intermediates/pre-dexed/debug/feedback_v6-e4ed5ba093e77a90471a36d1bc01a55c69729bb3.jar" />
-    </item>
-    <item jar="/Users/andrew/Documents/Git Repos/Planets-Gradle/Android TV/libs/feedback_v6.jar"
-        jumboMode="false" revision="21.0.1" sha1="21e8cf4719568f3a82309d6c8b8b740da6ab2311">
-        <dex
-            dex="/Users/andrew/Documents/Git Repos/Planets-Gradle/Android TV/build/intermediates/pre-dexed/debug/feedback_v6-3008234a1ccc0fb24dc6e952d6a895494d077761.jar" />
     </item>
 
 </items>
