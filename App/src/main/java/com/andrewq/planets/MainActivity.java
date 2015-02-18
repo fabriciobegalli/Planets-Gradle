@@ -67,14 +67,70 @@ public class MainActivity extends Activity {
 
     // (arbitrary) request code for the purchase flow
     static final int RC_REQUEST = 10001;
-
+    public static GridView gridView;
     // The helper object
     IabHelper mHelper;
+    IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener = new IabHelper.OnIabPurchaseFinishedListener() {
+        public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
+            Log.d(TAG, "Purchase finished: " + result + ", purchase: " + purchase);
+
+            if (mHelper == null) return;
+
+            if (result.isFailure()) {
+                Toast.makeText(getBaseContext(), "Error purchasing: " + result, Toast.LENGTH_LONG).show();
+                return;
+            }
+            if (!verifyDeveloperPayload(purchase)) {
+                Toast.makeText(getBaseContext(), "Error purchasing. Authenticity verification failed.", Toast.LENGTH_LONG).show();
+                return;
+            }
+
+            Log.d(TAG, "Purchase successful.");
+
+            if (purchase.getSku().equals(SKU_1_DOLLAR)) {
+                Toast.makeText(getBaseContext(), "Thank you for your donation of $1!", Toast.LENGTH_LONG).show();
+            } else if (purchase.getSku().equals(SKU_5_DOLLARS)) {
+                Toast.makeText(getBaseContext(), "Thank you for your donation of $5!", Toast.LENGTH_LONG).show();
+            } else if (purchase.getSku().equals(SKU_10_DOLLARS)) {
+                Toast.makeText(getBaseContext(), "Thank you for your donation of $10!", Toast.LENGTH_LONG).show();
+            } else if (purchase.getSku().equals(SKU_25_DOLLARS)) {
+                Toast.makeText(getBaseContext(), "Thank you for your donation of $25!", Toast.LENGTH_LONG).show();
+            } else if (purchase.getSku().equals(SKU_50_DOLLARS)) {
+                Toast.makeText(getBaseContext(), "Thank you for your donation of $50!", Toast.LENGTH_LONG).show();
+            }
+        }
+    };
+    // Listener that's called when we finish querying the items and subscriptions we own
+    IabHelper.QueryInventoryFinishedListener mGotInventoryListener;
+
+    {
+        mGotInventoryListener = new IabHelper.QueryInventoryFinishedListener() {
+            public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
+
+                if (mHelper == null) return;
+
+                if (result.isFailure()) {
+                    Toast.makeText(getBaseContext(), "Failed to query items", Toast.LENGTH_LONG).show();
+                }
+            }
+        };
+    }
+
+    IabHelper.OnConsumeFinishedListener mConsumeFinishedListener;
+
+    {
+        mConsumeFinishedListener = new IabHelper.OnConsumeFinishedListener() {
+            public void onConsumeFinished(Purchase purchase, IabResult result) {
+                Log.d(TAG, "Consumption finished. Purchase: " + purchase + ", result: " + result);
+
+                if (mHelper == null) return;
+
+                Log.d(TAG, "End consumption flow.");
+            }
+        };
+    }
 
     private ActionBar ab;
-
-    public static GridView gridView;
-
     private Context con;
 
     @Override
@@ -97,6 +153,8 @@ public class MainActivity extends Activity {
         mHelper = new IabHelper(this, base64EncodedPublicKey);
 
         mHelper.enableDebugLogging(false);
+
+        //TODO: Fix this!
 
         /*mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
             public void onIabSetupFinished(IabResult result) {
@@ -232,22 +290,6 @@ public class MainActivity extends Activity {
         });
     }
 
-    // Listener that's called when we finish querying the items and subscriptions we own
-    IabHelper.QueryInventoryFinishedListener mGotInventoryListener;
-
-    {
-        mGotInventoryListener = new IabHelper.QueryInventoryFinishedListener() {
-            public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
-
-                if (mHelper == null) return;
-
-                if (result.isFailure()) {
-                    Toast.makeText(getBaseContext(), "Failed to query items", Toast.LENGTH_LONG).show();
-                }
-            }
-        };
-    }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -266,51 +308,6 @@ public class MainActivity extends Activity {
         String payload;
         payload = p.getDeveloperPayload();
         return true;
-    }
-
-    IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener = new IabHelper.OnIabPurchaseFinishedListener() {
-        public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
-            Log.d(TAG, "Purchase finished: " + result + ", purchase: " + purchase);
-
-            if (mHelper == null) return;
-
-            if (result.isFailure()) {
-                Toast.makeText(getBaseContext(), "Error purchasing: " + result, Toast.LENGTH_LONG).show();
-                return;
-            }
-            if (!verifyDeveloperPayload(purchase)) {
-                Toast.makeText(getBaseContext(), "Error purchasing. Authenticity verification failed.", Toast.LENGTH_LONG).show();
-                return;
-            }
-
-            Log.d(TAG, "Purchase successful.");
-
-            if (purchase.getSku().equals(SKU_1_DOLLAR)) {
-                Toast.makeText(getBaseContext(), "Thank you for your donation of $1!", Toast.LENGTH_LONG).show();
-            } else if (purchase.getSku().equals(SKU_5_DOLLARS)) {
-                Toast.makeText(getBaseContext(), "Thank you for your donation of $5!", Toast.LENGTH_LONG).show();
-            } else if (purchase.getSku().equals(SKU_10_DOLLARS)) {
-                Toast.makeText(getBaseContext(), "Thank you for your donation of $10!", Toast.LENGTH_LONG).show();
-            } else if (purchase.getSku().equals(SKU_25_DOLLARS)) {
-                Toast.makeText(getBaseContext(), "Thank you for your donation of $25!", Toast.LENGTH_LONG).show();
-            } else if (purchase.getSku().equals(SKU_50_DOLLARS)) {
-                Toast.makeText(getBaseContext(), "Thank you for your donation of $50!", Toast.LENGTH_LONG).show();
-            }
-        }
-    };
-
-    IabHelper.OnConsumeFinishedListener mConsumeFinishedListener;
-
-    {
-        mConsumeFinishedListener = new IabHelper.OnConsumeFinishedListener() {
-            public void onConsumeFinished(Purchase purchase, IabResult result) {
-                Log.d(TAG, "Consumption finished. Purchase: " + purchase + ", result: " + result);
-
-                if (mHelper == null) return;
-
-                Log.d(TAG, "End consumption flow.");
-            }
-        };
     }
 
     @Override

@@ -1,38 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <color name="BLACK">#000000</color>
-    <color name="WHITE">#FFFFFF</color>
-    <color name="light_grey">#a5acb0</color>
-    <color name="brown">#525964</color>
-    <color name="dark_grey">#212121</color>
-    <color name="aqua">#a6b1ba</color>
-    <color name="red_cherry">#C9282D</color>
-    <color name="silver">#A9A9A9</color>
-    <color name="black">#000000</color>
-    <color name="transparent">#00000000</color>
-    <color name="white">#FFFFFF</color>
-    <color name="blue">#00aceb</color>
-    <color name="spiritclips_bck">#8AB8E0</color>
-    <color name="translucent_black">#55000000</color>
-    <color name="grid_bck">#627583</color>
-    <color name="grey">#393430</color>
-    <color name="dark_grey_bg">#1f1c17</color>
-    <color name="login_font_color_1">#546778</color>
-    <color name="login_font_color_2">#8E8E8E</color>
-    <color name="blue_txt">#0f5690</color>
     <color name="background_gradient_start">#000000</color>
     <color name="background_gradient_end">#DDDDDD</color>
-    <color name="fastlane_background">#0096a6</color>
-    <color name="search_opaque">#ffaa3f</color>
-    <color name="detail_background">#0096a6</color>
+
+
+    <color name="fastlane_background_red">#D32F2F</color>
+    <color name="fastlane_background_orange">#E64A19</color>
+    <color name="fastlane_background_blue">#1976D2</color>
+    <color name="fastlane_background_green">#388E3C</color>
+    <color name="fastlane_background_purple">#512DA8</color>
+    <color name="fastlane_background_dark">#212121</color>
+
+
+    <color name="detail_background_red">#D32F2F</color>
+    <color name="detail_background_orange">#E64A19</color>
+    <color name="detail_background_blue">#1976D2</color>
+    <color name="detail_background_green">#388E3C</color>
+    <color name="detail_background_purple">#512DA8</color>
+    <color name="detail_background_dark">#212121</color>
+
+
+    <color name="search_opaque_red">#ffff3838</color>
+    <color name="search_opaque_orange">#ffff511a</color>
+    <color name="search_opaque_blue">#ff25bbde</color>
+    <color name="search_opaque_green">#ff55d959</color>
+    <color name="search_opaque_purple">#ff6c41f3</color>
+    <color name="search_opaque_dark">#ff828282</color>
+
+
     <color name="soft_opaque">#30000000</color>
     <color name="img_soft_opaque">#30FF0000</color>
     <color name="img_full_opaque">#00000000</color>
     <color name="black_opaque">#AA000000</color>
+    <color name="black">#59000000</color>
+    <color name="white">#FFFFFF</color>
     <color name="orange_transparent">#AAFADCA7</color>
     <color name="orange">#FADCA7</color>
     <color name="yellow">#EEFF41</color>
     <color name="default_background">#3d3d3d</color>
-
 </resources>

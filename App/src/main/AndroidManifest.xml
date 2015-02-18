@@ -8,8 +8,17 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.android.vending.BILLING" />
 
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="false" />
+
     <application
         android:allowBackup="true"
+        android:banner="@drawable/planets_banner"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Roboto"
@@ -26,6 +35,29 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".tv.TvActivity"
+            android:label="@string/app_name"
+            android:logo="@drawable/app_icon_quantum"
+            android:screenOrientation="landscape"
+            android:theme="@style/TV">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".tv.SettingsActivity"
+            android:label="Settings"
+            android:parentActivityName=".tv.TvActivity"
+            android:theme="@style/Theme.Leanback">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".tv.TvActivity" />
         </activity>
 
         <!-- Settings Activity -->
@@ -239,11 +271,13 @@
         <activity
             android:name=".tv.DetailsActivity"
             android:label="Details"
-            android:parentActivityName=".tv.TvActivity" />
+            android:parentActivityName=".tv.TvActivity"
+            android:theme="@style/Theme.Leanback" />
         <activity
             android:name=".tv.PlayerActivity"
             android:label="Player"
-            android:parentActivityName=".tv.TvActivity" />
+            android:parentActivityName=".tv.TvActivity"
+            android:theme="@style/Theme.Leanback" />
     </application>
 
 </manifest>

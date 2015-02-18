@@ -25,6 +25,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.andrewq.planets.R;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
@@ -157,8 +158,7 @@ public class VideoDetailsFragment extends DetailsFragment {
                 public void onActionClicked(Action action) {
                     if (action.getId() == ACTION_WATCH_TRAILER) {
 
-                    }
-                    else {
+                    } else {
                         Toast.makeText(getActivity(), action.toString(), Toast.LENGTH_SHORT).show();
                     }
                 }
