@@ -11,16 +11,16 @@
         <ImageView
             android:id="@+id/image_header_jupiter"
             android:layout_width="match_parent"
-            android:background="@null"
             android:layout_height="wrap_content"
+            android:background="@null"
             android:scaleType="centerCrop"
             android:src="@drawable/jupiter" />
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:background="#D8D8D8">
+            android:background="#D8D8D8"
+            android:padding="16dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -28,18 +28,18 @@
 
                 <RelativeLayout
                     android:id="@+id/jupiterCard1"
-                    android:background="@drawable/layer_card_background"
                     android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginBottom="10dp"
-                    android:padding="16dp"
-                    android:layout_height="match_parent">
+                    android:background="@drawable/layer_card_background"
+                    android:padding="16dp">
 
                     <TextView
                         android:id="@+id/jupiter_sub_title_1"
-                        android:paddingBottom="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="false"
+                        android:paddingBottom="5dp"
                         android:text="@string/jupiter_sub_title_1"
                         android:textSize="27sp" />
 
@@ -55,18 +55,18 @@
 
                 <RelativeLayout
                     android:id="@+id/jupiterCard2"
-                    android:background="@drawable/layer_card_background"
                     android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_below="@+id/jupiterCard1"
-                    android:padding="16dp"
-                    android:layout_height="match_parent">
+                    android:background="@drawable/layer_card_background"
+                    android:padding="16dp">
 
                     <TextView
                         android:id="@+id/jupiter_sub_title_2"
-                        android:paddingBottom="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="false"
+                        android:paddingBottom="5dp"
                         android:text="@string/jupiter_sub_title_2"
                         android:textSize="27sp" />
 
@@ -85,7 +85,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/jupiter_description_2"
                         android:layout_centerHorizontal="true"
-                        android:text="Moons (1)" />
+                        android:text="Moons (4)" />
                 </RelativeLayout>
             </RelativeLayout>
         </FrameLayout>
