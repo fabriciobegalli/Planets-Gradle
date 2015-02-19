@@ -25,7 +25,7 @@ public final class PlanetsList {
                 "although this distance varies throughout the year because of " +
                 "the Earth’s elliptical orbit around the sun. " +
                 "The distance between the Earth and the Sun " +
-                "is called an Astronomical Unit or AU.";
+                "is called an Astronomical Unit or AU and is used to measure long distances between objects in space.";
 
         String bgImageUrl[] = {
                 "http://amqtech.com/planets_pics/sun.jpg"
@@ -108,15 +108,24 @@ public final class PlanetsList {
 
         String title[] = {
                 "Our Moon",
-                "Mars: Phobos",
-                "Mars: Deimos",
-                "Jupiter: Europa",
+                "Phobos",
+                "Deimos",
+                "Europa",
         };
 
-        String moonDescription = "This is a test!";
-        String phobosDescription = "This is a test!";
-        String deimosDescription = "This is a test!";
-        String europaDescription = "This is a test";
+        String moonDescription = "First visited in 1969, our Moon is the only body that orbits our planet. " +
+                "The moon is about 238,900 miles from Earth, which makes it easy to study. " +
+                "The Space Race of the 1960's put Americans, Neil Armstrong and Buzz Aldrin on the surface on July 24th, 1969. " +
+                "Michael Collins waited in the command module for 21 hours while Neil and Buzz walked the surface for the first time.";
+        String phobosDescription = "Phobos is one of two asteroids that have been collected into Mars' sphere of influence. " +
+                "It is the inner-most moon and is 7 times larger than Deimos. It was discovered in 1877 by Asaph Hall. " +
+                "Phobos has a crater named Stickney which is the most prominent feature on the surface and is named after Asaph Hall's wife, Angeline Stickney Hall.";
+        String deimosDescription = "Deimos is the smaller natural Satellite that orbits Mars. It was discovered by Asaph Hall in 1877 around " +
+                "the same time as he discovered Phobos. In Greek mythology, the name Deimos represents dread which is Similar to Phobos meaning Fear. Deimos " +
+                "has two craters: Swift and Voltaire each measuring around 1.9 miles across.";
+        String europaDescription = "Europa is one of the many natural satellites orbiting Jupiter. Its surface is mostly ice, and scientists " +
+                "believe there could be life under the surface. It is estimated that Europa contains 3 times more water under its icy surface " +
+                "than Planet Earth.";
 
         String bgImageUrl[] = {
                 "http://amqtech.com/planets_pics/moon.jpg",
@@ -132,13 +141,13 @@ public final class PlanetsList {
         };
 
         moonList.add(buildMovieInfo("category", title[0],
-                moonDescription, "Moon", cardImageUrl[0], bgImageUrl[0]));
+                moonDescription, "Orbits: Earth", cardImageUrl[0], bgImageUrl[0]));
         moonList.add(buildMovieInfo("category", title[1],
-                phobosDescription, "Moon", cardImageUrl[1], bgImageUrl[1]));
+                phobosDescription, "Orbits: Mars", cardImageUrl[1], bgImageUrl[1]));
         moonList.add(buildMovieInfo("category", title[2],
-                deimosDescription, "Moon", cardImageUrl[2], bgImageUrl[2]));
+                deimosDescription, "Orbits: Mars", cardImageUrl[2], bgImageUrl[2]));
         moonList.add(buildMovieInfo("category", title[3],
-                europaDescription, "Moon", cardImageUrl[3], bgImageUrl[3]));
+                europaDescription, "Orbits: Jupiter", cardImageUrl[3], bgImageUrl[3]));
 
         return moonList;
     }

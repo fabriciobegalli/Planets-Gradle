@@ -3,7 +3,6 @@ package com.andrewq.planets.tv;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -29,7 +28,6 @@ import com.andrewq.planets.R;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
-import java.io.IOException;
 import java.net.URI;
 import java.util.Collections;
 import java.util.List;
@@ -112,7 +110,7 @@ public class VideoDetailsFragment extends DetailsFragment {
             selectedPlanet = movies[0];
 
             DetailsOverviewRow row = new DetailsOverviewRow(selectedPlanet);
-            try {
+            /*try {
                 Bitmap poster = Picasso.with(getActivity())
                         .load(selectedPlanet.getCardImageUrl())
                         .resize(dpToPx(DETAIL_THUMB_WIDTH, getActivity().getApplicationContext()),
@@ -121,7 +119,7 @@ public class VideoDetailsFragment extends DetailsFragment {
                         .get();
                 row.setImageBitmap(getActivity(), poster);
             } catch (IOException e) {
-            }
+            }*/
 
             //row.addAction(new Action(ACTION_WATCH_TRAILER, "Test!", "Test!"));
 

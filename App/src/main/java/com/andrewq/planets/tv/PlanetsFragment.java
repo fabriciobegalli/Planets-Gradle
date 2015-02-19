@@ -126,7 +126,6 @@ public class PlanetsFragment extends BrowseFragment {
             mRowsAdapter.add(new ListRow(planet, listRowAdapter));
         }
 
-
         HeaderItem gridHeader = new HeaderItem(i, "Other", null);
 
         GridItemPresenter mGridPresenter = new GridItemPresenter();
@@ -251,7 +250,7 @@ public class PlanetsFragment extends BrowseFragment {
 
                         fbs.setModal(true);
 
-                        FeedbackDialog fdb = new FeedbackDialog(getActivity(), "AF-B8381B12F22D-0D", fbs);
+                        FeedbackDialog fdb = new FeedbackDialog(getActivity(), "AF-FD2E2AEF7F0A-27", fbs);
                         fdb.show();
                     } else if (((String) item).contains(getString(R.string.settings))) {
                         Intent i = new Intent(getActivity().getApplicationContext(), SettingsActivity.class);
