@@ -2,13 +2,16 @@ package com.andrewq.planets.planets;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.Gravity;
@@ -99,21 +102,63 @@ public class UranusActivity extends Activity {
         if (theme_chooser == 1) {
             //Red
             mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_red);
+
+            int actionBarColor = Color.parseColor("#D32F2F");
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                this.setTaskDescription(new ActivityManager.TaskDescription("Uranus",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+            }
         } else if (theme_chooser == 2) {
             //Orange
             mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_orange);
+
+            int actionBarColor = Color.parseColor("#E64A19");
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                this.setTaskDescription(new ActivityManager.TaskDescription("Uranus",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+            }
         } else if (theme_chooser == 3) {
             //Blue
             mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_blue);
+
+            int actionBarColor = Color.parseColor("#1976D2");
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                this.setTaskDescription(new ActivityManager.TaskDescription("Uranus",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+            }
         } else if (theme_chooser == 4) {
             //Green
             mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_green);
+
+            int actionBarColor = Color.parseColor("#388E3C");
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                this.setTaskDescription(new ActivityManager.TaskDescription("Uranus",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+            }
         } else if (theme_chooser == 5) {
             //Purple
             mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_purple);
+
+            int actionBarColor = Color.parseColor("#512DA8");
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                this.setTaskDescription(new ActivityManager.TaskDescription("Uranus",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+            }
         } else if (theme_chooser == 6) {
             //Black
             mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_black);
+
+            int actionBarColor = Color.parseColor("#212121");
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                this.setTaskDescription(new ActivityManager.TaskDescription("Uranus",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+            }
         }
 
         mActionBarBackgroundDrawable.setAlpha(0);

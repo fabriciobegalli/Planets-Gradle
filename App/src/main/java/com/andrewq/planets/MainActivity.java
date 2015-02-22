@@ -391,7 +391,7 @@ public class MainActivity extends Activity {
             tintManager.setStatusBarTintColor(actionBarColor);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
+                this.setTaskDescription(new ActivityManager.TaskDescription("The Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
 
@@ -404,7 +404,7 @@ public class MainActivity extends Activity {
             tintManager.setStatusBarTintColor(actionBarColor);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
+                this.setTaskDescription(new ActivityManager.TaskDescription("The Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
         } else if (theme_chooser == 3) {
@@ -416,7 +416,7 @@ public class MainActivity extends Activity {
             tintManager.setStatusBarTintColor(actionBarColor);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
+                this.setTaskDescription(new ActivityManager.TaskDescription("The Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
         } else if (theme_chooser == 4) {
@@ -428,7 +428,7 @@ public class MainActivity extends Activity {
             tintManager.setStatusBarTintColor(actionBarColor);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
+                this.setTaskDescription(new ActivityManager.TaskDescription("The Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
         } else if (theme_chooser == 5) {
@@ -440,7 +440,7 @@ public class MainActivity extends Activity {
             tintManager.setStatusBarTintColor(actionBarColor);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
+                this.setTaskDescription(new ActivityManager.TaskDescription("The Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
         } else if (theme_chooser == 6) {
@@ -452,7 +452,7 @@ public class MainActivity extends Activity {
             tintManager.setStatusBarTintColor(actionBarColor);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
+                this.setTaskDescription(new ActivityManager.TaskDescription("The Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
         }

@@ -71,7 +71,7 @@ public class Settings extends PreferenceActivity {
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
+            this.setTaskDescription(new ActivityManager.TaskDescription("Settings",
                     drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), Color.parseColor("#414141")));
         }
 
