@@ -452,7 +452,7 @@ public class MainActivity extends Activity {
             tintManager.setStatusBarTintColor(actionBarColor);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("The Planets",
+                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
         }
