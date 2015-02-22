@@ -2,14 +2,19 @@ package com.andrewq.planets;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.ActivityOptions;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -133,6 +138,29 @@ public class MainActivity extends Activity {
     private ActionBar ab;
     private Context con;
 
+    public static Bitmap drawableToBitmap(Drawable drawable) {
+        if (drawable instanceof BitmapDrawable) {
+            return ((BitmapDrawable) drawable).getBitmap();
+        }
+
+        // We ask for the bounds if they have been set as they would be most
+        // correct, then we check we are  > 0
+        final int width = !drawable.getBounds().isEmpty() ?
+                drawable.getBounds().width() : drawable.getIntrinsicWidth();
+
+        final int height = !drawable.getBounds().isEmpty() ?
+                drawable.getBounds().height() : drawable.getIntrinsicHeight();
+
+        // Now we check we are > 0
+        final Bitmap bitmap = Bitmap.createBitmap(width <= 0 ? 1 : width, height <= 0 ? 1 : height,
+                Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+        drawable.draw(canvas);
+
+        return bitmap;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -156,7 +184,7 @@ public class MainActivity extends Activity {
 
         //TODO: Fix this!
 
-        mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
+        /*mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
             public void onIabSetupFinished(IabResult result) {
                 Log.d(TAG, "Setup finished.");
 
@@ -173,7 +201,7 @@ public class MainActivity extends Activity {
                 Log.d(TAG, "Setup successful. Querying inventory.");
                 mHelper.queryInventoryAsync(mGotInventoryListener);
             }
-        });
+        });*/
 
 
         gridView = (GridView) findViewById(R.id.gridview);
@@ -286,6 +314,7 @@ public class MainActivity extends Activity {
                         startActivity(i10, scaleBundle10);
                         break;
                 }
+
             }
         });
     }
@@ -324,13 +353,17 @@ public class MainActivity extends Activity {
         boolean isChecked = getPrefs.getBoolean("pref_translucent", false);
 
         if (isChecked) {
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            }
             gridView = (GridView) findViewById(R.id.gridview);
             gridView.setClipToPadding(false);
             setInsets(this, gridView);
         } else {
-            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            }
         }
 
         if (isChecked) {
@@ -356,6 +389,12 @@ public class MainActivity extends Activity {
 
             int actionBarColor = Color.parseColor("#D32F2F");
             tintManager.setStatusBarTintColor(actionBarColor);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+            }
+
         } else if (theme_chooser == 2) {
             //Orange
             assert mActionBar != null;
@@ -363,6 +402,11 @@ public class MainActivity extends Activity {
 
             int actionBarColor = Color.parseColor("#E64A19");
             tintManager.setStatusBarTintColor(actionBarColor);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+            }
         } else if (theme_chooser == 3) {
             //Blue
             assert mActionBar != null;
@@ -370,6 +414,11 @@ public class MainActivity extends Activity {
 
             int actionBarColor = Color.parseColor("#1976D2");
             tintManager.setStatusBarTintColor(actionBarColor);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+            }
         } else if (theme_chooser == 4) {
             //Green
             assert mActionBar != null;
@@ -377,6 +426,11 @@ public class MainActivity extends Activity {
 
             int actionBarColor = Color.parseColor("#388E3C");
             tintManager.setStatusBarTintColor(actionBarColor);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+            }
         } else if (theme_chooser == 5) {
             //Purple
             assert mActionBar != null;
@@ -384,6 +438,11 @@ public class MainActivity extends Activity {
 
             int actionBarColor = Color.parseColor("#512DA8");
             tintManager.setStatusBarTintColor(actionBarColor);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+            }
         } else if (theme_chooser == 6) {
             //Black
             assert mActionBar != null;
@@ -391,6 +450,11 @@ public class MainActivity extends Activity {
 
             int actionBarColor = Color.parseColor("#212121");
             tintManager.setStatusBarTintColor(actionBarColor);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+            }
         }
     }
 

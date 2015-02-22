@@ -156,8 +156,8 @@ public final class PlanetsList {
                                          String description, String studio, String cardImageUrl,
                                          String bgImageUrl) {
         Planet planet = new Planet();
-        planet.setId(Planet.getCount());
-        Planet.incCount();
+        //planet.setId(Planet.getCount());
+        //Planet.incCount();
         planet.setTitle(title);
         planet.setDescription(description);
         planet.setStudio(studio);

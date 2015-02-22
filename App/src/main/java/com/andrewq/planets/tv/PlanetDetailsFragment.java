@@ -32,7 +32,7 @@ import java.net.URI;
 import java.util.Collections;
 import java.util.List;
 
-public class VideoDetailsFragment extends DetailsFragment {
+public class PlanetDetailsFragment extends DetailsFragment {
     private static final String TAG = "VideoDetailsFragment";
 
     private static final int ACTION_WATCH_TRAILER = 1;
@@ -44,7 +44,7 @@ public class VideoDetailsFragment extends DetailsFragment {
 
     private static final int NUM_COLS = 8;
 
-    private static final String MOVIE = "Movie";
+    private static final String PLANET = "Movie";
 
     private Planet selectedPlanet;
 
@@ -71,7 +71,7 @@ public class VideoDetailsFragment extends DetailsFragment {
         mMetrics = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(mMetrics);
 
-        selectedPlanet = (Planet) getActivity().getIntent().getSerializableExtra(MOVIE);
+        selectedPlanet = (Planet) getActivity().getIntent().getSerializableExtra(PLANET);
         new DetailRowBuilderTask().execute(selectedPlanet);
 
         setOnItemClickedListener(getDefaultItemClickedListener());
@@ -86,7 +86,7 @@ public class VideoDetailsFragment extends DetailsFragment {
                 if (item instanceof Planet) {
                     Planet planet = (Planet) item;
                     Intent intent = new Intent(getActivity(), DetailsActivity.class);
-                    intent.putExtra(MOVIE, planet);
+                    intent.putExtra(PLANET, planet);
                     startActivity(intent);
                 }
             }
@@ -121,7 +121,7 @@ public class VideoDetailsFragment extends DetailsFragment {
             } catch (IOException e) {
             }*/
 
-            //row.addAction(new Action(ACTION_WATCH_TRAILER, "Test!", "Test!"));
+            row.addAction(new Action(ACTION_WATCH_TRAILER, "Read More", null));
 
             return row;
         }
@@ -154,6 +154,7 @@ public class VideoDetailsFragment extends DetailsFragment {
             dorPresenter.setOnActionClickedListener(new OnActionClickedListener() {
                 @Override
                 public void onActionClicked(Action action) {
+
                     if (action.getId() == ACTION_WATCH_TRAILER) {
 
                     } else {

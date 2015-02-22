@@ -1,10 +1,15 @@
 package com.andrewq.planets.misc;
 
 import android.app.ActionBar;
+import android.app.ActivityManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -27,6 +32,29 @@ public class Settings extends PreferenceActivity {
 
     private ImageView img;
 
+    public static Bitmap drawableToBitmap(Drawable drawable) {
+        if (drawable instanceof BitmapDrawable) {
+            return ((BitmapDrawable) drawable).getBitmap();
+        }
+
+        // We ask for the bounds if they have been set as they would be most
+        // correct, then we check we are  > 0
+        final int width = !drawable.getBounds().isEmpty() ?
+                drawable.getBounds().width() : drawable.getIntrinsicWidth();
+
+        final int height = !drawable.getBounds().isEmpty() ?
+                drawable.getBounds().height() : drawable.getIntrinsicHeight();
+
+        // Now we check we are > 0
+        final Bitmap bitmap = Bitmap.createBitmap(width <= 0 ? 1 : width, height <= 0 ? 1 : height,
+                Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+        drawable.draw(canvas);
+
+        return bitmap;
+    }
+
     @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +62,7 @@ public class Settings extends PreferenceActivity {
         addPreferencesFromResource(R.xml.settings);
         setContentView(R.layout.custom_preferences);
 
-        Preference checkBoxPreference = (Preference) findPreference("pref_translucent");
+        Preference checkBoxPreference = findPreference("pref_translucent");
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             checkBoxPreference.setEnabled(true);
@@ -42,7 +70,12 @@ public class Settings extends PreferenceActivity {
             checkBoxPreference.setEnabled(false);
         }
 
-        Preference prefListview = (Preference) findPreference("pref_listlicense");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
+                    drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), Color.parseColor("#414141")));
+        }
+
+        Preference prefListview = findPreference("pref_listlicense");
 
         prefListview.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override

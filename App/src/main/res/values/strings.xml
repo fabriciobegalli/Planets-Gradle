@@ -226,5 +226,6 @@
     <string name="settings">Settings</string>
     <string name="action_example">ExampleAction</string>
     <string name="button_source">Source</string>
+    <string name="title_activity_planet_long_description">PlanetLongDescription</string>
 
 </resources>
