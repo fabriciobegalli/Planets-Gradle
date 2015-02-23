@@ -82,18 +82,32 @@ public class EarthActivity extends Activity {
 
         mActionBar = getActionBar();
         assert mActionBar != null;
-        mActionBar.setCustomView(R.layout.custom_actionbar_earth);
-        mActionBar.setDisplayShowCustomEnabled(true);
-        mActionBar.setDisplayHomeAsUpEnabled(false);
 
-        img = (ImageView) findViewById(R.id.backButtonSettings);
+        SharedPreferences getPrefs = PreferenceManager
+                .getDefaultSharedPreferences(getBaseContext());
 
-        img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        boolean isChecked = getPrefs.getBoolean("pref_lollipopMultitask", false);
+
+        if (isChecked) {
+            mActionBar.setCustomView(R.layout.custom_actionbar_earth_noback);
+
+            mActionBar.setDisplayShowCustomEnabled(true);
+            mActionBar.setDisplayHomeAsUpEnabled(false);
+        } else {
+            mActionBar.setCustomView(R.layout.custom_actionbar_earth);
+
+            mActionBar.setDisplayShowCustomEnabled(true);
+            mActionBar.setDisplayHomeAsUpEnabled(false);
+
+            img = (ImageView) findViewById(R.id.backButtonSettings);
+
+            img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
+        }
 
         SharedPreferences getPrefs2 = PreferenceManager
                 .getDefaultSharedPreferences(getBaseContext());

@@ -70,18 +70,33 @@ public class EuropaActivity extends Activity {
 
         mActionBar = getActionBar();
         assert mActionBar != null;
-        mActionBar.setCustomView(R.layout.custom_actionbar_europa);
-        mActionBar.setDisplayShowCustomEnabled(true);
-        mActionBar.setDisplayHomeAsUpEnabled(false);
 
-        img = (ImageView) findViewById(R.id.backButtonSettings);
 
-        img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        SharedPreferences getPrefs = PreferenceManager
+                .getDefaultSharedPreferences(getBaseContext());
+
+        boolean isChecked = getPrefs.getBoolean("pref_lollipopMultitask", false);
+
+        if (isChecked) {
+            mActionBar.setCustomView(R.layout.custom_actionbar_europa_noback);
+
+            mActionBar.setDisplayShowCustomEnabled(true);
+            mActionBar.setDisplayHomeAsUpEnabled(false);
+        } else {
+            mActionBar.setCustomView(R.layout.custom_actionbar_europa);
+
+            mActionBar.setDisplayShowCustomEnabled(true);
+            mActionBar.setDisplayHomeAsUpEnabled(false);
+
+            img = (ImageView) findViewById(R.id.backButtonSettings);
+
+            img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
+        }
 
         SharedPreferences getPrefs2 = PreferenceManager
                 .getDefaultSharedPreferences(getBaseContext());
