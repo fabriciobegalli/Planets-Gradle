@@ -199,9 +199,10 @@ public class EarthActivity extends Activity {
         moonButton = (Button) findViewById(R.id.earth_satellite);
         moonButton.setOnClickListener(new View.OnClickListener() {
 
-            final boolean isChecked = getPrefs.getBoolean("pref_lollipopMultitask", false);
             SharedPreferences getPrefs = PreferenceManager
                     .getDefaultSharedPreferences(getBaseContext());
+
+            final boolean isChecked = getPrefs.getBoolean("pref_lollipopMultitask", false);
 
             @Override
             public void onClick(View arg0) {
