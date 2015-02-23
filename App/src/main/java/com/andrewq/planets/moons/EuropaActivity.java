@@ -97,7 +97,7 @@ public class EuropaActivity extends Activity {
             int actionBarColor = Color.parseColor("#D32F2F");
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("Pluto",
+                this.setTaskDescription(new ActivityManager.TaskDescription("Europa",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
         } else if (theme_chooser == 2) {
@@ -107,7 +107,7 @@ public class EuropaActivity extends Activity {
             int actionBarColor = Color.parseColor("#E64A19");
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("Pluto",
+                this.setTaskDescription(new ActivityManager.TaskDescription("Europa",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
         } else if (theme_chooser == 3) {
@@ -117,7 +117,7 @@ public class EuropaActivity extends Activity {
             int actionBarColor = Color.parseColor("#1976D2");
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("Pluto",
+                this.setTaskDescription(new ActivityManager.TaskDescription("Europa",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
         } else if (theme_chooser == 4) {
@@ -127,7 +127,7 @@ public class EuropaActivity extends Activity {
             int actionBarColor = Color.parseColor("#388E3C");
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("Pluto",
+                this.setTaskDescription(new ActivityManager.TaskDescription("Europa",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
         } else if (theme_chooser == 5) {
@@ -137,7 +137,7 @@ public class EuropaActivity extends Activity {
             int actionBarColor = Color.parseColor("#512DA8");
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("Pluto",
+                this.setTaskDescription(new ActivityManager.TaskDescription("Europa",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
         } else if (theme_chooser == 6) {
@@ -147,7 +147,7 @@ public class EuropaActivity extends Activity {
             int actionBarColor = Color.parseColor("#212121");
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("Pluto",
+                this.setTaskDescription(new ActivityManager.TaskDescription("Europa",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
         }

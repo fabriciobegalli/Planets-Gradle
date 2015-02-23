@@ -222,6 +222,11 @@ public class MainActivity extends Activity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 
+                SharedPreferences getPrefs = PreferenceManager
+                        .getDefaultSharedPreferences(getBaseContext());
+
+                boolean isChecked = getPrefs.getBoolean("pref_lollipopMultitask", false);
+
                 switch (position) {
                     case 0:
                         Intent i1 = new Intent(getApplicationContext(),
@@ -230,6 +235,10 @@ public class MainActivity extends Activity {
                         Bundle scaleBundle = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
                         //then start the activity, and send the bundle
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            if (isChecked)
+                                i1.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+                        }
                         startActivity(i1, scaleBundle);
                         break;
                     case 1:
@@ -239,6 +248,10 @@ public class MainActivity extends Activity {
                         Bundle scaleBundle2 = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
                         //then start the activity, and send the bundle
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            if (isChecked)
+                                i2.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+                        }
                         startActivity(i2, scaleBundle2);
                         break;
                     case 2:
@@ -248,6 +261,10 @@ public class MainActivity extends Activity {
                         Bundle scaleBundle3 = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
                         //then start the activity, and send the bundle
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            if (isChecked)
+                                i3.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+                        }
                         startActivity(i3, scaleBundle3);
                         break;
                     case 3:
@@ -257,6 +274,10 @@ public class MainActivity extends Activity {
                         Bundle scaleBundle4 = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
                         //then start the activity, and send the bundle
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            if (isChecked)
+                                i4.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+                        }
                         startActivity(i4, scaleBundle4);
                         break;
                     case 4:
@@ -266,6 +287,10 @@ public class MainActivity extends Activity {
                         Bundle scaleBundle5 = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
                         //then start the activity, and send the bundle
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            if (isChecked)
+                                i5.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+                        }
                         startActivity(i5, scaleBundle5);
                         break;
                     case 5:
@@ -275,6 +300,10 @@ public class MainActivity extends Activity {
                         Bundle scaleBundle6 = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
                         //then start the activity, and send the bundle
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            if (isChecked)
+                                i6.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+                        }
                         startActivity(i6, scaleBundle6);
                         break;
                     case 6:
@@ -284,6 +313,10 @@ public class MainActivity extends Activity {
                         Bundle scaleBundle7 = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
                         //then start the activity, and send the bundle
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            if (isChecked)
+                                i7.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+                        }
                         startActivity(i7, scaleBundle7);
                         break;
                     case 7:
@@ -293,6 +326,10 @@ public class MainActivity extends Activity {
                         Bundle scaleBundle8 = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
                         //then start the activity, and send the bundle
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            if (isChecked)
+                                i8.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+                        }
                         startActivity(i8, scaleBundle8);
                         break;
                     case 8:
@@ -302,6 +339,10 @@ public class MainActivity extends Activity {
                         Bundle scaleBundle9 = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
                         //then start the activity, and send the bundle
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            if (isChecked)
+                                i9.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+                        }
                         startActivity(i9, scaleBundle9);
                         break;
                     case 9:
@@ -311,6 +352,10 @@ public class MainActivity extends Activity {
                         Bundle scaleBundle10 = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
                         //then start the activity, and send the bundle
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            if (isChecked)
+                                i10.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+                        }
                         startActivity(i10, scaleBundle10);
                         break;
                 }
@@ -345,8 +390,6 @@ public class MainActivity extends Activity {
         SystemBarTintManager tintManager = new SystemBarTintManager(this);
         SharedPreferences getPrefs = PreferenceManager
                 .getDefaultSharedPreferences(getBaseContext());
-        boolean sendUsage;
-        sendUsage = getPrefs.getBoolean("pref_send_usage", false);
 
         //TODO: fix landscape translucent status bar bug
 
@@ -391,7 +434,7 @@ public class MainActivity extends Activity {
             tintManager.setStatusBarTintColor(actionBarColor);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("The Planets",
+                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
 
@@ -404,7 +447,7 @@ public class MainActivity extends Activity {
             tintManager.setStatusBarTintColor(actionBarColor);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("The Planets",
+                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
         } else if (theme_chooser == 3) {
@@ -416,7 +459,7 @@ public class MainActivity extends Activity {
             tintManager.setStatusBarTintColor(actionBarColor);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("The Planets",
+                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
         } else if (theme_chooser == 4) {
@@ -428,7 +471,7 @@ public class MainActivity extends Activity {
             tintManager.setStatusBarTintColor(actionBarColor);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("The Planets",
+                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
         } else if (theme_chooser == 5) {
@@ -440,7 +483,7 @@ public class MainActivity extends Activity {
             tintManager.setStatusBarTintColor(actionBarColor);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("The Planets",
+                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
         } else if (theme_chooser == 6) {

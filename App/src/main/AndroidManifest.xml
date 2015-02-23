@@ -20,6 +20,7 @@
         android:banner="@drawable/planets_banner"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
+        android:maxRecents="5"
         android:theme="@style/Roboto"
         tools:ignore="UnusedAttribute">
 

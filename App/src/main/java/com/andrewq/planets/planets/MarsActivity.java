@@ -204,9 +204,16 @@ public class MarsActivity extends Activity {
         moonButton = (Button) findViewById(R.id.mars_satellite);
 
         moonButton.setOnClickListener(new View.OnClickListener() {
+
             //Handle the button being pressed
             @Override
             public void onClick(View v) {
+
+                SharedPreferences getPrefs = PreferenceManager
+                        .getDefaultSharedPreferences(getBaseContext());
+
+                final boolean isChecked = getPrefs.getBoolean("pref_lollipopMultitask", false);
+
                 //Make a new alert dialog
                 new AlertDialog.Builder(con)
                         //Set the title
@@ -219,12 +226,20 @@ public class MarsActivity extends Activity {
                                 if (which == 0) {
                                     //Open the first moon activity
                                     Intent phobos = new Intent(getBaseContext(), PhobosActivity.class);
+                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                                        if (isChecked)
+                                            phobos.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+                                    }
                                     startActivity(phobos);
                                 }
                                 //Otherwise
                                 else {
                                     //In this case, open the other moon activity
                                     Intent deimos = new Intent(getBaseContext(), DeimosActivity.class);
+                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                                        if (isChecked)
+                                            deimos.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+                                    }
                                     startActivity(deimos);
                                 }
                             }

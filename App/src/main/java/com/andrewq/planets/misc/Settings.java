@@ -62,18 +62,22 @@ public class Settings extends PreferenceActivity {
         addPreferencesFromResource(R.xml.settings);
         setContentView(R.layout.custom_preferences);
 
-        Preference checkBoxPreference = findPreference("pref_translucent");
+        Preference translucentStatus = findPreference("pref_translucent");
+        Preference lollipopMultitask = findPreference("pref_lollipopMultitask");
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            checkBoxPreference.setEnabled(true);
-        } else {
-            checkBoxPreference.setEnabled(false);
-        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+            lollipopMultitask.setEnabled(true);
+        else
+            lollipopMultitask.setEnabled(false);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
+            translucentStatus.setEnabled(true);
+        else
+            translucentStatus.setEnabled(false);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
             this.setTaskDescription(new ActivityManager.TaskDescription("Settings",
                     drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), Color.parseColor("#414141")));
-        }
 
         Preference prefListview = findPreference("pref_listlicense");
 

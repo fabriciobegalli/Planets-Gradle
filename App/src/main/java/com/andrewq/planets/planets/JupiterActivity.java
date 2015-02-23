@@ -4,7 +4,9 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityOptions;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -28,6 +30,7 @@ import android.widget.Toast;
 
 import com.andrewq.planets.R;
 import com.andrewq.planets.image_views.JupiterImageView;
+import com.andrewq.planets.moons.EuropaActivity;
 import com.andrewq.planets.util.NotifyingScrollView;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.suredigit.inappfeedback.FeedbackDialog;
@@ -40,6 +43,8 @@ public class JupiterActivity extends Activity {
     private ImageView img;
     private ActionBar mActionBar;
     private Drawable mActionBarBackgroundDrawable;
+    private Button jupiterMoons;
+
     private NotifyingScrollView.OnScrollChangedListener mOnScrollChangedListener = new NotifyingScrollView.OnScrollChangedListener() {
         public void onScrollChanged(ScrollView who, int l, int t, int oldl, int oldt) {
             @SuppressWarnings("ConstantConditions") final int headerHeight = findViewById(R.id.image_header_jupiter).getHeight() - getActionBar().getHeight();
@@ -161,6 +166,65 @@ public class JupiterActivity extends Activity {
             }
         }
 
+        final Context con = this;
+
+        jupiterMoons = (Button) findViewById(R.id.jupiter_satellite);
+
+        jupiterMoons.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                SharedPreferences getPrefs = PreferenceManager
+                        .getDefaultSharedPreferences(getBaseContext());
+
+                final boolean isChecked = getPrefs.getBoolean("pref_lollipopMultitask", false);
+
+                new AlertDialog.Builder(con)
+                        .setTitle("Select Moon")
+                        .setItems(R.array.jupiter_moons, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                if (which == 0) {
+                                    Intent i = new Intent(getBaseContext(), EuropaActivity.class);
+                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                                        if (isChecked)
+                                            i.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+                                    }
+                                    startActivity(i);
+                                } else if (which == 1) {
+                                    Intent i = new Intent(getBaseContext(), EuropaActivity.class);
+                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                                        if (isChecked)
+                                            i.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+                                    }
+                                    startActivity(i);
+                                } else if (which == 2) {
+                                    Intent i = new Intent(getBaseContext(), EuropaActivity.class);
+                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                                        if (isChecked)
+                                            i.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+                                    }
+                                    startActivity(i);
+                                } else if (which == 3) {
+                                    Intent i = new Intent(getBaseContext(), EuropaActivity.class);
+                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                                        if (isChecked)
+                                            i.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+                                    }
+                                    startActivity(i);
+                                }
+                            }
+                        })
+                        .setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //Do nothing!
+                            }
+                        })
+                        .show();
+            }
+        });
+
         mActionBarBackgroundDrawable.setAlpha(0);
 
         getActionBar().setBackgroundDrawable(mActionBarBackgroundDrawable);
@@ -192,8 +256,6 @@ public class JupiterActivity extends Activity {
         };
 
         imgV.setOnTouchListener(upDownListener);
-
-        Button moonButton = (Button) findViewById(R.id.jupiter_satellite);
     }
 
     @Override
