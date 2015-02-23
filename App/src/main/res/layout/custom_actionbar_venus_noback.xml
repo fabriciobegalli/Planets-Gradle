@@ -10,9 +10,9 @@
         android:id="@+id/tvName2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Planets"
-        android:paddingLeft="4dp"
+        android:text="Venus"
         android:layout_weight="1"
+        android:paddingLeft="16dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FFFFFF"
         tools:ignore="RtlSymmetry" />
