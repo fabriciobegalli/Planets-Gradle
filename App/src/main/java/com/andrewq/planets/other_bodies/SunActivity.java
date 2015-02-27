@@ -82,31 +82,19 @@ public class SunActivity extends Activity {
         mActionBar = getActionBar();
         assert mActionBar != null;
 
-        SharedPreferences getPrefs = PreferenceManager
-                .getDefaultSharedPreferences(getBaseContext());
+        mActionBar.setCustomView(R.layout.custom_actionbar_the_sun);
 
-        boolean isChecked = getPrefs.getBoolean("pref_lollipopMultitask", false);
+        mActionBar.setDisplayShowCustomEnabled(true);
+        mActionBar.setDisplayHomeAsUpEnabled(false);
 
-        if (isChecked) {
-            mActionBar.setCustomView(R.layout.custom_actionbar_the_sun_noback);
+        img = (ImageView) findViewById(R.id.backButtonSettings);
 
-            mActionBar.setDisplayShowCustomEnabled(true);
-            mActionBar.setDisplayHomeAsUpEnabled(false);
-        } else {
-            mActionBar.setCustomView(R.layout.custom_actionbar_the_sun);
-
-            mActionBar.setDisplayShowCustomEnabled(true);
-            mActionBar.setDisplayHomeAsUpEnabled(false);
-
-            img = (ImageView) findViewById(R.id.backButtonSettings);
-
-            img.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    finish();
-                }
-            });
-        }
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         tintManager = new SystemBarTintManager(this);
 

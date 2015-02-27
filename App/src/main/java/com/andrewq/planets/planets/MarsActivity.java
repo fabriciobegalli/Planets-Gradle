@@ -88,32 +88,19 @@ public class MarsActivity extends Activity {
         mActionBar = getActionBar();
         assert mActionBar != null;
 
+        mActionBar.setCustomView(R.layout.custom_actionbar_mars);
 
-        SharedPreferences getPrefs = PreferenceManager
-                .getDefaultSharedPreferences(getBaseContext());
+        mActionBar.setDisplayShowCustomEnabled(true);
+        mActionBar.setDisplayHomeAsUpEnabled(false);
 
-        boolean isChecked = getPrefs.getBoolean("pref_lollipopMultitask", false);
+        img = (ImageView) findViewById(R.id.backButtonSettings);
 
-        if (isChecked) {
-            mActionBar.setCustomView(R.layout.custom_actionbar_mars_noback);
-
-            mActionBar.setDisplayShowCustomEnabled(true);
-            mActionBar.setDisplayHomeAsUpEnabled(false);
-        } else {
-            mActionBar.setCustomView(R.layout.custom_actionbar_mars);
-
-            mActionBar.setDisplayShowCustomEnabled(true);
-            mActionBar.setDisplayHomeAsUpEnabled(false);
-
-            img = (ImageView) findViewById(R.id.backButtonSettings);
-
-            img.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    finish();
-                }
-            });
-        }
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         SharedPreferences getPrefs2 = PreferenceManager
                 .getDefaultSharedPreferences(getBaseContext());
@@ -241,20 +228,12 @@ public class MarsActivity extends Activity {
                                 if (which == 0) {
                                     //Open the first moon activity
                                     Intent phobos = new Intent(getBaseContext(), PhobosActivity.class);
-                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                                        if (isChecked)
-                                            phobos.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-                                    }
                                     startActivity(phobos);
                                 }
                                 //Otherwise
                                 else {
                                     //In this case, open the other moon activity
                                     Intent deimos = new Intent(getBaseContext(), DeimosActivity.class);
-                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                                        if (isChecked)
-                                            deimos.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-                                    }
                                     startActivity(deimos);
                                 }
                             }

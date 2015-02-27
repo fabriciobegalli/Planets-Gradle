@@ -80,32 +80,19 @@ public class SaturnActivity extends Activity {
         mActionBar = getActionBar();
         assert mActionBar != null;
 
+        mActionBar.setCustomView(R.layout.custom_actionbar_saturn);
 
-        SharedPreferences getPrefs = PreferenceManager
-                .getDefaultSharedPreferences(getBaseContext());
+        mActionBar.setDisplayShowCustomEnabled(true);
+        mActionBar.setDisplayHomeAsUpEnabled(false);
 
-        boolean isChecked = getPrefs.getBoolean("pref_lollipopMultitask", false);
+        img = (ImageView) findViewById(R.id.backButtonSettings);
 
-        if (isChecked) {
-            mActionBar.setCustomView(R.layout.custom_actionbar_saturn_noback);
-
-            mActionBar.setDisplayShowCustomEnabled(true);
-            mActionBar.setDisplayHomeAsUpEnabled(false);
-        } else {
-            mActionBar.setCustomView(R.layout.custom_actionbar_saturn);
-
-            mActionBar.setDisplayShowCustomEnabled(true);
-            mActionBar.setDisplayHomeAsUpEnabled(false);
-
-            img = (ImageView) findViewById(R.id.backButtonSettings);
-
-            img.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    finish();
-                }
-            });
-        }
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         SharedPreferences getPrefs2 = PreferenceManager
                 .getDefaultSharedPreferences(getBaseContext());

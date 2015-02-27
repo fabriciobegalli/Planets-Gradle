@@ -85,32 +85,17 @@ public class JupiterActivity extends Activity {
         mActionBar = getActionBar();
         assert mActionBar != null;
 
+        mActionBar.setDisplayShowCustomEnabled(true);
+        mActionBar.setDisplayHomeAsUpEnabled(false);
 
-        SharedPreferences getPrefs = PreferenceManager
-                .getDefaultSharedPreferences(getBaseContext());
+        img = (ImageView) findViewById(R.id.backButtonSettings);
 
-        boolean isChecked = getPrefs.getBoolean("pref_lollipopMultitask", false);
-
-        if (isChecked) {
-            mActionBar.setCustomView(R.layout.custom_actionbar_jupiter_noback);
-
-            mActionBar.setDisplayShowCustomEnabled(true);
-            mActionBar.setDisplayHomeAsUpEnabled(false);
-        } else {
-            mActionBar.setCustomView(R.layout.custom_actionbar_jupiter);
-
-            mActionBar.setDisplayShowCustomEnabled(true);
-            mActionBar.setDisplayHomeAsUpEnabled(false);
-
-            img = (ImageView) findViewById(R.id.backButtonSettings);
-
-            img.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    finish();
-                }
-            });
-        }
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         SharedPreferences getPrefs2 = PreferenceManager
                 .getDefaultSharedPreferences(getBaseContext());
@@ -201,31 +186,15 @@ public class JupiterActivity extends Activity {
                             public void onClick(DialogInterface dialog, int which) {
                                 if (which == 0) {
                                     Intent i = new Intent(getBaseContext(), EuropaActivity.class);
-                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                                        if (isChecked)
-                                            i.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-                                    }
                                     startActivity(i);
                                 } else if (which == 1) {
                                     Intent i = new Intent(getBaseContext(), EuropaActivity.class);
-                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                                        if (isChecked)
-                                            i.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-                                    }
                                     startActivity(i);
                                 } else if (which == 2) {
                                     Intent i = new Intent(getBaseContext(), EuropaActivity.class);
-                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                                        if (isChecked)
-                                            i.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-                                    }
                                     startActivity(i);
                                 } else if (which == 3) {
                                     Intent i = new Intent(getBaseContext(), EuropaActivity.class);
-                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                                        if (isChecked)
-                                            i.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-                                    }
                                     startActivity(i);
                                 }
                             }

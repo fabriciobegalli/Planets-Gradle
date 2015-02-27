@@ -63,12 +63,6 @@ public class Settings extends PreferenceActivity {
         setContentView(R.layout.custom_preferences);
 
         Preference translucentStatus = findPreference("pref_translucent");
-        Preference lollipopMultitask = findPreference("pref_lollipopMultitask");
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
-            lollipopMultitask.setEnabled(true);
-        else
-            lollipopMultitask.setEnabled(false);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
             translucentStatus.setEnabled(true);

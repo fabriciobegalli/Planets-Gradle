@@ -27,13 +27,6 @@
             android:title="@string/pref_5" />
 
         <CheckBoxPreference
-            android:id="@+id/translucent_lollipopMultitask"
-            android:defaultValue="false"
-            android:key="pref_lollipopMultitask"
-            android:summary="When checked, each celestial body will act as its own activity, allowing you to access information easier through multitasking. (Lollipop devices only.)"
-            android:title="Multitask Helper" />
-
-        <CheckBoxPreference
             android:id="@+id/translucent_pref"
             android:defaultValue="false"
             android:key="pref_translucent"
