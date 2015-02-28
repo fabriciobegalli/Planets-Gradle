@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 21
-        versionCode 25
-        versionName "2.6 BETA"
+        versionCode 26
+        versionName "2.6 BETA 2"
     }
     buildTypes {
         release {
