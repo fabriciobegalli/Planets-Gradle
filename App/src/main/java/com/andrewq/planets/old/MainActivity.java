@@ -1,4 +1,4 @@
-package com.andrewq.planets;
+package com.andrewq.planets.old;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -34,6 +34,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.andrewq.planets.R;
 import com.andrewq.planets.iab.IabHelper;
 import com.andrewq.planets.iab.IabResult;
 import com.andrewq.planets.iab.Inventory;
