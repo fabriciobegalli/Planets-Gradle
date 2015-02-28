@@ -20,7 +20,6 @@
         android:banner="@drawable/planets_banner"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:maxRecents="5"
         android:theme="@style/Roboto"
         tools:ignore="UnusedAttribute">
 
@@ -28,7 +27,7 @@
         <activity
             android:name=".NavDrawerActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
+            android:screenOrientation="sensor"
             android:theme="@style/AppThemeNavDrawer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -75,7 +74,7 @@
             android:name=".misc.Settings"
             android:label="@string/action_settings"
             android:parentActivityName=".misc.Settings"
-            android:screenOrientation="portrait"
+            android:screenOrientation="sensor"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.ImageGallery" />
