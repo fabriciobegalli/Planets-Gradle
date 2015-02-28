@@ -19,6 +19,12 @@
         <item>Calypso</item>
     </string-array>
 
+    <string-array name="navigation_drawer_items">
+        <item>Stars</item>
+        <item>Planets</item>
+        <item>Moons</item>
+    </string-array>
+
     <string-array name="settings">
         <item>Настройки</item>
     </string-array>
@@ -214,7 +220,6 @@
     <string name="europa_sub_title_1">Data</string>
     <string name="europa_sub_title_2">Facts</string>
     <string name="europa_title">Europa</string>
-    <string name="ga_trackingId">UA-49756519-1</string>
     <string name="jupiter_sat_1">Satellite (4)</string>
     <string name="hello_world">Hello world!</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -229,6 +234,7 @@
     <string name="title_section2">Make a Donation</string>
     <string name="title_section3">Send Feedback</string>
     <string name="title_section4">Settings</string>
+    <string name="title_activity_planet_long_description">PlanetLongDescription</string>
 
 </resources>
 

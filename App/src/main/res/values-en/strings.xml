@@ -233,5 +233,6 @@
     <string name="action_example">ExampleAction</string>
     <string name="button_source">Source</string>
     <string name="title_activity_planet_long_description">PlanetLongDescription</string>
+    <string name="pref_default_display_name">John Smith</string>
 
 </resources>
