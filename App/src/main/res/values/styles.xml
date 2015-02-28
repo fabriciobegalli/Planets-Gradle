@@ -9,6 +9,15 @@
         <item name="android:actionOverflowButtonStyle">@style/Roboto.OverFlow</item>
     </style>
 
+    <style name="AppThemeNavDrawer" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorAccent">#ffdadada</item>
+    </style>
+
+    <style name="ToolbarCustomIconColor" parent="AppThemeNavDrawer">
+        <!-- android:textColorSecondary is used for coloring the navigation drawer icon and up arrow. -->
+        <item name="android:textColorSecondary">#FFFFFF</item>
+    </style>
+
     <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
         <item name="android:fontFamily">sans-serif-light</item>
     </style>

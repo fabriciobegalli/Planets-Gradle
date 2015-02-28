@@ -25,13 +25,6 @@
             android:key="prefSetTheme"
             android:summary="Tap here to change the design of the app."
             android:title="@string/pref_5" />
-
-        <CheckBoxPreference
-            android:id="@+id/translucent_pref"
-            android:defaultValue="false"
-            android:key="pref_translucent"
-            android:summary="When checked, status bar will be colored on devices running Android 4.4 and up."
-            android:title="Translucent Status Bar" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Open Source Licenses">

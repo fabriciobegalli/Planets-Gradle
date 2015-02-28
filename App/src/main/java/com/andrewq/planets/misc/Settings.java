@@ -8,7 +8,6 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
@@ -61,13 +60,6 @@ public class Settings extends PreferenceActivity {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.settings);
         setContentView(R.layout.custom_preferences);
-
-        Preference translucentStatus = findPreference("pref_translucent");
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
-            translucentStatus.setEnabled(true);
-        else
-            translucentStatus.setEnabled(false);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
             this.setTaskDescription(new ActivityManager.TaskDescription("Settings",
@@ -225,10 +217,11 @@ public class Settings extends PreferenceActivity {
                 CustomDialog.Builder builder = new CustomDialog.Builder(Settings.this, "What's New in 2.6", "");
 
                 builder.content("- More moons\n" +
-                        "- Optional translucent status bar\n" +
+                        "- Translucent status bar\n" +
                         "- Redesigned preference screen\n" +
                         "- Measurement changes\n" +
-                        "- Support for Android TV");
+                        "- Support for Android TV\n" +
+                        "- Material Design added");
                 builder.negativeText("Close");
                 builder.titleAlignment(BaseDialog.Alignment.LEFT);
 
@@ -250,7 +243,7 @@ public class Settings extends PreferenceActivity {
         });
 
 
-        mActionBar = getActionBar();
+        /*mActionBar = getActionBar();
         mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#292929")));
         mActionBar.setCustomView(R.layout.custom_actionbar_settings);
         mActionBar.setDisplayShowCustomEnabled(true);
@@ -263,7 +256,7 @@ public class Settings extends PreferenceActivity {
             public void onClick(View v) {
                 finish();
             }
-        });
+        });*/
 
         ImageButton share = (ImageButton) findViewById(R.id.share);
         share.setOnClickListener(new View.OnClickListener() {

@@ -77,14 +77,6 @@
                         android:layout_centerHorizontal="false"
                         android:text="@string/mars_description_2"
                         android:textSize="17sp" />
-
-                    <Button
-                        android:id="@+id/mars_satellite"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/mars_description_2"
-                        android:layout_centerHorizontal="true"
-                        android:text="Moons (2)" />
                 </RelativeLayout>
             </RelativeLayout>
         </FrameLayout>

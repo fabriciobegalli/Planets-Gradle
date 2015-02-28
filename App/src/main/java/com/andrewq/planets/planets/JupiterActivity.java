@@ -4,9 +4,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityOptions;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -30,7 +28,6 @@ import android.widget.Toast;
 
 import com.andrewq.planets.R;
 import com.andrewq.planets.image_views.JupiterImageView;
-import com.andrewq.planets.moons.EuropaActivity;
 import com.andrewq.planets.util.NotifyingScrollView;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.suredigit.inappfeedback.FeedbackDialog;
@@ -87,6 +84,8 @@ public class JupiterActivity extends Activity {
 
         mActionBar.setDisplayShowCustomEnabled(true);
         mActionBar.setDisplayHomeAsUpEnabled(false);
+
+        mActionBar.setCustomView(R.layout.custom_actionbar_jupiter);
 
         img = (ImageView) findViewById(R.id.backButtonSettings);
 
@@ -165,49 +164,6 @@ public class JupiterActivity extends Activity {
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
         }
-
-        final Context con = this;
-
-        jupiterMoons = (Button) findViewById(R.id.jupiter_satellite);
-
-        jupiterMoons.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                SharedPreferences getPrefs = PreferenceManager
-                        .getDefaultSharedPreferences(getBaseContext());
-
-                final boolean isChecked = getPrefs.getBoolean("pref_lollipopMultitask", false);
-
-                new AlertDialog.Builder(con)
-                        .setTitle("Select Moon")
-                        .setItems(R.array.jupiter_moons, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                if (which == 0) {
-                                    Intent i = new Intent(getBaseContext(), EuropaActivity.class);
-                                    startActivity(i);
-                                } else if (which == 1) {
-                                    Intent i = new Intent(getBaseContext(), EuropaActivity.class);
-                                    startActivity(i);
-                                } else if (which == 2) {
-                                    Intent i = new Intent(getBaseContext(), EuropaActivity.class);
-                                    startActivity(i);
-                                } else if (which == 3) {
-                                    Intent i = new Intent(getBaseContext(), EuropaActivity.class);
-                                    startActivity(i);
-                                }
-                            }
-                        })
-                        .setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                //Do nothing!
-                            }
-                        })
-                        .show();
-            }
-        });
 
         mActionBarBackgroundDrawable.setAlpha(0);
 

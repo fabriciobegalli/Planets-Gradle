@@ -1,7 +1,9 @@
-package com.andrewq.planets;
+package com.andrewq.planets.tv;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.andrewq.planets.R;
 
 public class TvActivity extends Activity {
 

@@ -4,9 +4,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityOptions;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -30,8 +28,6 @@ import android.widget.Toast;
 
 import com.andrewq.planets.R;
 import com.andrewq.planets.image_views.MarsImageView;
-import com.andrewq.planets.moons.DeimosActivity;
-import com.andrewq.planets.moons.PhobosActivity;
 import com.andrewq.planets.util.NotifyingScrollView;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.suredigit.inappfeedback.FeedbackDialog;
@@ -202,56 +198,6 @@ public class MarsActivity extends Activity {
         };
 
         imgV.setOnTouchListener(upDownListener);
-
-        moonButton = (Button) findViewById(R.id.mars_satellite);
-
-        moonButton.setOnClickListener(new View.OnClickListener() {
-
-            //Handle the button being pressed
-            @Override
-            public void onClick(View v) {
-
-                SharedPreferences getPrefs = PreferenceManager
-                        .getDefaultSharedPreferences(getBaseContext());
-
-                final boolean isChecked = getPrefs.getBoolean("pref_lollipopMultitask", false);
-
-                //Make a new alert dialog
-                new AlertDialog.Builder(con)
-                        //Set the title
-                        .setTitle("Select Moon")
-                                //Set it's items to an array
-                        .setItems(R.array.mars_moons, new DialogInterface.OnClickListener() {
-                            //Handle what happens when each item is pressed
-                            public void onClick(DialogInterface dialog, int which) {
-                                //If the user pressed the first item
-                                if (which == 0) {
-                                    //Open the first moon activity
-                                    Intent phobos = new Intent(getBaseContext(), PhobosActivity.class);
-                                    startActivity(phobos);
-                                }
-                                //Otherwise
-                                else {
-                                    //In this case, open the other moon activity
-                                    Intent deimos = new Intent(getBaseContext(), DeimosActivity.class);
-                                    startActivity(deimos);
-                                }
-                            }
-                        })
-                                //Create a cancel button
-                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                            //Handle when it's clicked. Here we don't need it to do anything
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                //Do nothing!
-                            }
-                        })
-
-                                //Show the dialog after an item is pressed
-                        .show();
-            }
-        });
-
     }
 
     @Override

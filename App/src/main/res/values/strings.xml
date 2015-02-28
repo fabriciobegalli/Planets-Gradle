@@ -6,6 +6,12 @@
     <string name="search_title">Search</string>
     <string name="action_settings">Settings</string>
 
+    <string-array name="navigation_drawer_items">
+        <item>Stars</item>
+        <item>Planets</item>
+        <item>Moons</item>
+    </string-array>
+
     <!-- String Arrays -->
     <string-array name="mars_moons">
         <item>Phobos</item>

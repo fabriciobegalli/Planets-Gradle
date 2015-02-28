@@ -27,7 +27,6 @@ import android.widget.Toast;
 
 import com.andrewq.planets.R;
 import com.andrewq.planets.image_views.EarthImageView;
-import com.andrewq.planets.moons.MoonActivity;
 import com.andrewq.planets.util.NotifyingScrollView;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.suredigit.inappfeedback.FeedbackDialog;
@@ -197,22 +196,6 @@ public class EarthActivity extends Activity {
         };
 
         imgV.setOnTouchListener(upDownListener);
-
-        moonButton = (Button) findViewById(R.id.earth_satellite);
-        moonButton.setOnClickListener(new View.OnClickListener() {
-
-            SharedPreferences getPrefs = PreferenceManager
-                    .getDefaultSharedPreferences(getBaseContext());
-
-            final boolean isChecked = getPrefs.getBoolean("pref_lollipopMultitask", false);
-
-            @Override
-            public void onClick(View arg0) {
-                Intent intent = new Intent(getBaseContext(), MoonActivity.class);
-                startActivity(intent);
-            }
-        });
-
     }
 
     @Override

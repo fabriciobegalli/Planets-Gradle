@@ -33,11 +33,22 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".NavDrawerActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNavDrawer">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".TvActivity"
+            android:name=".tv.TvActivity"
             android:label="@string/app_name"
             android:logo="@drawable/app_icon_quantum"
             android:screenOrientation="landscape"
@@ -51,11 +62,11 @@
         <activity
             android:name=".tv.SettingsActivity"
             android:label="Settings"
-            android:parentActivityName=".TvActivity"
+            android:parentActivityName=".tv.TvActivity"
             android:theme="@style/Theme.Leanback">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".TvActivity" />
+                android:value=".tv.TvActivity" />
         </activity>
 
         <!-- Settings Activity -->
@@ -64,7 +75,7 @@
             android:label="@string/action_settings"
             android:parentActivityName=".misc.Settings"
             android:screenOrientation="portrait"
-            android:theme="@style/Roboto">
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.ImageGallery" />
 
@@ -269,12 +280,12 @@
         <activity
             android:name=".tv.DetailsActivity"
             android:label="Details"
-            android:parentActivityName=".TvActivity"
+            android:parentActivityName=".tv.TvActivity"
             android:theme="@style/Theme.Leanback" />
         <activity
             android:name=".tv.PlayerActivity"
             android:label="Player"
-            android:parentActivityName=".TvActivity"
+            android:parentActivityName=".tv.TvActivity"
             android:theme="@style/Theme.Leanback" />
     </application>
 
