@@ -235,6 +235,7 @@
     <string name="title_section3">Send Feedback</string>
     <string name="title_section4">Settings</string>
     <string name="title_activity_planet_long_description">PlanetLongDescription</string>
+    <string name="content_description">Nav Drawer Icon</string>
 
 </resources>
 

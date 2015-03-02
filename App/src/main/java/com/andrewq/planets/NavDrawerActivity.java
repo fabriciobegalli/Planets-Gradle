@@ -26,14 +26,18 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.andrewq.planets.fragments.FragmentMoons;
@@ -48,6 +52,9 @@ import com.google.analytics.tracking.android.EasyTracker;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 import com.suredigit.inappfeedback.FeedbackDialog;
 import com.suredigit.inappfeedback.FeedbackSettings;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by andrew on 2/27/15.
@@ -193,8 +200,9 @@ public class NavDrawerActivity extends ActionBarActivity {
 
         // set a custom shadow that overlays the main content when the drawer opens
         drawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
+        drawerLayout.setStatusBarBackgroundColor(Color.parseColor("#ACACAC"));
         // set up the drawer's list view with items and click listener
-        listView.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_item, navigationDrawerItems));
+        listView.setAdapter(new NavDrawerAdapter());
         listView.setOnItemClickListener(new DrawerItemClickListener());
 
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.app_name, R.string.app_name);
@@ -498,5 +506,67 @@ public class NavDrawerActivity extends ActionBarActivity {
         drawable.draw(canvas);
 
         return bitmap;
+    }
+
+    private class NavDrawerAdapter extends BaseAdapter {
+        private List<Item> items = new ArrayList<>();
+        private LayoutInflater inflater;
+
+
+        public NavDrawerAdapter() {
+            inflater = LayoutInflater.from(getApplicationContext());
+
+            items.add(new Item(R.drawable.ic_stars, "Stars"));
+            items.add(new Item(R.drawable.ic_planets, "Planets"));
+            items.add(new Item(R.drawable.ic_moons, "Moons"));
+        }
+
+        @Override
+        public int getCount() {
+            return items.size();
+        }
+
+        @Override
+        public Object getItem(int i) {
+            return items.get(i);
+        }
+
+        @Override
+        public long getItemId(int i) {
+            return items.get(i).drawableId;
+        }
+
+        @Override
+        public View getView(int i, View view, ViewGroup viewGroup) {
+            View v = view;
+            ImageView picture;
+            TextView name;
+
+            if (v == null) {
+                v = inflater.inflate(R.layout.drawer_list_item, viewGroup, false);
+                v.setTag(R.id.navDrawerItemIcon, v.findViewById(R.id.navDrawerItemIcon));
+                v.setTag(R.id.navDrawerItemName, v.findViewById(R.id.navDrawerItemName));
+            }
+
+            picture = (ImageView) v.getTag(R.id.navDrawerItemIcon);
+            name = (TextView) v.getTag(R.id.navDrawerItemName);
+
+            Item item = (Item) getItem(i);
+
+            picture.setImageResource(item.drawableId);
+            name.setText(item.itemName);
+
+            return v;
+        }
+
+        private class Item {
+            final int drawableId;
+            final String itemName;
+
+            Item(int drawableId, String name) {
+                this.itemName = name;
+                this.drawableId = drawableId;
+            }
+        }
     }
 }
