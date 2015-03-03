@@ -196,6 +196,7 @@ public class NavDrawerActivity extends ActionBarActivity {
 
         navigationDrawerItems = getResources().getStringArray(R.array.navigation_drawer_items);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerLayout.setStatusBarBackgroundColor(Color.parseColor("#ffffff"));
         listView = (ListView) findViewById(R.id.left_drawer);
 
         // set a custom shadow that overlays the main content when the drawer opens

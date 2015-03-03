@@ -1,5 +1,6 @@
 package com.andrewq.planets.fragments;
 
+import android.app.Activity;
 import android.app.ActivityOptions;
 import android.app.Fragment;
 import android.content.Intent;
@@ -26,6 +27,7 @@ import com.andrewq.planets.planets.SaturnActivity;
 import com.andrewq.planets.planets.UranusActivity;
 import com.andrewq.planets.planets.VenusActivity;
 import com.nhaarman.listviewanimations.swinginadapters.prepared.SwingBottomInAnimationAdapter;
+import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -143,7 +145,17 @@ public class FragmentPlanets extends Fragment {
 
             }
         });
+        setInsets(getActivity(), gridView);
 
+    }
+
+    public void setInsets(Activity context, View transView) {
+
+        SystemBarTintManager tintManager = new SystemBarTintManager(context);
+
+        SystemBarTintManager.SystemBarConfig config = tintManager.getConfig();
+
+        transView.setPadding(0, config.getActionBarHeight() + 32, config.getPixelInsetRight(), 32);
     }
 
     public FragmentPlanets() {
