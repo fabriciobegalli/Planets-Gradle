@@ -10,12 +10,13 @@
     </style>
 
     <style name="AppThemeNavDrawer" parent="Theme.AppCompat.NoActionBar">
-        <item name="colorAccent">#ffdadada</item>
+        <item name="colorAccent">#F8F8F8</item>
     </style>
 
     <style name="ToolbarCustomIconColor" parent="AppThemeNavDrawer">
         <!-- android:textColorSecondary is used for coloring the navigation drawer icon and up arrow. -->
         <item name="android:textColorSecondary">#FFFFFF</item>
+        <item name="android:activatedBackgroundIndicator">@drawable/drawer_list_selector</item>
     </style>
 
     <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
@@ -51,6 +52,6 @@
         <item name="android:shadowColor">#E8E8E8</item>
     </style>
 
-    <style name="TV" parent="@style/Theme.Leanback"></style>
+    <style name="TV" parent="@style/Theme.Leanback" />
 
 </resources>

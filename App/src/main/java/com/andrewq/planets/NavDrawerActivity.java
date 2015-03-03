@@ -200,7 +200,7 @@ public class NavDrawerActivity extends ActionBarActivity {
 
         // set a custom shadow that overlays the main content when the drawer opens
         drawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
-        drawerLayout.setStatusBarBackgroundColor(Color.parseColor("#ACACAC"));
+        //drawerLayout.setStatusBarBackgroundColor(Color.parseColor("#ACACAC"));
         // set up the drawer's list view with items and click listener
         listView.setAdapter(new NavDrawerAdapter());
         listView.setOnItemClickListener(new DrawerItemClickListener());
@@ -211,7 +211,6 @@ public class NavDrawerActivity extends ActionBarActivity {
         // enable ActionBar app icon to behave as action to toggle nav drawer
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-
 
         if (savedInstanceState == null) {
             selectItem(0);
@@ -372,7 +371,6 @@ public class NavDrawerActivity extends ActionBarActivity {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
 
         tintManager.setStatusBarTintEnabled(true);
@@ -392,8 +390,10 @@ public class NavDrawerActivity extends ActionBarActivity {
             assert mActionBar != null;
             mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#D32F2F")));
 
+            int statusBarTint = Color.parseColor("#F83232");
+            tintManager.setStatusBarTintColor(statusBarTint);
+
             int actionBarColor = Color.parseColor("#D32F2F");
-            tintManager.setStatusBarTintColor(actionBarColor);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
@@ -406,7 +406,9 @@ public class NavDrawerActivity extends ActionBarActivity {
             mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#E64A19")));
 
             int actionBarColor = Color.parseColor("#E64A19");
-            tintManager.setStatusBarTintColor(actionBarColor);
+
+            int statusBarTint = Color.parseColor("#F84C19");
+            tintManager.setStatusBarTintColor(statusBarTint);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
@@ -418,7 +420,9 @@ public class NavDrawerActivity extends ActionBarActivity {
             mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#1976D2")));
 
             int actionBarColor = Color.parseColor("#1976D2");
-            tintManager.setStatusBarTintColor(actionBarColor);
+
+            int statusBarTint = Color.parseColor("#1990F1");
+            tintManager.setStatusBarTintColor(statusBarTint);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
@@ -430,7 +434,9 @@ public class NavDrawerActivity extends ActionBarActivity {
             mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#388E3C")));
 
             int actionBarColor = Color.parseColor("#388E3C");
-            tintManager.setStatusBarTintColor(actionBarColor);
+
+            int statusBarTint = Color.parseColor("#4DD051");
+            tintManager.setStatusBarTintColor(statusBarTint);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
@@ -442,7 +448,9 @@ public class NavDrawerActivity extends ActionBarActivity {
             mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#512DA8")));
 
             int actionBarColor = Color.parseColor("#512DA8");
-            tintManager.setStatusBarTintColor(actionBarColor);
+
+            int statusBarTint = Color.parseColor("#6840EC");
+            tintManager.setStatusBarTintColor(statusBarTint);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
@@ -454,7 +462,9 @@ public class NavDrawerActivity extends ActionBarActivity {
             mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#212121")));
 
             int actionBarColor = Color.parseColor("#212121");
-            tintManager.setStatusBarTintColor(actionBarColor);
+
+            int statusBarTint = Color.parseColor("#212121");
+            tintManager.setStatusBarTintColor(statusBarTint);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
