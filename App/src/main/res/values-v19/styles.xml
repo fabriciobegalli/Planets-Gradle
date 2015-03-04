@@ -11,4 +11,15 @@
         <item name="android:windowTranslucentStatus">true</item>
     </style>
 
+    <style name="AppThemeNavDrawer" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorAccent">#F8F8F8</item>
+        <item name="android:clipToPadding">true</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <style name="ToolbarCustomIconColor" parent="AppThemeNavDrawer">
+        <item name="android:textColorSecondary">#FFFFFF</item>
+        <item name="android:activatedBackgroundIndicator">@drawable/drawer_list_selector</item>
+    </style>
+
 </resources>

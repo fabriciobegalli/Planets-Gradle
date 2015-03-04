@@ -391,12 +391,12 @@ public class NavDrawerActivity extends ActionBarActivity {
             assert mActionBar != null;
             mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#D32F2F")));
 
-            int statusBarTint = Color.parseColor("#F83232");
-            tintManager.setStatusBarTintColor(statusBarTint);
-
-            int actionBarColor = Color.parseColor("#D32F2F");
-
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                int statusBarTint = Color.parseColor("#F83232");
+                tintManager.setStatusBarTintColor(statusBarTint);
+
+                int actionBarColor = Color.parseColor("#D32F2F");
+
                 this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
@@ -406,12 +406,12 @@ public class NavDrawerActivity extends ActionBarActivity {
             assert mActionBar != null;
             mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#E64A19")));
 
-            int actionBarColor = Color.parseColor("#E64A19");
-
-            int statusBarTint = Color.parseColor("#F84C19");
-            tintManager.setStatusBarTintColor(statusBarTint);
-
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                int actionBarColor = Color.parseColor("#E64A19");
+
+                int statusBarTint = Color.parseColor("#F84C19");
+                tintManager.setStatusBarTintColor(statusBarTint);
+
                 this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
@@ -420,12 +420,12 @@ public class NavDrawerActivity extends ActionBarActivity {
             assert mActionBar != null;
             mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#1976D2")));
 
-            int actionBarColor = Color.parseColor("#1976D2");
-
-            int statusBarTint = Color.parseColor("#1990F1");
-            tintManager.setStatusBarTintColor(statusBarTint);
-
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                int actionBarColor = Color.parseColor("#1976D2");
+
+                int statusBarTint = Color.parseColor("#1990F1");
+                tintManager.setStatusBarTintColor(statusBarTint);
+
                 this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
@@ -434,12 +434,12 @@ public class NavDrawerActivity extends ActionBarActivity {
             assert mActionBar != null;
             mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#388E3C")));
 
-            int actionBarColor = Color.parseColor("#388E3C");
-
-            int statusBarTint = Color.parseColor("#4DD051");
-            tintManager.setStatusBarTintColor(statusBarTint);
-
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                int actionBarColor = Color.parseColor("#388E3C");
+
+                int statusBarTint = Color.parseColor("#4DD051");
+                tintManager.setStatusBarTintColor(statusBarTint);
+
                 this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
@@ -448,12 +448,12 @@ public class NavDrawerActivity extends ActionBarActivity {
             assert mActionBar != null;
             mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#512DA8")));
 
-            int actionBarColor = Color.parseColor("#512DA8");
-
-            int statusBarTint = Color.parseColor("#6840EC");
-            tintManager.setStatusBarTintColor(statusBarTint);
-
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                int actionBarColor = Color.parseColor("#512DA8");
+
+                int statusBarTint = Color.parseColor("#6840EC");
+                tintManager.setStatusBarTintColor(statusBarTint);
+
                 this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
@@ -462,12 +462,12 @@ public class NavDrawerActivity extends ActionBarActivity {
             assert mActionBar != null;
             mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#212121")));
 
-            int actionBarColor = Color.parseColor("#212121");
-
-            int statusBarTint = Color.parseColor("#212121");
-            tintManager.setStatusBarTintColor(statusBarTint);
-
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                int actionBarColor = Color.parseColor("#212121");
+
+                int statusBarTint = Color.parseColor("#212121");
+                tintManager.setStatusBarTintColor(statusBarTint);
+
                 this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
