@@ -31,6 +31,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
@@ -49,7 +50,6 @@ import com.andrewq.planets.iab.Inventory;
 import com.andrewq.planets.iab.Purchase;
 import com.andrewq.planets.misc.Settings;
 import com.google.analytics.tracking.android.EasyTracker;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
 import com.suredigit.inappfeedback.FeedbackDialog;
 import com.suredigit.inappfeedback.FeedbackSettings;
 
@@ -155,13 +155,13 @@ public class NavDrawerActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nav_drawer);
 
-        SystemBarTintManager tintManager = new SystemBarTintManager(this);
+        /*SystemBarTintManager tintManager = new SystemBarTintManager(this);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
 
-        tintManager.setStatusBarTintEnabled(true);
+        tintManager.setStatusBarTintEnabled(true);*/
 
         String base64EncodedPublicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjkBL90CQz/fVfOoKDFHTo4y/AWKOuKHK60Wjz+y8mPIUF2AU3uJ5c3ofu1SoGTY6+lpowpeHruMlVzwQ5fk31vAKGSRApcdWjmPh2w7dYmLldV1MTnxz0UiJydENj1O1Ci7MBJiGYigjS+wXG1kFL1LS1BIVoBiodeC+oh9u+eqKZASyA5b5ZUfK8kBQk4EtswnUSq6q5m+oj1SALK/2Nu3ZtRMPKX54dBhs1DHhOY3o9oI+7kl/pLN9d2tARmjJev06bbXlgfVDBum0ghaRI8JS6BZSgJch8inALx6677pOzCnZ49uW+CugyIGp3fe9cwbQDXIvQ8qSDoDjcmv/iwIDAQAB";
 
@@ -368,13 +368,10 @@ public class NavDrawerActivity extends ActionBarActivity {
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-        SystemBarTintManager tintManager = new SystemBarTintManager(this);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        }
-
-        tintManager.setStatusBarTintEnabled(true);
+        }*/
 
         //Set getPrefs to a preference manager
         SharedPreferences getPrefs2 = PreferenceManager
@@ -393,10 +390,15 @@ public class NavDrawerActivity extends ActionBarActivity {
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 int statusBarTint = Color.parseColor("#F83232");
-                tintManager.setStatusBarTintColor(statusBarTint);
 
+                //Status bar tinting
+                Window window = this.getWindow();
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                window.setStatusBarColor(this.getResources().getColor(R.color.status_bar_red));
+
+                //Overview color
                 int actionBarColor = Color.parseColor("#D32F2F");
-
                 this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
             }
@@ -409,8 +411,11 @@ public class NavDrawerActivity extends ActionBarActivity {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 int actionBarColor = Color.parseColor("#E64A19");
 
-                int statusBarTint = Color.parseColor("#F84C19");
-                tintManager.setStatusBarTintColor(statusBarTint);
+                //Status bar tinting
+                Window window = this.getWindow();
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                window.setStatusBarColor(this.getResources().getColor(R.color.status_bar_orange));
 
                 this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
@@ -423,8 +428,11 @@ public class NavDrawerActivity extends ActionBarActivity {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 int actionBarColor = Color.parseColor("#1976D2");
 
-                int statusBarTint = Color.parseColor("#1990F1");
-                tintManager.setStatusBarTintColor(statusBarTint);
+                //Status bar tinting
+                Window window = this.getWindow();
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                window.setStatusBarColor(this.getResources().getColor(R.color.status_bar_blue));
 
                 this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
@@ -437,8 +445,11 @@ public class NavDrawerActivity extends ActionBarActivity {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 int actionBarColor = Color.parseColor("#388E3C");
 
-                int statusBarTint = Color.parseColor("#4DD051");
-                tintManager.setStatusBarTintColor(statusBarTint);
+                //Status bar tinting
+                Window window = this.getWindow();
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                window.setStatusBarColor(this.getResources().getColor(R.color.status_bar_green));
 
                 this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
@@ -451,8 +462,11 @@ public class NavDrawerActivity extends ActionBarActivity {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 int actionBarColor = Color.parseColor("#512DA8");
 
-                int statusBarTint = Color.parseColor("#6840EC");
-                tintManager.setStatusBarTintColor(statusBarTint);
+                //Status bar tinting
+                Window window = this.getWindow();
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                window.setStatusBarColor(this.getResources().getColor(R.color.status_bar_purple));
 
                 this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
@@ -465,8 +479,11 @@ public class NavDrawerActivity extends ActionBarActivity {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 int actionBarColor = Color.parseColor("#212121");
 
-                int statusBarTint = Color.parseColor("#212121");
-                tintManager.setStatusBarTintColor(statusBarTint);
+                //Status bar tinting
+                Window window = this.getWindow();
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                window.setStatusBarColor(this.getResources().getColor(R.color.status_bar_dark));
 
                 this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));

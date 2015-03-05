@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="status_bar_red">#ffbf2e2e</color>
+    <color name="status_bar_orange">#ffd24a19</color>
+    <color name="status_bar_blue">#ff1963be</color>
+    <color name="status_bar_green">#ff367a3a</color>
+    <color name="status_bar_purple">#ff4a2d94</color>
+    <color name="status_bar_dark">#ff141414</color>
+</resources>

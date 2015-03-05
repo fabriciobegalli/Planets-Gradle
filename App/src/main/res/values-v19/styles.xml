@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="TranslucentNavigation" parent="Roboto">
+    <!--<style name="TranslucentNavigation" parent="Roboto">
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">false</item>
     </style>
@@ -9,12 +9,10 @@
     <style name="TranslucentNavigationRoboto" parent="Roboto">
         <item name="android:windowTranslucentNavigation">true</item>
         <item name="android:windowTranslucentStatus">true</item>
-    </style>
+    </style>-->
 
     <style name="AppThemeNavDrawer" parent="Theme.AppCompat.NoActionBar">
         <item name="colorAccent">#F8F8F8</item>
-        <item name="android:clipToPadding">true</item>
-        <item name="android:fitsSystemWindows">true</item>
     </style>
 
     <style name="ToolbarCustomIconColor" parent="AppThemeNavDrawer">

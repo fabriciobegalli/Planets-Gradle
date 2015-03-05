@@ -96,7 +96,6 @@ public class FragmentMoons extends Fragment {
             }
         });
         setInsets(getActivity(), gridView);
-
     }
 
     public void setInsets(Activity context, View transView) {
