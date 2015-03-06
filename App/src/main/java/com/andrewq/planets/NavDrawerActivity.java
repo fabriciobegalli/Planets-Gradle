@@ -163,13 +163,13 @@ public class NavDrawerActivity extends ActionBarActivity {
 
         //TODO: Fix this!
 
-        /*  mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
+        mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
             public void onIabSetupFinished(IabResult result) {
                 Log.d(TAG, "Setup finished.");
 
                 if (!result.isSuccess()) {
                     // Oh noes, there was a problem.
-                    Toast.makeText(getActivity().getBaseContext(), "Issue with in-app billing!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), "Issue with in-app billing!", Toast.LENGTH_LONG).show();
                     return;
                 }
 
@@ -180,7 +180,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                 Log.d(TAG, "Setup successful. Querying inventory.");
                 mHelper.queryInventoryAsync(mGotInventoryListener);
             }
-        });*/
+        });
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

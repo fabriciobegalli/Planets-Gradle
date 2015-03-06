@@ -216,6 +216,7 @@ public class Settings extends PreferenceActivity {
                         "- Support for Android TV\n");
                 builder.negativeText("Close");
                 builder.titleAlignment(BaseDialog.Alignment.LEFT);
+                builder.positiveColor("#0497c9");
 
                 CustomDialog customDialog = builder.build();
                 customDialog.setClickListener(new CustomDialog.ClickListener() {
