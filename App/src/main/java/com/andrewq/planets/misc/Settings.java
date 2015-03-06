@@ -1,6 +1,5 @@
 package com.andrewq.planets.misc;
 
-import android.app.ActionBar;
 import android.app.ActivityManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,7 +16,6 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
 import com.andrewq.planets.R;
 import com.google.analytics.tracking.android.EasyTracker;
@@ -26,10 +24,6 @@ import uk.me.lewisdeane.ldialogs.BaseDialog;
 import uk.me.lewisdeane.ldialogs.CustomDialog;
 
 public class Settings extends PreferenceActivity {
-
-    private ActionBar mActionBar;
-
-    private ImageView img;
 
     public static Bitmap drawableToBitmap(Drawable drawable) {
         if (drawable instanceof BitmapDrawable) {
@@ -61,9 +55,10 @@ public class Settings extends PreferenceActivity {
         addPreferencesFromResource(R.xml.settings);
         setContentView(R.layout.custom_preferences);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             this.setTaskDescription(new ActivityManager.TaskDescription("Settings",
                     drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), Color.parseColor("#414141")));
+        }
 
         Preference prefListview = findPreference("pref_listlicense");
 
@@ -101,7 +96,7 @@ public class Settings extends PreferenceActivity {
             }
         });
 
-        Preference prefSystemBarTint = (Preference) findPreference("pref_systembartint");
+        Preference prefSystemBarTint = findPreference("pref_systembartint");
 
         prefSystemBarTint.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
@@ -137,7 +132,7 @@ public class Settings extends PreferenceActivity {
             }
         });
 
-        Preference prefLDialogs = (Preference) findPreference("pref_ldialogs");
+        Preference prefLDialogs = findPreference("pref_ldialogs");
 
         prefLDialogs.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
@@ -171,7 +166,7 @@ public class Settings extends PreferenceActivity {
             }
         });
 
-        Preference prefAnalytics = (Preference) findPreference("pref_analytics");
+        Preference prefAnalytics = findPreference("pref_analytics");
 
         prefAnalytics.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
@@ -208,20 +203,17 @@ public class Settings extends PreferenceActivity {
             }
         });
 
-        Preference prefWhatsNew = (Preference) findPreference("pref_whatsnew");
+        Preference prefWhatsNew = findPreference("pref_whatsnew");
 
         prefWhatsNew.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
 
-                CustomDialog.Builder builder = new CustomDialog.Builder(Settings.this, "What's New in 2.6", "");
+                CustomDialog.Builder builder = new CustomDialog.Builder(Settings.this, "What's New in 2.6", "Contribute");
 
-                builder.content("- More moons\n" +
-                        "- Translucent status bar\n" +
-                        "- Redesigned preference screen\n" +
+                builder.content("- Material Design implemented\n" +
                         "- Measurement changes\n" +
-                        "- Support for Android TV\n" +
-                        "- Material Design added");
+                        "- Support for Android TV\n");
                 builder.negativeText("Close");
                 builder.titleAlignment(BaseDialog.Alignment.LEFT);
 
@@ -229,7 +221,10 @@ public class Settings extends PreferenceActivity {
                 customDialog.setClickListener(new CustomDialog.ClickListener() {
                     @Override
                     public void onConfirmClick() {
-                        //Not applicable
+                        String url = "https://github.com/AMQTech/Planets-Gradle";
+                        Intent i = new Intent(Intent.ACTION_VIEW);
+                        i.setData(Uri.parse(url));
+                        startActivity(i);
                     }
 
                     @Override
@@ -241,22 +236,6 @@ public class Settings extends PreferenceActivity {
                 return true;
             }
         });
-
-
-        /*mActionBar = getActionBar();
-        mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#292929")));
-        mActionBar.setCustomView(R.layout.custom_actionbar_settings);
-        mActionBar.setDisplayShowCustomEnabled(true);
-        mActionBar.setDisplayHomeAsUpEnabled(false);
-
-        img = (ImageView) findViewById(R.id.backButtonSettings);
-
-        img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });*/
 
         ImageButton share = (ImageButton) findViewById(R.id.share);
         share.setOnClickListener(new View.OnClickListener() {

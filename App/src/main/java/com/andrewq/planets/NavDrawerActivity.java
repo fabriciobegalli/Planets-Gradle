@@ -155,14 +155,6 @@ public class NavDrawerActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nav_drawer);
 
-        /*SystemBarTintManager tintManager = new SystemBarTintManager(this);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        }
-
-        tintManager.setStatusBarTintEnabled(true);*/
-
         String base64EncodedPublicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjkBL90CQz/fVfOoKDFHTo4y/AWKOuKHK60Wjz+y8mPIUF2AU3uJ5c3ofu1SoGTY6+lpowpeHruMlVzwQ5fk31vAKGSRApcdWjmPh2w7dYmLldV1MTnxz0UiJydENj1O1Ci7MBJiGYigjS+wXG1kFL1LS1BIVoBiodeC+oh9u+eqKZASyA5b5ZUfK8kBQk4EtswnUSq6q5m+oj1SALK/2Nu3ZtRMPKX54dBhs1DHhOY3o9oI+7kl/pLN9d2tARmjJev06bbXlgfVDBum0ghaRI8JS6BZSgJch8inALx6677pOzCnZ49uW+CugyIGp3fe9cwbQDXIvQ8qSDoDjcmv/iwIDAQAB";
 
         mHelper = new IabHelper(getBaseContext(), base64EncodedPublicKey);
@@ -289,7 +281,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                 fbs.setQuestionLabel("General Feedback");
 
                 fbs.setOrientation(LinearLayout.VERTICAL);
-                fbs.setGravity(Gravity.LEFT);
+                fbs.setGravity(Gravity.START);
 
                 fbs.setModal(true);
 
