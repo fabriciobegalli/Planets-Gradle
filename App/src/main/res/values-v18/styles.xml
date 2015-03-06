@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppThemeNavDrawer" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorAccent">#F8F8F8</item>
+    </style>
+
+    <style name="ToolbarCustomIconColor" parent="AppThemeNavDrawer">
+        <item name="android:textColorSecondary">#FFFFFF</item>
+        <item name="android:activatedBackgroundIndicator">@drawable/drawer_list_selector</item>
+    </style>
+
+</resources>
