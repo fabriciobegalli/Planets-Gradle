@@ -192,16 +192,13 @@ public class NavDrawerActivity extends ActionBarActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setBackgroundColor(Color.parseColor("#FFFFFF"));
 
         navigationDrawerItems = getResources().getStringArray(R.array.navigation_drawer_items);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawerLayout.setStatusBarBackgroundColor(Color.parseColor("#ffffff"));
         listView = (ListView) findViewById(R.id.left_drawer);
 
         // set a custom shadow that overlays the main content when the drawer opens
         drawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
-        //drawerLayout.setStatusBarBackgroundColor(Color.parseColor("#ACACAC"));
         // set up the drawer's list view with items and click listener
         listView.setAdapter(new NavDrawerAdapter());
         listView.setOnItemClickListener(new DrawerItemClickListener());
@@ -389,7 +386,8 @@ public class NavDrawerActivity extends ActionBarActivity {
             mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#D32F2F")));
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                int statusBarTint = Color.parseColor("#F83232");
+
+                mActionBar.setElevation(15);
 
                 //Status bar tinting
                 Window window = this.getWindow();
