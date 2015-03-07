@@ -358,10 +358,6 @@ public class NavDrawerActivity extends ActionBarActivity {
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
 
-        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        }*/
-
         //Set getPrefs to a preference manager
         SharedPreferences getPrefs2 = PreferenceManager
                 .getDefaultSharedPreferences(getBaseContext());

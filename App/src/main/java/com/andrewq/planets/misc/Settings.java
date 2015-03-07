@@ -60,42 +60,6 @@ public class Settings extends PreferenceActivity {
                     drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), Color.parseColor("#414141")));
         }
 
-        Preference prefListview = findPreference("pref_listlicense");
-
-        prefListview.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-
-                CustomDialog.Builder builder = new CustomDialog.Builder(Settings.this, "License", "View on Github");
-
-                builder.content("Copyright 2014 Niek Haarman\n" +
-                        "\n" +
-                        "Licensed under the Apache License, Version 2.0 (the \"License\"); " +
-                        "you may not use this file except in compliance with the License.");
-                builder.negativeText("Close");
-                builder.titleAlignment(BaseDialog.Alignment.LEFT);
-                builder.positiveColor("#0497c9");
-
-                CustomDialog customDialog = builder.build();
-                customDialog.setClickListener(new CustomDialog.ClickListener() {
-                    @Override
-                    public void onConfirmClick() {
-                        String url = "https://github.com/nhaarman/ListViewAnimations";
-                        Intent i = new Intent(Intent.ACTION_VIEW);
-                        i.setData(Uri.parse(url));
-                        startActivity(i);
-                    }
-
-                    @Override
-                    public void onCancelClick() {
-                        //Do nothing!
-                    }
-                });
-                customDialog.show();
-                return true;
-            }
-        });
-
         Preference prefSystemBarTint = findPreference("pref_systembartint");
 
         prefSystemBarTint.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
