@@ -121,7 +121,7 @@ public class PlanetDetailsFragment extends DetailsFragment {
             } catch (IOException e) {
             }*/
 
-            row.addAction(new Action(ACTION_WATCH_TRAILER, "Read More", null));
+            //row.addAction(new Action(ACTION_WATCH_TRAILER, "Read More", null));
 
             return row;
         }
