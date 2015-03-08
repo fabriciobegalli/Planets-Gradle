@@ -13,9 +13,6 @@
             android:key="pref_send_usage"
             android:summary="When checked, information about device, country location, language, and other anonymous data will be sent to a Google Analytics account for statistics monitoring."
             android:title="Send Anonymous Data" />
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="@string/pref_cate_title_1">
 
         <ListPreference
             android:defaultValue="3"
@@ -27,6 +24,40 @@
             android:title="@string/pref_5" />
     </PreferenceCategory>
 
+    <PreferenceCategory android:title="Developer">
+
+        <Preference
+            android:icon="@drawable/andrew_q"
+            android:title="Andrew Quebe"
+            android:summary="Coded everything!">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://plus.google.com/u/0/+AndrewQuebe/about" />
+        </Preference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Special Thanks">
+
+        <Preference
+            android:icon="@drawable/cookicons"
+            android:title="Michael Cook, Cookicons"
+            android:summary="Designed app icon, navigation drawer icons, and the icons in the settings page.">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://cookicons.co" />
+        </Preference>
+
+        <Preference
+            android:icon="@drawable/wknecht"
+            android:title="Delyn Wagenknecht"
+            android:summary="Rewrote descriptions for all the Planets and the Sun.">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://wordknecht.wordpress.com" />
+        </Preference>
+    </PreferenceCategory>
+
     <PreferenceCategory android:title="Open Source Licenses">
 
         <Preference
@@ -34,10 +65,10 @@
             android:summary="by Niek Haarman"
             android:title="ListViewAnimations" />
 
-        <Preference
+        <!--<Preference
             android:key="pref_systembartint"
             android:summary="by jgilfelt"
-            android:title="SystemBarTint" />
+            android:title="SystemBarTint" />-->
 
         <Preference
             android:key="pref_ldialogs"
@@ -48,25 +79,6 @@
             android:key="pref_analytics"
             android:summary="by Google, Inc."
             android:title="Google Analytics" />
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="Authors">
-
-        <Preference
-            android:icon="@drawable/andrew_q"
-            android:title="Andrew Quebe">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://plus.google.com/u/0/+AndrewQuebe/about" />
-        </Preference>
-
-        <Preference
-            android:icon="@drawable/wknecht"
-            android:title="Delyn Wagenknecht">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="http://wordknecht.wordpress.com" />
-        </Preference>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Version">

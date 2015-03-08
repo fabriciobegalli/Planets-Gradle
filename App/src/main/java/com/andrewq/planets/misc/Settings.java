@@ -60,7 +60,7 @@ public class Settings extends PreferenceActivity {
                     drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), Color.parseColor("#414141")));
         }
 
-        Preference prefSystemBarTint = findPreference("pref_systembartint");
+        Preference prefSystemBarTint = findPreference("pref_listlicense");
 
         prefSystemBarTint.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
@@ -68,7 +68,7 @@ public class Settings extends PreferenceActivity {
 
                 CustomDialog.Builder builder = new CustomDialog.Builder(Settings.this, "License", "View on Github");
 
-                builder.content("Copyright 2013 readyState Software Limited\n" +
+                builder.content("Copyright 2015 Niek Haarman\n" +
                         "\n" +
                         "Licensed under the Apache License, Version 2.0 (the \"License\"); " +
                         "you may not use this file except in compliance with the License.");
@@ -80,7 +80,7 @@ public class Settings extends PreferenceActivity {
                 customDialog.setClickListener(new CustomDialog.ClickListener() {
                     @Override
                     public void onConfirmClick() {
-                        String url = "https://github.com/jgilfelt/SystemBarTint";
+                        String url = "https://github.com/nhaarman/ListViewAnimations";
                         Intent i = new Intent(Intent.ACTION_VIEW);
                         i.setData(Uri.parse(url));
                         startActivity(i);
@@ -140,7 +140,7 @@ public class Settings extends PreferenceActivity {
 
                 builder.content("Google Analytics Android SDK version 3.02" +
                         "\n" +
-                        "Copyright 2009-2014 Google, Inc. All rights reserved." +
+                        "Copyright 2009-2015 Google, Inc. All rights reserved." +
                         "\n" + "Licensed under the Apache License, Version 2.0 (the \"License\"); " +
                         "you may not use this file except in compliance with the License.");
                 builder.negativeText("Close");
@@ -177,7 +177,8 @@ public class Settings extends PreferenceActivity {
 
                 builder.content("- Material Design implemented\n" +
                         "- Measurement changes\n" +
-                        "- Support for Android TV\n");
+                        "- Support for Android TV\n" +
+                        "- New App Icon");
                 builder.negativeText("Close");
                 builder.titleAlignment(BaseDialog.Alignment.LEFT);
                 builder.positiveColor("#0497c9");
