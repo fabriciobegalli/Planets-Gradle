@@ -109,7 +109,7 @@ public class FragmentPlanets extends Fragment {
                         break;
                     case 6:
                         Intent i8 = new Intent(getActivity().getApplicationContext(),
-                                UranusActivity.class);
+                                NeptuneActivity.class);
                         //Scale animation is sent as a bundle to the next activity.
                         Bundle scaleBundle8 = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
@@ -118,7 +118,7 @@ public class FragmentPlanets extends Fragment {
                         break;
                     case 7:
                         Intent i9 = new Intent(getActivity().getApplicationContext(),
-                                NeptuneActivity.class);
+                                UranusActivity.class);
                         //Scale animation is sent as a bundle to the next activity.
                         Bundle scaleBundle9 = ActivityOptions.makeScaleUpAnimation(
                                 v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
