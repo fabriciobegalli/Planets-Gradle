@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.andrewq.planets.R;
-import com.andrewq.planets.other_bodies.SunActivity;
+import com.andrewq.planets.stars.SunActivity;
 import com.nhaarman.listviewanimations.swinginadapters.prepared.SwingBottomInAnimationAdapter;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 

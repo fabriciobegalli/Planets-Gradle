@@ -1,4 +1,4 @@
-package com.andrewq.planets.other_bodies;
+package com.andrewq.planets.stars;
 
 import android.app.ActionBar;
 import android.app.Activity;

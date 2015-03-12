@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.andrewq.planets.R;
-import com.andrewq.planets.other_bodies.PlutoActivity;
 import com.andrewq.planets.planets.EarthActivity;
 import com.andrewq.planets.planets.JupiterActivity;
 import com.andrewq.planets.planets.MarsActivity;
@@ -125,15 +124,6 @@ public class FragmentPlanets extends Fragment {
                         //then start the activity, and send the bundle
                         startActivity(i9, scaleBundle9);
                         break;
-                    case 8:
-                        Intent i10 = new Intent(getActivity().getApplicationContext(),
-                                PlutoActivity.class);
-                        //Scale animation is sent as a bundle to the next activity.
-                        Bundle scaleBundle10 = ActivityOptions.makeScaleUpAnimation(
-                                v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
-                        //then start the activity, and send the bundle
-                        startActivity(i10, scaleBundle10);
-                        break;
                 }
 
             }
@@ -178,7 +168,6 @@ public class FragmentPlanets extends Fragment {
             items.add(new Item("Saturn", R.drawable.saturn));
             items.add(new Item("Neptune", R.drawable.neptune));
             items.add(new Item("Uranus", R.drawable.uranus));
-            items.add(new Item("Pluto", R.drawable.pluto));
         }
 
         @Override

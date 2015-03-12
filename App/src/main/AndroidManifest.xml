@@ -172,7 +172,7 @@
 
         <!-- Sun Activity -->
         <activity
-            android:name=".other_bodies.SunActivity"
+            android:name=".stars.SunActivity"
             android:label="Sun"
             android:parentActivityName=".old.MainActivity"
             android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay" />
@@ -273,7 +273,7 @@
 
         <!-- Pluto Image View -->
         <activity
-            android:name=".other_bodies.PlutoActivity"
+            android:name=".dwarfs.PlutoActivity"
             android:label="Pluto"
             android:parentActivityName=".old.MainActivity"
             android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay" />
