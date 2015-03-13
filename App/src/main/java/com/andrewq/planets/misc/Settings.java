@@ -175,7 +175,7 @@ public class Settings extends PreferenceActivity {
 
                 CustomDialog.Builder builder = new CustomDialog.Builder(Settings.this, "What's New in 2.6.1", "View on Github");
 
-                builder.content("- Dwarf Planet Category\n " +
+                builder.content("- \"Other\" Celestial Bodies Category\n " +
                         "- TV Updates");
                 builder.negativeText("Close");
                 builder.titleAlignment(BaseDialog.Alignment.LEFT);
