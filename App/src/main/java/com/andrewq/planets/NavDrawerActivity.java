@@ -313,10 +313,10 @@ public class NavDrawerActivity extends ActionBarActivity {
 
         switch (position) {
             case 0:
-                fragment = new FragmentStars();
+                fragment = new FragmentPlanets();
                 break;
             case 1:
-                fragment = new FragmentPlanets();
+                fragment = new FragmentStars();
                 break;
             case 2:
                 fragment = new FragmentMoons();
@@ -534,8 +534,8 @@ public class NavDrawerActivity extends ActionBarActivity {
         public NavDrawerAdapter() {
             inflater = LayoutInflater.from(getApplicationContext());
 
-            items.add(new Item(R.drawable.ic_stars, "Stars"));
             items.add(new Item(R.drawable.ic_planets, "Planets"));
+            items.add(new Item(R.drawable.ic_stars, "Stars"));
             items.add(new Item(R.drawable.ic_moons, "Moons"));
             items.add(new Item(R.drawable.ic_comet, "Other"));
         }
