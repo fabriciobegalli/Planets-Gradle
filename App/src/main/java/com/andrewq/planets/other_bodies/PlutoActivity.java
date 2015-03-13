@@ -1,4 +1,4 @@
-package com.andrewq.planets.dwarfs;
+package com.andrewq.planets.other_bodies;
 
 import android.app.ActionBar;
 import android.app.Activity;

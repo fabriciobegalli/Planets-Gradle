@@ -41,8 +41,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.andrewq.planets.fragments.FragmentDwarfs;
 import com.andrewq.planets.fragments.FragmentMoons;
+import com.andrewq.planets.fragments.FragmentOtherBodies;
 import com.andrewq.planets.fragments.FragmentPlanets;
 import com.andrewq.planets.fragments.FragmentStars;
 import com.andrewq.planets.iab.IabHelper;
@@ -322,7 +322,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                 fragment = new FragmentMoons();
                 break;
             case 3:
-                fragment = new FragmentDwarfs();
+                fragment = new FragmentOtherBodies();
                 break;
         }
 
@@ -537,7 +537,7 @@ public class NavDrawerActivity extends ActionBarActivity {
             items.add(new Item(R.drawable.ic_stars, "Stars"));
             items.add(new Item(R.drawable.ic_planets, "Planets"));
             items.add(new Item(R.drawable.ic_moons, "Moons"));
-            items.add(new Item(R.drawable.ic_planets, "Dwarf Planets"));
+            items.add(new Item(R.drawable.ic_comet, "Other"));
         }
 
         @Override

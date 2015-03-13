@@ -35,12 +35,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.andrewq.planets.R;
-import com.andrewq.planets.dwarfs.PlutoActivity;
 import com.andrewq.planets.iab.IabHelper;
 import com.andrewq.planets.iab.IabResult;
 import com.andrewq.planets.iab.Inventory;
 import com.andrewq.planets.iab.Purchase;
 import com.andrewq.planets.misc.Settings;
+import com.andrewq.planets.other_bodies.PlutoActivity;
 import com.andrewq.planets.planets.EarthActivity;
 import com.andrewq.planets.planets.JupiterActivity;
 import com.andrewq.planets.planets.MarsActivity;

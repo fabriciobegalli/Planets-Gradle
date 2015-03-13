@@ -273,7 +273,7 @@
 
         <!-- Pluto Image View -->
         <activity
-            android:name=".dwarfs.PlutoActivity"
+            android:name=".other_bodies.PlutoActivity"
             android:label="Pluto"
             android:parentActivityName=".old.MainActivity"
             android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay" />

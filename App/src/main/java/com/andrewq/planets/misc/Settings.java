@@ -173,12 +173,10 @@ public class Settings extends PreferenceActivity {
             @Override
             public boolean onPreferenceClick(Preference preference) {
 
-                CustomDialog.Builder builder = new CustomDialog.Builder(Settings.this, "What's New in 2.6", "Contribute");
+                CustomDialog.Builder builder = new CustomDialog.Builder(Settings.this, "What's New in 2.6.1", "View on Github");
 
-                builder.content("- Material Design implemented\n" +
-                        "- Measurement changes\n" +
-                        "- Support for Android TV\n" +
-                        "- New App Icon");
+                builder.content("- Dwarf Planet Category\n " +
+                        "- TV Updates");
                 builder.negativeText("Close");
                 builder.titleAlignment(BaseDialog.Alignment.LEFT);
                 builder.positiveColor("#0497c9");

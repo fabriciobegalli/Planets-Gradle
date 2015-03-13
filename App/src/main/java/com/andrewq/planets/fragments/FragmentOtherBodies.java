@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.andrewq.planets.R;
-import com.andrewq.planets.dwarfs.PlutoActivity;
+import com.andrewq.planets.other_bodies.PlutoActivity;
 import com.nhaarman.listviewanimations.swinginadapters.prepared.SwingBottomInAnimationAdapter;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * Created by andrew on 2/27/15.
  */
-public class FragmentDwarfs extends Fragment {
+public class FragmentOtherBodies extends Fragment {
 
     public static GridView gridView;
 
@@ -70,7 +70,7 @@ public class FragmentDwarfs extends Fragment {
         transView.setPadding(0, config.getActionBarHeight() + 32, config.getPixelInsetRight(), 32);
     }
 
-    public FragmentDwarfs() {
+    public FragmentOtherBodies() {
         // Required empty public constructor
     }
 
@@ -89,7 +89,7 @@ public class FragmentDwarfs extends Fragment {
         public MyAdapter() {
             inflater = LayoutInflater.from(getActivity().getApplicationContext());
 
-            items.add(new Item("Pluto", R.drawable.pluto));
+            items.add(new Item("Pluto", R.drawable.pluto, "Dwarf Planet"));
         }
 
         @Override
@@ -112,20 +112,24 @@ public class FragmentDwarfs extends Fragment {
             View v = view;
             ImageView picture;
             TextView name;
+            TextView planet;
 
             if (v == null) {
-                v = inflater.inflate(R.layout.gridview_item, viewGroup, false);
+                v = inflater.inflate(R.layout.gridview_item_moons, viewGroup, false);
                 v.setTag(R.id.picture, v.findViewById(R.id.picture));
                 v.setTag(R.id.text, v.findViewById(R.id.text));
+                v.setTag(R.id.planet, v.findViewById(R.id.planet));
             }
 
             picture = (ImageView) v.getTag(R.id.picture);
             name = (TextView) v.getTag(R.id.text);
+            planet = (TextView) v.getTag(R.id.planet);
 
             Item item = (Item) getItem(i);
 
             picture.setImageResource(item.drawableId);
             name.setText(item.name);
+            planet.setText(item.planet);
 
             return v;
         }
@@ -133,10 +137,12 @@ public class FragmentDwarfs extends Fragment {
         private class Item {
             final String name;
             final int drawableId;
+            final String planet;
 
-            Item(String name, int drawableId) {
+            Item(String name, int drawableId, String planetName) {
                 this.name = name;
                 this.drawableId = drawableId;
+                this.planet = planetName;
             }
         }
     }

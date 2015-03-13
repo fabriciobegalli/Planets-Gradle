@@ -86,7 +86,7 @@
         <Preference
             android:icon="@drawable/ic_launcher"
             android:key="pref_whatsnew"
-            android:summary="2.6 (29)"
+            android:summary="2.6.1 (30)"
             android:title="Planets" />
     </PreferenceCategory>
 
