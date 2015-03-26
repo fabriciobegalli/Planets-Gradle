@@ -164,7 +164,7 @@ public class NavDrawerActivity extends ActionBarActivity {
 
         //TODO: Fix this!
 
-        mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
+        /*mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
             public void onIabSetupFinished(IabResult result) {
                 Log.d(TAG, "Setup finished.");
 
@@ -181,7 +181,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                 Log.d(TAG, "Setup successful. Querying inventory.");
                 mHelper.queryInventoryAsync(mGotInventoryListener);
             }
-        });
+        });*/
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -189,6 +189,10 @@ public class NavDrawerActivity extends ActionBarActivity {
         navigationDrawerItems = getResources().getStringArray(R.array.navigation_drawer_items);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         listView = (ListView) findViewById(R.id.left_drawer);
+
+        View imgHeader = getLayoutInflater().inflate(R.layout.listview_header_image, null);
+
+        listView.addHeaderView(imgHeader);
 
         // set a custom shadow that overlays the main content when the drawer opens
         drawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
@@ -204,7 +208,7 @@ public class NavDrawerActivity extends ActionBarActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
 
         if (savedInstanceState == null) {
-            selectItem(0);
+            selectItem(1);
         }
 
         Thread t = new Thread(new Runnable() {
@@ -302,26 +306,29 @@ public class NavDrawerActivity extends ActionBarActivity {
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            selectItem(position);
+            if (position == 0)
+                selectItem(1);
+            else
+                selectItem(position);
         }
     }
 
     private void selectItem(int position) {
         // update the main content by replacing fragments
-        Fragment fragment = new FragmentStars();
+        Fragment fragment = new FragmentPlanets();
         FragmentManager fragmentManager = getFragmentManager();
 
         switch (position) {
-            case 0:
+            case 1:
                 fragment = new FragmentPlanets();
                 break;
-            case 1:
+            case 2:
                 fragment = new FragmentStars();
                 break;
-            case 2:
+            case 3:
                 fragment = new FragmentMoons();
                 break;
-            case 3:
+            case 4:
                 fragment = new FragmentOtherBodies();
                 break;
         }

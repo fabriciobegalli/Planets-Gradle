@@ -28,7 +28,6 @@ import com.andrewq.planets.R;
 import com.andrewq.planets.image_views.SunImageView;
 import com.andrewq.planets.util.NotifyingScrollView;
 import com.google.analytics.tracking.android.EasyTracker;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
 import com.suredigit.inappfeedback.FeedbackDialog;
 import com.suredigit.inappfeedback.FeedbackSettings;
 
@@ -41,7 +40,6 @@ public class SunActivity extends Activity {
     private ImageView img;
     private ActionBar mActionBar;
 
-    private SystemBarTintManager tintManager;
     private NotifyingScrollView.OnScrollChangedListener mOnScrollChangedListener = new NotifyingScrollView.OnScrollChangedListener() {
         public void onScrollChanged(ScrollView who, int l, int t, int oldl, int oldt) {
             final int headerHeight = findViewById(R.id.image_header_sun).getHeight() - getActionBar().getHeight();
@@ -95,8 +93,6 @@ public class SunActivity extends Activity {
                 finish();
             }
         });
-
-        tintManager = new SystemBarTintManager(this);
 
         SharedPreferences getPrefs2 = PreferenceManager
                 .getDefaultSharedPreferences(getBaseContext());

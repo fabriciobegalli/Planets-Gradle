@@ -21,6 +21,7 @@
 
     <string-array name="navigation_drawer_items">
         <item>Planets</item>
+        <item>Planets</item>
         <item>Stars</item>
         <item>Moons</item>
         <item>Other</item>

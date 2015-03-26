@@ -2,8 +2,7 @@
     android:id="@+id/drawer_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:layout_height="match_parent">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -19,14 +18,20 @@
 
     </FrameLayout>
 
-    <ListView
-        android:id="@+id/left_drawer"
+    <com.andrewq.planets.util.ScrimInsetsFrameLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/linearLayout"
         android:layout_width="304dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="#FFFFFF"
-        android:choiceMode="singleChoice"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="0dp" />
+        android:fitsSystemWindows="true"
+        app:insetForeground="#4000">
+
+        <ListView
+            android:id="@+id/left_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:choiceMode="singleChoice" />
+    </com.andrewq.planets.util.ScrimInsetsFrameLayout>
+
 
 </android.support.v4.widget.DrawerLayout>
