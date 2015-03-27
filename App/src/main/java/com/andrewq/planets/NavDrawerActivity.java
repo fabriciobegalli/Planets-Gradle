@@ -51,6 +51,10 @@ import com.andrewq.planets.iab.Inventory;
 import com.andrewq.planets.iab.Purchase;
 import com.andrewq.planets.misc.Settings;
 import com.google.analytics.tracking.android.EasyTracker;
+import com.mikepenz.materialdrawer.Drawer;
+import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 import com.suredigit.inappfeedback.FeedbackDialog;
 import com.suredigit.inappfeedback.FeedbackSettings;
 
@@ -62,11 +66,8 @@ import java.util.List;
  */
 public class NavDrawerActivity extends ActionBarActivity {
 
-    private DrawerLayout drawerLayout;
-    private ListView listView;
-    private ActionBarDrawerToggle actionBarDrawerToggle;
-
-    private String[] navigationDrawerItems;
+    Drawer.Result drawer;
+    Toolbar toolbar;
 
     // Debug tag, for logging
     static final String TAG = "Planets Donations";
@@ -183,36 +184,58 @@ public class NavDrawerActivity extends ActionBarActivity {
             }
         });*/
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        navigationDrawerItems = getResources().getStringArray(R.array.navigation_drawer_items);
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        listView = (ListView) findViewById(R.id.left_drawer);
+        drawer = new Drawer()
+                .withActivity(this)
+                .withToolbar(toolbar)
+                .withTranslucentNavigationBar(false)
+                .withTranslucentStatusBar(true)
+                .withTranslucentStatusBarProgrammatically(true)
+                .withHeader(R.layout.listview_header_image)
+                .addDrawerItems(
+                        new PrimaryDrawerItem().withIcon(R.drawable.ic_planets).withName("Planets").withIdentifier(1),
+                        new PrimaryDrawerItem().withIcon(R.drawable.ic_stars).withName("Stars").withIdentifier(2),
+                        new PrimaryDrawerItem().withIcon(R.drawable.ic_moons).withName("Moons").withIdentifier(3),
+                        new PrimaryDrawerItem().withIcon(R.drawable.ic_comet).withName("Other").withIdentifier(4)
+                )
+                .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l, IDrawerItem iDrawerItem) {
+                        // update the main content by replacing fragments
+                        Fragment fragment = new FragmentPlanets();
+                        FragmentManager fragmentManager = getFragmentManager();
 
-        View imgHeader = getLayoutInflater().inflate(R.layout.listview_header_image, null);
+                        switch (iDrawerItem.getIdentifier()) {
+                            case 1:
+                                fragment = new FragmentPlanets();
+                                break;
+                            case 2:
+                                fragment = new FragmentStars();
+                                break;
+                            case 3:
+                                fragment = new FragmentMoons();
+                                break;
+                            case 4:
+                                fragment = new FragmentOtherBodies();
+                                break;
+                        }
+                        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
 
-        listView.addHeaderView(imgHeader);
+                        if(iDrawerItem instanceof Nameable) {
+                            setTitle(((Nameable) iDrawerItem).getName());
+                        }
+                    }
+                })
+                .withFireOnInitialOnClick(true)
+                .withSavedInstance(savedInstanceState)
+                .build();
 
         // set a custom shadow that overlays the main content when the drawer opens
-        drawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
-        // set up the drawer's list view with items and click listener
-        listView.setAdapter(new NavDrawerAdapter());
-        listView.setOnItemClickListener(new DrawerItemClickListener());
-
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.app_name, R.string.app_name);
-        drawerLayout.setDrawerListener(actionBarDrawerToggle);
-
-        // enable ActionBar app icon to behave as action to toggle nav drawer
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-
-        if (savedInstanceState == null) {
-            selectItem(1);
-        }
+        drawer.getDrawerLayout().setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
 
         Thread t = new Thread(new Runnable() {
-
             @Override
             public void run() {
                 SharedPreferences getPrefs = PreferenceManager
@@ -220,7 +243,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                 boolean isFirstStart = getPrefs.getBoolean("key", true);
 
                 if (isFirstStart) {
-                    drawerLayout.openDrawer(Gravity.START);
+                    drawer.openDrawer();
                     SharedPreferences.Editor e = getPrefs.edit();
                     e.putBoolean("key", false);
                     e.apply();
@@ -229,6 +252,13 @@ public class NavDrawerActivity extends ActionBarActivity {
         });
 
         t.start();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        //add the values which need to be saved from the drawer to the bundle
+        outState = drawer.saveInstanceState(outState);
+        super.onSaveInstanceState(outState);
     }
 
     @Override
@@ -302,188 +332,55 @@ public class NavDrawerActivity extends ActionBarActivity {
     }
 
 
-    /* The click listener for ListView in the navigation drawer */
-    private class DrawerItemClickListener implements ListView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            if (position == 0)
-                selectItem(1);
-            else
-                selectItem(position);
-        }
-    }
-
-    private void selectItem(int position) {
-        // update the main content by replacing fragments
-        Fragment fragment = new FragmentPlanets();
-        FragmentManager fragmentManager = getFragmentManager();
-
-        switch (position) {
-            case 1:
-                fragment = new FragmentPlanets();
-                break;
-            case 2:
-                fragment = new FragmentStars();
-                break;
-            case 3:
-                fragment = new FragmentMoons();
-                break;
-            case 4:
-                fragment = new FragmentOtherBodies();
-                break;
-        }
-
-        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
-
-        // update selected item and title, then close the drawer
-        listView.setItemChecked(position, true);
-        setTitle(navigationDrawerItems[position]);
-        drawerLayout.closeDrawer(listView);
-    }
-
     @Override
     public void setTitle(CharSequence title) {
         getSupportActionBar().setTitle(title);
     }
 
-    /**
-     * When using the ActionBarDrawerToggle, you must call it during
-     * onPostCreate() and onConfigurationChanged()...
-     */
-
-    @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        // Sync the toggle state after onRestoreInstanceState has occurred.
-        actionBarDrawerToggle.syncState();
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        // Pass any configuration change to the drawer toggls
-        actionBarDrawerToggle.onConfigurationChanged(newConfig);
-    }
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
 
         //Set getPrefs to a preference manager
-        SharedPreferences getPrefs2 = PreferenceManager
-                .getDefaultSharedPreferences(getBaseContext());
+        SharedPreferences getPrefs2 = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
         //Give theme_chooser the preference key defined in XML
         int theme_chooser = Integer.parseInt(getPrefs2.getString("prefSetTheme", "3"));
         //Get an instance of the ActionBar
         ActionBar mActionBar = getSupportActionBar();
 
+        int color;
+
         //Set the action bar colors to whatever the user selects from the ListPreference
         if (theme_chooser == 1) {
             //Red
-            assert mActionBar != null;
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#D32F2F")));
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-
-                mActionBar.setElevation(15);
-
-                //Status bar tinting
-                Window window = this.getWindow();
-                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-                window.setStatusBarColor(this.getResources().getColor(R.color.status_bar_red));
-
-                //Overview color
-                int actionBarColor = Color.parseColor("#D32F2F");
-                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
-                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
-            }
-
+            color = Color.parseColor("#D32F2F");
         } else if (theme_chooser == 2) {
             //Orange
-            assert mActionBar != null;
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#E64A19")));
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                int actionBarColor = Color.parseColor("#E64A19");
-
-                //Status bar tinting
-                Window window = this.getWindow();
-                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-                window.setStatusBarColor(this.getResources().getColor(R.color.status_bar_orange));
-
-                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
-                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
-            }
+            color = Color.parseColor("#E64A19");
         } else if (theme_chooser == 3) {
             //Blue
-            assert mActionBar != null;
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#1976D2")));
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                int actionBarColor = Color.parseColor("#1976D2");
-
-                //Status bar tinting
-                Window window = this.getWindow();
-                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-                window.setStatusBarColor(this.getResources().getColor(R.color.status_bar_blue));
-
-                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
-                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
-            }
+            color = Color.parseColor("#1976D2");
         } else if (theme_chooser == 4) {
             //Green
-            assert mActionBar != null;
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#388E3C")));
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                int actionBarColor = Color.parseColor("#388E3C");
-
-                //Status bar tinting
-                Window window = this.getWindow();
-                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-                window.setStatusBarColor(this.getResources().getColor(R.color.status_bar_green));
-
-                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
-                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
-            }
+            color = Color.parseColor("#388E3C");
         } else if (theme_chooser == 5) {
             //Purple
-            assert mActionBar != null;
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#512DA8")));
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                int actionBarColor = Color.parseColor("#512DA8");
-
-                //Status bar tinting
-                Window window = this.getWindow();
-                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-                window.setStatusBarColor(this.getResources().getColor(R.color.status_bar_purple));
-
-                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
-                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
-            }
+            color = Color.parseColor("#512DA8");
         } else if (theme_chooser == 6) {
             //Black
-            assert mActionBar != null;
-            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#212121")));
+            color = Color.parseColor("#212121");
+        } else {
+            color = Color.parseColor("#E64A19");
+        }
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                int actionBarColor = Color.parseColor("#212121");
+        if (mActionBar != null) {
+            toolbar.setBackgroundColor(color);
+            drawer.setStatusBarColor(color);
 
-                //Status bar tinting
-                Window window = this.getWindow();
-                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-                window.setStatusBarColor(this.getResources().getColor(R.color.status_bar_dark));
-
-                this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
-                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                toolbar.setElevation(8);
             }
         }
     }
@@ -531,68 +428,5 @@ public class NavDrawerActivity extends ActionBarActivity {
         drawable.draw(canvas);
 
         return bitmap;
-    }
-
-    private class NavDrawerAdapter extends BaseAdapter {
-        private List<Item> items = new ArrayList<>();
-        private LayoutInflater inflater;
-
-
-        public NavDrawerAdapter() {
-            inflater = LayoutInflater.from(getApplicationContext());
-
-            items.add(new Item(R.drawable.ic_planets, "Planets"));
-            items.add(new Item(R.drawable.ic_stars, "Stars"));
-            items.add(new Item(R.drawable.ic_moons, "Moons"));
-            items.add(new Item(R.drawable.ic_comet, "Other"));
-        }
-
-        @Override
-        public int getCount() {
-            return items.size();
-        }
-
-        @Override
-        public Object getItem(int i) {
-            return items.get(i);
-        }
-
-        @Override
-        public long getItemId(int i) {
-            return items.get(i).drawableId;
-        }
-
-        @Override
-        public View getView(int i, View view, ViewGroup viewGroup) {
-            View v = view;
-            ImageView picture;
-            TextView name;
-
-            if (v == null) {
-                v = inflater.inflate(R.layout.drawer_list_item, viewGroup, false);
-                v.setTag(R.id.navDrawerItemIcon, v.findViewById(R.id.navDrawerItemIcon));
-                v.setTag(R.id.navDrawerItemName, v.findViewById(R.id.navDrawerItemName));
-            }
-
-            picture = (ImageView) v.getTag(R.id.navDrawerItemIcon);
-            name = (TextView) v.getTag(R.id.navDrawerItemName);
-
-            Item item = (Item) getItem(i);
-
-            picture.setImageResource(item.drawableId);
-            name.setText(item.itemName);
-
-            return v;
-        }
-
-        private class Item {
-            final int drawableId;
-            final String itemName;
-
-            Item(int drawableId, String name) {
-                this.itemName = name;
-                this.drawableId = drawableId;
-            }
-        }
     }
 }

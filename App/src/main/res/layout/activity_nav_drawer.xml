@@ -1,37 +1,14 @@
-<android.support.v4.widget.DrawerLayout
-    android:id="@+id/drawer_layout"
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include android:id="@+id/toolbar" layout="@layout/toolbar" />
+
     <FrameLayout
+        android:layout_below="@id/toolbar"
+        android:id="@+id/content_frame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <FrameLayout
-            android:id="@+id/content_frame"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <include layout="@layout/toolbar" />
-
-    </FrameLayout>
-
-    <com.andrewq.planets.util.ScrimInsetsFrameLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/linearLayout"
-        android:layout_width="304dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:insetForeground="#4000">
-
-        <ListView
-            android:id="@+id/left_drawer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:choiceMode="singleChoice" />
-    </com.andrewq.planets.util.ScrimInsetsFrameLayout>
-
-
-</android.support.v4.widget.DrawerLayout>
+        android:layout_height="match_parent" />
+</RelativeLayout>
