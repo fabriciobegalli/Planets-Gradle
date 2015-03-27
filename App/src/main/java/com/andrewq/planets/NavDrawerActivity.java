@@ -1,44 +1,29 @@
 package com.andrewq.planets;
 
 import android.app.Activity;
-import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.andrewq.planets.fragments.FragmentMoons;
@@ -52,14 +37,13 @@ import com.andrewq.planets.iab.Purchase;
 import com.andrewq.planets.misc.Settings;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.mikepenz.materialdrawer.Drawer;
+import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
+import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 import com.suredigit.inappfeedback.FeedbackDialog;
 import com.suredigit.inappfeedback.FeedbackSettings;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by andrew on 2/27/15.
@@ -193,10 +177,53 @@ public class NavDrawerActivity extends ActionBarActivity {
                 .withHeader(R.layout.listview_header_image)
                 .withTranslucentNavigationBar(false)
                 .addDrawerItems(
-                        new PrimaryDrawerItem().withIcon(R.drawable.ic_planets).withName("Planets").withIdentifier(1),
-                        new PrimaryDrawerItem().withIcon(R.drawable.ic_stars).withName("Stars").withIdentifier(2),
-                        new PrimaryDrawerItem().withIcon(R.drawable.ic_moons).withName("Moons").withIdentifier(3),
-                        new PrimaryDrawerItem().withIcon(R.drawable.ic_comet).withName("Other").withIdentifier(4)
+                        new PrimaryDrawerItem()
+                                .withIcon(R.drawable.ic_planets)
+                                .withName("Planets")
+                                .withIdentifier(1)
+                                .withSelectedTextColor(Color.parseColor("#1976D2"))
+                                .withSelectedIcon(R.drawable.ic_planets_blue),
+
+                        new PrimaryDrawerItem()
+                                .withIcon(R.drawable.ic_stars)
+                                .withName("Stars")
+                                .withIdentifier(2)
+                                .withSelectedTextColor(Color.parseColor("#E64A19"))
+                                .withSelectedIcon(R.drawable.ic_stars_orange),
+
+                        new PrimaryDrawerItem()
+                                .withIcon(R.drawable.ic_moon)
+                                .withName("Moons")
+                                .withIdentifier(3)
+                                .withSelectedTextColor(Color.parseColor("#527A7A"))
+                                .withSelectedIcon(R.drawable.ic_moon_tinted),
+
+                        new PrimaryDrawerItem()
+                                .withIcon(R.drawable.ic_moon)
+                                .withName("Other")
+                                .withIdentifier(4)
+                                .withSelectedTextColor(Color.parseColor("#527A7A"))
+                                .withSelectedIcon(R.drawable.ic_moon_tinted),
+
+                        new DividerDrawerItem(),
+
+                        new SecondaryDrawerItem()
+                                .withIcon(R.drawable.ic_donate)
+                                .withName("Donate")
+                                .withIdentifier(5)
+                                .withCheckable(false),
+
+                        new SecondaryDrawerItem()
+                                .withIcon(R.drawable.ic_feedback)
+                                .withName("Send Feedback")
+                                .withIdentifier(6)
+                                .withCheckable(false),
+
+                        new SecondaryDrawerItem()
+                                .withIcon(R.drawable.ic_settings)
+                                .withName("Settings")
+                                .withIdentifier(7)
+                                .withCheckable(false)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -218,10 +245,73 @@ public class NavDrawerActivity extends ActionBarActivity {
                             case 4:
                                 fragment = new FragmentOtherBodies();
                                 break;
+                            case 5:
+
+                                drawer.setSelectionByIdentifier(1);
+
+                                final Activity act = NavDrawerActivity.this;
+
+                                new AlertDialog.Builder(NavDrawerActivity.this)
+                                        .setTitle("Select Amount (Tax Not Listed)")
+                                        .setItems(R.array.donations, new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                String payload = "";
+                                                if (which == 0) {
+                                                    mHelper.launchPurchaseFlow(act, SKU_1_DOLLAR, RC_REQUEST, mPurchaseFinishedListener, payload);
+                                                } else if (which == 1) {
+                                                    mHelper.launchPurchaseFlow(act, SKU_5_DOLLARS, RC_REQUEST, mPurchaseFinishedListener, payload);
+                                                } else if (which == 2) {
+                                                    mHelper.launchPurchaseFlow(act, SKU_10_DOLLARS, RC_REQUEST, mPurchaseFinishedListener, payload);
+                                                } else if (which == 3) {
+                                                    mHelper.launchPurchaseFlow(act, SKU_25_DOLLARS, RC_REQUEST, mPurchaseFinishedListener, payload);
+                                                } else {
+                                                    mHelper.launchPurchaseFlow(act, SKU_50_DOLLARS, RC_REQUEST, mPurchaseFinishedListener, payload);
+                                                }
+                                            }
+                                        })
+                                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                //Do nothing!
+                                            }
+                                        })
+                                        .show();
+                                break;
+                            case 6:
+                                drawer.setSelectionByIdentifier(1);
+
+                                FeedbackSettings fbs = new FeedbackSettings();
+                                fbs.setText("Use this to send feedback, suggestions, and bugs to the developer. " +
+                                        "All feedback/suggestions are appreciated!");
+                                fbs.setYourComments("Your message here...");
+                                fbs.setTitle("Feedback Submitter");
+
+                                fbs.setToast("Thanks! Check back later for a reply if applicable.");
+                                fbs.setToastDuration(Toast.LENGTH_LONG);
+
+                                fbs.setRadioButtons(true);
+                                fbs.setBugLabel("Bug");
+                                fbs.setIdeaLabel("Suggestion");
+                                fbs.setQuestionLabel("General Feedback");
+
+                                fbs.setOrientation(LinearLayout.VERTICAL);
+                                fbs.setGravity(Gravity.START);
+
+                                fbs.setModal(true);
+
+                                FeedbackDialog fdb = new FeedbackDialog(NavDrawerActivity.this, "AF-FD2E2AEF7F0A-27", fbs);
+                                fdb.show();
+                                break;
+                            case 7:
+                                drawer.setSelectionByIdentifier(1);
+
+                                Intent intent = new Intent(getApplicationContext(), Settings.class);
+                                startActivity(intent);
+                                break;
                         }
                         fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
 
-                        if(iDrawerItem instanceof Nameable) {
+                        if (iDrawerItem instanceof Nameable) {
                             setTitle(((Nameable) iDrawerItem).getName());
                         }
                     }
@@ -260,81 +350,12 @@ public class NavDrawerActivity extends ActionBarActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        final Activity act = this;
-
-        switch (item.getItemId()) {
-            case R.id.donate:
-                new AlertDialog.Builder(this)
-                        .setTitle("Select Amount (Tax Not Listed)")
-                        .setItems(R.array.donations, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                String payload = "";
-                                if (which == 0) {
-                                    mHelper.launchPurchaseFlow(act, SKU_1_DOLLAR, RC_REQUEST, mPurchaseFinishedListener, payload);
-                                } else if (which == 1) {
-                                    mHelper.launchPurchaseFlow(act, SKU_5_DOLLARS, RC_REQUEST, mPurchaseFinishedListener, payload);
-                                } else if (which == 2) {
-                                    mHelper.launchPurchaseFlow(act, SKU_10_DOLLARS, RC_REQUEST, mPurchaseFinishedListener, payload);
-                                } else if (which == 3) {
-                                    mHelper.launchPurchaseFlow(act, SKU_25_DOLLARS, RC_REQUEST, mPurchaseFinishedListener, payload);
-                                } else {
-                                    mHelper.launchPurchaseFlow(act, SKU_50_DOLLARS, RC_REQUEST, mPurchaseFinishedListener, payload);
-                                }
-                            }
-                        })
-                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                //Do nothing!
-                            }
-                        })
-                        .show();
-                break;
-            case R.id.sendFeedback:
-                FeedbackSettings fbs = new FeedbackSettings();
-                fbs.setText("Use this to send feedback, suggestions, and bugs to the developer. " +
-                        "All feedback/suggestions are appreciated!");
-                fbs.setYourComments("Your message here...");
-                fbs.setTitle("Feedback Submitter");
-
-                fbs.setToast("Thanks! Check back later for a reply if applicable.");
-                fbs.setToastDuration(Toast.LENGTH_LONG);
-
-                fbs.setRadioButtons(true);
-                fbs.setBugLabel("Bug");
-                fbs.setIdeaLabel("Suggestion");
-                fbs.setQuestionLabel("General Feedback");
-
-                fbs.setOrientation(LinearLayout.VERTICAL);
-                fbs.setGravity(Gravity.START);
-
-                fbs.setModal(true);
-
-                FeedbackDialog fdb = new FeedbackDialog(this, "AF-FD2E2AEF7F0A-27", fbs);
-                fdb.show();
-                break;
-            case R.id.settings:
-                Intent intent = new Intent(getApplicationContext(), Settings.class);
-                startActivity(intent);
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-
-    @Override
     public void setTitle(CharSequence title) {
-        getSupportActionBar().setTitle(title);
-    }
+        if (title == "Donate" || title == "Send Feedback" || title == "Settings") {
 
+        } else
+            getSupportActionBar().setTitle(title);
+    }
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
