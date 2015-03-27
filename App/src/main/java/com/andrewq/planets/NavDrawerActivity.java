@@ -1,6 +1,7 @@
 package com.andrewq.planets;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -167,6 +168,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                 mHelper.queryInventoryAsync(mGotInventoryListener);
             }
         });*/
+
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -375,30 +377,79 @@ public class NavDrawerActivity extends ActionBarActivity {
         if (theme_chooser == 1) {
             //Red
             color = Color.parseColor("#D32F2F");
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                //Overview color
+                int actionBarColor = Color.parseColor("#D32F2F");
+                NavDrawerActivity.this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+            }
         } else if (theme_chooser == 2) {
             //Orange
             color = Color.parseColor("#E64A19");
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                //Overview color
+                int actionBarColor = Color.parseColor("#E64A19");
+                NavDrawerActivity.this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+            }
         } else if (theme_chooser == 3) {
             //Blue
             color = Color.parseColor("#1976D2");
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                //Overview color
+                int actionBarColor = Color.parseColor("#1976D2");
+                NavDrawerActivity.this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+            }
         } else if (theme_chooser == 4) {
             //Green
             color = Color.parseColor("#388E3C");
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                //Overview color
+                int actionBarColor = Color.parseColor("#388E3C");
+                NavDrawerActivity.this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+            }
         } else if (theme_chooser == 5) {
             //Purple
             color = Color.parseColor("#512DA8");
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                //Overview color
+                int actionBarColor = Color.parseColor("#512DA8");
+                NavDrawerActivity.this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+            }
         } else if (theme_chooser == 6) {
             //Black
             color = Color.parseColor("#212121");
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                //Overview color
+                int actionBarColor = Color.parseColor("#212121");
+                NavDrawerActivity.this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+            }
         } else {
             color = Color.parseColor("#E64A19");
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                //Overview color
+                int actionBarColor = Color.parseColor("#E64A19");
+                NavDrawerActivity.this.setTaskDescription(new ActivityManager.TaskDescription("Planets",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+            }
         }
 
         if (mActionBar != null) {
             toolbar.setBackgroundColor(color);
             drawer.setStatusBarColor(darker(color, 0.8f));
 
-            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 toolbar.setElevation(8);
             }
         }
@@ -452,15 +503,15 @@ public class NavDrawerActivity extends ActionBarActivity {
     /**
      * Returns darker version of specified <code>color</code>.
      */
-    public static int darker (int color, float factor) {
-        int a = Color.alpha( color );
-        int r = Color.red( color );
-        int g = Color.green( color );
-        int b = Color.blue( color );
+    public static int darker(int color, float factor) {
+        int a = Color.alpha(color);
+        int r = Color.red(color);
+        int g = Color.green(color);
+        int b = Color.blue(color);
 
-        return Color.argb( a,
-                Math.max( (int)(r * factor), 0 ),
-                Math.max( (int)(g * factor), 0 ),
-                Math.max( (int)(b * factor), 0 ) );
+        return Color.argb(a,
+                Math.max((int) (r * factor), 0),
+                Math.max((int) (g * factor), 0),
+                Math.max((int) (b * factor), 0));
     }
 }
