@@ -190,10 +190,8 @@ public class NavDrawerActivity extends ActionBarActivity {
         drawer = new Drawer()
                 .withActivity(this)
                 .withToolbar(toolbar)
-                .withTranslucentNavigationBar(false)
-                .withTranslucentStatusBar(true)
-                .withTranslucentStatusBarProgrammatically(true)
                 .withHeader(R.layout.listview_header_image)
+                .withTranslucentNavigationBar(false)
                 .addDrawerItems(
                         new PrimaryDrawerItem().withIcon(R.drawable.ic_planets).withName("Planets").withIdentifier(1),
                         new PrimaryDrawerItem().withIcon(R.drawable.ic_stars).withName("Stars").withIdentifier(2),
@@ -377,7 +375,7 @@ public class NavDrawerActivity extends ActionBarActivity {
 
         if (mActionBar != null) {
             toolbar.setBackgroundColor(color);
-            drawer.setStatusBarColor(color);
+            drawer.setStatusBarColor(darker(color, 0.8f));
 
             if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 toolbar.setElevation(8);
@@ -428,5 +426,20 @@ public class NavDrawerActivity extends ActionBarActivity {
         drawable.draw(canvas);
 
         return bitmap;
+    }
+
+    /**
+     * Returns darker version of specified <code>color</code>.
+     */
+    public static int darker (int color, float factor) {
+        int a = Color.alpha( color );
+        int r = Color.red( color );
+        int g = Color.green( color );
+        int b = Color.blue( color );
+
+        return Color.argb( a,
+                Math.max( (int)(r * factor), 0 ),
+                Math.max( (int)(g * factor), 0 ),
+                Math.max( (int)(b * factor), 0 ) );
     }
 }
