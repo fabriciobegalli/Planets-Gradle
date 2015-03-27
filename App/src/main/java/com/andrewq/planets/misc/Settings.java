@@ -175,8 +175,8 @@ public class Settings extends PreferenceActivity {
 
                 CustomDialog.Builder builder = new CustomDialog.Builder(Settings.this, "What's New in 2.6.1", "View on Github");
 
-                builder.content("- New \"Other\" Category\n " +
-                        "- TV Updates");
+                builder.content("- More Material Design for Nav Drawer\n " +
+                        "- Bug fixes");
                 builder.negativeText("Close");
                 builder.titleAlignment(BaseDialog.Alignment.LEFT);
                 builder.positiveColor("#0497c9");
