@@ -27,7 +27,7 @@
     <PreferenceCategory android:title="Developer">
 
         <Preference
-            android:icon="@drawable/andrew_q"
+            android:icon="@drawable/andrew"
             android:title="Andrew Quebe"
             android:summary="Coded everything!">
             <intent
@@ -55,6 +55,15 @@
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="http://wordknecht.wordpress.com" />
+        </Preference>
+
+        <Preference
+            android:icon="@drawable/mike"
+            android:title="Mike Penz"
+            android:summary="Helped with navigation drawer issues.">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://plus.google.com/u/0/+MikePenz/about" />
         </Preference>
     </PreferenceCategory>
 
@@ -86,7 +95,7 @@
         <Preference
             android:icon="@drawable/ic_launcher"
             android:key="pref_whatsnew"
-            android:summary="2.6.1 (30)"
+            android:summary="2.6.2 (31)"
             android:title="Planets" />
     </PreferenceCategory>
 

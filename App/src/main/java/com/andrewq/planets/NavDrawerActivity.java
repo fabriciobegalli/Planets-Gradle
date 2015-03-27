@@ -204,7 +204,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 .withIcon(R.drawable.ic_moon)
                                 .withName("Other")
                                 .withIdentifier(4)
-                                .withSelectedTextColor(Color.parseColor("#527A7A"))
+                                .withSelectedTextColor(Color.parseColor("#838383"))
                                 .withSelectedIcon(R.drawable.ic_moon_tinted),
 
                         new DividerDrawerItem(),

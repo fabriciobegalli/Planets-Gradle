@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 22
-        versionCode 30
-        versionName "2.6.1"
+        versionCode 31
+        versionName "2.6.2"
     }
     buildTypes {
         release {
@@ -19,7 +19,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-
 
     // You must install or update the Support Repository through the SDK manager to use this dependency.
     //noinspection GradleDynamicVersion
