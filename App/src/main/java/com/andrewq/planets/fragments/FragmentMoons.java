@@ -88,16 +88,6 @@ public class FragmentMoons extends Fragment {
 
             }
         });
-        setInsets(getActivity(), gridView);
-    }
-
-    public void setInsets(Activity context, View transView) {
-
-        SystemBarTintManager tintManager = new SystemBarTintManager(context);
-
-        SystemBarTintManager.SystemBarConfig config = tintManager.getConfig();
-
-        transView.setPadding(0, config.getActionBarHeight() + 32, config.getPixelInsetRight(), 32);
     }
 
     public FragmentMoons() {

@@ -181,7 +181,7 @@ public class PlanetDetailsFragment extends DetailsFragment {
                 listRowAdapter.add(list.get(j));
             }
 
-            HeaderItem header = new HeaderItem(0, subcategories[0], null);
+            HeaderItem header = new HeaderItem(0, subcategories[0]);
             adapter.add(new ListRow(header, listRowAdapter));
 
             setAdapter(adapter);

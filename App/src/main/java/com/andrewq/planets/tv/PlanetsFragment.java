@@ -94,7 +94,7 @@ public class PlanetsFragment extends BrowseFragment {
                 listRowAdapter.add(sList.get(b));
             }
 
-            HeaderItem planet = new HeaderItem(s, "Stars", null);
+            HeaderItem planet = new HeaderItem(s, "Stars");
             mRowsAdapter.add(new ListRow(planet, listRowAdapter));
         }
 
@@ -108,7 +108,7 @@ public class PlanetsFragment extends BrowseFragment {
                 listRowAdapter.add(pList.get(j));
             }
 
-            HeaderItem planet = new HeaderItem(i, "Planets", null);
+            HeaderItem planet = new HeaderItem(i, "Planets");
             mRowsAdapter.add(new ListRow(planet, listRowAdapter));
         }
 
@@ -122,11 +122,11 @@ public class PlanetsFragment extends BrowseFragment {
                 listRowAdapter.add(mList.get(d));
             }
 
-            HeaderItem planet = new HeaderItem(i, "Moons", null);
+            HeaderItem planet = new HeaderItem(i, "Moons");
             mRowsAdapter.add(new ListRow(planet, listRowAdapter));
         }
 
-        HeaderItem gridHeader = new HeaderItem(i, "Other", null);
+        HeaderItem gridHeader = new HeaderItem(i, "Other");
 
         GridItemPresenter mGridPresenter = new GridItemPresenter();
         ArrayObjectAdapter gridRowAdapter = new ArrayObjectAdapter(mGridPresenter);
