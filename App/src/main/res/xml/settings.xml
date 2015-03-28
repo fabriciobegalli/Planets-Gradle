@@ -2,7 +2,6 @@
     android:id="@+id/pref_screen"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:clipToPadding="false"
     android:fitsSystemWindows="true"
     android:padding="8dp">
 
@@ -11,7 +10,7 @@
             android:id="@+id/send_usage"
             android:defaultValue="false"
             android:key="pref_send_usage"
-            android:summary="When checked, information about device, country location, language, and other anonymous data will be sent to a Google Analytics account for statistics monitoring."
+            android:summary="Check to send anonymous data to the developer."
             android:title="Send Anonymous Data" />
 
         <ListPreference
@@ -20,80 +19,61 @@
             android:entries="@array/themes"
             android:entryValues="@array/themesEntries"
             android:key="prefSetTheme"
-            android:summary="Tap here to change the design of the app."
+            android:summary="Tap here to change colors throughout app."
             android:title="@string/pref_5" />
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="Developer">
+    <!--    <PreferenceCategory android:title="Special Thanks">
+
+            <Preference
+                android:icon="@drawable/cookicons"
+                android:title="Michael Cook, Cookicons"
+                android:summary="Designed app icon, navigation drawer icons, and the icons in the settings page.">
+                <intent
+                    android:action="android.intent.action.VIEW"
+                    android:data="http://cookicons.co" />
+            </Preference>
+
+            <Preference
+                android:icon="@drawable/wknecht"
+                android:title="Delyn Wagenknecht"
+                android:summary="Rewrote descriptions for all the Planets and the Sun.">
+                <intent
+                    android:action="android.intent.action.VIEW"
+                    android:data="http://wordknecht.wordpress.com" />
+            </Preference>
+
+            <Preference
+                android:icon="@drawable/mike"
+                android:title="Mike Penz"
+                android:summary="Helped with navigation drawer issues.">
+                <intent
+                    android:action="android.intent.action.VIEW"
+                    android:data="https://plus.google.com/u/0/+MikePenz/about" />
+            </Preference>
+        </PreferenceCategory>-->
+
+    <PreferenceCategory android:title="About">
 
         <Preference
-            android:icon="@drawable/andrew"
-            android:title="Andrew Quebe"
-            android:summary="Coded everything!">
+            android:title="Developer"
+            android:summary="Andrew Quebe">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://plus.google.com/u/0/+AndrewQuebe/about" />
         </Preference>
 
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="Special Thanks">
+        <Preference
+            android:key="pref_contribs"
+            android:summary="Touch to see who has contributed to this project."
+            android:title="Contributors" />
 
         <Preference
-            android:icon="@drawable/cookicons"
-            android:title="Michael Cook, Cookicons"
-            android:summary="Designed app icon, navigation drawer icons, and the icons in the settings page.">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="http://cookicons.co" />
-        </Preference>
+            android:key="pref_licenses"
+            android:summary="Touch to view open source licenses."
+            android:title="Open Source Licenses" />
 
         <Preference
-            android:icon="@drawable/wknecht"
-            android:title="Delyn Wagenknecht"
-            android:summary="Rewrote descriptions for all the Planets and the Sun.">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="http://wordknecht.wordpress.com" />
-        </Preference>
-
-        <Preference
-            android:icon="@drawable/mike"
-            android:title="Mike Penz"
-            android:summary="Helped with navigation drawer issues.">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://plus.google.com/u/0/+MikePenz/about" />
-        </Preference>
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="Open Source Licenses">
-
-        <Preference
-            android:key="pref_listlicense"
-            android:summary="by Niek Haarman"
-            android:title="ListViewAnimations" />
-
-        <!--<Preference
-            android:key="pref_systembartint"
-            android:summary="by jgilfelt"
-            android:title="SystemBarTint" />-->
-
-        <Preference
-            android:key="pref_ldialogs"
-            android:summary="by Lewis Deane"
-            android:title="L-Dialogs" />
-
-        <Preference
-            android:key="pref_analytics"
-            android:summary="by Google, Inc."
-            android:title="Google Analytics" />
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="Version">
-
-        <Preference
-            android:icon="@drawable/ic_launcher"
             android:key="pref_whatsnew"
             android:summary="2.6.2 (31)"
             android:title="Planets" />

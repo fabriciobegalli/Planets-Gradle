@@ -64,79 +64,6 @@ public class NavDrawerActivity extends ActionBarActivity {
     static final String SKU_25_DOLLARS = "donate_25_dollars";
     static final String SKU_50_DOLLARS = "donate_50_dollars";
 
-    // (arbitrary) request code for the purchase flow
-    static final int RC_REQUEST = 10001;
-    // The helper object
-    IabHelper mHelper;
-    IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener = new IabHelper.OnIabPurchaseFinishedListener() {
-        public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
-            Log.d(TAG, "Purchase finished: " + result + ", purchase: " + purchase);
-
-            if (mHelper == null) return;
-
-            if (result.isFailure()) {
-                Toast.makeText(getBaseContext(), "Error purchasing: " + result, Toast.LENGTH_LONG).show();
-                return;
-            }
-            if (!verifyDeveloperPayload(purchase)) {
-                Toast.makeText(getBaseContext(), "Error purchasing. Authenticity verification failed.", Toast.LENGTH_LONG).show();
-                return;
-            }
-
-            Log.d(TAG, "Purchase successful.");
-
-            if (purchase.getSku().equals(SKU_1_DOLLAR)) {
-                Toast.makeText(getBaseContext(), "Thank you for your donation of $1!", Toast.LENGTH_LONG).show();
-            } else if (purchase.getSku().equals(SKU_5_DOLLARS)) {
-                Toast.makeText(getBaseContext(), "Thank you for your donation of $5!", Toast.LENGTH_LONG).show();
-            } else if (purchase.getSku().equals(SKU_10_DOLLARS)) {
-                Toast.makeText(getBaseContext(), "Thank you for your donation of $10!", Toast.LENGTH_LONG).show();
-            } else if (purchase.getSku().equals(SKU_25_DOLLARS)) {
-                Toast.makeText(getBaseContext(), "Thank you for your donation of $25!", Toast.LENGTH_LONG).show();
-            } else if (purchase.getSku().equals(SKU_50_DOLLARS)) {
-                Toast.makeText(getBaseContext(), "Thank you for your donation of $50!", Toast.LENGTH_LONG).show();
-            }
-        }
-    };
-    // Listener that's called when we finish querying the items and subscriptions we own
-    IabHelper.QueryInventoryFinishedListener mGotInventoryListener;
-
-    {
-        mGotInventoryListener = new IabHelper.QueryInventoryFinishedListener() {
-            public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
-
-                if (mHelper == null) return;
-
-                if (result.isFailure()) {
-                    Toast.makeText(getBaseContext(), "Failed to query items", Toast.LENGTH_LONG).show();
-                }
-            }
-        };
-    }
-
-    IabHelper.OnConsumeFinishedListener mConsumeFinishedListener;
-
-    {
-        mConsumeFinishedListener = new IabHelper.OnConsumeFinishedListener() {
-            public void onConsumeFinished(Purchase purchase, IabResult result) {
-                Log.d(TAG, "Consumption finished. Purchase: " + purchase + ", result: " + result);
-
-                if (mHelper == null) return;
-
-                Log.d(TAG, "End consumption flow.");
-            }
-        };
-    }
-
-    /**
-     * Verifies the developer payload of a purchase.
-     */
-    boolean verifyDeveloperPayload(Purchase p) {
-        String payload;
-        payload = p.getDeveloperPayload();
-        return true;
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -182,6 +109,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 .withIcon(R.drawable.ic_planets)
                                 .withName("Planets")
                                 .withIdentifier(1)
+                                .withTextColor(Color.parseColor("#444444"))
                                 .withSelectedTextColor(Color.parseColor("#1976D2"))
                                 .withSelectedIcon(R.drawable.ic_planets_blue),
 
@@ -189,6 +117,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 .withIcon(R.drawable.ic_stars)
                                 .withName("Stars")
                                 .withIdentifier(2)
+                                .withTextColor(Color.parseColor("#444444"))
                                 .withSelectedTextColor(Color.parseColor("#E64A19"))
                                 .withSelectedIcon(R.drawable.ic_stars_orange),
 
@@ -196,6 +125,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 .withIcon(R.drawable.ic_moon)
                                 .withName("Moons")
                                 .withIdentifier(3)
+                                .withTextColor(Color.parseColor("#444444"))
                                 .withSelectedTextColor(Color.parseColor("#527A7A"))
                                 .withSelectedIcon(R.drawable.ic_moon_tinted),
 
@@ -203,6 +133,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 .withIcon(R.drawable.ic_moon)
                                 .withName("Other")
                                 .withIdentifier(4)
+                                .withTextColor(Color.parseColor("#444444"))
                                 .withSelectedTextColor(Color.parseColor("#838383"))
                                 .withSelectedIcon(R.drawable.ic_moon_tinted),
 
@@ -212,18 +143,21 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 .withIcon(R.drawable.ic_donate)
                                 .withName("Donate")
                                 .withIdentifier(5)
+                                .withTextColor(Color.parseColor("#444444"))
                                 .withCheckable(false),
 
                         new SecondaryDrawerItem()
                                 .withIcon(R.drawable.ic_feedback)
                                 .withName("Send Feedback")
                                 .withIdentifier(6)
+                                .withTextColor(Color.parseColor("#444444"))
                                 .withCheckable(false),
 
                         new SecondaryDrawerItem()
                                 .withIcon(R.drawable.ic_settings)
                                 .withName("Settings")
                                 .withIdentifier(7)
+                                .withTextColor(Color.parseColor("#444444"))
                                 .withCheckable(false)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
@@ -247,7 +181,6 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 fragment = new FragmentOtherBodies();
                                 break;
                             case 5:
-
                                 drawer.setSelectionByIdentifier(1);
 
                                 final Activity act = NavDrawerActivity.this;
@@ -341,6 +274,79 @@ public class NavDrawerActivity extends ActionBarActivity {
         });
 
         t.start();
+    }
+
+    // (arbitrary) request code for the purchase flow
+    static final int RC_REQUEST = 10001;
+    // The helper object
+    IabHelper mHelper;
+    IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener = new IabHelper.OnIabPurchaseFinishedListener() {
+        public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
+            Log.d(TAG, "Purchase finished: " + result + ", purchase: " + purchase);
+
+            if (mHelper == null) return;
+
+            if (result.isFailure()) {
+                Toast.makeText(getBaseContext(), "Error purchasing: " + result, Toast.LENGTH_LONG).show();
+                return;
+            }
+            if (!verifyDeveloperPayload(purchase)) {
+                Toast.makeText(getBaseContext(), "Error purchasing. Authenticity verification failed.", Toast.LENGTH_LONG).show();
+                return;
+            }
+
+            Log.d(TAG, "Purchase successful.");
+
+            if (purchase.getSku().equals(SKU_1_DOLLAR)) {
+                Toast.makeText(getBaseContext(), "Thank you for your donation of $1!", Toast.LENGTH_LONG).show();
+            } else if (purchase.getSku().equals(SKU_5_DOLLARS)) {
+                Toast.makeText(getBaseContext(), "Thank you for your donation of $5!", Toast.LENGTH_LONG).show();
+            } else if (purchase.getSku().equals(SKU_10_DOLLARS)) {
+                Toast.makeText(getBaseContext(), "Thank you for your donation of $10!", Toast.LENGTH_LONG).show();
+            } else if (purchase.getSku().equals(SKU_25_DOLLARS)) {
+                Toast.makeText(getBaseContext(), "Thank you for your donation of $25!", Toast.LENGTH_LONG).show();
+            } else if (purchase.getSku().equals(SKU_50_DOLLARS)) {
+                Toast.makeText(getBaseContext(), "Thank you for your donation of $50!", Toast.LENGTH_LONG).show();
+            }
+        }
+    };
+    // Listener that's called when we finish querying the items and subscriptions we own
+    IabHelper.QueryInventoryFinishedListener mGotInventoryListener;
+
+    {
+        mGotInventoryListener = new IabHelper.QueryInventoryFinishedListener() {
+            public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
+
+                if (mHelper == null) return;
+
+                if (result.isFailure()) {
+                    Toast.makeText(getBaseContext(), "Failed to query items", Toast.LENGTH_LONG).show();
+                }
+            }
+        };
+    }
+
+    IabHelper.OnConsumeFinishedListener mConsumeFinishedListener;
+
+    {
+        mConsumeFinishedListener = new IabHelper.OnConsumeFinishedListener() {
+            public void onConsumeFinished(Purchase purchase, IabResult result) {
+                Log.d(TAG, "Consumption finished. Purchase: " + purchase + ", result: " + result);
+
+                if (mHelper == null) return;
+
+                Log.d(TAG, "End consumption flow.");
+            }
+        };
+    }
+
+    /**
+     * Verifies the developer payload of a purchase.
+     */
+    boolean verifyDeveloperPayload(Purchase p) {
+        String payload;
+        payload = p.getDeveloperPayload();
+        return true;
     }
 
     @Override
