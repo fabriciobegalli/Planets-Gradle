@@ -16,6 +16,8 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 
 import com.andrewq.planets.R;
+import com.andrewq.planets.contributers.Contributers;
+import com.andrewq.planets.licenses.Licenses;
 import com.google.analytics.tracking.android.EasyTracker;
 
 import uk.me.lewisdeane.ldialogs.BaseDialog;
@@ -33,6 +35,30 @@ public class Settings extends PreferenceActivity {
             this.setTaskDescription(new ActivityManager.TaskDescription("Settings",
                     drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), Color.parseColor("#414141")));
         }
+
+        Preference prefContribs = findPreference("pref_contribs");
+
+        prefContribs.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+
+                Intent i = new Intent(getBaseContext(), Contributers.class);
+                startActivity(i);
+                return true;
+            }
+        });
+
+        Preference prefLicenses = findPreference("pref_licenses");
+
+        prefLicenses.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+
+                Intent i = new Intent(getBaseContext(), Licenses.class);
+                startActivity(i);
+                return true;
+            }
+        });
 
         Preference prefWhatsNew = findPreference("pref_whatsnew");
 

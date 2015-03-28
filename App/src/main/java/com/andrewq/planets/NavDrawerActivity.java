@@ -359,7 +359,7 @@ public class NavDrawerActivity extends ActionBarActivity {
     @Override
     public void setTitle(CharSequence title) {
         if (title == "Donate" || title == "Send Feedback" || title == "Settings") {
-
+            //Do nothing...
         } else
             getSupportActionBar().setTitle(title);
     }
