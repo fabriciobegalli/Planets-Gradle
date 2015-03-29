@@ -49,6 +49,7 @@ import com.suredigit.inappfeedback.FeedbackSettings;
 /**
  * Created by andrew on 2/27/15.
  */
+@SuppressWarnings("deprecation")
 public class NavDrawerActivity extends ActionBarActivity {
 
     Drawer.Result drawer;
@@ -77,7 +78,7 @@ public class NavDrawerActivity extends ActionBarActivity {
 
         //TODO: Fix this!
 
-        /*mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
+        mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
             public void onIabSetupFinished(IabResult result) {
                 Log.d(TAG, "Setup finished.");
 
@@ -94,7 +95,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                 Log.d(TAG, "Setup successful. Querying inventory.");
                 mHelper.queryInventoryAsync(mGotInventoryListener);
             }
-        });*/
+        });
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -344,8 +345,7 @@ public class NavDrawerActivity extends ActionBarActivity {
      * Verifies the developer payload of a purchase.
      */
     boolean verifyDeveloperPayload(Purchase p) {
-        String payload;
-        payload = p.getDeveloperPayload();
+        String payload = p.getDeveloperPayload();
         return true;
     }
 
@@ -358,6 +358,7 @@ public class NavDrawerActivity extends ActionBarActivity {
 
     @Override
     public void setTitle(CharSequence title) {
+        //noinspection StatementWithEmptyBody
         if (title == "Donate" || title == "Send Feedback" || title == "Settings") {
             //Do nothing...
         } else
