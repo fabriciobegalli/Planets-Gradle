@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityOptions;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -11,9 +12,12 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -23,6 +27,10 @@ import com.andrewq.planets.R;
 import com.andrewq.planets.image_views.PhobosImageView;
 import com.andrewq.planets.util.NotifyingScrollView;
 import com.google.analytics.tracking.android.EasyTracker;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class PhobosActivity extends Activity {
 
@@ -69,6 +77,7 @@ public class PhobosActivity extends Activity {
         setContentView(R.layout.phobos);
 
         mActionBar = getActionBar();
+        assert mActionBar != null;
 
         mActionBar.setCustomView(R.layout.custom_actionbar_phobos);
 
@@ -186,6 +195,65 @@ public class PhobosActivity extends Activity {
         imgV.setOnTouchListener(upDownListener);
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.source_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.sendFeedback:
+                sendFeedback(this);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public static void sendFeedback(Context context)
+    //opens an email intent with a screenshot and preloaded email
+    {
+        context.getApplicationContext();
+        final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+        Uri uri = Uri.fromFile(takeTempScreenshot(context));
+            /* Fill it with Data */
+        emailIntent.setType("plain/text");
+        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{context.getResources().getString(R.string.support_email)});
+        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Feedback: Phobos");
+        emailIntent.putExtra(Intent.EXTRA_STREAM, uri);
+        //emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Text");
+        context.startActivity(Intent.createChooser(emailIntent, context.getResources().getString(R.string.send_feedback)));
+        //activity.startActivityForResult(Intent.createChooser(emailIntent, getResources().getString(R.string.send_feedback)));
+
+    } //end sendFeedback()
+
+    public static File takeTempScreenshot(Context context)
+    //takes a screenshot and stores it in the app's cache, returns the image
+    {
+        Activity activity = (Activity) context;
+        try {
+            File outputDir = context.getExternalCacheDir(); // context being the Activity pointer
+            File imageFile = File.createTempFile("pfb_phobos", ".jpeg", outputDir);
+            // image naming and path  to include sd card  appending name you choose for file
+            View v1 = activity.getWindow().getDecorView().getRootView();
+
+            v1.setDrawingCacheEnabled(true);
+            // create bitmap screen capture
+            Bitmap bitmap = Bitmap.createBitmap(v1.getDrawingCache());
+            v1.setDrawingCacheEnabled(false);
+            FileOutputStream fout = new FileOutputStream(imageFile);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fout);
+            fout.flush();
+            fout.close();
+            return imageFile;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    } //end takeScreenshot
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
