@@ -130,12 +130,12 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 .withSelectedIcon(R.drawable.ic_moon_tinted),
 
                         new PrimaryDrawerItem()
-                                .withIcon(R.drawable.ic_moon)
+                                .withIcon(R.drawable.ic_comet)
                                 .withName("Other")
                                 .withIdentifier(4)
                                 .withTextColor(Color.parseColor("#444444"))
                                 .withSelectedTextColor(Color.parseColor("#838383"))
-                                .withSelectedIcon(R.drawable.ic_moon_tinted),
+                                .withSelectedIcon(R.drawable.ic_coment_tinted),
 
                         new DividerDrawerItem(),
 
