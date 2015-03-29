@@ -311,6 +311,7 @@ public class NavDrawerActivity extends ActionBarActivity {
             }
         }
     };
+
     // Listener that's called when we finish querying the items and subscriptions we own
     IabHelper.QueryInventoryFinishedListener mGotInventoryListener;
 
