@@ -135,7 +135,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 .withIdentifier(4)
                                 .withTextColor(Color.parseColor("#444444"))
                                 .withSelectedTextColor(Color.parseColor("#838383"))
-                                .withSelectedIcon(R.drawable.ic_coment_tinted),
+                                .withSelectedIcon(R.drawable.ic_comet_tinted),
 
                         new DividerDrawerItem(),
 
