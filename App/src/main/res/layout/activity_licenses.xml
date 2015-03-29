@@ -9,7 +9,49 @@
     tools:context="com.andrewq.planets.licenses.Licenses">
 
     <TextView
-        android:text="@string/hello_world"
+        android:id="@+id/lvTitle"
+        android:textSize="18sp"
+        android:text="License for ListviewAnimations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/lvLicense"
+        android:textSize="14sp"
+        android:layout_below="@+id/lvTitle"
+        android:text="Licensed under the Apache License, Version 2.0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/lDialogsTitle"
+        android:layout_below="@+id/lvLicense"
+        android:textSize="18sp"
+        android:text="License for L-Dialogs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/lDialogsLicense"
+        android:textSize="14sp"
+        android:layout_below="@+id/lDialogsTitle"
+        android:text="No license provided by developer."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/lGoogleAnalytics"
+        android:layout_below="@+id/lDialogsLicense"
+        android:textSize="18sp"
+        android:text="License for Google Analytics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/lGoogleAnalyticsLicense"
+        android:textSize="14sp"
+        android:layout_below="@+id/lGoogleAnalytics"
+        android:text="Licensed under the Apache License, Version 2.0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
