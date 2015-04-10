@@ -110,6 +110,8 @@ public class PlanetDetailsFragment extends DetailsFragment {
             selectedPlanet = movies[0];
 
             DetailsOverviewRow row = new DetailsOverviewRow(selectedPlanet);
+
+            //TODO: Fix this so that there is room on the whole card for a picture AND text.
             /*try {
                 Bitmap poster = Picasso.with(getActivity())
                         .load(selectedPlanet.getCardImageUrl())
@@ -120,6 +122,9 @@ public class PlanetDetailsFragment extends DetailsFragment {
                 row.setImageBitmap(getActivity(), poster);
             } catch (IOException e) {
             }*/
+
+            //TODO: make a new activity for each item which gives a long description
+            // This line adds a button to the card
 
             //row.addAction(new Action(ACTION_WATCH_TRAILER, "Read More", null));
 
