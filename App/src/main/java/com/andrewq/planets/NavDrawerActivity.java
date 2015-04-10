@@ -298,16 +298,22 @@ public class NavDrawerActivity extends ActionBarActivity {
 
             Log.d(TAG, "Purchase successful.");
 
-            if (purchase.getSku().equals(SKU_1_DOLLAR)) {
-                Toast.makeText(getBaseContext(), "Thank you for your donation of $1!", Toast.LENGTH_LONG).show();
-            } else if (purchase.getSku().equals(SKU_5_DOLLARS)) {
-                Toast.makeText(getBaseContext(), "Thank you for your donation of $5!", Toast.LENGTH_LONG).show();
-            } else if (purchase.getSku().equals(SKU_10_DOLLARS)) {
-                Toast.makeText(getBaseContext(), "Thank you for your donation of $10!", Toast.LENGTH_LONG).show();
-            } else if (purchase.getSku().equals(SKU_25_DOLLARS)) {
-                Toast.makeText(getBaseContext(), "Thank you for your donation of $25!", Toast.LENGTH_LONG).show();
-            } else if (purchase.getSku().equals(SKU_50_DOLLARS)) {
-                Toast.makeText(getBaseContext(), "Thank you for your donation of $50!", Toast.LENGTH_LONG).show();
+            switch (purchase.getSku()) {
+                case SKU_1_DOLLAR:
+                    Toast.makeText(getBaseContext(), "Thank you for your donation of $1!", Toast.LENGTH_LONG).show();
+                    break;
+                case SKU_5_DOLLARS:
+                    Toast.makeText(getBaseContext(), "Thank you for your donation of $5!", Toast.LENGTH_LONG).show();
+                    break;
+                case SKU_10_DOLLARS:
+                    Toast.makeText(getBaseContext(), "Thank you for your donation of $10!", Toast.LENGTH_LONG).show();
+                    break;
+                case SKU_25_DOLLARS:
+                    Toast.makeText(getBaseContext(), "Thank you for your donation of $25!", Toast.LENGTH_LONG).show();
+                    break;
+                case SKU_50_DOLLARS:
+                    Toast.makeText(getBaseContext(), "Thank you for your donation of $50!", Toast.LENGTH_LONG).show();
+                    break;
             }
         }
     };

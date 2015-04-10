@@ -236,7 +236,7 @@
     <string name="button_source">Source</string>
     <string name="title_activity_planet_long_description">PlanetLongDescription</string>
     <string name="content_description">Nav Drawer Icon</string>
-    <string name="title_activity_contributers">Contributers</string>
+    <string name="title_activity_contributers">Contributors</string>
     <string name="title_activity_licenses">Licenses</string>
 
 </resources>

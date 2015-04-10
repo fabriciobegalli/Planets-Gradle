@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
+import android.support.v7.widget.Toolbar;
 
 import com.andrewq.planets.R;
 import com.andrewq.planets.contributers.Contributers;
@@ -24,6 +25,8 @@ import uk.me.lewisdeane.ldialogs.BaseDialog;
 import uk.me.lewisdeane.ldialogs.CustomDialog;
 
 public class Settings extends PreferenceActivity {
+
+    Toolbar toolbar;
 
     @SuppressWarnings("deprecation")
     @Override
