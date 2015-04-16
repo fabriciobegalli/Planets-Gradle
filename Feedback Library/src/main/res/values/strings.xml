@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Feedback Library</string>
+
+    <string name="feedback_activity_name">Send Feedback</string>
+    <string name="feedback_hint">Write your feedback</string>
+    <string name="checkbox_text">Include screenshot and info</string>
+</resources>

@@ -2,10 +2,8 @@ package com.andrewq.planets;
 
 import android.app.Activity;
 import android.app.ActivityManager;
-import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -27,6 +25,8 @@ import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.afollestad.materialdialogs.Theme;
 import com.andrewq.planets.fragments.FragmentMoons;
 import com.andrewq.planets.fragments.FragmentOtherBodies;
 import com.andrewq.planets.fragments.FragmentPlanets;
@@ -186,7 +186,7 @@ public class NavDrawerActivity extends ActionBarActivity {
 
                                 final Activity act = NavDrawerActivity.this;
 
-                                new AlertDialog.Builder(NavDrawerActivity.this)
+                                /*new AlertDialog.Builder(NavDrawerActivity.this)
                                         .setTitle("Select Amount (Tax Not Listed)")
                                         .setItems(R.array.donations, new DialogInterface.OnClickListener() {
                                             public void onClick(DialogInterface dialog, int which) {
@@ -210,7 +210,32 @@ public class NavDrawerActivity extends ActionBarActivity {
                                                 //Do nothing!
                                             }
                                         })
+                                        .show();*/
+
+                                new MaterialDialog.Builder(NavDrawerActivity.this)
+                                        .title("Select Amount (Tax Not Listed)")
+                                        .theme(Theme.LIGHT)
+                                        .items(R.array.donations)
+                                        .itemsCallback(new MaterialDialog.ListCallback() {
+                                            @Override
+                                            public void onSelection(MaterialDialog materialDialog, View view, int i, CharSequence charSequence) {
+                                                String payload = "";
+                                                if (i == 0) {
+                                                    mHelper.launchPurchaseFlow(act, SKU_1_DOLLAR, RC_REQUEST, mPurchaseFinishedListener, payload);
+                                                } else if (i == 1) {
+                                                    mHelper.launchPurchaseFlow(act, SKU_5_DOLLARS, RC_REQUEST, mPurchaseFinishedListener, payload);
+                                                } else if (i == 2) {
+                                                    mHelper.launchPurchaseFlow(act, SKU_10_DOLLARS, RC_REQUEST, mPurchaseFinishedListener, payload);
+                                                } else if (i == 3) {
+                                                    mHelper.launchPurchaseFlow(act, SKU_25_DOLLARS, RC_REQUEST, mPurchaseFinishedListener, payload);
+                                                } else {
+                                                    mHelper.launchPurchaseFlow(act, SKU_50_DOLLARS, RC_REQUEST, mPurchaseFinishedListener, payload);
+                                                }
+                                            }
+                                        })
+                                        .autoDismiss(false)
                                         .show();
+
                                 break;
                             case 6:
                                 drawer.setSelectionByIdentifier(1);

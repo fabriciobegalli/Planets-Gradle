@@ -102,5 +102,6 @@
     <orderEntry type="library" exported="" name="leanback-v17-22.0.0" level="project" />
     <orderEntry type="library" exported="" name="libGoogleAnalyticsServices" level="project" />
     <orderEntry type="library" exported="" name="recyclerview-v7-22.0.0" level="project" />
+    <orderEntry type="module" module-name="Feedback Library" exported="" />
   </component>
 </module>
