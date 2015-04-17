@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Action Bar Titles -->
+    <string name="app_name">Planets</string>
+    <string name="search_title">Cerca</string>
+    <string name="action_settings">Impostazioni</string>
+    <string-array name="navigation_drawer_items">
+        <item>Pianeti</item>
+        <item>Pianeti</item>
+        <item>Stelle</item>
+        <item>Lune</item>
+        <item>Altri</item>
+    </string-array>
+    <!-- String Arrays -->
+    <string-array name="mars_moons">
+        <!-- String Arrays -->
+        <item>Phobos</item>
+        <!-- String Arrays -->
+        <item>Deimos</item>
+    </string-array>
+    <string-array name="jupiter_moons">
+        <item>Europa</item>
+        <item>Io</item>
+        <item>Ganimede</item>
+        <item>Calipso</item>
+    </string-array>
+    <string-array name="settings">
+        <item>Impostazioni</item>
+        <item>Impostazioni</item>
+    </string-array>
+    <string-array name="themes">
+        <item>Rosso</item>
+        <item>Arancio</item>
+        <item>Blu</item>
+        <item>Verde</item>
+        <item>Viola</item>
+        <item>Scuro</item>
+    </string-array>
+    <string-array name="themesEntries">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    <string-array name="donations">
+        <item>$1</item>
+        <item>$5</item>
+        <item>$10</item>
+        <item>$25</item>
+        <item>$50</item>
+    </string-array>
+    <string-array name="donationEntries">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <!-- Preferences Titles -->
+    <string name="pref_cate_title_1">Design</string>
+    <string name="pref_5">Tema</string>
+    <!-- Accessibility Titles -->
+    <string name="sun_image">Immagini del Sole</string>
+    <string name="mercury_image">Immagini di Mercurio</string>
+    <string name="venus_image">Immagini di Venere</string>
+    <string name="earth_image">Immagini della Terra</string>
+    <string name="mars_image">Immagini di Marte</string>
+    <string name="jupiter_image">Immagini di Giove</string>
+    <string name="saturn_image">Immagini di Saturno</string>
+    <string name="uranus_image">Immagini di Urano</string>
+    <string name="neptune_image">Immagini di Nettuno</string>
+    <!-- Moons -->
+    <string name="earth_satellite">Satellite (1)</string>
+    <string name="moon_title">Luna</string>
+    <string name="moon_image">Immagini della Luna</string>
+    <string name="moon_sub_title_1">Dati</string>
+    <string name="moon_description">Circonferenza equatoriale: 10,917.0 km\nDiametro: 3,475 km\nMassa: 73,476,730,924,573,500 milioni kg (0.0123 x Terra)\nDistanza Media dalla Terra: 384,400 km\nLunghezza dell\'Orbita: 27.3 Earth days\nTemperatura alla Superfice: -233 to 123 °C</string>
+    <string name="moon_sub_title_2">Fatti</string>
+    <string name="moon_description_2">La Luna è l\'unico satellite naturale della Terra e si è formata circa 4.6 miliardi di anni fa e intorno ai 30–50 milioni di anni dalla formazione del sistema solare. La Luna è in rotazione sincrona con la Terra rivolgendole quindi sempre la stessa faccia. La prima missione sulla Luna senza equipaggio si è svolta nel 1959 con il Programma Lunare Sovietico mentri la prima con equipaggio è avvenuta nel 1969 con la missione statunitense Apollo 11.</string>
+    <string name="moon_button">Satellite (1)</string>
+    <!-- Europa -->
+    <string name="jupiter_sat_1">Satellite (4)</string>
+    <string name="europa_title">Europa</string>
+    <string name="europa_image">Immagini di Europa</string>
+    <string name="europa_sub_title_1">Dati</string>
+    <string name="europa_description">Scoperto da: Galileo Galilei, Simon Marius\nData Scoperta: 8 gennaio 1610\nPerigeo: 664,862 km\nApogeo: 676,938 km\nRaggio medio orbita: 670,900 km\nEccentricità: 0.009\nPeriodo di rivoluzione: 3.551181 giorni\nVelocità orbitale media: 13.740 km/s\nInclinazione: 0.470° (rispetto all\'equatore di Giove)</string>
+    <string name="europa_sub_title_2">Fatti</string>
+    <string name="europa_description_2">Nella mitologia greca, Europa fu rapita da Zeus, trasformato in un toro interamente bianco al fine di sedurla. Europa adornò il \"toro\" con dei fiori e lo cavalcò fino a riportarlo a Creta. Una volta giunto a Creta, equivalente del dio romano Giove, riprese la sua forma originale e sedusse Europa. la quale divenne regina di Creta e diede a Zeus molti figli.\n\nPer secoli, la quarta luna in ordine di grandezza di Giove non ebbe un nome. Infatti Galileo diede ad ognuna delle lune un numero, da uno a quattro. Delle quattro lune  Europa venne ritenuta la seconda più vicina a Giove ed ecco perché Galileo le diede il nome di Giove II.\n\nAlla missione Galileo, lanciata dalla NASA nel 1989, si deve la maggior parte delle informazione che abbiamo oggi su Giove e sui corpi orbitanti intorno a Giove. La sonda Galileo impiegò più di 6 anni per raggiungere la sua destinazione. La sonda rimase in orbita di Giove dall\'8 Dicembre 1995 fino al 21 settembre 2003.\n\nUna caratteristica peculiare di Europa è il suo elevato grado di riflessione. La crosta ghiacciata di Europa è responsabile di un grado di riflessione pari a 0.64, uno dei valori più elevati tra tutte le lune dell\'intero sistema solare.\nGli scienziati stimano che la superficie di Europa abbia un\'età compresa tra i 20 e i 180 milioni di anni, e quindi relativamente giovane.\nTramite l\'analisi delle foto scattate dalla sonda Galileo, gli scienziati hanno ipotizzato che Europa abbia una superficie composta di rocce di silicio e che abbia un nucleo di ferro e un mantello roccioso, molto simile alla Terra. A differenza della Terra però l\'interno roccioso di Europa risulta circondato di uno strato di ghiaccio dallo spessore di circa 100 km.</string>
+    <!-- Titan -->
+    <string name="titan_description">Scoperto da: Christiaan Huygens\nData della scoperta: 25 marzo 1655\nPerigeo: 1.186.680 km\nApogeo: 1.257.060 km\nAsse minore: 1.221.870 km\nEccentricita: 0.0288\nPeriodo di rivoluzione: 15,945 giorni\nVelocità media orbitale: 5.57 km/s (calcolata)\nInclinazione: 0.34854° (rispetto all\'orbita di Saturno)</string>
+    <!-- Phobos -->
+    <string name="mars_sat_1">Satellite (2)</string>
+    <string name="phobos_title">Phobos</string>
+    <string name="phobos_image">Immagini di Phobos</string>
+    <string name="phobos_sub_title_1">Dati</string>
+    <string name="phobos_description">Dimensioni: 27 x 22 x 18 km\nRaggio medio: 11,2667 km (1,76941 mTerre)\nMassa: 1,0659×1016 kg (17.8477 nTerre)\nDensità media: 1,876 g/cm cubi\nGravità Superficiale Equatoriale: 0,0057 m/s quadrati (581.4 µg)\nVelocità di fuga: 11,39 m/s (41 km/h,\nTemperatura ≈ 233 K\nMagnitudine apparente: 11,3</string>
+    <string name="phobos_sub_title_2">Fatti</string>
+    <string name="phobos_description_2">All\'inizio del 17esimo secolo, l\'astronomo tedesco Johannes Kepler ipotizzò che Marte avesse due lune, in virtù della sua posizione posta tra la Terra e Giove, rispettivamente con una e quattro satelliti. Tuttavia nessuna evidenza sulla presenza di tali lune fu data. Sebbene la maggioranza del pubblico ritenesse che Marte fosse priva di lune, l\'astronomo americano Asaph Hall fece degli studi metodici utilizzando il U.S. Naval Observatory situato a Washington, D.C., con osservazioni del pianeta più ravvicinate ci quanto fatto fino ad allora.\n\nDopo aver effettuato le sue ricerche senza successo, il demoralizzato Hall era sul punto di abbandonare ma venne persuaso di continuare dalla moglie Angelina. La notte seguente, era il 12 agosto 1877, fece la scoperta della luna di Marte in seguito conosciuta con il nome di Deimos. Sei giorni dopo scoprì Phobos. le tue lune sono così vicine al pianeta al punto da venire nascoste dalla luce di esso. Di dimensioni simili ad asteroidi, Phobos e Deimos sono anche tra le più piccole lune del sistema solare, con la più grande Phobos ben 7,24 volte più grande della sua compagna Deimos.</string>
+    <!-- Deimos -->
+    <string name="mars_sat_2">Satellite (2)</string>
+    <string name="deimos_title">Deimos</string>
+    <string name="deimos_image">Immagini di Deimos</string>
+    <string name="deimos_sub_title_1">Dati</string>
+    <string name="deimos_description">Dimensioni: 7,8 x 6,0 x 5,1 km\nRaggio Medio: 6,2 ± 0,18 km (0,97316 mTerre)\nMassa: 1,4762×1015 kg (24,7179 nTerre)\nDensità Media: 1,471±0,166 g/cm cubi\nGravità Superficiale all\'Equatore: 0,003 m/s quadrati (306 µg)\nVelocità di fuga: 5,556 m/s (20 km/h)\nTemperatura ≈ 233 K\nMagnitude Apparente: 12.45 ± 0.05</string>
+    <string name="deimos_sub_title_2">Fatti</string>
+    <string name="deimos_description_2">Il 12 agosto 1877 la ricerca delle lune marziane da parte dell\'astronomo americano Asaph Hall porta alla scoperta di Deimos. Sei giorni dopo la seconda luna di Marte, Phobos, viene identificata.\nL\'esistenza delle suddette lune era stata ipotizza alcuni anni prima, quando Johannes Kepler propose che, siccome la Terra ha una luna e Giove quattro (all\'epoca solo le lune galileiane erano conosciute) , Marte  ne avrebbe dovuto avere due.  Tuttavia nessuna luna venne identificata fino a che Hal iniziò la sua ricerca dedicata.\nUtilizzando il rifrattore a 26 pollici dell\'U.S. Naval Observatory di Washington, D.C., Hall si dedicò ad uno studio metodico nella regione intorno al pianeta rosso. Studiando più in prossimità al pianeta rispetto ai precedenti astronomi, Hall trovò Deimos in orbita equatoriale a circa 23.458 km rispetto al centro di Marte. Phobos orbita ancora più vicino. La loro prossimità alla superficie di Marte e le piccole dimensioni permisero loro di rimanere occultate alle osservazioni astronomiche.\nCome molti dei corpi dei sistemi solari, le lune marziane prendono il loro nome dalla mitologia greca. Nell\'antico poema di Omero, L\'Iliade, Deimos e Phobos erano i figli gemelli di Marte (Ares per i greci) e lo accompagnavano nelle battaglie.</string>
+    <!-- Objects Names and Info -->
+    <string name="sun_title">Sole</string>
+    <string name="sun_sub_title_1">Dati</string>
+    <string name="sun_description">Età : 4,6 Miliardi di Anni\nTipo: Nana Gialla (G2V)\nDiametro: 1.392.684 km\nCirconferenza Equatoriale: 4.370.005.6 km\nMassa: 1,9891×10^21 miliardi kg (333.060 x Terra)\nTemperatura alla Superficie: 5500 °C</string>
+    <string name="sun_sub_title_2">Fatti</string>
+    <string name="sun_description_2" formatted="false">Il Sole è il centro del nostro sistema solare, intorno al quale la Terra gira ad una distanza di circa 93 milioni di miglia, con una distanza variabile a causa dell\'orbita ellittica della Terra stessa. La distanza Terra-Sole viene chiamata Unità Astronomica UA. La luce del sole impiega poco più di 8 minuti per raggiungere la Terra. Al pari della Terra anche il Sole si muove in orbita rispetto al centro della Via Lattea. La sua velocità è di circa 220 chilometri al secondo.\n\nIl sole è una stella di tipo nana gialla avente una massa di 1,989x1039 kg, circa 330.000 volte più grande di quella della Terra. È composto per il 70% circa da idrogeno con la restante parte di elio.\n\nLa circonferenza del sole è pari a 1.3902.684 km e la sua superficie è circa 11.990 volte quella della Terra. Un milione di Terre potrebbero essere contenute nel sole! Il sole è l\'unico oggetto osservato in natura con la forma più simile a quella di una sfera perfetta.\n\nLa temperatura del nucleo del sole può raggiungere i 15 milioni di gradi Celsius con quella superficiale pari invece a circa 5500 gradi. Il sole produce la sua energia tramite fusione nucleare, in cui l\'idrogeno viene convertito in elio nel nucleo. Il sole è responsabile del clima sulla Terra nonché della sua vita.\n\nSiccome il sole ha un fortissimo campo magnetico, periodicamente vengono rilasciate dalla sua superficie  delle fiammate solari causate da tempeste magnetiche. Tali fiammate vengono viste dalla Terra come macchie solari.\n\nIl sole genera anche il vento solare, un flusso di particelle cariche che viaggia attraverso il sistema solare a circa 40 chilometri al secondo.</string>
+    <string name="mercury_title">Mercurio</string>
+    <string name="mercury_sub_title_1">Dati</string>
+    <string name="mercury_description">Massa: 3.30104×10^14 milardi kg (0.055 x Terra)\nDiametro Equatoriale: 4,879\nDiametro ai Poli: 4,879\nCirconferenza Equatoriale: 15,329 km\nSatelliti Conosciuti: nessuno\nSatelliti Principali: nessuno\nDistanza Orbita: 57,909,227 km (0.39 AU)\nPeriodo di Rivoluzione: 87.97 Earth days\nTemperatura alla Superficie: -173 to 427°C\nPrima Osservazione: 14th century BC\nOsservato da: Astronomi Assiri</string>
+    <string name="mercury_sub_title_2">Fatti</string>
+    <string name="mercury_description_2" formatted="false">Mercurio è il pianeta più vicino al sole. A causa della sua orbita fortemente eccentrica la sua distanza dal sole varia tra i 46 e i 70 milioni di chilometri. È quasi bloccato nella sua rotazione in quanto ruota intorno al suo asse solamente tre volte nei due ¨anni¨ in cui percorre la sua orbita. Un anno di Mercurio è lungo 88 giorni ma un suo giorno è lungo quanto 176 giorni terrestri. A causa della sua elevata velocità orbitale al pianeta venne dato il nome del dio romano alato, messaggero degli dei, Mercurio.\n\nMercurio è il più piccolo pianeta del sistema solare. Il suo diametro è di 4.879 km, mentre quello della Terra è pari a 12.742 km. Nonostante sia piccolo la densità di Mercurio (5,4 grammi al cm cubo) è seconda solo a quella della Terra. Ciò è dovuto al fatto che Mercurio è composto di di metalli pesanti e rocce.\nLa temperatura di Mercurio varia tra i 427 gradi Celsius sulla faccia rivolta al sole e i -173 gradi sulla faccia opposta. Non esiste alcuna atmosfera che possa regolare la temperatura.\n\nLa superficie di Mercurio è molto irregolare. Le crepe, chiamate Lobate Scarp, possono arrivare da una profondità di un miglio ed una lunghezza di centinaia di miglia.\n\nDue sonde hanno finora visitato Mercurio: il Mariner 10 ed il Messenger, che hanno permesse di ottenere molte informazioni che sappiamo di Mercurio.</string>
+    <string name="venus_title">Venere</string>
+    <string name="venus_sub_title_1">Dati</string>
+    <string name="venus_description">Massa: 4,86732×10^15 miliardi kg (0,815 x Terra)\nDiametro Equatoriale : 12.104 km\nDiametro Polare: 12.104 km\nCirconferenza Equatoriale: 38.025 km\nSatelliti conosciuti: nessuno\nSatelliti rilevanti: nessuno\nDistanza Orbitale: 108.209.475 km (0,73 AU)\nPeriodo Orbitale: 224,70 giorni terrestri\nTemperatura Superficiale: 462 °C\nPrima Osservazione: 17esimo secolo AC\nOsservatori: astronomi babilonesi</string>
+    <string name="venus_sub_title_2">Fatti</string>
+    <string name="venus_description_2" formatted="false">Venere è il secondo pianeta per vicinanza al sole e viene spesso rappresentato come la sorella del pianeta Terra per la sua somiglianza in dimensioni, densità, composizione e gravità. Entrambi i pianeti hanno un nucleo centrale, un mantello fluido ed una crosta. Venere, tuttavia, non può ospitare vita.\n\nVenere è il pianete più caldo del sistema solare nonostante non sia il più vicino al sole. La temperatura media alla superficie è di 462 gradi Celsius e non esistono variazioni stagionali in quanto l\'asse del pianeta non è inclinato. Le temperature raggiungono valori così elevati a causa della densa atmosfera composta al 96,5% di anidride carbonica. Venere possiede anche delle nuvole composte da acido solforico e molti vulcani, ed è infine molto secco. La pressione atmosferica su Venere è il 92% più elevata di quella della Terra.\n\nVenere è il secondo oggetto più luminoso del cielo notturno, dopo la luna. Il suo nome deriva da quello della dea dell\'amore, probabilmente dovuto alla sua brillantezza. Viene spesso chiamato anche Stella del Mattino o Stella della Sera in quanto, quando la sua orbita intorno al Sole supera quella della Terra, passa da uno stato di visibilità dopo il tramonto a quella di visibilità prima dell\'alba. A causa di questo fenomeno le antiche civiltà ipotizzavano che Venere avesse due corpi. Gli astronomi Maya fecero delle osservazioni molto dettagliate di Venere già nel 650 DC.\n\nVenere ruote in senso antiorario (rotazione retrograda) ed impiega circa 243 giorni terrestri per ruotare intorno al proprio asse. Un giorno su Venere è lungo quasi come un anno terrestre e la sua orbita intorno al solo impiega 225 giorni terrestri. A differenza di molti altri pianeti del nostro sistema solare Venere non ha satelliti naturali.\n\nMolte sonde hanno finora visitato Venere ma la sua atmosfera, l\'intensa attività vulcanica ed il calore superficiale impediscono studi accurati.</string>
+    <string name="earth_title">Terra</string>
+    <string name="earth_sub_title_1">Dati</string>
+    <string name="earth_description">Massa: 5,972199×10^15 miliardi kg\nDiametro Equatoriale: 12,756 km\nDiametro Polare: 12,714 km\nCirconferenza Equatoriale: 40,030 km\nSatelliti noti: 1\nSatelliti rilevanti: La Luna\nDistanza Orbitale: 149.598.262 km (1 AU)\nPeriodo Orbitale: 365,26 giorni terrestri\nTemperatura Superficiale: da -88 a +58°C</string>
+    <string name="earth_sub_title_2">Fatti</string>
+    <string name="earth_description_2" formatted="false">A causa del movimento apparente del Sole e degli altri pianeti in relazione alla Terra, gli antichi scienziati pensavano che la Terra rappresentasse il centro dell\'universo e che fosse immobile con gli altri corpi celesti in orbita attorno ad essa. Fu lo scienziato Copernico che postulò che fosse il Sole al centro dell\'universo, ipotesi infine, con le dovute evidente correzioni, provata.\nLa Terra orbita ad una distanza di 149.598.262 chilometri dal Sole.\n\nLa rotazione della Terra, inclinata sul suo asse, sta rallentando lentamente, ma la sua decelerazione avviene in maniera quasi impercettibile, di circa 17 millisecondi ogni 100 anni. A questo andatura, i nostri giorni si allungheranno a circa 25 ore in un lasso di tempo di 140 milioni di anni.\n\nLa Terra è il più grande di pianeti terresti, o rocciosi, includendo Venere, Marte e Mercurio. Con un diametro di 13.000 km è il quinto pianeta per grandezza in ordine assoluto.\n\nLa Terra è dotata di un potente campo magnetico, un fenomeno causato dalla combinazione del nucleo di nickel-ferro e la rapida rotazione. Il campo protegge la Terra dagli effetti del vento solare.\n\nLa Luna è l\'unico satellite naturale del pianeta Terra. Considerando la percentuale delle dimensioni del corpo ospitante, la Luna è il più grande satellite del sistema solare. In senso assoluto, tuttavia, è solo il quinto satellite per ordine di grandezza.\n\nLa Terra è l\'unico pianeta che non ha un nome ispirato ad un dio.\n\nDi tutti i pianeti del sistema solare, la Terra ha la densità maggiore. Questa tuttavia varia considerevolmente a seconda della regione; per esempio il nucleo metallico è più denso della crosta. La densità media della Terra è di circa 5.52 grammi per centimetro cubico.</string>
+    <string name="mars_title">Marte</string>
+    <string name="mars_sub_title_1">Dati</string>
+    <string name="mars_description">Massa: 6.41693×10^14 milardi kg (0.107 x Terra)\nDiametro all\'equatore: 6,805\nDiametro ai Poli: 6,755\nCirconferenza all\'Equatore: 21,297 km\nSatelliti conosciuti: 2\nSatelliti di spicco: Phobos e Deimos\nDistanza orbitale: 227,943,824 km (1.38 AU)\nPeriodo di rivoluzione: 686.98 giorni terrestri (1.88 anni terrestri)\nTemperatura alla superficie: -87 to -5 °C\nPrima osservaziobe: 2 mila anni AC\nOsservato da: Astronomi egizi</string>
+    <string name="mars_sub_title_2">Fatti</string>
+    <string name="mars_description_2" formatted="false">Marte, il quarto pianeta per distanza dal Sole, deve il suo nome al dio romano della guerra, e viene spesso chiamato ¨Pianeta Rosso¨ per il suo colore rosso ¨sangue¨. Il color ruggine di Marte è causato dai minerali ricchi di ferro contenuti nella sua regolite - la polvere e i frammenti che ricoprono la sua superficie. Marte è un pianeta di tipo terrestre con una sottile atmosfera composta principalmente di anidride carbonica.\n\nMarte e la Terra hanno una massa simile, nonostante Marte abbia solamente il 15% del volume della Terra. La sua sottile atmosfera fredda impedisce la formazione di acqua allo stato liquido sulla superficie marziana per un periodo di tempo prolungato. Per questo motivo, nonostante il pianeta deserto abbia un diametro pari a solo la metà di quello della Terra, esso ha la stessa superficie di terra. La gravità marziana è solo il 37% di quella terreste (ciò significa che su Marte faresti dei balzi quasi 3 volte più lunghi).\n\nMarte ha il primato del più alto rilievo montuoso del sistema solare. Il Monte Olimpo, un vulcano spento, è alto 21 km ed ha una base di 600 km. Può anche vantarsi della valle più lunga del sistema solare, il sistema di valli Valles Marineris, battezzato in seguito alla scoperta avvenuta nel 1971 dalla sonda Mariner 9.\n\nSu Marte si formano le più grandi tempeste di polvere del sistema solare. Possono durare diversi mesi e ricoprire l\'intero pianeta. Le variazioni stagionali sono estreme a causa del suo percorso orbitale ellittico a forma ovale molto più elongato di quello do quasi tutti i pianeti del sistema solare.\n\nSu Marte il Sole appare di dimensioni circa metà di come appare sulla Terra. Nel suo punto di maggior vicinanza al Sole, l\'emisfero meridionale di Marte risulta inclinato verso il Sole creando una breve ma torrida estate mentre l\'emisfero nord è sottoposto ad un breve freddo inverno. Viceversa, al suo punto più distante dal sole, l\'emisfero nord marziano risulta inclinato verso il sole creando una lunga, mite estate mentre l\'emisfero meridionale è sottoposto ad un lungo freddo inverno.\n\nSolo 16 missioni su Marte hanno avuto successo. Tra orbiter, lander e rover, ci sono state 39 missioni, senza contare sorvoli e un tentativo, fallito, di riportare un campione di Phobos.</string>
+    <string name="jupiter_title">Giove</string>
+    <string name="jupiter_sub_title_1">Dati</string>
+    <string name="jupiter_description">Massa: 1,89813×10^18 miliardi kg (317,83 x Terra)\nDiametro Equatoriale: 142.984 km\nDiametro Polare: 133.709 km\nCirconferenza Equatoriale: 439.264 km\nSatelliti noti: 67\nSatelliti importanti: Io, Europa, Ganimede e Callisto\nDistanza orbitale: 778.340.821 km (5,20 AU)\nPeriodo orbitale: 4.332,82 giorni terrestri (11,86 anni terrestri)\nTemperatura superficiale: -108°C\nPrima osservazione: 7 or 8 secolo AC\nDa: osservatori babilonesi</string>
+    <string name="jupiter_sub_title_2">Fatti</string>
+    <string name="jupiter_description_2" formatted="false">Giove è il quinto pianeta distante dal Sole. Due volte e mezza più grande di tutti gli altri pianeti messi insieme, è composto principalmente da gas. Per questo motivo viene chiamato ¨il gigante di gas¨. Il suo diametro è pari a 142.984 chilometri e la sua massa è pari a 317,83 volte quella della Terra.\n\nGiove deve il suo nome al re degli dei romani ed è spesso chiamato anche Zeus, il dio greco del tuono, oppure Marduk, il dio della Mesopotamia e patrono della città di Babilonia.\n\n\Giove è il terzo oggetto, per splendore, del sistema solare. È uno dei cinque pianeti visibili ad occhio nudo insieme a Mercurio, Venere, Marte e Saturno.\n\nLa rotazione di Giove è la più veloce di quella di tutti gli altri pianeti, pari a solo 10 ore. La sua elevata velocità di rotazione rende Giove molto largo all\'equatore e schiacciato ai poli. Orbita a circa 778.340.821 km dal Sole ed impiega più di undici anni a compiere una rivoluzione completa.\n\nLa caratteristica più nota di Giove è la grande Macchia Rossa. Questa è provocata da una gigantesca tempesta in atto da almeno 350 anni ed è così grande da poter contenere la Terra due volte.\n\nLa luna più grande di Giove, Ganimede, è la luna più grande dell\'intero sistema solare, con un diametro di 5.268 km. È addirittura più grande del pianeta Mercurio.\n\nGiove ha due anelli che si ritiene si siano formati a causa di di material eroso dai suoi satelliti quando furono colpiti da meteoriti.</string>
+    <string name="saturn_title">Saturno</string>
+    <string name="saturn_sub_title_1">Dati</string>
+    <string name="saturn_description">Massa: 5,68319×10^17 milardi kg (95,16 x Terra)\nDiametro Equatoriale: 120.536 km\nDiametro Polare: 108.728 km\nCirconferenza Equatoriale: 365.882 km\nSatelliti noti: 62\nSatelliti importanti: Titan, Rhea and Enceladus\nDistanza orbitale: 1.426.666.422 km (9,58 AU)\nPeriodo orbitale: 10.755,70 giorni terrestri (29,45 anni terrestri)\nTemperatura superficiale -139 °C\nPrima registrazione: 8 secolo AC\nDa: Assiri</string>
+    <string name="saturn_sub_title_2">Fatti</string>
+    <string name="saturn_description_2" formatted="false">Saturno, il secondo pianeta più grande del sistema solare, è il sesto pianeta in ordine di distanza dal Sole e prende il nome dal dio romano del benessere. Sufficientemente grande da contenere al suo interno ben 760 Terre, ha una maggior di qualunque altro pianeta ad eccezione di Giove, circa 75 volte la massa della Terra. Tuttavia, Saturno possiede la densità più bassa di tutti i pianeti ed è l\'unico con densità minore di quella dell\'acqua.\nSaturno orbita intorno al sole ogni 29,4 anni terrestri. Ruota sul suo asse ogni 10 ore e 34 minuti rendendolo il secondo pianeta da giorno più breve del sistema solare. A causa della sua bassa densità e della veloce rotazione è inoltre il pianeta più schiacciato.\n\nSaturno è meglio conosciuto per i suoi spettacolari anelli che furono scoperti da Galileo nel 1610. Sebbene anche gli altri giganti gassosi del sistema solare - Giove, Urano e Nettuno - abbiano degli anelli, quelli di Saturno sono indubbiamente i più straordinari. Saturno ha inoltre 150 tra lune e altri corpi orbitanti minori.</string>
+    <string name="uranus_title">Urano</string>
+    <string name="uranus_sub_title_1">Dati</string>
+    <string name="uranus_description">Massa: 8,68103×10^16 miliardi kg (14,536 x Terra)\nDiametro equatoriale: 51.118 km\nDiametro polare: 49.946 km\nCirconferenza equatoriale: 159.354 km\nSatelliti noti 27\nSatelliti importanti: Oberon, Titania, Miranda, Ariel e Umbriel\nDistanza orbitale: 2.870.658.186 km (19,22 AU)\nPeriodo orbitale: 30.687,15 giorni terrestri (84,02 anni terrestri)\nTemperatura superficiale: -197 °C\nData della scoperta: 13 marzo 1781\nScoperto da: William Herschel</string>
+    <string name="uranus_sub_title_2">Fatti</string>
+    <string name="uranus_description_2" formatted="false">Urano è il settimo pianeta come distanza dal Sole ed è stato il primo pianeta scoperto con l\'ausilio del telescopio. Fu William Herschel a scoprirlo il 13 marzo 1781 anche se inizialmente pensava che fosse una cometa. Herschel tentò poi di dare il nome di Georgian Sidus in onore a Re Giorgio III al suo pianeta ma alla fine Urano prese il nome del dio greco dei cieli.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLa caratteristica unica di Urano è la direzione del suo asse di rotazione rispetto a tutti gli altri pianeti; infatti i suoi poli nord e sud sono praticamente in linea con la tipica linea equatoriale degli altri pianeti.\n\nL\'atmosfera di Urano è composta principalmente di idrogeno ed elio con una piccola percentuale di metano (CH4). \n\nSulla superficie di Urano la gravità sarebbe pari all\'89% di quella terrestre ma, essendo un pianeta gassoso con un nucleo liquido, la sua superficie non è definibile.\n\nLa temperatura minima atmosferica di Urano è pari a -224 gradi Celsius, rendendolo di conseguenza il pianeta più freddo del sistema solare.\n\nLe lune di Urano prendono i nomi da personaggi creati da William Shakespeare e Alexander Pope. Questi includono Oberon, Titania e Miranda. Urano presenta anche due serie di anelli: nove anelli interni e due anelli esterni. La prima serie di anelli fu scoperta nel 1977 mentre il secondo fu scoperto solo nel 2003 utilizzando il Telescopio Spaziale di Hubble.\n\nL\'unica sonda ad aver visitato Urano è il Voyager 2 che è passato, nel 1986, ad una distanza di 81.500 km dal pianeta.</string>
+    <string name="neptune_title">Nettuno</string>
+    <string name="neptune_sub_title_1">Dati</string>
+    <string name="neptune_description">Massa: 1,0241×10^17 miliardi kg (17,15 x Terra)\nDiametro Equatoriale: 49.528 km\nDiametro Polare: 48.682 km\nCirconferenza Equatoriale: 155.600 km\nSatelliti noti: 14\nSatelliti importanti: Tritan\nDistanza orbitale: 4.498.396.441 km (30,10 AU)\nPeriodo orbitale: 60.190,03 giorni terrestri (164,79 anni terrestri)\nTemperatura superficiale: -201 °C\nData scoperta: 23 settembre 1846\nScoperto da: Urbain Le Verrier e Johann Galle</string>
+    <string name="neptune_sub_title_2">Fatti</string>
+    <string name="neptune_description_2" formatted="false">Nettuno è l\'ottavo pianeta distante dal Sole ed il più piccolo dei giganti gassosi. Nettuno è stato il primo pianeta ad essere stato individuato tramite predizioni matematiche in seguito all\'osservazione di cambi di dell\'orbita di Urano non altrimenti spiegabili. Prende il nome dal dio romano dei mari. L\'orbita ellittica di forma ovale mantiene il pianeta ad una distanza media dal sole pari a circa 4,5 miliardi di km, circa 30 volte più distante della Terra. Nettuno non era conosciuto ai popoli antichi in quanto non visibile ad occhio nudo; la sua prima osservazione risale al 1846.\n\nNettuno ruota intorno al suo asse molto rapidamente: all\'equatore impiega infatti solo 18 ore per effettuare una rotazione. Impiega invece be  164,79 anni terresti per compiere una rivoluzione intorno al Sole.\n\nNonostante sia più piccolo di Urano, Nettuno ha una massa maggiore. Sotto la sua densa atmosfera Urano è costituito da strati di idrogeno, elio e gas metanici. Racchiudono strati di acqua, ammoniaca e metano in stato solido. Il nucleo del pianeta è invece costituito da roccia.\n\nNonostante la notevole distanza dal sole, e che impedisce quindi di ricevere una luce sufficiente per mantenerla sua atmosfera calda ed attiva, i venti di Nettuno possono raggiungere anche le 1.500 miglia all\'ora.\n\nNettuno ha una serie di anelli molto sottili e che sono composti probabilmente di particelle di ghiaccio miste a polvere e rivestiti di sostanze a base di carbonio. Il pianeta ha inoltre 14 lune. La luna più interessante è Tritone, un piccolo mondo ghiacciato composto di ghiaccio di idrogeno e particelle di polvere. Probabilmente è il più freddo corpo del sistema solare.\n\nNettuno è stato visitato da una sola sonda, il Voyager 2 che lo ha sorvolato il 25 agosto 1989.</string>
+    <string name="pluto_title">Plutone</string>
+    <string name="pluto_image">Immagini di Plutone</string>
+    <string name="pluto_description">Gravità: 0.658 m/s quadrati\nData scoperta: 18 febbraio 1930\nDensità: 2.03 g/cm cubici\nCirconferenza: 7.232 km</string>
+    <string name="pluto_description_2" formatted="false">Plutone è l\'unico pianeta nato ad essere stato in precedenza considerato un pianeta a tutti gli effetti. Infatti una volta considerato come il nono pianeta ed il più distante dal sole, Plutone viene ora considerato come uno dei più grossi corpi appartenenti alla Fascia di Kuiper, una zona d\'ombra posta oltre l\'orbita di Nettuno popolata da oltre un trilione di comete. Plutone è stato riclassificato come pianeta nano nel 2006, un cambio che è stato considerato come una bocciatura e che ha causato controversie e dibattiti.\n\nL\'astronomo americano Percival Lowell fu il primo ad intuire l\'esistenza di Plutone nel 1905 a seguito di strane deviazioni delle orbite di Nettuno ed Urano, suggerendo quindi che ci fosse un corpo estraneo a creare delle forze gravitazionali. Predisse quindi la sua posizione nel 1915 ma morì prima di individuarlo. La sua scoperta avvenne quindi nel 1930 ad opera di Clyde Tombaugh all\'Osservatory Lowell basandosi sulle predizioni di Lowell e di altri astronomi.\n\nPlutone è l\'unico pianeta battezzato da una ragazzina di 11 anni, tale Venetia Burney di Oxford, Inghilterra, la quale suggerì di utilizzare il nome del dio romano dell\'oltretomba. Il suo nonno quindi riportò la proposta all\'Osservatorio Lowell. Il nome porta inoltre onore a Percival Lowell, le cui iniziali sono le prime due lettere di Plutone.\n\nPlutone orbita a 5.874.000.000 km dal sole, impiegando circa 264,04 anni terrestri per compiere l\'intera rivoluzione.\n\nPlutone ha cinque lune conosciute: Caronte, Idra, Nix, Cerbero e Stige.</string>
+    <string name="support_email">andrewmquebe@gmail.com</string>
+    <string name="send_feedback">Invia tramite…</string>
+    <string name="title_activity_tvsun">TVSunActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_main_activity_nav_drawer">MainActivityNavDrawer</string>
+    <string name="title_section1">Galleria</string>
+    <string name="title_section2">Fai una Donazione</string>
+    <string name="title_section3">Invia Feedback</string>
+    <string name="title_section4">Impostazioni</string>
+    <string name="navigation_drawer_open">Apri il menu di navigazione</string>
+    <string name="navigation_drawer_close">Chiudi il menu di navigazione</string>
+    <string name="browse_title"><![CDATA[Pianeti]]></string>
+    <string name="related_movies">Altro</string>
+    <string name="error">Errore</string>
+    <string name="ok">OK</string>
+    <string name="pause">Pausa</string>
+    <string name="play">Play</string>
+    <string name="stop">Stop</string>
+    <string name="init_text">00:00</string>
+    <string name="play_pause_description">Pulsante Play Pausa</string>
+    <string name="loading">Caricamento…</string>
+    <string name="no_video_found">Nessun video trovato</string>
+    <string name="version">Versione: %1$s</string>
+    <string name="popular_header">Video Popolari</string>
+    <string name="preferences">PREFERENZE</string>
+    <string name="send_feeback">Invia Feedback</string>
+    <string name="personal_settings">Impostazioni Personali</string>
+    <string name="watch_trailer_1">Guarda il trailer</string>
+    <string name="watch_trailer_2">GRATUITO</string>
+    <string name="rent_1">Noleggio Giornaliero</string>
+    <string name="rent_2">Da $1.99</string>
+    <string name="buy_1">Acquista</string>
+    <string name="buy_2">A $9.99</string>
+    <string name="movie">Film</string>
+    <string name="should_start">shouldStart</string>
+    <string name="start_position">startPosition</string>
+    <string name="search_results">Cerca Risultati</string>
+    <string name="about">Info</string>
+    <string name="tvFeedback">Invia\nFeedback</string>
+    <string name="pref_default_display_name">John Smith</string>
+</resources>

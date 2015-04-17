@@ -1,5 +1,6 @@
 package com.amqtech.fblib.activity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -18,5 +19,9 @@ public class FeedbackActvity extends ActionBarActivity {
 
         Toolbar tb = (Toolbar) findViewById(R.id.fb_toolbar);
         setSupportActionBar(tb);
+
+        //Parse a color with any hex code
+        tb.setBackgroundColor(Color.parseColor("#FFFFFF"));
+        tb.setTitle("Title");
     }
 }
