@@ -196,4 +196,18 @@
     <string name="about">Info</string>
     <string name="tvFeedback">Invia\nFeedback</string>
     <string name="pref_default_display_name">John Smith</string>
+    <string name="vertical_grid_title"><![CDATA[Vertical Video Grid]]></string>
+    <string name="about_app">About DemoCast Player</string>
+    <string name="grid_view">Grid View</string>
+    <string name="video_error_media_load_timeout">Media loading timed out</string>
+    <string name="video_error_server_unaccessible">Media server was not reachable</string>
+    <string name="video_error_unknown_error">Failed to load video</string>
+    <string name="oops">Oops</string>
+    <string name="action_example">ExampleAction</string>
+    <string name="button_source">Source</string>
+    <string name="title_activity_planet_long_description">PlanetLongDescription</string>
+    <string name="content_description">Nav Drawer Icon</string>
+    <string name="title_activity_contributers">Contributors</string>
+    <string name="title_activity_licenses">Licenses</string>
+
 </resources>
