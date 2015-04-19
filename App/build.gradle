@@ -2,13 +2,13 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 22
-    buildToolsVersion '22'
+    buildToolsVersion '22.0.1'
 
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 22
-        versionCode 33
-        versionName "2.6.3 BETA 2"
+        versionCode 34
+        versionName "2.6.3 BETA 3"
     }
     buildTypes {
         release {
@@ -34,7 +34,7 @@ dependencies {
         transitive = true
     }
     compile 'com.afollestad:material-dialogs:0.7.1.2'
-    compile project(':Feedback Library')
+    //compile project(':Feedback Library')
 }
 
 repositories {
