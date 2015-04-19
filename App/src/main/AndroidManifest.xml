@@ -78,7 +78,7 @@
             android:label="@string/action_settings"
             android:parentActivityName=".NavDrawerActivity"
             android:screenOrientation="sensor"
-            android:theme="@style/Theme.AppCompat.Light">
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.ImageGallery" />
 

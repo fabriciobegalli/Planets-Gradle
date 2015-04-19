@@ -1,10 +1,11 @@
 package com.andrewq.planets.fragments;
 
-import android.app.Activity;
 import android.app.ActivityOptions;
 import android.app.Fragment;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,6 @@ import android.widget.TextView;
 import com.andrewq.planets.R;
 import com.andrewq.planets.stars.SunActivity;
 import com.nhaarman.listviewanimations.swinginadapters.prepared.SwingBottomInAnimationAdapter;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -103,9 +103,16 @@ public class FragmentStars extends Fragment {
             View v = view;
             ImageView picture;
             TextView name;
+            CardView cardView;
 
             if (v == null) {
-                v = inflater.inflate(R.layout.gridview_item, viewGroup, false);
+                v = inflater.inflate(R.layout.gridview_item_card, viewGroup, false);
+
+                cardView = (CardView) v.findViewById(R.id.card_view);
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+                    cardView.setElevation(10);
+
                 v.setTag(R.id.picture, v.findViewById(R.id.picture));
                 v.setTag(R.id.text, v.findViewById(R.id.text));
             }
