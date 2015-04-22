@@ -48,6 +48,18 @@
                     android:scheme="planets"
                     android:host="home" />
             </intent-filter>
+
+            <intent-filter android:label="Planets">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "http://example.com/gizmos" -->
+                <data
+                    android:scheme="http"
+                    android:host="planets.amqtech.com"
+                    android:pathPrefix="" />
+            </intent-filter>
         </activity>
 
         <activity
