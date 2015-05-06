@@ -78,7 +78,7 @@ public class NavDrawerActivity extends ActionBarActivity {
 
         //TODO: Fix this!
 
-        /*mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
+        mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
             public void onIabSetupFinished(IabResult result) {
                 Log.d(TAG, "Setup finished.");
 
@@ -95,7 +95,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                 Log.d(TAG, "Setup successful. Querying inventory.");
                 mHelper.queryInventoryAsync(mGotInventoryListener);
             }
-        });*/
+        });
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -269,7 +269,6 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 startActivity(intent);
                                 break;
                         }
-
                         fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
 
                         if (iDrawerItem instanceof Nameable) {
@@ -394,10 +393,8 @@ public class NavDrawerActivity extends ActionBarActivity {
         //noinspection StatementWithEmptyBody
         if (title == "Donate" || title == "Send Feedback" || title == "Settings") {
             //Do nothing...
-        } else {
-            //noinspection ConstantConditions
+        } else
             getSupportActionBar().setTitle(title);
-        }
     }
 
     @Override
