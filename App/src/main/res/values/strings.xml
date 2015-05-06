@@ -238,5 +238,6 @@
     <string name="content_description">Nav Drawer Icon</string>
     <string name="title_activity_contributers">Contributors</string>
     <string name="title_activity_licenses">Licenses</string>
+    <string name="color_chooser">Color Chooser</string>
 
 </resources>

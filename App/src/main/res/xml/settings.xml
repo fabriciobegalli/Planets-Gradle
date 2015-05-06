@@ -23,36 +23,6 @@
             android:title="@string/pref_5" />
     </PreferenceCategory>
 
-    <!--    <PreferenceCategory android:title="Special Thanks">
-
-            <Preference
-                android:icon="@drawable/cookicons"
-                android:title="Michael Cook, Cookicons"
-                android:summary="Designed app icon, navigation drawer icons, and the icons in the settings page.">
-                <intent
-                    android:action="android.intent.action.VIEW"
-                    android:data="http://cookicons.co" />
-            </Preference>
-
-            <Preference
-                android:icon="@drawable/wknecht"
-                android:title="Delyn Wagenknecht"
-                android:summary="Rewrote descriptions for all the Planets and the Sun.">
-                <intent
-                    android:action="android.intent.action.VIEW"
-                    android:data="http://wordknecht.wordpress.com" />
-            </Preference>
-
-            <Preference
-                android:icon="@drawable/mike"
-                android:title="Mike Penz"
-                android:summary="Helped with navigation drawer issues.">
-                <intent
-                    android:action="android.intent.action.VIEW"
-                    android:data="https://plus.google.com/u/0/+MikePenz/about" />
-            </Preference>
-        </PreferenceCategory>-->
-
     <PreferenceCategory android:title="About">
 
         <Preference

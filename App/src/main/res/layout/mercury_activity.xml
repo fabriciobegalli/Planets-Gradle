@@ -12,72 +12,85 @@
             android:id="@+id/image_header_mercury"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:contentDescription=""
             android:scaleType="centerCrop"
             android:src="@drawable/mercury" />
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:background="#D8D8D8">
+            android:background="#D8D8D8"
+            android:padding="16dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <RelativeLayout
+                <android.support.v7.widget.CardView
                     android:id="@+id/mercuryCard1"
-                    android:background="@drawable/layer_card_background"
                     android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginBottom="10dp"
-                    android:padding="16dp"
-                    android:layout_height="match_parent">
+                    android:padding="16dp">
 
-                    <TextView
-                        android:id="@+id/mercury_sub_title_1"
-                        android:paddingBottom="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="false"
-                        android:text="@string/mercury_sub_title_1"
-                        android:textSize="27sp" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp">
 
-                    <TextView
-                        android:id="@+id/mercury_description"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/mercury_sub_title_1"
-                        android:layout_centerHorizontal="false"
-                        android:text="@string/mercury_description"
-                        android:textSize="17sp" />
-                </RelativeLayout>
+                        <TextView
+                            android:id="@+id/mercury_sub_title_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="false"
+                            android:paddingBottom="5dp"
+                            android:text="@string/mercury_sub_title_1"
+                            android:textSize="27sp" />
 
-                <RelativeLayout
+                        <TextView
+                            android:id="@+id/mercury_description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/mercury_sub_title_1"
+                            android:layout_centerHorizontal="false"
+                            android:text="@string/mercury_description"
+                            android:textSize="17sp" />
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
                     android:id="@+id/mercuryCard2"
-                    android:background="@drawable/layer_card_background"
                     android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_below="@+id/mercuryCard1"
-                    android:padding="16dp"
-                    android:layout_height="match_parent">
+                    android:padding="16dp">
 
-                    <TextView
-                        android:id="@+id/mercury_sub_title_2"
-                        android:paddingBottom="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="false"
-                        android:text="@string/mercury_sub_title_2"
-                        android:textSize="27sp" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="16dp">
 
-                    <TextView
-                        android:id="@+id/mercury_description_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/mercury_sub_title_2"
-                        android:layout_centerHorizontal="false"
-                        android:text="@string/mercury_description_2"
-                        android:textSize="17sp" />
-                </RelativeLayout>
+                        <TextView
+                            android:id="@+id/mercury_sub_title_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="false"
+                            android:paddingBottom="5dp"
+                            android:text="@string/mercury_sub_title_2"
+                            android:textSize="27sp" />
+
+                        <TextView
+                            android:id="@+id/mercury_description_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/mercury_sub_title_2"
+                            android:layout_centerHorizontal="false"
+                            android:text="@string/mercury_description_2"
+                            android:textSize="17sp" />
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
             </RelativeLayout>
         </FrameLayout>
 

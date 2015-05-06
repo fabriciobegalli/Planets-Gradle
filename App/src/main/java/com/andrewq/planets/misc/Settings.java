@@ -115,6 +115,8 @@ public class Settings extends PreferenceActivity {
         });
     }
 
+
+
     public static Bitmap drawableToBitmap(Drawable drawable) {
         if (drawable instanceof BitmapDrawable) {
             return ((BitmapDrawable) drawable).getBitmap();
