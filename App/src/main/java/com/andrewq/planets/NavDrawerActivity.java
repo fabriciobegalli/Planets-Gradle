@@ -98,6 +98,7 @@ public class NavDrawerActivity extends ActionBarActivity {
         });
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
 
         drawer = new Drawer()
