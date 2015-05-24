@@ -5,6 +5,6 @@
     app:theme="@style/ToolbarCustomIconColor"
     android:layout_width="match_parent"
     android:paddingTop="24dp"
-    android:layout_height="80dp"
+    android:layout_height="88dp"
     android:titleTextAppearance="?attr/titleTextAppearance"
     tools:ignore="UnusedAttribute" />

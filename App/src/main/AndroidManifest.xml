@@ -92,7 +92,7 @@
             android:label="Moon"
             android:parentActivityName=".NavDrawerActivity"
             android:screenOrientation="sensor"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/NewMaterial">
             <intent-filter>
                 <action android:name="android.intent.action.ImageGallery" />
                 <action android:name="android.intent.action.SEARCH" />
@@ -118,7 +118,7 @@
             android:label="Phobos"
             android:parentActivityName=".NavDrawerActivity"
             android:screenOrientation="sensor"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/NewMaterial">
             <intent-filter>
                 <action android:name="android.intent.action.ImageGallery" />
                 <action android:name="android.intent.action.SEARCH" />
@@ -148,7 +148,7 @@
             android:label="Europa"
             android:parentActivityName=".NavDrawerActivity"
             android:screenOrientation="sensor"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/NewMaterial">
             <intent-filter>
                 <action android:name="android.intent.action.ImageGallery" />
                 <action android:name="android.intent.action.SEARCH" />
@@ -179,7 +179,7 @@
             android:label="Deimos"
             android:parentActivityName=".NavDrawerActivity"
             android:screenOrientation="sensor"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/NewMaterial">
             <intent-filter>
                 <action android:name="android.intent.action.ImageGallery" />
 
@@ -218,7 +218,7 @@
             android:name=".stars.SunActivity"
             android:label="Sun"
             android:parentActivityName=".NavDrawerActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/NewMaterial">
 
             <intent-filter android:label="The Sun">
                 <action android:name="android.intent.action.VIEW" />
@@ -241,7 +241,7 @@
             android:name=".planets.MercuryActivity"
             android:label="Mercury"
             android:parentActivityName=".NavDrawerActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/NewMaterial">
 
             <intent-filter android:label="Mercury">
                 <action android:name="android.intent.action.VIEW" />
@@ -265,7 +265,7 @@
             android:name=".planets.VenusActivity"
             android:label="Venus"
             android:parentActivityName=".NavDrawerActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/NewMaterial">
 
             <intent-filter android:label="Venus">
                 <action android:name="android.intent.action.VIEW" />
@@ -289,7 +289,7 @@
             android:name=".planets.EarthActivity"
             android:label="Earth"
             android:parentActivityName=".NavDrawerActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/NewMaterial">
 
             <intent-filter android:label="Earth">
                 <action android:name="android.intent.action.VIEW" />
@@ -313,7 +313,7 @@
             android:name=".planets.MarsActivity"
             android:label="Mars"
             android:parentActivityName=".NavDrawerActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/NewMaterial">
 
             <intent-filter android:label="Mars">
                 <action android:name="android.intent.action.VIEW" />
@@ -332,7 +332,7 @@
             android:name=".planets.JupiterActivity"
             android:label="Jupiter"
             android:parentActivityName=".NavDrawerActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/NewMaterial">
 
             <intent-filter android:label="Jupiter">
                 <action android:name="android.intent.action.VIEW" />
@@ -356,7 +356,7 @@
             android:name=".planets.SaturnActivity"
             android:label="Saturn"
             android:parentActivityName=".NavDrawerActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/NewMaterial">
 
             <intent-filter android:label="Saturn">
                 <action android:name="android.intent.action.VIEW" />
@@ -380,7 +380,7 @@
             android:name=".planets.UranusActivity"
             android:label="Uranus"
             android:parentActivityName=".NavDrawerActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/NewMaterial">
 
             <intent-filter android:label="Uranus">
                 <action android:name="android.intent.action.VIEW" />
@@ -404,7 +404,7 @@
             android:name=".planets.NeptuneActivity"
             android:label="Neptune"
             android:parentActivityName=".NavDrawerActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/NewMaterial">
 
             <intent-filter android:label="Neptune">
                 <action android:name="android.intent.action.VIEW" />
@@ -428,7 +428,7 @@
             android:name=".other_bodies.PlutoActivity"
             android:label="Pluto"
             android:parentActivityName=".NavDrawerActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/NewMaterial">
 
             <intent-filter android:label="Pluto">
                 <action android:name="android.intent.action.VIEW" />

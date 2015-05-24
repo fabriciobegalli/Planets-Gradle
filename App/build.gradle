@@ -8,7 +8,7 @@ android {
         minSdkVersion 17
         targetSdkVersion 22
         versionCode 35
-        versionName "2.7 BETA"
+        versionName "2.7"
     }
     buildTypes {
         release {
