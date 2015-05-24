@@ -19,6 +19,22 @@
         <item>Calypso</item>
     </string-array>
 
+    <string-array name="sortEntries">
+        <item name="1">1</item>
+        <item name="2">2</item>
+        <item name="3">3</item>
+        <item name="4">4</item>
+        <item name="5">5</item>
+    </string-array>
+
+    <string-array name="sorts">
+        <item name="1">Traditional</item>
+        <item name="2">A - Z</item>
+        <item name="3">Z - A</item>
+        <item name="4">Smallest to Largest</item>
+        <item name="5">Largest to Smallest</item>
+    </string-array>
+
     <string-array name="navigation_drawer_items">
         <item>Planets</item>
         <item>Planets</item>
