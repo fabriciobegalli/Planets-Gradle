@@ -4,6 +4,10 @@
         <item name="windowActionModeOverlay">true</item>
     </style>
 
+    <style name="NewMaterial" parent="AppThemeNavDrawer">
+        <item name="windowActionModeOverlay">true</item>
+    </style>
+
     <style name="ToolbarCustomIconColor" parent="AppThemeNavDrawer">
         <item name="android:textColorSecondary">#FFFFFF</item>
         <item name="android:activatedBackgroundIndicator">@drawable/drawer_list_selector</item>

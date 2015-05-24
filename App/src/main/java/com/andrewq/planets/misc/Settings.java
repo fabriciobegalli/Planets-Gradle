@@ -76,7 +76,7 @@ public class Settings extends PreferenceActivity {
             @Override
             public boolean onPreferenceClick(Preference preference) {
 
-                CustomDialog.Builder builder = new CustomDialog.Builder(Settings.this, "What's New in 2.7", "View on Github");
+                CustomDialog.Builder builder = new CustomDialog.Builder(Settings.this, "What's New in 2.7.1", "View on Github");
 
                 builder.content("- Material Design for Details View\n" +
                         "- New object sort feature\n" +
