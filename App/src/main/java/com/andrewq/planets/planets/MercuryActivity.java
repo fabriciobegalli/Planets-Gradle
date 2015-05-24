@@ -317,7 +317,7 @@ public class MercuryActivity extends BaseActivity implements ObservableScrollVie
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
-        imgV = (ImageView) findViewById(R.id.image_header_mercury);
+        //imgV = (ImageView) findViewById(R.id.image_header_mercury);
 
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             imgV.setAlpha(0.8f);

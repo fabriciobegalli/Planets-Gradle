@@ -317,7 +317,7 @@ public class SunActivity extends BaseActivity implements ObservableScrollViewCal
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
-        imgV = (ImageView) findViewById(R.id.image_header_sun);
+        //imgV = (ImageView) findViewById(R.id.image_header_sun);
 
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             imgV.setAlpha(0.8f);

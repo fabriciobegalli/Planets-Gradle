@@ -317,7 +317,7 @@ public class MarsActivity extends BaseActivity implements ObservableScrollViewCa
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
-        imgV = (ImageView) findViewById(R.id.image_header_mars);
+        //imgV = (ImageView) findViewById(R.id.image_header_mars);
 
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             imgV.setAlpha(0.8f);

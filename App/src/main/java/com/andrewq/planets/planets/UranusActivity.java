@@ -317,7 +317,7 @@ public class UranusActivity extends BaseActivity implements ObservableScrollView
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
-        imgV = (ImageView) findViewById(R.id.image_header_uranus);
+        //imgV = (ImageView) findViewById(R.id.image_header_uranus);
 
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             imgV.setAlpha(0.8f);

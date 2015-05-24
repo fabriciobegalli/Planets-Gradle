@@ -137,7 +137,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 .withName("Other")
                                 .withIdentifier(4)
                                 .withTextColor(Color.parseColor("#444444"))
-                                .withSelectedTextColor(Color.parseColor("#838383"))
+                                .withSelectedTextColor(Color.parseColor("#535353"))
                                 .withSelectedIcon(R.drawable.ic_comet_tinted),
 
                         new DividerDrawerItem(),
@@ -150,15 +150,15 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 .withCheckable(false),
 
                         new SecondaryDrawerItem()
-                                .withIcon(R.drawable.ic_feedback)
-                                .withName("Send Feedback")
+                                .withIcon(R.drawable.ic_settings)
+                                .withName("Settings")
                                 .withIdentifier(6)
                                 .withTextColor(Color.parseColor("#444444"))
                                 .withCheckable(false),
 
                         new SecondaryDrawerItem()
-                                .withIcon(R.drawable.ic_settings)
-                                .withName("Settings")
+                                .withIcon(R.drawable.ic_feedback)
+                                .withName("Send Feedback")
                                 .withIdentifier(7)
                                 .withTextColor(Color.parseColor("#444444"))
                                 .withCheckable(false)
@@ -224,6 +224,12 @@ public class NavDrawerActivity extends ActionBarActivity {
                             case 6:
                                 drawer.setSelectionByIdentifier(1);
 
+                                Intent intent = new Intent(getApplicationContext(), Settings.class);
+                                startActivity(intent);
+                                break;
+                            case 7:
+                                drawer.setSelectionByIdentifier(1);
+
                                 FeedbackSettings fbs = new FeedbackSettings();
                                 fbs.setText("Use this to send feedback, suggestions, and bugs to the developer. " +
                                         "All feedback/suggestions are appreciated!");
@@ -245,12 +251,6 @@ public class NavDrawerActivity extends ActionBarActivity {
 
                                 FeedbackDialog fdb = new FeedbackDialog(NavDrawerActivity.this, "AF-FD2E2AEF7F0A-27", fbs);
                                 fdb.show();
-                                break;
-                            case 7:
-                                drawer.setSelectionByIdentifier(1);
-
-                                Intent intent = new Intent(getApplicationContext(), Settings.class);
-                                startActivity(intent);
                                 break;
                         }
                         fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();

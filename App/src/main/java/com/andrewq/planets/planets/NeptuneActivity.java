@@ -317,7 +317,7 @@ public class NeptuneActivity extends BaseActivity implements ObservableScrollVie
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
-        imgV = (ImageView) findViewById(R.id.image_header_neptune);
+        //imgV = (ImageView) findViewById(R.id.image_header_neptune);
 
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             imgV.setAlpha(0.8f);

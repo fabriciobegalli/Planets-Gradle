@@ -317,7 +317,7 @@ public class EarthActivity extends BaseActivity implements ObservableScrollViewC
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
-        imgV = (ImageView) findViewById(R.id.image_header_earth);
+        //imgV = (ImageView) findViewById(R.id.image_header_earth);
 
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             imgV.setAlpha(0.8f);

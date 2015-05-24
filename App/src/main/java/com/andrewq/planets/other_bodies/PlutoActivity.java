@@ -317,7 +317,7 @@ public class PlutoActivity extends BaseActivity implements ObservableScrollViewC
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
-        imgV = (ImageView) findViewById(R.id.image_header_pluto);
+        //imgV = (ImageView) findViewById(R.id.image_header_pluto);
 
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             imgV.setAlpha(0.8f);

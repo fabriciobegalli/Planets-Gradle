@@ -317,7 +317,7 @@ public class SaturnActivity extends BaseActivity implements ObservableScrollView
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
-        imgV = (ImageView) findViewById(R.id.image_header_saturn);
+        //imgV = (ImageView) findViewById(R.id.image_header_saturn);
 
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             imgV.setAlpha(0.8f);
