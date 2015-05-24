@@ -1,9 +1,6 @@
 package com.andrewq.planets.stars;
 
-import android.app.ActionBar;
 import android.app.ActivityManager;
-import android.app.ActivityOptions;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -13,19 +10,19 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.andrewq.planets.R;
-import com.andrewq.planets.image_views.SunImageView;
 import com.andrewq.planets.util.BaseActivity;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
@@ -40,135 +37,110 @@ import com.suredigit.inappfeedback.FeedbackSettings;
 public class SunActivity extends BaseActivity implements ObservableScrollViewCallbacks {
 
     private ImageView imgV;
-    private Drawable mActionBarBackgroundDrawable;
-
-    private ImageView img;
-    private ActionBar mActionBar;
-
-    private static final float MAX_TEXT_SCALE_DELTA = 0.3f;
 
     private View mImageView;
-    private View mOverlayView;
     private ObservableScrollView mScrollView;
-    private TextView mTitleView;
-    private int mActionBarSize;
-    private int mFlexibleSpaceImageHeight;
+    private int mParallaxImageHeight;
 
     Toolbar toolbar;
-
-    TextView postDateTV;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+        setContentView(R.layout.sun_activity);
 
-        mFlexibleSpaceImageHeight = getResources().getDimensionPixelSize(R.dimen.flexible_space_image_height);
-        mActionBarSize = getActionBarSize();
+        toolbar = (Toolbar) findViewById(R.id.toolbar_sun);
+        setSupportActionBar(toolbar);
+
+        //noinspection ConstantConditions
+        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mImageView = findViewById(R.id.image);
-        mOverlayView = findViewById(R.id.overlay);
+        toolbar.setBackgroundColor(ScrollUtils.getColorWithAlpha(0, getResources().getColor(R.color.primary)));
+        toolbar.setTitleTextColor(Color.parseColor("#FFFFFF"));
+
         mScrollView = (ObservableScrollView) findViewById(R.id.scroll);
         mScrollView.setScrollViewCallbacks(this);
-        mTitleView = (TextView) findViewById(R.id.title);
-        mTitleView.setText(getTitle());
-        setTitle(null);
 
-        ScrollUtils.addOnGlobalLayoutListener(mScrollView, new Runnable() {
-            @Override
-            public void run() {
-                //mScrollView.scrollTo(0, mFlexibleSpaceImageHeight - mActionBarSize);
+        mParallaxImageHeight = getResources().getDimensionPixelSize(R.dimen.parallax_image_height);
 
-                // If you'd like to start from scrollY == 0, don't write like this:
-                //mScrollView.scrollTo(0, 0);
-                // The initial scrollY is 0, so it won't invoke onScrollChanged().
-                // To do this, use the following:
-                //onScrollChanged(0, false, false);
-
-                // You can also achieve it with the following codes.
-                // This causes scroll change from 1 to 0.
-                mScrollView.scrollTo(0, 1);
-                mScrollView.scrollTo(0, 0);
-            }
-        });
         SharedPreferences getPrefs2 = PreferenceManager
                 .getDefaultSharedPreferences(getBaseContext());
 
         //Give theme_chooser the preference key defined in XML
         int theme_chooser = Integer.parseInt(getPrefs2.getString("prefSetTheme", "3"));
 
-        //Set the action bar colors to whatever the user selects from the ListPreference
         if (theme_chooser == 1) {
             //Red
-            mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_red);
-
             int actionBarColor = Color.parseColor("#D32F2F");
-            mOverlayView.setBackgroundColor(actionBarColor);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 this.setTaskDescription(new ActivityManager.TaskDescription("The Sun",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+
+                Window window = getWindow();
+                window.setStatusBarColor(darker(actionBarColor, 0.8f));
             }
         } else if (theme_chooser == 2) {
             //Orange
-            mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_orange);
-
             int actionBarColor = Color.parseColor("#E64A19");
-            mOverlayView.setBackgroundColor(actionBarColor);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 this.setTaskDescription(new ActivityManager.TaskDescription("The Sun",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+
+                Window window = getWindow();
+                window.setStatusBarColor(darker(actionBarColor, 0.8f));
             }
         } else if (theme_chooser == 3) {
             //Blue
-            mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_blue);
-
             int actionBarColor = Color.parseColor("#1976D2");
-            mOverlayView.setBackgroundColor(actionBarColor);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 this.setTaskDescription(new ActivityManager.TaskDescription("The Sun",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+
+                Window window = getWindow();
+                window.setStatusBarColor(darker(actionBarColor, 0.8f));
             }
         } else if (theme_chooser == 4) {
             //Green
-            mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_green);
-
             int actionBarColor = Color.parseColor("#388E3C");
-            mOverlayView.setBackgroundColor(actionBarColor);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 this.setTaskDescription(new ActivityManager.TaskDescription("The Sun",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+
+                Window window = getWindow();
+                window.setStatusBarColor(darker(actionBarColor, 0.8f));
             }
         } else if (theme_chooser == 5) {
             //Purple
-            mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_purple);
-
             int actionBarColor = Color.parseColor("#512DA8");
-            mOverlayView.setBackgroundColor(actionBarColor);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 this.setTaskDescription(new ActivityManager.TaskDescription("The Sun",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+
+                Window window = getWindow();
+                window.setStatusBarColor(darker(actionBarColor, 0.8f));
             }
         } else if (theme_chooser == 6) {
             //Black
-            mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_black);
-
             int actionBarColor = Color.parseColor("#212121");
-            mOverlayView.setBackgroundColor(actionBarColor);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 this.setTaskDescription(new ActivityManager.TaskDescription("The Sun",
                         drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+
+                Window window = getWindow();
+                window.setStatusBarColor(darker(actionBarColor, 0.8f));
             }
         }
 
-        imgV = (ImageView) findViewById(R.id.image_header_sun);
+        //imgV = (ImageView) findViewById(R.id.image_header_sun);
 
-        View.OnTouchListener upDownListener = new View.OnTouchListener() {
+        /*View.OnTouchListener upDownListener = new View.OnTouchListener() {
 
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -188,34 +160,69 @@ public class SunActivity extends BaseActivity implements ObservableScrollViewCal
                 return false;
             }
 
-        };
+        };*/
 
-        imgV.setOnTouchListener(upDownListener);
+        //imgV.setOnTouchListener(upDownListener);
 
     }
 
     @Override
     public void onScrollChanged(int scrollY, boolean firstScroll, boolean dragging) {
-        // Translate overlay and image
-        float flexibleRange = mFlexibleSpaceImageHeight - mActionBarSize;
-        int minOverlayTransitionY = mActionBarSize - mOverlayView.getHeight();
-        ViewHelper.setTranslationY(mOverlayView, ScrollUtils.getFloat(-scrollY, minOverlayTransitionY, 0));
-        ViewHelper.setTranslationY(mImageView, ScrollUtils.getFloat(-scrollY / 2, minOverlayTransitionY, 0));
+        int baseColor = getResources().getColor(R.color.primary);
 
-        // Change alpha of overlay
-        ViewHelper.setAlpha(mOverlayView, ScrollUtils.getFloat((float) scrollY / flexibleRange, 0, 1));
+        //Set getPrefs to a preference manager
+        SharedPreferences getPrefs2 = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
-        // Scale title text
-        float scale = 1 + ScrollUtils.getFloat((flexibleRange - scrollY) / flexibleRange, 0, MAX_TEXT_SCALE_DELTA);
-        ViewHelper.setPivotX(mTitleView, 0);
-        ViewHelper.setPivotY(mTitleView, 0);
-        ViewHelper.setScaleX(mTitleView, scale);
-        ViewHelper.setScaleY(mTitleView, scale);
+        //Give theme_chooser the preference key defined in XML
+        int theme_chooser = Integer.parseInt(getPrefs2.getString("prefSetTheme", "3"));
 
-        // Translate title text
-        int maxTitleTranslationY = (int) (mFlexibleSpaceImageHeight - mTitleView.getHeight() * scale);
-        int titleTranslationY = maxTitleTranslationY - scrollY;
-        ViewHelper.setTranslationY(mTitleView, titleTranslationY);
+        int color;
+
+        //Set the action bar colors to whatever the user selects from the ListPreference
+        if (theme_chooser == 0) {
+            //Default
+            color = Color.parseColor("#5B6ABF");
+
+            baseColor = color;
+        } else if (theme_chooser == 1) {
+            //Red
+            color = Color.parseColor("#D32F2F");
+
+            baseColor = color;
+        } else if (theme_chooser == 2) {
+            //Orange
+            color = Color.parseColor("#E64A19");
+
+            baseColor = color;
+        } else if (theme_chooser == 3) {
+            //Blue
+            color = Color.parseColor("#1976D2");
+
+            baseColor = color;
+        } else if (theme_chooser == 4) {
+            //Green
+            color = Color.parseColor("#388E3C");
+
+            baseColor = color;
+        } else if (theme_chooser == 5) {
+            //Purple
+            color = Color.parseColor("#512DA8");
+
+            baseColor = color;
+        } else if (theme_chooser == 6) {
+            //Black
+            color = Color.parseColor("#212121");
+
+            baseColor = color;
+        } else {
+            color = Color.parseColor("#5B6ABF");
+
+            baseColor = color;
+        }
+
+        float alpha = Math.min(1, (float) scrollY / mParallaxImageHeight);
+        toolbar.setBackgroundColor(ScrollUtils.getColorWithAlpha(alpha, baseColor));
+        ViewHelper.setTranslationY(mImageView, scrollY / 2);
     }
 
     @Override
@@ -226,14 +233,11 @@ public class SunActivity extends BaseActivity implements ObservableScrollViewCal
     public void onUpOrCancelMotionEvent(ScrollState scrollState) {
     }
 
-    /*private NotifyingScrollView.OnScrollChangedListener mOnScrollChangedListener = new NotifyingScrollView.OnScrollChangedListener() {
-        public void onScrollChanged(ScrollView who, int l, int t, int oldl, int oldt) {
-            final int headerHeight = findViewById(R.id.image_header_sun).getHeight() - getActionBar().getHeight();
-            final float ratio = (float) Math.min(Math.max(t, 0), headerHeight) / headerHeight;
-            final int newAlpha = (int) (ratio * 255);
-            mActionBarBackgroundDrawable.setAlpha(newAlpha);
-        }
-    };*/
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        onScrollChanged(mScrollView.getCurrentScrollY(), false, false);
+    }
 
     public static Bitmap drawableToBitmap(Drawable drawable) {
         if (drawable instanceof BitmapDrawable) {
@@ -256,6 +260,21 @@ public class SunActivity extends BaseActivity implements ObservableScrollViewCal
         drawable.draw(canvas);
 
         return bitmap;
+    }
+
+    /**
+     * Returns darker version of specified <code>color</code>.
+     */
+    public static int darker(int color, float factor) {
+        int a = Color.alpha(color);
+        int r = Color.red(color);
+        int g = Color.green(color);
+        int b = Color.blue(color);
+
+        return Color.argb(a,
+                Math.max((int) (r * factor), 0),
+                Math.max((int) (g * factor), 0),
+                Math.max((int) (b * factor), 0));
     }
 
     @Override

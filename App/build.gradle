@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 22
-        versionCode 34
-        versionName "2.6.3 BETA 3"
+        versionCode 35
+        versionName "2.7 BETA"
     }
     buildTypes {
         release {
@@ -16,6 +16,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+
+    mavenCentral()
 }
 
 dependencies {
@@ -35,14 +43,5 @@ dependencies {
     }
     compile 'com.afollestad:material-dialogs:0.7.1.2'
     compile 'com.github.ksoichiro:android-observablescrollview:1.+'
-    compile 'com.nineoldandroids:library:2.4.0'
     //compile project(':Feedback Library')
-}
-
-repositories {
-    flatDir {
-        dirs 'libs'
-    }
-
-    mavenCentral()
 }

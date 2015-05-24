@@ -1,52 +1,243 @@
 package com.andrewq.planets.moons;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.app.ActivityManager;
-import android.app.ActivityOptions;
-import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
+import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
-import android.widget.ScrollView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.andrewq.planets.R;
-import com.andrewq.planets.image_views.EuropaImageView;
-import com.andrewq.planets.util.NotifyingScrollView;
+import com.andrewq.planets.util.BaseActivity;
+import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;
+import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
+import com.github.ksoichiro.android.observablescrollview.ScrollState;
+import com.github.ksoichiro.android.observablescrollview.ScrollUtils;
 import com.google.analytics.tracking.android.EasyTracker;
+import com.nineoldandroids.view.ViewHelper;
+import com.suredigit.inappfeedback.FeedbackDialog;
+import com.suredigit.inappfeedback.FeedbackSettings;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+@SuppressWarnings("ConstantConditions")
+public class EuropaActivity extends BaseActivity implements ObservableScrollViewCallbacks {
 
-public class EuropaActivity extends Activity {
+    private ImageView imgV;
 
-    ImageView imgV;
-    ImageView img;
-    ActionBar mActionBar;
+    private View mImageView;
+    private ObservableScrollView mScrollView;
+    private int mParallaxImageHeight;
 
-    private Drawable mActionBarBackgroundDrawable;
-    private NotifyingScrollView.OnScrollChangedListener mOnScrollChangedListener = new NotifyingScrollView.OnScrollChangedListener() {
-        public void onScrollChanged(ScrollView who, int l, int t, int oldl, int oldt) {
-            @SuppressWarnings("ConstantConditions") final int headerHeight = findViewById(R.id.image_header_europa).getHeight() - getActionBar().getHeight();
-            final float ratio = (float) Math.min(Math.max(t, 0), headerHeight) / headerHeight;
-            final int newAlpha = (int) (ratio * 255);
-            mActionBarBackgroundDrawable.setAlpha(newAlpha);
+    Toolbar toolbar;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.europa_activity);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar_europa);
+        setSupportActionBar(toolbar);
+
+        //noinspection ConstantConditions
+        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        mImageView = findViewById(R.id.image);
+        toolbar.setBackgroundColor(ScrollUtils.getColorWithAlpha(0, getResources().getColor(R.color.primary)));
+        toolbar.setTitleTextColor(Color.parseColor("#FFFFFF"));
+
+        mScrollView = (ObservableScrollView) findViewById(R.id.scroll);
+        mScrollView.setScrollViewCallbacks(this);
+
+        mParallaxImageHeight = getResources().getDimensionPixelSize(R.dimen.parallax_image_height);
+
+        SharedPreferences getPrefs2 = PreferenceManager
+                .getDefaultSharedPreferences(getBaseContext());
+
+        //Give theme_chooser the preference key defined in XML
+        int theme_chooser = Integer.parseInt(getPrefs2.getString("prefSetTheme", "3"));
+
+        if (theme_chooser == 1) {
+            //Red
+            int actionBarColor = Color.parseColor("#D32F2F");
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                this.setTaskDescription(new ActivityManager.TaskDescription("Europa",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+
+                Window window = getWindow();
+                window.setStatusBarColor(darker(actionBarColor, 0.8f));
+            }
+        } else if (theme_chooser == 2) {
+            //Orange
+            int actionBarColor = Color.parseColor("#E64A19");
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                this.setTaskDescription(new ActivityManager.TaskDescription("Europa",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+
+                Window window = getWindow();
+                window.setStatusBarColor(darker(actionBarColor, 0.8f));
+            }
+        } else if (theme_chooser == 3) {
+            //Blue
+            int actionBarColor = Color.parseColor("#1976D2");
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                this.setTaskDescription(new ActivityManager.TaskDescription("Europa",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+
+                Window window = getWindow();
+                window.setStatusBarColor(darker(actionBarColor, 0.8f));
+            }
+        } else if (theme_chooser == 4) {
+            //Green
+            int actionBarColor = Color.parseColor("#388E3C");
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                this.setTaskDescription(new ActivityManager.TaskDescription("Europa",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+
+                Window window = getWindow();
+                window.setStatusBarColor(darker(actionBarColor, 0.8f));
+            }
+        } else if (theme_chooser == 5) {
+            //Purple
+            int actionBarColor = Color.parseColor("#512DA8");
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                this.setTaskDescription(new ActivityManager.TaskDescription("Europa",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+
+                Window window = getWindow();
+                window.setStatusBarColor(darker(actionBarColor, 0.8f));
+            }
+        } else if (theme_chooser == 6) {
+            //Black
+            int actionBarColor = Color.parseColor("#212121");
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                this.setTaskDescription(new ActivityManager.TaskDescription("Europa",
+                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
+
+                Window window = getWindow();
+                window.setStatusBarColor(darker(actionBarColor, 0.8f));
+            }
         }
-    };
+
+        //imgV = (ImageView) findViewById(R.id.image_header_europa);
+
+        /*View.OnTouchListener upDownListener = new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    imgV.setAlpha(0.8f);
+                    return true;
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    imgV.setAlpha(1.0f);
+                    Intent i = new Intent(getBaseContext(), EuropaImageView.class);
+                    Bundle scaleBundle = ActivityOptions.makeScaleUpAnimation(
+                            v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                    startActivity(i, scaleBundle);
+                    return true;
+                }
+
+                return false;
+            }
+
+        };*/
+
+        //imgV.setOnTouchListener(upDownListener);
+
+    }
+
+    @Override
+    public void onScrollChanged(int scrollY, boolean firstScroll, boolean dragging) {
+        int baseColor = getResources().getColor(R.color.primary);
+
+        //Set getPrefs to a preference manager
+        SharedPreferences getPrefs2 = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+
+        //Give theme_chooser the preference key defined in XML
+        int theme_chooser = Integer.parseInt(getPrefs2.getString("prefSetTheme", "3"));
+
+        int color;
+
+        //Set the action bar colors to whatever the user selects from the ListPreference
+        if (theme_chooser == 0) {
+            //Default
+            color = Color.parseColor("#5B6ABF");
+
+            baseColor = color;
+        } else if (theme_chooser == 1) {
+            //Red
+            color = Color.parseColor("#D32F2F");
+
+            baseColor = color;
+        } else if (theme_chooser == 2) {
+            //Orange
+            color = Color.parseColor("#E64A19");
+
+            baseColor = color;
+        } else if (theme_chooser == 3) {
+            //Blue
+            color = Color.parseColor("#1976D2");
+
+            baseColor = color;
+        } else if (theme_chooser == 4) {
+            //Green
+            color = Color.parseColor("#388E3C");
+
+            baseColor = color;
+        } else if (theme_chooser == 5) {
+            //Purple
+            color = Color.parseColor("#512DA8");
+
+            baseColor = color;
+        } else if (theme_chooser == 6) {
+            //Black
+            color = Color.parseColor("#212121");
+
+            baseColor = color;
+        } else {
+            color = Color.parseColor("#5B6ABF");
+
+            baseColor = color;
+        }
+
+        float alpha = Math.min(1, (float) scrollY / mParallaxImageHeight);
+        toolbar.setBackgroundColor(ScrollUtils.getColorWithAlpha(alpha, baseColor));
+        ViewHelper.setTranslationY(mImageView, scrollY / 2);
+    }
+
+    @Override
+    public void onDownMotionEvent() {
+    }
+
+    @Override
+    public void onUpOrCancelMotionEvent(ScrollState scrollState) {
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        onScrollChanged(mScrollView.getCurrentScrollY(), false, false);
+    }
 
     public static Bitmap drawableToBitmap(Drawable drawable) {
         if (drawable instanceof BitmapDrawable) {
@@ -71,143 +262,19 @@ public class EuropaActivity extends Activity {
         return bitmap;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.europa_activity);
+    /**
+     * Returns darker version of specified <code>color</code>.
+     */
+    public static int darker(int color, float factor) {
+        int a = Color.alpha(color);
+        int r = Color.red(color);
+        int g = Color.green(color);
+        int b = Color.blue(color);
 
-        mActionBar = getActionBar();
-        assert mActionBar != null;
-
-        mActionBar.setCustomView(R.layout.custom_actionbar_europa);
-
-        mActionBar.setDisplayShowCustomEnabled(true);
-        mActionBar.setDisplayHomeAsUpEnabled(false);
-
-        img = (ImageView) findViewById(R.id.backButtonSettings);
-
-        img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
-        SharedPreferences getPrefs2 = PreferenceManager
-                .getDefaultSharedPreferences(getBaseContext());
-
-        //Give theme_chooser the preference key defined in XML
-        int theme_chooser = Integer.parseInt(getPrefs2.getString("prefSetTheme", "3"));
-
-        //Set the action bar colors to whatever the user selects from the ListPreference
-        if (theme_chooser == 1) {
-            //Red
-            mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_red);
-
-            int actionBarColor = Color.parseColor("#D32F2F");
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("Europa",
-                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
-            }
-        } else if (theme_chooser == 2) {
-            //Orange
-            mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_orange);
-
-            int actionBarColor = Color.parseColor("#E64A19");
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("Europa",
-                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
-            }
-        } else if (theme_chooser == 3) {
-            //Blue
-            mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_blue);
-
-            int actionBarColor = Color.parseColor("#1976D2");
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("Europa",
-                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
-            }
-        } else if (theme_chooser == 4) {
-            //Green
-            mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_green);
-
-            int actionBarColor = Color.parseColor("#388E3C");
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("Europa",
-                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
-            }
-        } else if (theme_chooser == 5) {
-            //Purple
-            mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_purple);
-
-            int actionBarColor = Color.parseColor("#512DA8");
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("Europa",
-                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
-            }
-        } else if (theme_chooser == 6) {
-            //Black
-            mActionBarBackgroundDrawable = getResources().getDrawable(R.drawable.ab_background_black);
-
-            int actionBarColor = Color.parseColor("#212121");
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                this.setTaskDescription(new ActivityManager.TaskDescription("Europa",
-                        drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), actionBarColor));
-            }
-        }
-
-        mActionBarBackgroundDrawable.setAlpha(0);
-
-        getActionBar().setBackgroundDrawable(mActionBarBackgroundDrawable);
-
-        ((NotifyingScrollView) findViewById(R.id.scroll_view_europa)).setOnScrollChangedListener(mOnScrollChangedListener);
-
-        imgV = (ImageView) findViewById(R.id.image_header_europa);
-
-        View.OnTouchListener upDownListener = new View.OnTouchListener() {
-
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    imgV.setAlpha(0.8f);
-                    return true;
-                } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    imgV.setAlpha(1.0f);
-                    Intent i = new Intent(getBaseContext(), EuropaImageView.class);
-                    Bundle scaleBundle = ActivityOptions.makeScaleUpAnimation(
-                            v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
-                    startActivity(i, scaleBundle);
-                    return true;
-                }
-
-                return false;
-            }
-
-        };
-
-        imgV.setOnTouchListener(upDownListener);
-
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-
-        imgV = (ImageView) findViewById(R.id.image_header_europa);
-
-        if (event.getAction() == MotionEvent.ACTION_DOWN) {
-            imgV.setAlpha(0.8f);
-        } else if (event.getAction() == MotionEvent.ACTION_UP) {
-            imgV.setAlpha(1.0f);
-        }
-
-        return super.onTouchEvent(event);
+        return Color.argb(a,
+                Math.max((int) (r * factor), 0),
+                Math.max((int) (g * factor), 0),
+                Math.max((int) (b * factor), 0));
     }
 
     @Override
@@ -221,58 +288,55 @@ public class EuropaActivity extends Activity {
 
         switch (item.getItemId()) {
             case R.id.sendFeedback:
-                sendFeedback(this);
+                FeedbackSettings fbs = new FeedbackSettings();
+                fbs.setText("Use this to send feedback, suggestions, and bugs to the developer. " +
+                        "All feedback/suggestions are appreciated!");
+                fbs.setYourComments("Your message here...");
+                fbs.setTitle("Feedback Submitter");
+
+                fbs.setToast("Thanks! Check back later for a reply if applicable.");
+                fbs.setToastDuration(Toast.LENGTH_LONG);
+
+                fbs.setRadioButtons(true);
+                fbs.setBugLabel("Bug");
+                fbs.setIdeaLabel("Suggestion");
+                fbs.setQuestionLabel("General Feedback");
+
+                fbs.setOrientation(LinearLayout.VERTICAL);
+                fbs.setGravity(Gravity.LEFT);
+
+                fbs.setModal(true);
+
+                FeedbackDialog fdb = new FeedbackDialog(this, "AF-FD2E2AEF7F0A-27", fbs);
+                fdb.show();
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    public static void sendFeedback(Context context)
-    //opens an email intent with a screenshot and preloaded email
-    {
-        context.getApplicationContext();
-        final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
-        Uri uri = Uri.fromFile(takeTempScreenshot(context));
-            /* Fill it with Data */
-        emailIntent.setType("plain/text");
-        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{context.getResources().getString(R.string.support_email)});
-        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Feedback: Europa");
-        emailIntent.putExtra(Intent.EXTRA_STREAM, uri);
-        //emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Text");
-        context.startActivity(Intent.createChooser(emailIntent, context.getResources().getString(R.string.send_feedback)));
-        //activity.startActivityForResult(Intent.createChooser(emailIntent, getResources().getString(R.string.send_feedback)));
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
 
-    } //end sendFeedback()
+        //imgV = (ImageView) findViewById(R.id.image_header_europa);
 
-    public static File takeTempScreenshot(Context context)
-    //takes a screenshot and stores it in the app's cache, returns the image
-    {
-        Activity activity = (Activity) context;
-        try {
-            File outputDir = context.getExternalCacheDir(); // context being the Activity pointer
-            File imageFile = File.createTempFile("pfb_europa", ".jpeg", outputDir);
-            // image naming and path  to include sd card  appending name you choose for file
-            View v1 = activity.getWindow().getDecorView().getRootView();
-
-            v1.setDrawingCacheEnabled(true);
-            // create bitmap screen capture
-            Bitmap bitmap = Bitmap.createBitmap(v1.getDrawingCache());
-            v1.setDrawingCacheEnabled(false);
-            FileOutputStream fout = new FileOutputStream(imageFile);
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fout);
-            fout.flush();
-            fout.close();
-            return imageFile;
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            imgV.setAlpha(0.8f);
+        } else if (event.getAction() == MotionEvent.ACTION_UP) {
+            imgV.setAlpha(1.0f);
         }
-        return null;
-    } //end takeScreenshot
+
+        return super.onTouchEvent(event);
+    }
 
     @Override
     public void onStart() {
         super.onStart();
         EasyTracker.getInstance(this).activityStart(this);  // Add this method.
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
     }
 
     @Override

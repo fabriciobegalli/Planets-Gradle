@@ -30,6 +30,7 @@
         <activity
             android:name=".NavDrawerActivity"
             android:label="@string/app_name"
+            android:launchMode="singleTop"
             android:screenOrientation="sensor"
             android:theme="@style/AppThemeNavDrawer">
             <intent-filter>
@@ -89,9 +90,9 @@
         <activity
             android:name=".moons.MoonActivity"
             android:label="Moon"
-            android:parentActivityName=".moons.MoonActivity"
+            android:parentActivityName=".NavDrawerActivity"
             android:screenOrientation="sensor"
-            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.ImageGallery" />
                 <action android:name="android.intent.action.SEARCH" />
@@ -115,9 +116,9 @@
         <activity
             android:name=".moons.PhobosActivity"
             android:label="Phobos"
-            android:parentActivityName=".moons.PhobosActivity"
+            android:parentActivityName=".NavDrawerActivity"
             android:screenOrientation="sensor"
-            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.ImageGallery" />
                 <action android:name="android.intent.action.SEARCH" />
@@ -140,14 +141,14 @@
         <activity
             android:name=".image_views.PhobosImageView"
             android:label="Phobos"
-            android:parentActivityName=".planets.MarsActivity" />
+            android:parentActivityName=".moons.PhobosActivity" />
 
         <activity
             android:name=".moons.EuropaActivity"
             android:label="Europa"
-            android:parentActivityName=".planets.JupiterActivity"
+            android:parentActivityName=".NavDrawerActivity"
             android:screenOrientation="sensor"
-            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.ImageGallery" />
                 <action android:name="android.intent.action.SEARCH" />
@@ -171,14 +172,14 @@
         <activity
             android:name=".image_views.EuropaImageView"
             android:label="Phobos"
-            android:parentActivityName=".planets.MarsActivity" />
+            android:parentActivityName=".moons.EuropaActivity" />
 
         <activity
             android:name=".moons.DeimosActivity"
             android:label="Deimos"
-            android:parentActivityName=".moons.DeimosActivity"
+            android:parentActivityName=".NavDrawerActivity"
             android:screenOrientation="sensor"
-            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.ImageGallery" />
 
@@ -201,23 +202,23 @@
         <activity
             android:name=".image_views.DeimosImageView"
             android:label="Phobos"
-            android:parentActivityName=".planets.MarsActivity" />
+            android:parentActivityName=".moons.DeimosActivity" />
 
         <activity
             android:name=".image_views.MoonImageView"
             android:label="Moon"
-            android:parentActivityName=".old.MainActivity" />
+            android:parentActivityName=".moons.MoonActivity" />
 
         <activity
             android:name=".image_views.SunImageView"
             android:label="Sun"
-            android:parentActivityName=".old.MainActivity" />
+            android:parentActivityName=".stars.SunActivity" />
 
         <activity
             android:name=".stars.SunActivity"
             android:label="Sun"
-            android:parentActivityName=".old.MainActivity"
-            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay">
+            android:parentActivityName=".NavDrawerActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
             <intent-filter android:label="The Sun">
                 <action android:name="android.intent.action.VIEW" />
@@ -234,13 +235,13 @@
         <activity
             android:name=".image_views.MercuryImageView"
             android:label="Mercury"
-            android:parentActivityName=".old.MainActivity" />
+            android:parentActivityName=".planets.MercuryActivity" />
 
         <activity
             android:name=".planets.MercuryActivity"
             android:label="Mercury"
-            android:parentActivityName=".old.MainActivity"
-            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay">
+            android:parentActivityName=".NavDrawerActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
             <intent-filter android:label="Mercury">
                 <action android:name="android.intent.action.VIEW" />
@@ -258,13 +259,13 @@
         <activity
             android:name=".image_views.VenusImageView"
             android:label="Venus"
-            android:parentActivityName=".old.MainActivity" />
+            android:parentActivityName=".planets.VenusActivity" />
 
         <activity
             android:name=".planets.VenusActivity"
             android:label="Venus"
-            android:parentActivityName=".old.MainActivity"
-            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay">
+            android:parentActivityName=".NavDrawerActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
             <intent-filter android:label="Venus">
                 <action android:name="android.intent.action.VIEW" />
@@ -282,13 +283,13 @@
         <activity
             android:name=".image_views.EarthImageView"
             android:label="Earth"
-            android:parentActivityName=".old.MainActivity" />
+            android:parentActivityName=".planets.EarthActivity" />
 
         <activity
             android:name=".planets.EarthActivity"
             android:label="Earth"
-            android:parentActivityName=".old.MainActivity"
-            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay">
+            android:parentActivityName=".NavDrawerActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
             <intent-filter android:label="Earth">
                 <action android:name="android.intent.action.VIEW" />
@@ -306,15 +307,15 @@
         <activity
             android:name=".image_views.MarsImageView"
             android:label="Mars"
-            android:parentActivityName=".old.MainActivity" />
+            android:parentActivityName=".planets.MarsActivity" />
 
         <activity
             android:name=".planets.MarsActivity"
             android:label="Mars"
-            android:parentActivityName=".old.MainActivity"
-            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay">
+            android:parentActivityName=".NavDrawerActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-            <intent-filter android:label="MArs">
+            <intent-filter android:label="Mars">
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -330,8 +331,8 @@
         <activity
             android:name=".planets.JupiterActivity"
             android:label="Jupiter"
-            android:parentActivityName=".old.MainActivity"
-            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay">
+            android:parentActivityName=".NavDrawerActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
             <intent-filter android:label="Jupiter">
                 <action android:name="android.intent.action.VIEW" />
@@ -349,13 +350,13 @@
         <activity
             android:name=".image_views.JupiterImageView"
             android:label="Jupiter"
-            android:parentActivityName=".old.MainActivity" />
+            android:parentActivityName=".planets.JupiterActivity" />
 
         <activity
             android:name=".planets.SaturnActivity"
             android:label="Saturn"
-            android:parentActivityName=".old.MainActivity"
-            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay">
+            android:parentActivityName=".NavDrawerActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
             <intent-filter android:label="Saturn">
                 <action android:name="android.intent.action.VIEW" />
@@ -373,13 +374,13 @@
         <activity
             android:name=".image_views.SaturnImageView"
             android:label="Saturn"
-            android:parentActivityName=".old.MainActivity" />
+            android:parentActivityName=".planets.SaturnActivity" />
 
         <activity
             android:name=".planets.UranusActivity"
             android:label="Uranus"
-            android:parentActivityName=".old.MainActivity"
-            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay">
+            android:parentActivityName=".NavDrawerActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
             <intent-filter android:label="Uranus">
                 <action android:name="android.intent.action.VIEW" />
@@ -397,13 +398,13 @@
         <activity
             android:name=".image_views.UranusImageView"
             android:label="Uranus"
-            android:parentActivityName=".old.MainActivity" />
+            android:parentActivityName=".planets.UranusActivity" />
 
         <activity
             android:name=".planets.NeptuneActivity"
             android:label="Neptune"
-            android:parentActivityName=".old.MainActivity"
-            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay">
+            android:parentActivityName=".NavDrawerActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
             <intent-filter android:label="Neptune">
                 <action android:name="android.intent.action.VIEW" />
@@ -421,13 +422,13 @@
         <activity
             android:name=".image_views.NeptuneImageView"
             android:label="Neptune"
-            android:parentActivityName=".old.MainActivity" />
+            android:parentActivityName=".planets.NeptuneActivity" />
 
         <activity
             android:name=".other_bodies.PlutoActivity"
             android:label="Pluto"
-            android:parentActivityName=".old.MainActivity"
-            android:theme="@style/Theme.TranslucentActionBar.ActionBar.Overlay">
+            android:parentActivityName=".NavDrawerActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
             <intent-filter android:label="Pluto">
                 <action android:name="android.intent.action.VIEW" />
@@ -445,7 +446,7 @@
         <activity
             android:name=".image_views.PlutoImageView"
             android:label="Pluto"
-            android:parentActivityName=".old.MainActivity" />
+            android:parentActivityName=".other_bodies.PlutoActivity" />
 
         <activity
             android:name=".tv.DetailsActivity"
@@ -460,7 +461,7 @@
             android:theme="@style/Theme.Leanback" />
 
         <activity
-            android:name=".contributers.Contributers"
+            android:name=".contributors.Contributors"
             android:label="@string/title_activity_contributers"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
             android:parentActivityName=".misc.Settings" />

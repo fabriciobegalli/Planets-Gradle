@@ -78,7 +78,7 @@ public class NavDrawerActivity extends ActionBarActivity {
 
         //TODO: Fix this!
 
-        mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
+        /*mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
             public void onIabSetupFinished(IabResult result) {
                 Log.d(TAG, "Setup finished.");
 
@@ -95,10 +95,10 @@ public class NavDrawerActivity extends ActionBarActivity {
                 Log.d(TAG, "Setup successful. Querying inventory.");
                 mHelper.queryInventoryAsync(mGotInventoryListener);
             }
-        });
+        });*/
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-
+        toolbar.setTitleTextColor(Color.parseColor("#FFFFFF"));
         setSupportActionBar(toolbar);
 
         drawer = new Drawer()
@@ -187,32 +187,6 @@ public class NavDrawerActivity extends ActionBarActivity {
 
                                 final Activity act = NavDrawerActivity.this;
 
-                                /*new AlertDialog.Builder(NavDrawerActivity.this)
-                                        .setTitle("Select Amount (Tax Not Listed)")
-                                        .setItems(R.array.donations, new DialogInterface.OnClickListener() {
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                String payload = "";
-                                                if (which == 0) {
-                                                    mHelper.launchPurchaseFlow(act, SKU_1_DOLLAR, RC_REQUEST, mPurchaseFinishedListener, payload);
-                                                } else if (which == 1) {
-                                                    mHelper.launchPurchaseFlow(act, SKU_5_DOLLARS, RC_REQUEST, mPurchaseFinishedListener, payload);
-                                                } else if (which == 2) {
-                                                    mHelper.launchPurchaseFlow(act, SKU_10_DOLLARS, RC_REQUEST, mPurchaseFinishedListener, payload);
-                                                } else if (which == 3) {
-                                                    mHelper.launchPurchaseFlow(act, SKU_25_DOLLARS, RC_REQUEST, mPurchaseFinishedListener, payload);
-                                                } else {
-                                                    mHelper.launchPurchaseFlow(act, SKU_50_DOLLARS, RC_REQUEST, mPurchaseFinishedListener, payload);
-                                                }
-                                            }
-                                        })
-                                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                                            @Override
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                //Do nothing!
-                                            }
-                                        })
-                                        .show();*/
-
                                 new MaterialDialog.Builder(NavDrawerActivity.this)
                                         .title("Select Amount (Tax Not Listed)")
                                         .theme(Theme.LIGHT)
@@ -232,6 +206,14 @@ public class NavDrawerActivity extends ActionBarActivity {
                                                 } else {
                                                     mHelper.launchPurchaseFlow(act, SKU_50_DOLLARS, RC_REQUEST, mPurchaseFinishedListener, payload);
                                                 }
+                                            }
+                                        })
+                                        .neutralText("Cancel")
+                                        .callback(new MaterialDialog.ButtonCallback() {
+                                            @Override
+                                            public void onNeutral(MaterialDialog dialog) {
+                                                super.onNeutral(dialog);
+                                                dialog.dismiss();
                                             }
                                         })
                                         .autoDismiss(false)
@@ -395,6 +377,7 @@ public class NavDrawerActivity extends ActionBarActivity {
         if (title == "Donate" || title == "Send Feedback" || title == "Settings") {
             //Do nothing...
         } else
+            //noinspection ConstantConditions
             getSupportActionBar().setTitle(title);
     }
 

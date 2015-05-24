@@ -1,6 +1,6 @@
 <resources>
-    <style name="AppThemeNavDrawer" parent="Theme.AppCompat.NoActionBar">
-        <item name="colorAccent">#F8F8F8</item>
+
+    <style name="AppThemeNavDrawer" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="windowActionModeOverlay">true</item>
     </style>
 

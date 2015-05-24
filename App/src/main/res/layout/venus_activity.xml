@@ -1,29 +1,51 @@
-<com.andrewq.planets.util.NotifyingScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/scroll_view_3"
+<!--
+  Copyright 2014 Soichiro Kashima
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <com.github.ksoichiro.android.observablescrollview.ObservableScrollView
+        android:id="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <ImageView
-            android:id="@+id/image_header_venus"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            android:src="@drawable/venus" />
+            android:layout_height="wrap_content">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:background="#D8D8D8">
-
-            <RelativeLayout
+            <ImageView
+                android:id="@+id/image"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="@dimen/parallax_image_height"
+                android:scaleType="centerCrop"
+                android:src="@drawable/venus" />
+
+            <View
+                android:id="@+id/anchor"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/parallax_image_height"
+                android:minHeight="@dimen/parallax_image_height" />
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:background="#d8d8d8"
+                android:layout_below="@id/anchor">
 
                 <RelativeLayout
                     android:id="@+id/venusCard1"
@@ -31,7 +53,7 @@
                     android:layout_width="match_parent"
                     android:layout_marginBottom="10dp"
                     android:padding="16dp"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
 
                     <TextView
                         android:id="@+id/venus_sub_title_1"
@@ -56,9 +78,8 @@
                     android:id="@+id/venusCard2"
                     android:background="@drawable/layer_card_background"
                     android:layout_width="match_parent"
-                    android:layout_below="@+id/venusCard1"
                     android:padding="16dp"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
 
                     <TextView
                         android:id="@+id/venus_sub_title_2"
@@ -78,9 +99,13 @@
                         android:text="@string/venus_description_2"
                         android:textSize="17sp" />
                 </RelativeLayout>
-            </RelativeLayout>
-        </FrameLayout>
+            </LinearLayout>
+        </RelativeLayout>
 
-    </LinearLayout>
+    </com.github.ksoichiro.android.observablescrollview.ObservableScrollView>
 
-</com.andrewq.planets.util.NotifyingScrollView>
+    <include
+        android:id="@+id/toolbar_venus"
+        layout="@layout/details_toolbar" />
+
+</FrameLayout>

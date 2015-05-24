@@ -21,7 +21,7 @@ import android.view.Window;
 import android.widget.LinearLayout;
 
 import com.andrewq.planets.R;
-import com.andrewq.planets.contributers.Contributers;
+import com.andrewq.planets.contributors.Contributors;
 import com.andrewq.planets.licenses.Licenses;
 import com.google.analytics.tracking.android.EasyTracker;
 
@@ -38,7 +38,10 @@ public class Settings extends PreferenceActivity {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             this.setTaskDescription(new ActivityManager.TaskDescription("Settings",
-                    drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), Color.parseColor("#414141")));
+                    drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), Color.parseColor("#212121")));
+
+            Window window = getWindow();
+            window.setStatusBarColor(darker(Color.parseColor("#212121"), 0.8f));
         }
 
         Preference prefContribs = findPreference("pref_contribs");
@@ -47,7 +50,7 @@ public class Settings extends PreferenceActivity {
             @Override
             public boolean onPreferenceClick(Preference preference) {
 
-                Intent i = new Intent(getBaseContext(), Contributers.class);
+                Intent i = new Intent(getBaseContext(), Contributors.class);
                 startActivity(i);
                 return true;
             }
@@ -71,9 +74,11 @@ public class Settings extends PreferenceActivity {
             @Override
             public boolean onPreferenceClick(Preference preference) {
 
-                CustomDialog.Builder builder = new CustomDialog.Builder(Settings.this, "What's New in 2.6.3 BETA 3", "View on Github");
+                CustomDialog.Builder builder = new CustomDialog.Builder(Settings.this, "What's New in 2.7", "View on Github");
 
-                builder.content("- Fixed \"Send Feedback\" bug");
+                builder.content("- Material Design for Details View\n" +
+                        "- New object sort feature\n" +
+                        "- Bug fixes");
                 builder.negativeText("Close");
                 builder.titleAlignment(BaseDialog.Alignment.LEFT);
                 builder.positiveColor("#0497c9");
@@ -105,6 +110,8 @@ public class Settings extends PreferenceActivity {
 
         LinearLayout root = (LinearLayout) findViewById(android.R.id.list).getParent().getParent().getParent();
         Toolbar bar = (Toolbar) LayoutInflater.from(this).inflate(R.layout.settings_toolbar, root, false);
+        bar.setTitleTextColor(Color.parseColor("#FFFFFF"));
+        bar.setBackgroundColor(Color.parseColor("#212121"));
         root.addView(bar, 0); // insert at top
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)

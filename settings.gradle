@@ -1,1 +1,1 @@
-include ':App', ':Feedback Library'
+include ':App', ':Feedback Library', ':CircleReveal'

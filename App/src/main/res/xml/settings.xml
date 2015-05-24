@@ -21,6 +21,15 @@
             android:key="prefSetTheme"
             android:summary="Tap here to change colors throughout app."
             android:title="@string/pref_5" />
+
+        <ListPreference
+            android:defaultValue="1"
+            android:enabled="true"
+            android:entries="@array/sorts"
+            android:entryValues="@array/sortEntries"
+            android:key="prefSortBy"
+            android:summary="Tap here to change how objects are sorted."
+            android:title="Sort By" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="About">
@@ -45,7 +54,7 @@
 
         <Preference
             android:key="pref_whatsnew"
-            android:summary="2.6.3 BETA 3 (34)"
+            android:summary="2.7 (35)"
             android:title="Planets" />
     </PreferenceCategory>
 
