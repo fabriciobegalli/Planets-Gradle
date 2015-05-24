@@ -49,6 +49,7 @@ import com.suredigit.inappfeedback.FeedbackSettings;
 /**
  * Created by andrew on 2/27/15.
  */
+
 @SuppressWarnings("deprecation")
 public class NavDrawerActivity extends ActionBarActivity {
 
@@ -78,7 +79,7 @@ public class NavDrawerActivity extends ActionBarActivity {
 
         //TODO: Fix this!
 
-        /*mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
+        mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
             public void onIabSetupFinished(IabResult result) {
                 Log.d(TAG, "Setup finished.");
 
@@ -95,7 +96,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                 Log.d(TAG, "Setup successful. Querying inventory.");
                 mHelper.queryInventoryAsync(mGotInventoryListener);
             }
-        });*/
+        });
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(Color.parseColor("#FFFFFF"));

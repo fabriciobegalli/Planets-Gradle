@@ -555,6 +555,520 @@ public class FragmentPlanets extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+
+        gridView = (GridView) getActivity().findViewById(R.id.gridview);
+
+        SwingBottomInAnimationAdapter swingBottomInAnimationAdapter = new SwingBottomInAnimationAdapter(new MyAdapter(), 100, 300);
+
+        swingBottomInAnimationAdapter.setAbsListView(gridView);
+
+        gridView.setAdapter(swingBottomInAnimationAdapter);
+
+        //Set getPrefs to a preference manager
+        SharedPreferences getPrefs2 = PreferenceManager.getDefaultSharedPreferences(getActivity().getBaseContext());
+
+        //Give sort_chooser the preference key defined in XML
+        int sort_chooser = Integer.parseInt(getPrefs2.getString("prefSortBy", "1"));
+
+        //Set the action bar colors to whatever the user selects from the ListPreference
+        if (sort_chooser == 1) {
+            //Traditional
+            gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+
+                    switch (position) {
+                        case 0:
+                            Intent i2 = new Intent(getActivity().getApplicationContext(),
+                                    MercuryActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle2 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i2, scaleBundle2);
+                            break;
+                        case 1:
+                            Intent i3 = new Intent(getActivity().getApplicationContext(),
+                                    VenusActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle3 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i3, scaleBundle3);
+                            break;
+                        case 2:
+                            Intent i4 = new Intent(getActivity().getApplicationContext(),
+                                    EarthActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle4 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i4, scaleBundle4);
+                            break;
+                        case 3:
+                            Intent i5 = new Intent(getActivity().getApplicationContext(),
+                                    MarsActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle5 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i5, scaleBundle5);
+                            break;
+                        case 4:
+                            Intent i6 = new Intent(getActivity().getApplicationContext(),
+                                    JupiterActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle6 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i6, scaleBundle6);
+                            break;
+                        case 5:
+                            Intent i7 = new Intent(getActivity().getApplicationContext(),
+                                    SaturnActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle7 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i7, scaleBundle7);
+                            break;
+                        case 6:
+                            Intent i8 = new Intent(getActivity().getApplicationContext(),
+                                    NeptuneActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle8 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i8, scaleBundle8);
+                            break;
+                        case 7:
+                            Intent i9 = new Intent(getActivity().getApplicationContext(),
+                                    UranusActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle9 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i9, scaleBundle9);
+                            break;
+                    }
+
+                }
+            });
+        } else if (sort_chooser == 2) {
+            //A - Z
+            gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+
+                    switch (position) {
+                        case 0:
+                            Intent i2 = new Intent(getActivity().getApplicationContext(),
+                                    EarthActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle2 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i2, scaleBundle2);
+                            break;
+                        case 1:
+                            Intent i3 = new Intent(getActivity().getApplicationContext(),
+                                    JupiterActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle3 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i3, scaleBundle3);
+                            break;
+                        case 2:
+                            Intent i4 = new Intent(getActivity().getApplicationContext(),
+                                    MarsActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle4 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i4, scaleBundle4);
+                            break;
+                        case 3:
+                            Intent i5 = new Intent(getActivity().getApplicationContext(),
+                                    MercuryActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle5 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i5, scaleBundle5);
+                            break;
+                        case 4:
+                            Intent i6 = new Intent(getActivity().getApplicationContext(),
+                                    NeptuneActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle6 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i6, scaleBundle6);
+                            break;
+                        case 5:
+                            Intent i7 = new Intent(getActivity().getApplicationContext(),
+                                    SaturnActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle7 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i7, scaleBundle7);
+                            break;
+                        case 6:
+                            Intent i8 = new Intent(getActivity().getApplicationContext(),
+                                    UranusActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle8 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i8, scaleBundle8);
+                            break;
+                        case 7:
+                            Intent i9 = new Intent(getActivity().getApplicationContext(),
+                                    VenusActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle9 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i9, scaleBundle9);
+                            break;
+                    }
+
+                }
+            });
+        } else if (sort_chooser == 3) {
+            //Z - A
+            gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+
+                    switch (position) {
+                        case 0:
+                            Intent i2 = new Intent(getActivity().getApplicationContext(),
+                                    VenusActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle2 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i2, scaleBundle2);
+                            break;
+                        case 1:
+                            Intent i3 = new Intent(getActivity().getApplicationContext(),
+                                    UranusActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle3 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i3, scaleBundle3);
+                            break;
+                        case 2:
+                            Intent i4 = new Intent(getActivity().getApplicationContext(),
+                                    SaturnActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle4 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i4, scaleBundle4);
+                            break;
+                        case 3:
+                            Intent i5 = new Intent(getActivity().getApplicationContext(),
+                                    NeptuneActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle5 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i5, scaleBundle5);
+                            break;
+                        case 4:
+                            Intent i6 = new Intent(getActivity().getApplicationContext(),
+                                    MercuryActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle6 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i6, scaleBundle6);
+                            break;
+                        case 5:
+                            Intent i7 = new Intent(getActivity().getApplicationContext(),
+                                    MarsActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle7 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i7, scaleBundle7);
+                            break;
+                        case 6:
+                            Intent i8 = new Intent(getActivity().getApplicationContext(),
+                                    JupiterActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle8 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i8, scaleBundle8);
+                            break;
+                        case 7:
+                            Intent i9 = new Intent(getActivity().getApplicationContext(),
+                                    EarthActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle9 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i9, scaleBundle9);
+                            break;
+                    }
+
+                }
+            });
+        } else if (sort_chooser == 4) {
+            //Smallest to Largest
+            gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+
+                    switch (position) {
+                        case 0:
+                            Intent i2 = new Intent(getActivity().getApplicationContext(),
+                                    MercuryActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle2 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i2, scaleBundle2);
+                            break;
+                        case 1:
+                            Intent i3 = new Intent(getActivity().getApplicationContext(),
+                                    MarsActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle3 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i3, scaleBundle3);
+                            break;
+                        case 2:
+                            Intent i4 = new Intent(getActivity().getApplicationContext(),
+                                    VenusActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle4 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i4, scaleBundle4);
+                            break;
+                        case 3:
+                            Intent i5 = new Intent(getActivity().getApplicationContext(),
+                                    EarthActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle5 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i5, scaleBundle5);
+                            break;
+                        case 4:
+                            Intent i6 = new Intent(getActivity().getApplicationContext(),
+                                    NeptuneActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle6 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i6, scaleBundle6);
+                            break;
+                        case 5:
+                            Intent i7 = new Intent(getActivity().getApplicationContext(),
+                                    UranusActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle7 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i7, scaleBundle7);
+                            break;
+                        case 6:
+                            Intent i8 = new Intent(getActivity().getApplicationContext(),
+                                    SaturnActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle8 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i8, scaleBundle8);
+                            break;
+                        case 7:
+                            Intent i9 = new Intent(getActivity().getApplicationContext(),
+                                    JupiterActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle9 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i9, scaleBundle9);
+                            break;
+                    }
+
+                }
+            });
+        } else if (sort_chooser == 5) {
+            //Largest to Smallest
+            gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+
+                    switch (position) {
+                        case 0:
+                            Intent i2 = new Intent(getActivity().getApplicationContext(),
+                                    JupiterActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle2 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i2, scaleBundle2);
+                            break;
+                        case 1:
+                            Intent i3 = new Intent(getActivity().getApplicationContext(),
+                                    SaturnActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle3 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i3, scaleBundle3);
+                            break;
+                        case 2:
+                            Intent i4 = new Intent(getActivity().getApplicationContext(),
+                                    UranusActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle4 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i4, scaleBundle4);
+                            break;
+                        case 3:
+                            Intent i5 = new Intent(getActivity().getApplicationContext(),
+                                    NeptuneActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle5 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i5, scaleBundle5);
+                            break;
+                        case 4:
+                            Intent i6 = new Intent(getActivity().getApplicationContext(),
+                                    EarthActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle6 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i6, scaleBundle6);
+                            break;
+                        case 5:
+                            Intent i7 = new Intent(getActivity().getApplicationContext(),
+                                    VenusActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle7 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i7, scaleBundle7);
+                            break;
+                        case 6:
+                            Intent i8 = new Intent(getActivity().getApplicationContext(),
+                                    MarsActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle8 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i8, scaleBundle8);
+                            break;
+                        case 7:
+                            Intent i9 = new Intent(getActivity().getApplicationContext(),
+                                    MercuryActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle9 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i9, scaleBundle9);
+                            break;
+                    }
+
+                }
+            });
+        } else {
+            //Traditional
+            gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+
+                    switch (position) {
+                        case 0:
+                            Intent i2 = new Intent(getActivity().getApplicationContext(),
+                                    MercuryActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle2 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i2, scaleBundle2);
+                            break;
+                        case 1:
+                            Intent i3 = new Intent(getActivity().getApplicationContext(),
+                                    VenusActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle3 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i3, scaleBundle3);
+                            break;
+                        case 2:
+                            Intent i4 = new Intent(getActivity().getApplicationContext(),
+                                    EarthActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle4 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i4, scaleBundle4);
+                            break;
+                        case 3:
+                            Intent i5 = new Intent(getActivity().getApplicationContext(),
+                                    MarsActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle5 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i5, scaleBundle5);
+                            break;
+                        case 4:
+                            Intent i6 = new Intent(getActivity().getApplicationContext(),
+                                    JupiterActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle6 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i6, scaleBundle6);
+                            break;
+                        case 5:
+                            Intent i7 = new Intent(getActivity().getApplicationContext(),
+                                    SaturnActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle7 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i7, scaleBundle7);
+                            break;
+                        case 6:
+                            Intent i8 = new Intent(getActivity().getApplicationContext(),
+                                    NeptuneActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle8 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i8, scaleBundle8);
+                            break;
+                        case 7:
+                            Intent i9 = new Intent(getActivity().getApplicationContext(),
+                                    UranusActivity.class);
+                            //Scale animation is sent as a bundle to the next activity.
+                            Bundle scaleBundle9 = ActivityOptions.makeScaleUpAnimation(
+                                    v, 0, 0, v.getWidth(), v.getHeight()).toBundle();
+                            //then start the activity, and send the bundle
+                            startActivity(i9, scaleBundle9);
+                            break;
+                    }
+
+                }
+            });
+        }
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment

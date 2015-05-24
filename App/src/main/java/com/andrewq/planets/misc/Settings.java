@@ -16,10 +16,12 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.LinearLayout;
 
+import com.andrewq.planets.NavDrawerActivity;
 import com.andrewq.planets.R;
 import com.andrewq.planets.contributors.Contributors;
 import com.andrewq.planets.licenses.Licenses;
@@ -102,6 +104,15 @@ public class Settings extends PreferenceActivity {
                 return true;
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        if (menuItem.getItemId() == android.R.id.home) {
+            Intent i = new Intent(this, NavDrawerActivity.class);
+            startActivity(i);
+        }
+        return super.onOptionsItemSelected(menuItem);
     }
 
     @Override
