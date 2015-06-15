@@ -24,6 +24,7 @@ import android.widget.LinearLayout;
 import com.andrewq.planets.NavDrawerActivity;
 import com.andrewq.planets.R;
 import com.andrewq.planets.contributors.Contributors;
+import com.andrewq.planets.intro.DefaultIntro;
 import com.andrewq.planets.licenses.Licenses;
 import com.google.analytics.tracking.android.EasyTracker;
 
@@ -101,6 +102,18 @@ public class Settings extends PreferenceActivity {
                     }
                 });
                 customDialog.show();
+                return true;
+            }
+        });
+
+        Preference prefIntro = findPreference("pref_intro");
+
+        prefIntro.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+
+                Intent i = new Intent(Settings.this, DefaultIntro.class);
+                startActivity(i);
                 return true;
             }
         });

@@ -14,6 +14,18 @@
             android:title="Send Anonymous Data" />
 
         <ListPreference
+            android:defaultValue="1"
+            android:enabled="true"
+            android:entries="@array/sorts"
+            android:entryValues="@array/sortEntries"
+            android:key="prefSortBy"
+            android:summary="Tap here to change how objects are sorted."
+            android:title="Sort By" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="App Design">
+
+        <ListPreference
             android:defaultValue="3"
             android:enabled="true"
             android:entries="@array/themes"
@@ -22,14 +34,6 @@
             android:summary="Tap here to change colors throughout app."
             android:title="@string/pref_5" />
 
-        <ListPreference
-            android:defaultValue="1"
-            android:enabled="true"
-            android:entries="@array/sorts"
-            android:entryValues="@array/sortEntries"
-            android:key="prefSortBy"
-            android:summary="Tap here to change how objects are sorted."
-            android:title="Sort By" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="About">
@@ -41,6 +45,11 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://plus.google.com/u/0/+AndrewQuebe/about" />
         </Preference>
+
+        <Preference
+            android:key="pref_intro"
+            android:summary="Touch to launch the intro to this app."
+            android:title="App Intro" />
 
         <Preference
             android:key="pref_contribs"

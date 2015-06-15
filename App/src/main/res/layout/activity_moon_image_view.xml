@@ -7,7 +7,7 @@
 
     <ImageView
         android:id="@+id/image01"
-        android:src="@drawable/moon"
+        android:src="@drawable/intro_moon"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:scaleType="fitCenter" />
