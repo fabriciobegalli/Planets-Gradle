@@ -32,7 +32,7 @@
             android:entryValues="@array/themesEntries"
             android:key="prefSetTheme"
             android:summary="Tap here to change colors throughout app."
-            android:title="@string/pref_5" />
+            android:title="Color" />
 
     </PreferenceCategory>
 
