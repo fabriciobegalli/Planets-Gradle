@@ -7,7 +7,7 @@ android {
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 22
-        versionCode 36
+        versionCode 37
         versionName "2.7.1"
     }
     buildTypes {
