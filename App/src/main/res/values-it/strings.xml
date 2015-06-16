@@ -225,4 +225,5 @@
     <string name="title_activity_contributers">Contributors</string>
     <string name="title_activity_licenses">Licenses</string>
 
+    <string name="app_intro">App Intro</string>
 </resources>

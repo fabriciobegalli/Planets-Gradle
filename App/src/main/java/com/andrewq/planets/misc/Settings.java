@@ -77,11 +77,10 @@ public class Settings extends PreferenceActivity {
             @Override
             public boolean onPreferenceClick(Preference preference) {
 
-                CustomDialog.Builder builder = new CustomDialog.Builder(Settings.this, "What's New in 2.7.1", "View on Github");
+                CustomDialog.Builder builder = new CustomDialog.Builder(Settings.this, "What's New in 2.7.2", "View on Github");
 
-                builder.content("- Material Design for Details View\n" +
-                        "- New object sort feature\n" +
-                        "- Bug fixes");
+                builder.content("- App intro for new users\n" +
+                        "- Rearranged settings page");
                 builder.negativeText("Close");
                 builder.titleAlignment(BaseDialog.Alignment.LEFT);
                 builder.positiveColor("#0497c9");

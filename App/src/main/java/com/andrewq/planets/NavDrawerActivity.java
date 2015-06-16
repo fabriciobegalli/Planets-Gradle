@@ -76,7 +76,7 @@ public class NavDrawerActivity extends ActionBarActivity {
 
         mHelper = new IabHelper(getBaseContext(), base64EncodedPublicKey);
 
-        /*mHelper.enableDebugLogging(false);
+        mHelper.enableDebugLogging(false);
 
         //TODO: Fix this!
 
@@ -97,7 +97,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                 Log.d(TAG, "Setup successful. Querying inventory.");
                 mHelper.queryInventoryAsync(mGotInventoryListener);
             }
-        });*/
+        });
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(Color.parseColor("#FFFFFF"));

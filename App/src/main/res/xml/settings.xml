@@ -63,7 +63,7 @@
 
         <Preference
             android:key="pref_whatsnew"
-            android:summary="2.7.1 (36)"
+            android:summary="2.7.2 (37)"
             android:title="Planets" />
     </PreferenceCategory>
 
