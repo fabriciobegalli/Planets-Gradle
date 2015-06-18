@@ -38,6 +38,9 @@ import com.andrewq.planets.iab.Purchase;
 import com.andrewq.planets.intro.DefaultIntro;
 import com.andrewq.planets.misc.Settings;
 import com.google.analytics.tracking.android.EasyTracker;
+import com.mikepenz.aboutlibraries.Libs;
+import com.mikepenz.aboutlibraries.LibsBuilder;
+import com.mikepenz.iconics.typeface.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
@@ -163,6 +166,14 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 .withName("Send Feedback")
                                 .withIdentifier(7)
                                 .withTextColor(Color.parseColor("#444444"))
+                                .withCheckable(false),
+
+                        new SecondaryDrawerItem()
+                                .withIcon(FontAwesome.Icon.faw_github)
+                                .withName("Open Source")
+                                .withIdentifier(8)
+                                .withTextColor(Color.parseColor("#444444"))
+                                .withIconColor(Color.parseColor("#444444"))
                                 .withCheckable(false)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
@@ -186,10 +197,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 fragment = new FragmentOtherBodies();
                                 break;
                             case 5:
-                                drawer.setSelectionByIdentifier(1);
-
                                 final Activity act = NavDrawerActivity.this;
-
                                 new MaterialDialog.Builder(NavDrawerActivity.this)
                                         .title("Select Amount (Tax Not Listed)")
                                         .theme(Theme.LIGHT)
@@ -221,17 +229,12 @@ public class NavDrawerActivity extends ActionBarActivity {
                                         })
                                         .autoDismiss(false)
                                         .show();
-
-                                break;
+                                return false;
                             case 6:
-                                drawer.setSelectionByIdentifier(1);
-
                                 Intent intent = new Intent(getApplicationContext(), Settings.class);
                                 startActivity(intent);
-                                break;
+                                return false;
                             case 7:
-                                drawer.setSelectionByIdentifier(1);
-
                                 FeedbackSettings fbs = new FeedbackSettings();
                                 fbs.setText("Use this to send feedback, suggestions, and bugs to the developer. " +
                                         "All feedback/suggestions are appreciated!");
@@ -253,7 +256,13 @@ public class NavDrawerActivity extends ActionBarActivity {
 
                                 FeedbackDialog fdb = new FeedbackDialog(NavDrawerActivity.this, "AF-FD2E2AEF7F0A-27", fbs);
                                 fdb.show();
-                                break;
+                                return false;
+                            case 8:
+                                new LibsBuilder()
+                                        .withFields(R.string.class.getFields())
+                                        .withActivityStyle(Libs.ActivityStyle.LIGHT_DARK_TOOLBAR)
+                                        .start(NavDrawerActivity.this);
+                                return false;
                         }
                         fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
 
