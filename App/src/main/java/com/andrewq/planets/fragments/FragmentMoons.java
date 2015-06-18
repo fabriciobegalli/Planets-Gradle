@@ -4,8 +4,10 @@ import android.app.ActivityOptions;
 import android.app.Fragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.graphics.Palette;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -730,8 +732,41 @@ public class FragmentMoons extends Fragment {
             name.setText(item.name);
             planet.setText(item.planet);
 
+
+            Palette.Builder builder = new Palette.Builder(BitmapFactory.decodeResource(getResources(), item.drawableId));
+            builder.generate(new PaletteListener(name, planet));
             return v;
         }
+
+        private class PaletteListener implements Palette.PaletteAsyncListener {
+
+            private TextView name;
+            private TextView planet;
+
+            private PaletteListener(TextView name, TextView planet) {
+                this.name = name;
+                this.planet = planet;
+            }
+
+            @Override
+            public void onGenerated(Palette palette) {
+                Palette.Swatch swatch = palette.getDarkVibrantSwatch();
+                if (swatch == null) {
+                    swatch = palette.getDarkMutedSwatch();
+                }
+                if (swatch != null) {
+                    int titleTextColor = swatch.getTitleTextColor();
+                    int bodyTextColor = swatch.getBodyTextColor();
+                    int rgb = swatch.getRgb();
+                    planet.setTextColor(titleTextColor);
+                    name.setTextColor(bodyTextColor);
+
+                    name.setBackgroundColor(rgb);
+                    planet.setBackgroundColor(rgb);
+                }
+            }
+        }
+
 
         private class Item {
             final String name;

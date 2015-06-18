@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.app.ActivityOptions;
 import android.app.Fragment;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.v7.graphics.Palette;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -118,7 +120,32 @@ public class FragmentStars extends Fragment {
             picture.setImageResource(item.drawableId);
             name.setText(item.name);
 
+            Palette.Builder builder = new Palette.Builder(BitmapFactory.decodeResource(getResources(), item.drawableId));
+            builder.generate(new PaletteListener(name));
             return v;
+        }
+
+        private class PaletteListener implements Palette.PaletteAsyncListener {
+
+            private TextView text;
+
+            private PaletteListener(TextView text) {
+                this.text = text;
+            }
+
+            @Override
+            public void onGenerated(Palette palette) {
+                Palette.Swatch swatch = palette.getDarkVibrantSwatch();
+                if (swatch == null) {
+                    swatch = palette.getDarkMutedSwatch();
+                }
+                if (swatch != null) {
+                    int titleTextColor = swatch.getBodyTextColor();
+                    int rgb = swatch.getRgb();
+                    text.setTextColor(titleTextColor);
+                    text.setBackgroundColor(rgb);
+                }
+            }
         }
 
         private class Item {

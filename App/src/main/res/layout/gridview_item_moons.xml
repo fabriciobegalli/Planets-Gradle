@@ -2,7 +2,7 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/selector_card_background"
     android:layout_margin="10dp">
 
@@ -14,7 +14,6 @@
 
     <TextView
         android:id="@+id/text"
-        android:layout_below="@+id/picture"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="12dp"
@@ -22,11 +21,11 @@
         android:paddingRight="12dp"
         android:paddingBottom="2dp"
         android:textSize="18sp"
-        android:textColor="#ff545454" />
+        android:textColor="#ff545454"
+        android:layout_above="@+id/planet"/>
 
     <TextView
         android:id="@+id/planet"
-        android:layout_below="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="12dp"
@@ -35,5 +34,6 @@
         android:paddingTop="2dp"
         android:textSize="13sp"
         android:layout_gravity="bottom"
-        android:textColor="#797979" />
+        android:textColor="#797979"
+        android:layout_alignBottom="@+id/picture"/>
 </RelativeLayout>
