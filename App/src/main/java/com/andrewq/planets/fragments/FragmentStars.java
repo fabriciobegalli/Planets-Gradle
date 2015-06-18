@@ -105,15 +105,18 @@ public class FragmentStars extends Fragment {
             View v = view;
             ImageView picture;
             TextView name;
+            View textContainer;
 
             if (v == null) {
                 v = inflater.inflate(R.layout.gridview_item, viewGroup, false);
                 v.setTag(R.id.picture, v.findViewById(R.id.picture));
                 v.setTag(R.id.text, v.findViewById(R.id.text));
+                v.setTag(R.id.textContainer, v.findViewById(R.id.textContainer));
             }
 
             picture = (ImageView) v.getTag(R.id.picture);
             name = (TextView) v.getTag(R.id.text);
+            textContainer = (View) v.getTag(R.id.textContainer);
 
             Item item = (Item) getItem(i);
 
@@ -121,16 +124,18 @@ public class FragmentStars extends Fragment {
             name.setText(item.name);
 
             Palette.Builder builder = new Palette.Builder(BitmapFactory.decodeResource(getResources(), item.drawableId));
-            builder.generate(new PaletteListener(name));
+            builder.generate(new PaletteListener(name, textContainer));
             return v;
         }
 
         private class PaletteListener implements Palette.PaletteAsyncListener {
 
             private TextView text;
+            private View textContainer;
 
-            private PaletteListener(TextView text) {
+            private PaletteListener(TextView text, View textContainer) {
                 this.text = text;
+                this.textContainer = textContainer;
             }
 
             @Override
@@ -143,7 +148,8 @@ public class FragmentStars extends Fragment {
                     int titleTextColor = swatch.getBodyTextColor();
                     int rgb = swatch.getRgb();
                     text.setTextColor(titleTextColor);
-                    text.setBackgroundColor(rgb);
+                    textContainer.setBackgroundColor(rgb);
+                    textContainer.getBackground().setAlpha(127);
                 }
             }
         }

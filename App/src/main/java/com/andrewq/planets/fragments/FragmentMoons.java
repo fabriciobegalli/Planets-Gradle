@@ -714,17 +714,20 @@ public class FragmentMoons extends Fragment {
             ImageView picture;
             TextView name;
             TextView planet;
+            View textContainer;
 
             if (v == null) {
                 v = inflater.inflate(R.layout.gridview_item_moons, viewGroup, false);
                 v.setTag(R.id.picture, v.findViewById(R.id.picture));
                 v.setTag(R.id.text, v.findViewById(R.id.text));
                 v.setTag(R.id.planet, v.findViewById(R.id.planet));
+                v.setTag(R.id.textContainer, v.findViewById(R.id.textContainer));
             }
 
             picture = (ImageView) v.getTag(R.id.picture);
             name = (TextView) v.getTag(R.id.text);
             planet = (TextView) v.getTag(R.id.planet);
+            textContainer = (View) v.getTag(R.id.textContainer);
 
             Item item = (Item) getItem(i);
 
@@ -732,9 +735,8 @@ public class FragmentMoons extends Fragment {
             name.setText(item.name);
             planet.setText(item.planet);
 
-
             Palette.Builder builder = new Palette.Builder(BitmapFactory.decodeResource(getResources(), item.drawableId));
-            builder.generate(new PaletteListener(name, planet));
+            builder.generate(new PaletteListener(name, planet, textContainer));
             return v;
         }
 
@@ -742,10 +744,12 @@ public class FragmentMoons extends Fragment {
 
             private TextView name;
             private TextView planet;
+            private View textContainer;
 
-            private PaletteListener(TextView name, TextView planet) {
+            private PaletteListener(TextView name, TextView planet, View textContainer) {
                 this.name = name;
                 this.planet = planet;
+                this.textContainer = textContainer;
             }
 
             @Override
@@ -755,18 +759,16 @@ public class FragmentMoons extends Fragment {
                     swatch = palette.getDarkMutedSwatch();
                 }
                 if (swatch != null) {
-                    int titleTextColor = swatch.getTitleTextColor();
                     int bodyTextColor = swatch.getBodyTextColor();
                     int rgb = swatch.getRgb();
-                    planet.setTextColor(titleTextColor);
+                    planet.setTextColor(bodyTextColor);
                     name.setTextColor(bodyTextColor);
 
-                    name.setBackgroundColor(rgb);
-                    planet.setBackgroundColor(rgb);
+                    textContainer.setBackgroundColor(rgb);
+                    textContainer.getBackground().setAlpha(127);
                 }
             }
         }
-
 
         private class Item {
             final String name;
