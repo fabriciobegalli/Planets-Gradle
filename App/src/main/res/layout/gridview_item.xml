@@ -2,7 +2,7 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/selector_card_background"
     android:layout_margin="10dp">
 
@@ -12,13 +12,18 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop" />
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_below="@+id/picture"
+    <LinearLayout
+        android:id="@+id/textContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="12dp"
-        android:textSize="18sp"
         android:layout_gravity="bottom"
-        android:textColor="#797979" />
+        android:layout_alignBottom="@+id/picture">
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:textSize="18sp"
+            android:textColor="#797979"/>
+    </LinearLayout>
 </RelativeLayout>
