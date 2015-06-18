@@ -18,8 +18,10 @@ import android.support.v17.leanback.widget.HeaderItem;
 import android.support.v17.leanback.widget.ListRow;
 import android.support.v17.leanback.widget.ListRowPresenter;
 import android.support.v17.leanback.widget.OnActionClickedListener;
-import android.support.v17.leanback.widget.OnItemClickedListener;
+import android.support.v17.leanback.widget.OnItemViewClickedListener;
+import android.support.v17.leanback.widget.Presenter;
 import android.support.v17.leanback.widget.Row;
+import android.support.v17.leanback.widget.RowPresenter;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.widget.Toast;
@@ -74,15 +76,15 @@ public class PlanetDetailsFragment extends DetailsFragment {
         selectedPlanet = (Planet) getActivity().getIntent().getSerializableExtra(PLANET);
         new DetailRowBuilderTask().execute(selectedPlanet);
 
-        setOnItemClickedListener(getDefaultItemClickedListener());
+        setOnItemViewClickedListener(getDefaultItemClickedListener());
         updateBackground(selectedPlanet.getBackgroundImageURI());
 
     }
 
-    protected OnItemClickedListener getDefaultItemClickedListener() {
-        return new OnItemClickedListener() {
+    protected OnItemViewClickedListener getDefaultItemClickedListener() {
+        return new OnItemViewClickedListener() {
             @Override
-            public void onItemClicked(Object item, Row row) {
+            public void onItemClicked(Presenter.ViewHolder itemViewHolder, Object item, RowPresenter.ViewHolder rowViewHolder, Row row) {
                 if (item instanceof Planet) {
                     Planet planet = (Planet) item;
                     Intent intent = new Intent(getActivity(), DetailsActivity.class);
