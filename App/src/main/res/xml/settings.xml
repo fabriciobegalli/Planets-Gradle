@@ -58,7 +58,7 @@
 
         <Preference
             android:key="pref_whatsnew"
-            android:summary="2.7.2 (37)"
+            android:summary="2.8 BETA (38)"
             android:title="Planets" />
     </PreferenceCategory>
 
