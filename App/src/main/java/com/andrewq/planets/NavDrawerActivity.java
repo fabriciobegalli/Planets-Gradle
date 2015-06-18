@@ -170,7 +170,7 @@ public class NavDrawerActivity extends ActionBarActivity {
 
                         new SecondaryDrawerItem()
                                 .withIcon(FontAwesome.Icon.faw_github)
-                                .withName("Open Source")
+                                .withName("Open Source Licenses")
                                 .withIdentifier(8)
                                 .withTextColor(Color.parseColor("#444444"))
                                 .withIconColor(Color.parseColor("#444444"))

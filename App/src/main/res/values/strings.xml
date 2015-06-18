@@ -255,5 +255,7 @@
     <string name="title_activity_contributers">Contributors</string>
     <string name="title_activity_licenses">Licenses</string>
     <string name="app_intro">App Intro</string>
+    <string name="alorna_name">Bernat Borrás Paronella</string>
+    <string name="alorna_summary">Helped with colored grid items on object lists using Android.Palette.</string>
 
 </resources>

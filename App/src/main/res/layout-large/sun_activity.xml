@@ -32,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/parallax_image_height"
                 android:scaleType="centerCrop"
-                android:src="@drawable/intro_star" />
+                android:src="@drawable/sun" />
 
             <View
                 android:id="@+id/anchor"

@@ -25,7 +25,6 @@ import com.andrewq.planets.NavDrawerActivity;
 import com.andrewq.planets.R;
 import com.andrewq.planets.contributors.Contributors;
 import com.andrewq.planets.intro.DefaultIntro;
-import com.andrewq.planets.licenses.Licenses;
 import com.google.analytics.tracking.android.EasyTracker;
 
 import uk.me.lewisdeane.ldialogs.BaseDialog;
@@ -59,28 +58,20 @@ public class Settings extends PreferenceActivity {
             }
         });
 
-        Preference prefLicenses = findPreference("pref_licenses");
-
-        prefLicenses.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-
-                Intent i = new Intent(getBaseContext(), Licenses.class);
-                startActivity(i);
-                return true;
-            }
-        });
-
         Preference prefWhatsNew = findPreference("pref_whatsnew");
 
         prefWhatsNew.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
 
-                CustomDialog.Builder builder = new CustomDialog.Builder(Settings.this, "What's New in 2.7.2", "View on Github");
+                CustomDialog.Builder builder = new CustomDialog.Builder(Settings.this, "What's New in 2.8", "View on Github");
 
-                builder.content("- App intro for new users\n" +
-                        "- Rearranged settings page");
+                builder.content("- New Interactive Map\n" +
+                        "- Information is now copyable\n" +
+                        "- Added dedicated section for open-source licenses\n" +
+                        "- Fixed toolbar bug on Android M\n" +
+                        "- Google Analytics changes\n" +
+                        "- New app theme adjustments");
                 builder.negativeText("Close");
                 builder.titleAlignment(BaseDialog.Alignment.LEFT);
                 builder.positiveColor("#0497c9");

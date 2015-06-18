@@ -57,11 +57,6 @@
             android:title="Contributors" />
 
         <Preference
-            android:key="pref_licenses"
-            android:summary="Touch to view open source licenses."
-            android:title="Open Source Licenses" />
-
-        <Preference
             android:key="pref_whatsnew"
             android:summary="2.7.2 (37)"
             android:title="Planets" />
