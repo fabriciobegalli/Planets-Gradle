@@ -39,6 +39,7 @@ import com.andrewq.planets.intro.DefaultIntro;
 import com.andrewq.planets.misc.Settings;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.mikepenz.materialdrawer.Drawer;
+import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
@@ -54,7 +55,7 @@ import com.suredigit.inappfeedback.FeedbackSettings;
 @SuppressWarnings("deprecation")
 public class NavDrawerActivity extends ActionBarActivity {
 
-    Drawer.Result drawer;
+    Drawer drawer;
     Toolbar toolbar;
 
     // Debug tag, for logging
@@ -103,7 +104,7 @@ public class NavDrawerActivity extends ActionBarActivity {
         toolbar.setTitleTextColor(Color.parseColor("#FFFFFF"));
         setSupportActionBar(toolbar);
 
-        drawer = new Drawer()
+        drawer = new DrawerBuilder()
                 .withActivity(this)
                 .withToolbar(toolbar)
                 .withHeader(R.layout.listview_header_image)
@@ -166,7 +167,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
-                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l, IDrawerItem iDrawerItem) {
+                    public boolean onItemClick(AdapterView<?> adapterView, View view, int i, long l, IDrawerItem iDrawerItem) {
                         // update the main content by replacing fragments
                         Fragment fragment = new FragmentPlanets();
                         FragmentManager fragmentManager = getFragmentManager();
@@ -259,6 +260,8 @@ public class NavDrawerActivity extends ActionBarActivity {
                         if (iDrawerItem instanceof Nameable) {
                             setTitle(((Nameable) iDrawerItem).getName());
                         }
+
+                        return false;
                     }
                 })
                 .withFireOnInitialOnClick(true)
