@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.Toolbar;
+import android.text.ClipboardManager;
+import android.view.ContextMenu;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,6 +22,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.andrewq.planets.R;
@@ -51,6 +54,7 @@ public class SunActivity extends BaseActivity implements ObservableScrollViewCal
 
         toolbar = (Toolbar) findViewById(R.id.toolbar_sun);
         setSupportActionBar(toolbar);
+
 
         //noinspection ConstantConditions
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -138,6 +142,8 @@ public class SunActivity extends BaseActivity implements ObservableScrollViewCal
             }
         }
 
+        //registerForContextMenu(findViewById(R.id.sun_description_2));
+
         //imgV = (ImageView) findViewById(R.id.image_header_sun);
 
         /*View.OnTouchListener upDownListener = new View.OnTouchListener() {
@@ -164,6 +170,19 @@ public class SunActivity extends BaseActivity implements ObservableScrollViewCal
 
         //imgV.setOnTouchListener(upDownListener);
 
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        //user has long pressed your TextView
+        menu.add(0, v.getId(), 0, "Copy");
+
+        //cast the received View to TextView so that you can get its text
+        TextView yourTextView = (TextView) v;
+
+        //place your TextView's text in clipboard
+        ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+        clipboard.setText(yourTextView.getText());
     }
 
     @Override

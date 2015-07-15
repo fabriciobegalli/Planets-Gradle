@@ -16,6 +16,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    sourceSets {
+        main {
+            res.srcDirs =
+                    [
+                            'src/main/res',
+                            'src/main/res/layout/fragments',
+                            'src/main/res/layout/stars',
+                            'src/main/res/layout/planets',
+                            'src/main/res/layout/moons',
+                            'src/main/res/layout/other',
+                            'src/main/res/layout/util'
+                    ]
+        }
+    }
 }
 
 repositories {

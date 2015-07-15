@@ -96,6 +96,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/sun_sub_title_2"
                         android:layout_centerHorizontal="false"
+                        android:textIsSelectable="true"
                         android:text="@string/sun_description_2"
                         android:textSize="17sp" />
                 </RelativeLayout>
