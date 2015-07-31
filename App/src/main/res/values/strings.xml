@@ -31,7 +31,25 @@
         <item>Settings</item>
     </string-array>
 
-    <string-array name="themesEntries">
+    <string-array name="colorEntries">
+        <item name="1">1</item>
+        <item name="2">2</item>
+        <item name="3">3</item>
+        <item name="4">4</item>
+        <item name="5">5</item>
+        <item name="6">6</item>
+    </string-array>
+
+    <string-array name="colors">
+        <item name="1">Red</item>
+        <item name="2">Orange</item>
+        <item name="3">Blue</item>
+        <item name="4">Green</item>
+        <item name="5">Purple</item>
+        <item name="6">Dark</item>
+    </string-array>
+
+    <string-array name="themeEntries">
         <item name="1">1</item>
         <item name="2">2</item>
         <item name="3">3</item>
@@ -41,13 +59,11 @@
     </string-array>
 
     <string-array name="themes">
-        <item name="1">Red</item>
-        <item name="2">Orange</item>
-        <item name="3">Blue</item>
-        <item name="4">Green</item>
-        <item name="5">Purple</item>
-        <item name="6">Dark</item>
+        <item name="1">Light</item>
+        <item name="2">Dark</item>
+        <item name="3">Automatic</item>
     </string-array>
+
 
     <string-array name="sortEntries">
         <item name="1">1</item>

@@ -68,7 +68,7 @@ public class NeptuneActivity extends BaseActivity implements ObservableScrollVie
                 .getDefaultSharedPreferences(getBaseContext());
 
         //Give theme_chooser the preference key defined in XML
-        int theme_chooser = Integer.parseInt(getPrefs2.getString("prefSetTheme", "3"));
+        int theme_chooser = Integer.parseInt(getPrefs2.getString("prefSetColor", "3"));
 
         if (theme_chooser == 1) {
             //Red

@@ -193,7 +193,7 @@ public class SunActivity extends BaseActivity implements ObservableScrollViewCal
         SharedPreferences getPrefs2 = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
         //Give theme_chooser the preference key defined in XML
-        int theme_chooser = Integer.parseInt(getPrefs2.getString("prefSetTheme", "3"));
+        int theme_chooser = Integer.parseInt(getPrefs2.getString("prefSetColor", "3"));
 
         int color;
 

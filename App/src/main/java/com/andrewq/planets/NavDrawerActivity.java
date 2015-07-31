@@ -147,33 +147,59 @@ public class NavDrawerActivity extends ActionBarActivity {
 
                         new DividerDrawerItem(),
 
+                        new PrimaryDrawerItem()
+                                .withIcon(FontAwesome.Icon.faw_map_marker)
+                                .withName("Map")
+                                .withIdentifier(5)
+                                .withTextColor(Color.parseColor("#444444"))
+                                .withIconColor(Color.parseColor("#444444"))
+                                .withCheckable(false),
+
+                        new PrimaryDrawerItem()
+                                .withIcon(R.drawable.ic_compare)
+                                .withName("Compare Objects")
+                                .withIdentifier(6)
+                                .withTextColor(Color.parseColor("#444444"))
+                                .withIconColor(Color.parseColor("#444444"))
+                                .withCheckable(false),
+
+                        new PrimaryDrawerItem()
+                                .withIcon(R.drawable.ic_gallery)
+                                .withName("Wallpapers")
+                                .withIdentifier(7)
+                                .withTextColor(Color.parseColor("#444444"))
+                                .withIconColor(Color.parseColor("#444444"))
+                                .withCheckable(false),
+
+                        new DividerDrawerItem(),
+
                         new SecondaryDrawerItem()
                                 .withIcon(R.drawable.ic_donate)
                                 .withName("Donate")
-                                .withIdentifier(5)
-                                .withTextColor(Color.parseColor("#444444"))
-                                .withCheckable(false),
-
-                        new SecondaryDrawerItem()
-                                .withIcon(R.drawable.ic_settings)
-                                .withName("Settings")
-                                .withIdentifier(6)
-                                .withTextColor(Color.parseColor("#444444"))
-                                .withCheckable(false),
-
-                        new SecondaryDrawerItem()
-                                .withIcon(R.drawable.ic_feedback)
-                                .withName("Send Feedback")
-                                .withIdentifier(7)
+                                .withIdentifier(8)
                                 .withTextColor(Color.parseColor("#444444"))
                                 .withCheckable(false),
 
                         new SecondaryDrawerItem()
                                 .withIcon(FontAwesome.Icon.faw_github)
                                 .withName("Open Source Licenses")
-                                .withIdentifier(8)
+                                .withIdentifier(9)
                                 .withTextColor(Color.parseColor("#444444"))
                                 .withIconColor(Color.parseColor("#444444"))
+                                .withCheckable(false),
+
+                        new SecondaryDrawerItem()
+                                .withIcon(R.drawable.ic_settings)
+                                .withName("Settings")
+                                .withIdentifier(10)
+                                .withTextColor(Color.parseColor("#444444"))
+                                .withCheckable(false),
+
+                        new SecondaryDrawerItem()
+                                .withIcon(R.drawable.ic_feedback)
+                                .withName("Send Feedback")
+                                .withIdentifier(11)
+                                .withTextColor(Color.parseColor("#444444"))
                                 .withCheckable(false)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
@@ -197,6 +223,15 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 fragment = new FragmentOtherBodies();
                                 break;
                             case 5:
+                                Toast.makeText(getBaseContext(), "Coming Soon!", Toast.LENGTH_LONG).show();
+                                break;
+                            case 6:
+                                Toast.makeText(getBaseContext(), "Coming Soon!", Toast.LENGTH_LONG).show();
+                                break;
+                            case 7:
+                                Toast.makeText(getBaseContext(), "Coming Soon!", Toast.LENGTH_LONG).show();
+                                break;
+                            case 8:
                                 final Activity act = NavDrawerActivity.this;
                                 new MaterialDialog.Builder(NavDrawerActivity.this)
                                         .title("Select Amount (Tax Not Listed)")
@@ -230,18 +265,25 @@ public class NavDrawerActivity extends ActionBarActivity {
                                         .autoDismiss(false)
                                         .show();
                                 return false;
-                            case 6:
+                            case 9:
+                                new LibsBuilder()
+                                        .withFields(R.string.class.getFields())
+                                        .withActivityTitle("Sources")
+                                        .withActivityStyle(Libs.ActivityStyle.LIGHT_DARK_TOOLBAR)
+                                        .start(NavDrawerActivity.this);
+                                return false;
+                            case 10:
                                 Intent intent = new Intent(getApplicationContext(), Settings.class);
                                 startActivity(intent);
                                 return false;
-                            case 7:
+                            case 11:
                                 FeedbackSettings fbs = new FeedbackSettings();
                                 fbs.setText("Use this to send feedback, suggestions, and bugs to the developer. " +
                                         "All feedback/suggestions are appreciated!");
                                 fbs.setYourComments("Your message here...");
                                 fbs.setTitle("Feedback Submitter");
 
-                                fbs.setToast("Thanks! Check back later for a reply if applicable.");
+                                fbs.setToast("Thanks!");
                                 fbs.setToastDuration(Toast.LENGTH_LONG);
 
                                 fbs.setRadioButtons(true);
@@ -257,12 +299,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 FeedbackDialog fdb = new FeedbackDialog(NavDrawerActivity.this, "AF-FD2E2AEF7F0A-27", fbs);
                                 fdb.show();
                                 return false;
-                            case 8:
-                                new LibsBuilder()
-                                        .withFields(R.string.class.getFields())
-                                        .withActivityStyle(Libs.ActivityStyle.LIGHT_DARK_TOOLBAR)
-                                        .start(NavDrawerActivity.this);
-                                return false;
+
                         }
                         fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
 
@@ -406,7 +443,7 @@ public class NavDrawerActivity extends ActionBarActivity {
         SharedPreferences getPrefs2 = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
         //Give theme_chooser the preference key defined in XML
-        int theme_chooser = Integer.parseInt(getPrefs2.getString("prefSetTheme", "3"));
+        int theme_chooser = Integer.parseInt(getPrefs2.getString("prefSetColor", "3"));
         //Get an instance of the ActionBar
         ActionBar mActionBar = getSupportActionBar();
 

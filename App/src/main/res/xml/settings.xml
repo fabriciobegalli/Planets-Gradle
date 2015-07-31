@@ -26,11 +26,20 @@
     <PreferenceCategory android:title="App Design">
 
         <ListPreference
+            android:defaultValue="1"
+            android:enabled="false"
+            android:entries="@array/themes"
+            android:entryValues="@array/themeEntries"
+            android:key="prefSetTheme"
+            android:summary="Tap here to change the base theme of the app."
+            android:title="Base Theme (Coming Soon)" />
+
+        <ListPreference
             android:defaultValue="3"
             android:enabled="true"
-            android:entries="@array/themes"
-            android:entryValues="@array/themesEntries"
-            android:key="prefSetTheme"
+            android:entries="@array/colors"
+            android:entryValues="@array/colorEntries"
+            android:key="prefSetColor"
             android:summary="Tap here to change colors throughout app."
             android:title="Color" />
 

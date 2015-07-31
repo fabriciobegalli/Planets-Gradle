@@ -9,8 +9,8 @@
         <ListPreference
             android:defaultValue="3"
             android:enabled="true"
-            android:entries="@array/themes"
-            android:entryValues="@array/themesEntries"
+            android:entries="@array/colors"
+            android:entryValues="@array/colorEntries"
             android:key="prefSetTheme"
             android:summary="Tap here to change the design of the app. (Requires restart!)"
             android:title="Color Scheme" />

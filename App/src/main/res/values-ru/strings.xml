@@ -47,7 +47,16 @@
         <item>Настройки</item>
     </string-array>
 
-    <string-array name="themes">
+    <string-array name="colorEntries">
+        <item name="1">1</item>
+        <item name="2">2</item>
+        <item name="3">3</item>
+        <item name="4">4</item>
+        <item name="5">5</item>
+        <item name="6">6</item>
+    </string-array>
+
+    <string-array name="colors">
         <item name="1">Красная</item>
         <item name="2">Оранжевая</item>
         <item name="3">Синяя</item>
@@ -56,13 +65,19 @@
         <item name="6">Тёмная</item>
     </string-array>
 
-    <string-array name="themesEntries">
+    <string-array name="themeEntries">
         <item name="1">1</item>
         <item name="2">2</item>
         <item name="3">3</item>
         <item name="4">4</item>
         <item name="5">5</item>
         <item name="6">6</item>
+    </string-array>
+
+    <string-array name="themes">
+        <item name="1">Light</item>
+        <item name="2">Dark</item>
+        <item name="3">Automatic</item>
     </string-array>
 
     <string-array name="donations">
