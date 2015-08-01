@@ -26,7 +26,7 @@
         android:theme="@style/Roboto"
         tools:ignore="UnusedAttribute">
 
-        <!-- Main Activity  -->
+        <!-- Main Activity -->
         <activity
             android:name=".NavDrawerActivity"
             android:label="@string/app_name"
@@ -38,7 +38,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
             <intent-filter android:label="Planets">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -46,11 +45,10 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with "example://gizmos" -->
                 <data
-                    android:scheme="planets"
-                    android:host="home" />
+                    android:host="home"
+                    android:scheme="planets" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".tv.TvActivity"
             android:label="@string/app_name"
@@ -63,7 +61,6 @@
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".tv.SettingsActivity"
             android:label="Settings"
@@ -73,7 +70,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".tv.TvActivity" />
         </activity>
-
         <activity
             android:name=".misc.Settings"
             android:label="@string/action_settings"
@@ -86,7 +82,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".moons.MoonActivity"
             android:label="Moon"
@@ -99,8 +94,6 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
-
             <intent-filter android:label="The Moon">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -108,11 +101,10 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with "example://gizmos" -->
                 <data
-                    android:scheme="planets"
-                    android:host="the_moon" />
+                    android:host="the_moon"
+                    android:scheme="planets" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".moons.PhobosActivity"
             android:label="Phobos"
@@ -125,7 +117,6 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
             <intent-filter android:label="Phobos">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -133,16 +124,14 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with "example://gizmos" -->
                 <data
-                    android:scheme="planets"
-                    android:host="phobos" />
+                    android:host="phobos"
+                    android:scheme="planets" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".image_views.PhobosImageView"
             android:label="Phobos"
             android:parentActivityName=".moons.PhobosActivity" />
-
         <activity
             android:name=".moons.EuropaActivity"
             android:label="Europa"
@@ -155,7 +144,6 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
             <intent-filter android:label="Europa">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -163,17 +151,14 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with "example://gizmos" -->
                 <data
-                    android:scheme="planets"
-                    android:host="europa" />
+                    android:host="europa"
+                    android:scheme="planets" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".image_views.EuropaImageView"
             android:label="Phobos"
             android:parentActivityName=".moons.EuropaActivity" />
-
         <activity
             android:name=".moons.DeimosActivity"
             android:label="Deimos"
@@ -185,7 +170,6 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
             <intent-filter android:label="Deimos">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -193,33 +177,27 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with "example://gizmos" -->
                 <data
-                    android:scheme="planets"
-                    android:host="deimos" />
+                    android:host="deimos"
+                    android:scheme="planets" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".image_views.DeimosImageView"
             android:label="Phobos"
             android:parentActivityName=".moons.DeimosActivity" />
-
         <activity
             android:name=".image_views.MoonImageView"
             android:label="Moon"
             android:parentActivityName=".moons.MoonActivity" />
-
         <activity
             android:name=".image_views.SunImageView"
             android:label="Sun"
             android:parentActivityName=".stars.SunActivity" />
-
         <activity
             android:name=".stars.SunActivity"
             android:label="Sun"
             android:parentActivityName=".NavDrawerActivity"
             android:theme="@style/NewMaterial">
-
             <intent-filter android:label="The Sun">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -227,22 +205,19 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with "example://gizmos" -->
                 <data
-                    android:scheme="planets"
-                    android:host="the_sun" />
+                    android:host="the_sun"
+                    android:scheme="planets" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".image_views.MercuryImageView"
             android:label="Mercury"
             android:parentActivityName=".planets.MercuryActivity" />
-
         <activity
             android:name=".planets.MercuryActivity"
             android:label="Mercury"
             android:parentActivityName=".NavDrawerActivity"
             android:theme="@style/NewMaterial">
-
             <intent-filter android:label="Mercury">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -250,23 +225,19 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with "example://gizmos" -->
                 <data
-                    android:scheme="planets"
-                    android:host="mercury" />
+                    android:host="mercury"
+                    android:scheme="planets" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".image_views.VenusImageView"
             android:label="Venus"
             android:parentActivityName=".planets.VenusActivity" />
-
         <activity
             android:name=".planets.VenusActivity"
             android:label="Venus"
             android:parentActivityName=".NavDrawerActivity"
             android:theme="@style/NewMaterial">
-
             <intent-filter android:label="Venus">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -274,23 +245,19 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with "example://gizmos" -->
                 <data
-                    android:scheme="planets"
-                    android:host="venus" />
+                    android:host="venus"
+                    android:scheme="planets" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".image_views.EarthImageView"
             android:label="Earth"
             android:parentActivityName=".planets.EarthActivity" />
-
         <activity
             android:name=".planets.EarthActivity"
             android:label="Earth"
             android:parentActivityName=".NavDrawerActivity"
             android:theme="@style/NewMaterial">
-
             <intent-filter android:label="Earth">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -298,23 +265,19 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with "example://gizmos" -->
                 <data
-                    android:scheme="planets"
-                    android:host="earth" />
+                    android:host="earth"
+                    android:scheme="planets" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".image_views.MarsImageView"
             android:label="Mars"
             android:parentActivityName=".planets.MarsActivity" />
-
         <activity
             android:name=".planets.MarsActivity"
             android:label="Mars"
             android:parentActivityName=".NavDrawerActivity"
             android:theme="@style/NewMaterial">
-
             <intent-filter android:label="Mars">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -322,18 +285,15 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with "example://gizmos" -->
                 <data
-                    android:scheme="planets"
-                    android:host="mars" />
+                    android:host="mars"
+                    android:scheme="planets" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".planets.JupiterActivity"
             android:label="Jupiter"
             android:parentActivityName=".NavDrawerActivity"
             android:theme="@style/NewMaterial">
-
             <intent-filter android:label="Jupiter">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -341,23 +301,19 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with "example://gizmos" -->
                 <data
-                    android:scheme="planets"
-                    android:host="jupiter" />
+                    android:host="jupiter"
+                    android:scheme="planets" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".image_views.JupiterImageView"
             android:label="Jupiter"
             android:parentActivityName=".planets.JupiterActivity" />
-
         <activity
             android:name=".planets.SaturnActivity"
             android:label="Saturn"
             android:parentActivityName=".NavDrawerActivity"
             android:theme="@style/NewMaterial">
-
             <intent-filter android:label="Saturn">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -365,23 +321,19 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with "example://gizmos" -->
                 <data
-                    android:scheme="planets"
-                    android:host="saturn" />
+                    android:host="saturn"
+                    android:scheme="planets" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".image_views.SaturnImageView"
             android:label="Saturn"
             android:parentActivityName=".planets.SaturnActivity" />
-
         <activity
             android:name=".planets.UranusActivity"
             android:label="Uranus"
             android:parentActivityName=".NavDrawerActivity"
             android:theme="@style/NewMaterial">
-
             <intent-filter android:label="Uranus">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -389,23 +341,19 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with "example://gizmos" -->
                 <data
-                    android:scheme="planets"
-                    android:host="uranus" />
+                    android:host="uranus"
+                    android:scheme="planets" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".image_views.UranusImageView"
             android:label="Uranus"
             android:parentActivityName=".planets.UranusActivity" />
-
         <activity
             android:name=".planets.NeptuneActivity"
             android:label="Neptune"
             android:parentActivityName=".NavDrawerActivity"
             android:theme="@style/NewMaterial">
-
             <intent-filter android:label="Neptune">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -413,67 +361,74 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with "example://gizmos" -->
                 <data
-                    android:scheme="planets"
-                    android:host="neptune" />
+                    android:host="neptune"
+                    android:scheme="planets" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".image_views.NeptuneImageView"
             android:label="Neptune"
             android:parentActivityName=".planets.NeptuneActivity" />
-
         <activity
             android:name=".other_bodies.PlutoActivity"
             android:label="Pluto"
             android:parentActivityName=".NavDrawerActivity"
             android:theme="@style/NewMaterial">
-
             <intent-filter android:label="Pluto">
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data
-                    android:scheme="planets"
-                    android:host="pluto" />
+                    android:host="pluto"
+                    android:scheme="planets" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".image_views.PlutoImageView"
             android:label="Pluto"
             android:parentActivityName=".other_bodies.PlutoActivity" />
-
         <activity
             android:name=".tv.DetailsActivity"
             android:label="Details"
             android:parentActivityName=".tv.TvActivity"
             android:theme="@style/Theme.Leanback" />
-
         <activity
             android:name=".tv.PlayerActivity"
             android:label="Player"
             android:parentActivityName=".tv.TvActivity"
             android:theme="@style/Theme.Leanback" />
-
         <activity
             android:name=".contributors.Contributors"
             android:label="@string/title_activity_contributers"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
-            android:parentActivityName=".misc.Settings" />
-
+            android:parentActivityName=".misc.Settings"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
         <activity
             android:name=".licenses.Licenses"
             android:label="@string/title_activity_licenses"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
-            android:parentActivityName=".misc.Settings" />
-
+            android:parentActivityName=".misc.Settings"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
         <activity
             android:name=".intro.DefaultIntro"
             android:label="@string/app_intro" />
+
+        <activity
+            android:name=".wallpapers.activity.WallpaperMain"
+            android:label="Wallpapers"
+            android:parentActivityName=".NavDrawerActivity"
+            android:theme="@style/WallTheme">
+            <intent-filter android:label="Wallpapers">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "example://gizmos" -->
+                <data
+                    android:host="wallpapers"
+                    android:scheme="planets" />
+            </intent-filter>
+        </activity>
 
     </application>
 

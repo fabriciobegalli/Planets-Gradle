@@ -37,6 +37,7 @@ import com.andrewq.planets.iab.Inventory;
 import com.andrewq.planets.iab.Purchase;
 import com.andrewq.planets.intro.DefaultIntro;
 import com.andrewq.planets.misc.Settings;
+import com.andrewq.planets.wallpapers.activity.WallpaperMain;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.mikepenz.aboutlibraries.Libs;
 import com.mikepenz.aboutlibraries.LibsBuilder;
@@ -178,6 +179,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 .withName("Donate")
                                 .withIdentifier(8)
                                 .withTextColor(Color.parseColor("#444444"))
+                                .withIconColor(Color.parseColor("#444444"))
                                 .withCheckable(false),
 
                         new SecondaryDrawerItem()
@@ -193,6 +195,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 .withName("Settings")
                                 .withIdentifier(10)
                                 .withTextColor(Color.parseColor("#444444"))
+                                .withIconColor(Color.parseColor("#444444"))
                                 .withCheckable(false),
 
                         new SecondaryDrawerItem()
@@ -200,6 +203,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 .withName("Send Feedback")
                                 .withIdentifier(11)
                                 .withTextColor(Color.parseColor("#444444"))
+                                .withIconColor(Color.parseColor("#444444"))
                                 .withCheckable(false)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
@@ -229,7 +233,9 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 Toast.makeText(getBaseContext(), "Coming Soon!", Toast.LENGTH_LONG).show();
                                 break;
                             case 7:
-                                Toast.makeText(getBaseContext(), "Coming Soon!", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getBaseContext(), "Sill in Beta!", Toast.LENGTH_LONG).show();
+                                Intent wallpaper = new Intent(NavDrawerActivity.this, WallpaperMain.class);
+                                startActivity(wallpaper);
                                 break;
                             case 8:
                                 final Activity act = NavDrawerActivity.this;

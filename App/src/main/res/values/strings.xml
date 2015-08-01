@@ -273,5 +273,6 @@
     <string name="app_intro">App Intro</string>
     <string name="alorna_name">Bernat Borrás Paronella</string>
     <string name="alorna_summary">Helped with colored grid items on object lists using Android.Palette.</string>
+    <string name="title_activity_main">MainActivity</string>
 
 </resources>

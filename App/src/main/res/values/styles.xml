@@ -4,6 +4,12 @@
         <item name="windowActionModeOverlay">true</item>
     </style>
 
+    <style name="WallTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/WallsPrimary</item>
+        <item name="colorPrimaryDark">@color/WallsPrimaryDark</item>
+        <item name="android:textColorSecondary">#ffffff</item>
+    </style>
+
     <style name="NewMaterial" parent="AppThemeNavDrawer">
         <item name="windowActionModeOverlay">true</item>
     </style>
