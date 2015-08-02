@@ -64,12 +64,9 @@ public class Settings extends PreferenceActivity {
             @Override
             public boolean onPreferenceClick(Preference preference) {
 
-                CustomDialog.Builder builder = new CustomDialog.Builder(Settings.this, "What's New in 2.8 BETA 1", "View on Github");
+                CustomDialog.Builder builder = new CustomDialog.Builder(Settings.this, "What's New in 2.8 BETA 2", "View on Github");
 
-                builder.content("- View and set spacey wallpapers on your device" +
-                        "\n- Updated Navigation Drawer items" +
-                        "\n- Updated contributors page" +
-                        "\n- Updated settings page");
+                builder.content("- ");
                 builder.negativeText("Close");
                 builder.titleAlignment(BaseDialog.Alignment.LEFT);
                 builder.positiveColor("#0497c9");
