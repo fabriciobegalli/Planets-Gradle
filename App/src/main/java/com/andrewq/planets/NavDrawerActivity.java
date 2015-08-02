@@ -233,7 +233,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 Toast.makeText(getBaseContext(), "Coming Soon!", Toast.LENGTH_LONG).show();
                                 break;
                             case 7:
-                                Toast.makeText(getBaseContext(), "Sill in Beta!", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getBaseContext(), "Work in Progress!", Toast.LENGTH_LONG).show();
                                 Intent wallpaper = new Intent(NavDrawerActivity.this, WallpaperMain.class);
                                 startActivity(wallpaper);
                                 break;
@@ -434,7 +434,7 @@ public class NavDrawerActivity extends ActionBarActivity {
     @Override
     public void setTitle(CharSequence title) {
         //noinspection StatementWithEmptyBody
-        if (title == "Donate" || title == "Send Feedback" || title == "Settings") {
+        if (title == "Map" || title == "Compare Objects" || title == "Wallpapers" || title == "Donate" || title == "Send Feedback" || title == "Settings") {
             //Do nothing...
         } else
             //noinspection ConstantConditions
