@@ -21,7 +21,7 @@ public class Contributors extends ActionBarActivity {
         setContentView(R.layout.activity_contributers);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            this.setTaskDescription(new ActivityManager.TaskDescription("Licenses",
+            this.setTaskDescription(new ActivityManager.TaskDescription("Contributors",
                     drawableToBitmap(getResources().getDrawable(R.drawable.ic_launcher)), Color.parseColor("#212121")));
 
             Window window = getWindow();

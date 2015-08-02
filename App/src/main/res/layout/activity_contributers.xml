@@ -1,78 +1,135 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.andrewq.planets.contributors.Contributors">
 
-    <TextView
-        android:id="@+id/michael"
-        android:textSize="18sp"
-        android:text="Michael Cook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="30dp">
 
-    <TextView
-        android:id="@+id/lvLicense"
-        android:textSize="14sp"
-        android:layout_below="@+id/michael"
-        android:text="Designed newest app icon and has provided useful design feedback."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="10dp" />
+        <com.pkmmte.view.CircularImageView
+            android:id="@+id/akshay_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/akshay"
+            android:layout_gravity="center"
+            app:border="true"
+            app:border_color="#000000"
+            app:border_width="2dp"
+            app:shadow="true" />
 
-    <TextView
-        android:id="@+id/lDialogsTitle"
-        android:layout_below="@+id/lvLicense"
-        android:textSize="18sp"
-        android:text="Delyn Wagenknecht"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/akshay_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Akshay Chordiya"
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/lDialogsLicense"
-        android:textSize="14sp"
-        android:layout_below="@+id/lDialogsTitle"
-        android:text="Rewrote entire content from scratch."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="10dp" />
+        <TextView
+            android:id="@+id/akshay_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="20dp"
+            android:text="Plans to implement theme engine similar to Jair Player."
+            android:textColor="#000000"
+            android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/lGoogleAnalytics"
-        android:layout_below="@+id/lDialogsLicense"
-        android:textSize="18sp"
-        android:text="Mike Penz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <com.pkmmte.view.CircularImageView
+            android:id="@+id/mike_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/mike"
+            android:layout_gravity="center"
+            app:border="true"
+            app:border_color="#000000"
+            app:border_width="2dp"
+            app:shadow="true" />
 
-    <TextView
-        android:id="@+id/lGoogleAnalyticsLicense"
-        android:textSize="14sp"
-        android:layout_below="@+id/lGoogleAnalytics"
-        android:text="Helped incorporate a super easy-to-use library that brings more material design to the app."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="10dp" />
+        <TextView
+            android:id="@+id/mike_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Mike Penz"
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/lAlorma"
-        android:layout_below="@+id/lGoogleAnalyticsLicense"
-        android:textSize="18sp"
-        android:text="@string/alorna_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/mike_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="20dp"
+            android:text="Helped incorporate a super easy-to-use library that brings more material design to the app."
+            android:textColor="#000000"
+            android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/lAlormaExtend"
-        android:textSize="14sp"
-        android:layout_below="@+id/lAlorma"
-        android:text="@string/alorna_summary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="10dp" />
+        <com.pkmmte.view.CircularImageView
+            android:id="@+id/michael_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/cookicons"
+            android:layout_gravity="center"
+            app:border="true"
+            app:border_color="#000000"
+            app:border_width="2dp"
+            app:shadow="true" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/michael_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Michael Cook"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/michael_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="20dp"
+            android:text="Designed newest app icon and has provided useful design feedback."
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <com.pkmmte.view.CircularImageView
+            android:id="@+id/delyn_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/wknecht"
+            android:layout_gravity="center"
+            app:border="true"
+            app:border_color="#000000"
+            app:border_width="2dp"
+            app:shadow="true" />
+
+        <TextView
+            android:id="@+id/delyn_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Delyn Wagenknecht"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/delyn_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="20dp"
+            android:text="Rewrote entire content from scratch."
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</ScrollView>
