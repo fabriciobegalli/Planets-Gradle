@@ -233,7 +233,6 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 Toast.makeText(getBaseContext(), "Coming Soon!", Toast.LENGTH_LONG).show();
                                 break;
                             case 7:
-                                Toast.makeText(getBaseContext(), "Work in Progress!", Toast.LENGTH_LONG).show();
                                 Intent wallpaper = new Intent(NavDrawerActivity.this, WallpaperMain.class);
                                 startActivity(wallpaper);
                                 break;

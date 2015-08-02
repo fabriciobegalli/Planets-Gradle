@@ -4,6 +4,7 @@ package com.andrewq.planets.wallpapers.tabs;
  * Created by andrew on 8/1/15.
  */
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,9 +16,9 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.andrewq.planets.R;
+import com.andrewq.planets.wallpapers.previews.phone.PhoneMain;
 import com.nhaarman.listviewanimations.swinginadapters.prepared.SwingBottomInAnimationAdapter;
 
 import java.util.ArrayList;
@@ -47,25 +48,39 @@ public class Tab1 extends Fragment {
 
                 switch (position) {
                     case 0:
-                        Toast.makeText(getActivity().getBaseContext(), "Long press to set as wallpaper.", Toast.LENGTH_LONG).show();
+                        Intent i1 = new Intent(getActivity(), PhoneMain.class);
+                        i1.putExtra("id", "image_1");
+                        startActivity(i1);
                         break;
                     case 1:
-                        Toast.makeText(getActivity().getBaseContext(), "Long press to set as wallpaper.", Toast.LENGTH_LONG).show();
+                        Intent i2 = new Intent(getActivity(), PhoneMain.class);
+                        i2.putExtra("id", "image_2");
+                        startActivity(i2);
                         break;
                     case 2:
-                        Toast.makeText(getActivity().getBaseContext(), "Long press to set as wallpaper.", Toast.LENGTH_LONG).show();
+                        Intent i3 = new Intent(getActivity(), PhoneMain.class);
+                        i3.putExtra("id", "image_3");
+                        startActivity(i3);
                         break;
                     case 3:
-                        Toast.makeText(getActivity().getBaseContext(), "Long press to set as wallpaper.", Toast.LENGTH_LONG).show();
+                        Intent i4 = new Intent(getActivity(), PhoneMain.class);
+                        i4.putExtra("id", "image_4");
+                        startActivity(i4);
                         break;
                     case 4:
-                        Toast.makeText(getActivity().getBaseContext(), "Long press to set as wallpaper.", Toast.LENGTH_LONG).show();
+                        Intent i5 = new Intent(getActivity(), PhoneMain.class);
+                        i5.putExtra("id", "image_5");
+                        startActivity(i5);
                         break;
                     case 5:
-                        Toast.makeText(getActivity().getBaseContext(), "Long press to set as wallpaper.", Toast.LENGTH_LONG).show();
+                        Intent i6 = new Intent(getActivity(), PhoneMain.class);
+                        i6.putExtra("id", "image_6");
+                        startActivity(i6);
                         break;
                     case 6:
-                        Toast.makeText(getActivity().getBaseContext(), "Long press to set as wallpaper.", Toast.LENGTH_LONG).show();
+                        Intent i7 = new Intent(getActivity(), PhoneMain.class);
+                        i7.putExtra("id", "image_7");
+                        startActivity(i7);
                         break;
                 }
 

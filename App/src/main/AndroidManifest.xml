@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
 
     <uses-feature
         android:name="android.hardware.screen.portrait"
@@ -429,6 +430,16 @@
                     android:scheme="planets" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".wallpapers.previews.phone.PhoneMain"
+            android:label="Phone Viewer"
+            android:parentActivityName=".wallpapers.activity.WallpaperMain" />
+
+        <activity
+            android:name=".wallpapers.previews.tablet.TabletMain"
+            android:label="Tablet Viewer"
+            android:parentActivityName=".wallpapers.activity.WallpaperMain" />
 
     </application>
 
