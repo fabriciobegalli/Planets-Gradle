@@ -64,14 +64,12 @@ public class Settings extends PreferenceActivity {
             @Override
             public boolean onPreferenceClick(Preference preference) {
 
-                CustomDialog.Builder builder = new CustomDialog.Builder(Settings.this, "What's New in 2.8", "View on Github");
+                CustomDialog.Builder builder = new CustomDialog.Builder(Settings.this, "What's New in 2.8 BETA 1", "View on Github");
 
-                builder.content("- New Interactive Map\n" +
-                        "- Information is now copyable\n" +
-                        "- Added dedicated section for open-source licenses\n" +
-                        "- Fixed toolbar bug on Android M\n" +
-                        "- Google Analytics changes\n" +
-                        "- New app theme adjustments");
+                builder.content("- View and set spacey wallpapers on your device" +
+                        "\n- Updated Navigation Drawer items" +
+                        "\n- Updated contributors page" +
+                        "\n- Updated settings page");
                 builder.negativeText("Close");
                 builder.titleAlignment(BaseDialog.Alignment.LEFT);
                 builder.positiveColor("#0497c9");

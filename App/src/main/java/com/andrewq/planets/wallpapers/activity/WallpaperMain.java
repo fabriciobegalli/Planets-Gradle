@@ -8,7 +8,10 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.andrewq.planets.R;
 import com.andrewq.planets.util.SlidingTabLayout;
 import com.andrewq.planets.wallpapers.util.ViewPagerAdapter;
@@ -57,10 +60,10 @@ public class WallpaperMain extends ActionBarActivity {
     }
 
 
-    /*@Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.wallpaper_menu, menu);
         return true;
     }
 
@@ -72,10 +75,23 @@ public class WallpaperMain extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.infoButton) {
+            new MaterialDialog.Builder(this)
+                    .title("About This Feature")
+                    .content("This feature is still in testing. If you're on a tablet, please refrain from using phone wallpapers " +
+                            "and vice versa." +
+                            "This will be addressed in future updates." +
+                            "\n\n" +
+                            "All wallpapers are given to the app developer (Andrew Quebe) and credit is shown below each wallpaper. " +
+                            "If you'd like to submit your own wallpapers, please contact the developer. Wallpapers must be space " +
+                            "related and made by you. Please " +
+                            "don't send photos that you found on Google. Be creative :)\n\n" +
+                            "Enjoy!")
+                    .neutralText("Close")
+                    .show();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
-    }*/
+    }
 }
