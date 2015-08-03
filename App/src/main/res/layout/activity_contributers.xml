@@ -12,6 +12,66 @@
         android:padding="30dp">
 
         <com.pkmmte.view.CircularImageView
+            android:id="@+id/david_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/david"
+            android:layout_gravity="center"
+            app:border="true"
+            app:border_color="#000000"
+            app:border_width="2dp"
+            app:shadow="true" />
+
+        <TextView
+            android:id="@+id/david_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="David Ratkovic"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/david_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="20dp"
+            android:text="Hello! I'm an educated and dedicated graphic designer and I provided 7 wallpapers for this app."
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <com.pkmmte.view.CircularImageView
+            android:id="@+id/adrien_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/david"
+            android:layout_gravity="center"
+            app:border="true"
+            app:border_color="#000000"
+            app:border_width="2dp"
+            app:shadow="true" />
+
+        <TextView
+            android:id="@+id/adrien_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Adrien Zier"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/adrien_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="20dp"
+            android:text="I'm Adrien and I'm an amateur Graphic Designer. I contributed some wallpapers to this app and also made the graphics you see on the app intro."
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <com.pkmmte.view.CircularImageView
             android:id="@+id/akshay_image"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -37,7 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:paddingBottom="20dp"
-            android:text="Plans to implement theme engine similar to Jair Player."
+            android:text="Hey, I'm 21 years old and I worked on the theme engine and added some planet details in this app. I'm a software developer with almost 3 years of experience in Android and Java."
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -67,7 +127,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:paddingBottom="20dp"
-            android:text="Helped incorporate a super easy-to-use library that brings more material design to the app."
+            android:text="Hi, I'm Mike Penz. I've been an Android Developer since the early ages of our little loved green robot. Beside the work on my Android open source libraries, I try to support the community. I helped add the navigation drawer for this app as well as the open source licenses list."
             android:textColor="#000000"
             android:textSize="16sp" />
 
