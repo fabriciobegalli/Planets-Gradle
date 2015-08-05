@@ -1,5 +1,6 @@
 package com.andrewq.planets.compare.activity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
@@ -46,7 +47,7 @@ public class CompareObjectsMain extends ActionBarActivity {
         tabs.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
             @Override
             public int getIndicatorColor(int position) {
-                return getResources().getColor(R.color.tabsScrollColor);
+                return Color.parseColor("#ffffff");
             }
         });
 

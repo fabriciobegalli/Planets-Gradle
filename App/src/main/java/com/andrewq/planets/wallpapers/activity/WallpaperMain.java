@@ -4,6 +4,7 @@ package com.andrewq.planets.wallpapers.activity;
  * Created by andrew on 8/1/15.
  */
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
@@ -50,7 +51,7 @@ public class WallpaperMain extends ActionBarActivity {
         tabs.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
             @Override
             public int getIndicatorColor(int position) {
-                return getResources().getColor(R.color.tabsScrollColor);
+                return Color.parseColor("#ffffff");
             }
         });
 
