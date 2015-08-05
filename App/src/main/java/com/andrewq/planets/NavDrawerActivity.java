@@ -27,6 +27,7 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.afollestad.materialdialogs.Theme;
+import com.andrewq.planets.compare.activity.CompareObjectsMain;
 import com.andrewq.planets.fragments.FragmentMoons;
 import com.andrewq.planets.fragments.FragmentOtherBodies;
 import com.andrewq.planets.fragments.FragmentPlanets;
@@ -230,7 +231,9 @@ public class NavDrawerActivity extends ActionBarActivity {
                                 Toast.makeText(getBaseContext(), "Coming Soon!", Toast.LENGTH_LONG).show();
                                 break;
                             case 6:
-                                Toast.makeText(getBaseContext(), "Coming Soon!", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getBaseContext(), "Still in beta!", Toast.LENGTH_LONG).show();
+                                Intent compare = new Intent(NavDrawerActivity.this, CompareObjectsMain.class);
+                                startActivity(compare);
                                 break;
                             case 7:
                                 Intent wallpaper = new Intent(NavDrawerActivity.this, WallpaperMain.class);
@@ -239,7 +242,7 @@ public class NavDrawerActivity extends ActionBarActivity {
                             case 8:
                                 final Activity act = NavDrawerActivity.this;
                                 new MaterialDialog.Builder(NavDrawerActivity.this)
-                                        .title("Select Amount (Tax Not Listed)")
+                                        .title("Select Amount")
                                         .theme(Theme.LIGHT)
                                         .items(R.array.donations)
                                         .itemsCallback(new MaterialDialog.ListCallback() {

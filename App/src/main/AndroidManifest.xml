@@ -424,9 +424,25 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <!-- Accepts URIs that begin with "example://gizmos" -->
                 <data
                     android:host="wallpapers"
+                    android:scheme="planets" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".compare.activity.CompareObjectsMain"
+            android:label="Compare Objects"
+            android:parentActivityName=".NavDrawerActivity"
+            android:theme="@style/CompareTheme">
+            <intent-filter android:label="Compare Objects">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="compare"
                     android:scheme="planets" />
             </intent-filter>
         </activity>

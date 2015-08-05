@@ -1,35 +1,31 @@
-package com.andrewq.planets.wallpapers.activity;
-
-/**
- * Created by andrew on 8/1/15.
- */
+package com.andrewq.planets.compare.activity;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.andrewq.planets.R;
+import com.andrewq.planets.compare.util.ViewPagerAdapter;
 import com.andrewq.planets.util.SlidingTabLayout;
-import com.andrewq.planets.wallpapers.util.ViewPagerAdapter;
 
-public class WallpaperMain extends ActionBarActivity {
+/**
+ * Created by andrew on 8/5/15.
+ */
+public class CompareObjectsMain extends ActionBarActivity {
 
     // Declaring Your View and Variables
     Toolbar toolbar;
     ViewPager pager;
     ViewPagerAdapter adapter;
     SlidingTabLayout tabs;
-    CharSequence Titles[] = {"Phone", "Tablet"};
+    private CharSequence Titles[] = {"Object 1", "Object 2"};
     int Numboftabs = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.wallpaper_main_activity);
+        setContentView(R.layout.compare_main_activity);
 
         // Create The Toolbar and setting it as the Toolbar for the activity
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
@@ -59,7 +55,7 @@ public class WallpaperMain extends ActionBarActivity {
     }
 
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.wallpaper_menu, menu);
@@ -92,5 +88,5 @@ public class WallpaperMain extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 }
