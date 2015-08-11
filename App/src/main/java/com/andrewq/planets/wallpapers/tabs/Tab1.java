@@ -24,18 +24,15 @@ import com.nhaarman.listviewanimations.swinginadapters.prepared.SwingBottomInAni
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Edwin on 15/02/2015.
- */
 public class Tab1 extends Fragment {
 
-    public static GridView gridView;
+    static GridView gridView;
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        gridView = (GridView) getActivity().findViewById(R.id.gridview);
+        gridView = (GridView) getActivity().findViewById(R.id.walls_gridview1);
 
         SwingBottomInAnimationAdapter swingBottomInAnimationAdapter = new SwingBottomInAnimationAdapter(new MyAdapter(), 100, 300);
 
@@ -102,13 +99,13 @@ public class Tab1 extends Fragment {
             inflater = LayoutInflater.from(getActivity().getApplicationContext());
 
             //Traditional
-            items.add(new Item("Credit: David Ratkovic", R.drawable.david_wall_1));
-            items.add(new Item("Credit: David Ratkovic", R.drawable.david_wall_2));
-            items.add(new Item("Credit: David Ratkovic", R.drawable.david_wall_3));
-            items.add(new Item("Credit: David Ratkovic", R.drawable.david_wall_4));
-            items.add(new Item("Credit: David Ratkovic", R.drawable.david_wall_5));
-            items.add(new Item("Credit: David Ratkovic", R.drawable.david_wall_6));
-            items.add(new Item("Credit: David Ratkovic", R.drawable.david_wall_7));
+            items.add(new Item("Orbit", R.drawable.david_wall_1));
+            items.add(new Item("Rocket", R.drawable.david_wall_2));
+            items.add(new Item("Liftoff", R.drawable.david_wall_3));
+            items.add(new Item("Outside", R.drawable.david_wall_4));
+            items.add(new Item("Earth", R.drawable.david_wall_5));
+            items.add(new Item("Flyby", R.drawable.david_wall_6));
+            items.add(new Item("Liftoff 2", R.drawable.david_wall_7));
         }
 
         @Override

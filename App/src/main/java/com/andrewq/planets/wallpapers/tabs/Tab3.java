@@ -24,7 +24,7 @@ import com.nhaarman.listviewanimations.swinginadapters.prepared.SwingBottomInAni
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tab2 extends Fragment {
+public class Tab3 extends Fragment {
 
     static GridView gridView;
 
@@ -32,7 +32,7 @@ public class Tab2 extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        gridView = (GridView) getActivity().findViewById(R.id.walls_gridview2);
+        gridView = (GridView) getActivity().findViewById(R.id.walls_gridview3);
 
         SwingBottomInAnimationAdapter swingBottomInAnimationAdapter = new SwingBottomInAnimationAdapter(new MyAdapter(), 100, 300);
 
@@ -54,12 +54,12 @@ public class Tab2 extends Fragment {
                         i2.putExtra("id", "image_2");
                         startActivity(i2);
                         break;
-                    case 2:
+                    /*case 2:
                         Intent i3 = new Intent(getActivity(), PhoneMain.class);
                         i3.putExtra("id", "image_3");
                         startActivity(i3);
                         break;
-                    /*case 3:
+                    case 3:
                         Intent i4 = new Intent(getActivity(), PhoneMain.class);
                         i4.putExtra("id", "image_4");
                         startActivity(i4);
@@ -87,7 +87,7 @@ public class Tab2 extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.walls_tab_2, container, false);
+        View v = inflater.inflate(R.layout.walls_tab_3, container, false);
         return v;
     }
 
@@ -100,7 +100,6 @@ public class Tab2 extends Fragment {
 
             items.add(new Item("Orbit", R.drawable.david_wall_1));
             items.add(new Item("Rocket", R.drawable.david_wall_2));
-            items.add(new Item("Liftoff", R.drawable.david_wall_3));
         }
 
         @Override

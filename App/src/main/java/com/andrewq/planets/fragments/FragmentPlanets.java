@@ -40,7 +40,7 @@ public class FragmentPlanets extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        gridView = (GridView) getActivity().findViewById(R.id.gridview);
+        gridView = (GridView) getActivity().findViewById(R.id.gridview1);
 
         SwingBottomInAnimationAdapter swingBottomInAnimationAdapter = new SwingBottomInAnimationAdapter(new MyAdapter(), 100, 300);
 
@@ -558,7 +558,7 @@ public class FragmentPlanets extends Fragment {
     public void onResume() {
         super.onResume();
 
-        gridView = (GridView) getActivity().findViewById(R.id.gridview);
+        gridView = (GridView) getActivity().findViewById(R.id.gridview1);
 
         SwingBottomInAnimationAdapter swingBottomInAnimationAdapter = new SwingBottomInAnimationAdapter(new MyAdapter(), 100, 300);
 
@@ -1097,8 +1097,8 @@ public class FragmentPlanets extends Fragment {
                 items.add(new Item("Mars", R.drawable.mars));
                 items.add(new Item("Jupiter", R.drawable.jupiter));
                 items.add(new Item("Saturn", R.drawable.saturn));
-                items.add(new Item("Neptune", R.drawable.neptune));
                 items.add(new Item("Uranus", R.drawable.uranus));
+                items.add(new Item("Neptune", R.drawable.neptune));
             } else if (sort_chooser == 2) {
                 //A - Z
                 items.add(new Item("Earth", R.drawable.earth));
@@ -1147,8 +1147,8 @@ public class FragmentPlanets extends Fragment {
                 items.add(new Item("Mars", R.drawable.mars));
                 items.add(new Item("Jupiter", R.drawable.jupiter));
                 items.add(new Item("Saturn", R.drawable.saturn));
-                items.add(new Item("Neptune", R.drawable.neptune));
                 items.add(new Item("Uranus", R.drawable.uranus));
+                items.add(new Item("Neptune", R.drawable.neptune));
             }
         }
 

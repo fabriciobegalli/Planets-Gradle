@@ -31,7 +31,7 @@ public class FragmentOtherBodies extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        gridView = (GridView) getActivity().findViewById(R.id.gridview);
+        gridView = (GridView) getActivity().findViewById(R.id.gridview1);
 
         SwingBottomInAnimationAdapter swingBottomInAnimationAdapter = new SwingBottomInAnimationAdapter(new MyAdapter(), 100, 300);
 

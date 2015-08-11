@@ -24,8 +24,8 @@ public class WallpaperMain extends ActionBarActivity {
     ViewPager pager;
     ViewPagerAdapter adapter;
     SlidingTabLayoutScrollable tabs;
-    CharSequence Titles[] = {"David Ratkovic", "Anas Khan", "Adrien Zier", "Person 4", "Person 5"};
-    int Numboftabs = 5;
+    CharSequence Titles[] = {"David Ratkovic", "Anas Khan", "Adrien Zier"};
+    int Numboftabs = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class WallpaperMain extends ActionBarActivity {
 
         // Assigning the Sliding Tab Layout View
         tabs = (SlidingTabLayoutScrollable) findViewById(R.id.tabs);
-        tabs.setDistributeEvenly(false); // To make the Tabs Fixed set this true, This makes the tabs Space Evenly in Available width
+        tabs.setDistributeEvenly(true); // To make the Tabs Fixed set this true, This makes the tabs Space Evenly in Available width
 
         // Setting Custom Color for the Scroll bar indicator of the Tab View
         tabs.setCustomTabColorizer(new SlidingTabLayoutScrollable.TabColorizer() {
