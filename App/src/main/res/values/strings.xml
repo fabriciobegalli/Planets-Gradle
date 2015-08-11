@@ -97,6 +97,23 @@
         <item name="5">5</item>
     </string-array>
 
+    <string-array name="objects">
+        <item name="mercury">Mercury</item>
+        <item name="venus">Venus</item>
+        <item name="earth">Earth</item>
+        <item name="mars">Mars</item>
+        <item name="jupiter">Jupiter</item>
+        <item name="saturn">Saturn</item>
+        <item name="neptune">Neptune</item>
+        <item name="uranus">Uranus</item>
+        <item name="sun">The Sun</item>
+        <item name="moon">Our Moon</item>
+        <item name="phobos">Phobos</item>
+        <item name="deimos">Deimos</item>
+        <item name="Europa">Europa</item>
+        <item name="Pluto">Pluto</item>
+    </string-array>
+
     <!-- Preferences Titles -->
     <string name="pref_cate_title_1">Design</string>
     <string name="pref_5">Theme</string>

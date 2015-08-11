@@ -6,6 +6,23 @@
     <string name="search_title">Поиск</string>
     <string name="action_settings">Настройки</string>
 
+    <string-array name="objects">
+        <item name="mercury">Mercury</item>
+        <item name="venus">Venus</item>
+        <item name="earth">Earth</item>
+        <item name="mars">Mars</item>
+        <item name="jupiter">Jupiter</item>
+        <item name="saturn">Saturn</item>
+        <item name="neptune">Neptune</item>
+        <item name="uranus">Uranus</item>
+        <item name="sun">The Sun</item>
+        <item name="moon">Our Moon</item>
+        <item name="phobos">Phobos</item>
+        <item name="deimos">Deimos</item>
+        <item name="Europa">Europa</item>
+        <item name="Pluto">Pluto</item>
+    </string-array>
+
     <!-- String Arrays -->
     <string-array name="mars_moons">
         <item>Фобос</item>

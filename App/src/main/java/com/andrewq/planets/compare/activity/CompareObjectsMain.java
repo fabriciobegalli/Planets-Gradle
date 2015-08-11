@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.andrewq.planets.R;
 import com.andrewq.planets.compare.util.ViewPagerAdapter;
-import com.andrewq.planets.util.SlidingTabLayout;
+import com.andrewq.planets.util.SlidingTabLayoutFixed;
 
 /**
  * Created by andrew on 8/5/15.
@@ -19,8 +19,8 @@ public class CompareObjectsMain extends ActionBarActivity {
     Toolbar toolbar;
     ViewPager pager;
     ViewPagerAdapter adapter;
-    SlidingTabLayout tabs;
-    private CharSequence Titles[] = {"Object 1", "Object 2"};
+    SlidingTabLayoutFixed tabs;
+    public CharSequence Titles[] = {"Object 1", "Object 2"};
     int Numboftabs = 2;
 
     @Override
@@ -40,11 +40,11 @@ public class CompareObjectsMain extends ActionBarActivity {
         pager.setAdapter(adapter);
 
         // Assigning the Sliding Tab Layout View
-        tabs = (SlidingTabLayout) findViewById(R.id.tabs);
+        tabs = (SlidingTabLayoutFixed) findViewById(R.id.tabs);
         tabs.setDistributeEvenly(true); // To make the Tabs Fixed set this true, This makes the tabs Space Evenly in Available width
 
         // Setting Custom Color for the Scroll bar indicator of the Tab View
-        tabs.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
+        tabs.setCustomTabColorizer(new SlidingTabLayoutFixed.TabColorizer() {
             @Override
             public int getIndicatorColor(int position) {
                 return Color.parseColor("#ffffff");

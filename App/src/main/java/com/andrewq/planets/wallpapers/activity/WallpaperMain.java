@@ -14,7 +14,7 @@ import android.view.MenuItem;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.andrewq.planets.R;
-import com.andrewq.planets.util.SlidingTabLayout;
+import com.andrewq.planets.util.SlidingTabLayoutScrollable;
 import com.andrewq.planets.wallpapers.util.ViewPagerAdapter;
 
 public class WallpaperMain extends ActionBarActivity {
@@ -23,9 +23,9 @@ public class WallpaperMain extends ActionBarActivity {
     Toolbar toolbar;
     ViewPager pager;
     ViewPagerAdapter adapter;
-    SlidingTabLayout tabs;
-    CharSequence Titles[] = {"Phone", "Tablet"};
-    int Numboftabs = 2;
+    SlidingTabLayoutScrollable tabs;
+    CharSequence Titles[] = {"David Ratkovic", "Anas Khan", "Adrien Zier", "Person 4", "Person 5"};
+    int Numboftabs = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +44,11 @@ public class WallpaperMain extends ActionBarActivity {
         pager.setAdapter(adapter);
 
         // Assigning the Sliding Tab Layout View
-        tabs = (SlidingTabLayout) findViewById(R.id.tabs);
-        tabs.setDistributeEvenly(true); // To make the Tabs Fixed set this true, This makes the tabs Space Evenly in Available width
+        tabs = (SlidingTabLayoutScrollable) findViewById(R.id.tabs);
+        tabs.setDistributeEvenly(false); // To make the Tabs Fixed set this true, This makes the tabs Space Evenly in Available width
 
         // Setting Custom Color for the Scroll bar indicator of the Tab View
-        tabs.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
+        tabs.setCustomTabColorizer(new SlidingTabLayoutScrollable.TabColorizer() {
             @Override
             public int getIndicatorColor(int position) {
                 return Color.parseColor("#ffffff");

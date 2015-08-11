@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <com.andrewq.planets.util.SlidingTabLayout
+    <com.andrewq.planets.util.SlidingTabLayoutScrollable
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
