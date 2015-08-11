@@ -448,13 +448,15 @@
         </activity>
 
         <activity
-            android:name=".wallpapers.previews.phone.PhoneMain"
-            android:label="Phone Viewer"
+            android:name=".wallpapers.viewers.WallpaperViewerDavid"
+            android:theme="@style/WallpaperViewerTheme"
+            android:label="Set as Wallpaper"
             android:parentActivityName=".wallpapers.activity.WallpaperMain" />
 
         <activity
-            android:name=".wallpapers.previews.tablet.TabletMain"
-            android:label="Tablet Viewer"
+            android:name=".wallpapers.viewers.WallpaperViewerAnas"
+            android:theme="@style/WallpaperViewerTheme"
+            android:label="Set as Wallpaper"
             android:parentActivityName=".wallpapers.activity.WallpaperMain" />
 
     </application>

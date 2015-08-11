@@ -18,7 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.andrewq.planets.R;
-import com.andrewq.planets.wallpapers.previews.phone.PhoneMain;
+import com.andrewq.planets.wallpapers.viewers.WallpaperViewerDavid;
 import com.nhaarman.listviewanimations.swinginadapters.prepared.SwingBottomInAnimationAdapter;
 
 import java.util.ArrayList;
@@ -45,37 +45,37 @@ public class Tab1 extends Fragment {
 
                 switch (position) {
                     case 0:
-                        Intent i1 = new Intent(getActivity(), PhoneMain.class);
+                        Intent i1 = new Intent(getActivity(), WallpaperViewerDavid.class);
                         i1.putExtra("id", "image_1");
                         startActivity(i1);
                         break;
                     case 1:
-                        Intent i2 = new Intent(getActivity(), PhoneMain.class);
+                        Intent i2 = new Intent(getActivity(), WallpaperViewerDavid.class);
                         i2.putExtra("id", "image_2");
                         startActivity(i2);
                         break;
                     case 2:
-                        Intent i3 = new Intent(getActivity(), PhoneMain.class);
+                        Intent i3 = new Intent(getActivity(), WallpaperViewerDavid.class);
                         i3.putExtra("id", "image_3");
                         startActivity(i3);
                         break;
                     case 3:
-                        Intent i4 = new Intent(getActivity(), PhoneMain.class);
+                        Intent i4 = new Intent(getActivity(), WallpaperViewerDavid.class);
                         i4.putExtra("id", "image_4");
                         startActivity(i4);
                         break;
                     case 4:
-                        Intent i5 = new Intent(getActivity(), PhoneMain.class);
+                        Intent i5 = new Intent(getActivity(), WallpaperViewerDavid.class);
                         i5.putExtra("id", "image_5");
                         startActivity(i5);
                         break;
                     case 5:
-                        Intent i6 = new Intent(getActivity(), PhoneMain.class);
+                        Intent i6 = new Intent(getActivity(), WallpaperViewerDavid.class);
                         i6.putExtra("id", "image_6");
                         startActivity(i6);
                         break;
                     case 6:
-                        Intent i7 = new Intent(getActivity(), PhoneMain.class);
+                        Intent i7 = new Intent(getActivity(), WallpaperViewerDavid.class);
                         i7.putExtra("id", "image_7");
                         startActivity(i7);
                         break;

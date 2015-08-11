@@ -6,6 +6,9 @@
     <color name="WallsPrimaryDark">#145ea8</color>
     <color name="tabsScrollColor">#0e356f</color>
 
+    <color name="PhoneViewerPrimary">#414141</color>
+    <color name="PhoneViewerPrimaryDark">#282828</color>
+
     <color name="status_bar_red">#ffbf2e2e</color>
     <color name="status_bar_orange">#ffd24a19</color>
     <color name="status_bar_blue">#ff1963be</color>

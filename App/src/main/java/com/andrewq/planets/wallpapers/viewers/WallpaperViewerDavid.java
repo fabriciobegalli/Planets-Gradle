@@ -1,6 +1,5 @@
-package com.andrewq.planets.wallpapers.previews.phone;
+package com.andrewq.planets.wallpapers.viewers;
 
-import android.app.Activity;
 import android.app.WallpaperManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,9 +7,9 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -21,21 +20,26 @@ import java.io.IOException;
 /**
  * Created by andrew on 8/2/15.
  */
-public class PhoneMain extends Activity {
+public class WallpaperViewerDavid extends ActionBarActivity {
 
     private ImageView img;
 
     public String receivedID;
 
+    private Toolbar tb;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        /*requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);*/
 
-        setContentView(R.layout.activity_view_phone_wallpapers);
+        setContentView(R.layout.activity_view_wallpapers);
+
+        tb = (Toolbar) findViewById(R.id.tool_bar);
+        setSupportActionBar(tb);
 
         final SharedPreferences getPrefs = PreferenceManager
                 .getDefaultSharedPreferences(getBaseContext());
@@ -51,14 +55,14 @@ public class PhoneMain extends Activity {
         Intent intent = getIntent();
         receivedID = intent.getExtras().getString("id");
 
-        img = (ImageView) findViewById(R.id.phone_imgview);
+        img = (ImageView) findViewById(R.id.viewer_imgview);
 
         final Bitmap b;
 
         switch (checkSentID()) {
             case 1:
                 Drawable image1 = getResources().getDrawable(R.drawable.david_wall_1);
-                img.setBackground(image1);
+                img.setImageDrawable(image1);
 
                 img.setDrawingCacheEnabled(true);
 
@@ -90,7 +94,7 @@ public class PhoneMain extends Activity {
                 break;
             case 2:
                 Drawable image2 = getResources().getDrawable(R.drawable.david_wall_2);
-                img.setBackground(image2);
+                img.setImageDrawable(image2);
 
                 img.setDrawingCacheEnabled(true);
 
@@ -122,7 +126,7 @@ public class PhoneMain extends Activity {
                 break;
             case 3:
                 Drawable image3 = getResources().getDrawable(R.drawable.david_wall_3);
-                img.setBackground(image3);
+                img.setImageDrawable(image3);
 
                 img.setDrawingCacheEnabled(true);
 
@@ -154,7 +158,7 @@ public class PhoneMain extends Activity {
                 break;
             case 4:
                 Drawable image4 = getResources().getDrawable(R.drawable.david_wall_4);
-                img.setBackground(image4);
+                img.setImageDrawable(image4);
 
                 img.setDrawingCacheEnabled(true);
 
@@ -186,7 +190,7 @@ public class PhoneMain extends Activity {
                 break;
             case 5:
                 Drawable image5 = getResources().getDrawable(R.drawable.david_wall_5);
-                img.setBackground(image5);
+                img.setImageDrawable(image5);
 
                 img.setDrawingCacheEnabled(true);
 
@@ -218,7 +222,7 @@ public class PhoneMain extends Activity {
                 break;
             case 6:
                 Drawable image6 = getResources().getDrawable(R.drawable.david_wall_6);
-                img.setBackground(image6);
+                img.setImageDrawable(image6);
 
                 img.setDrawingCacheEnabled(true);
 
@@ -250,7 +254,7 @@ public class PhoneMain extends Activity {
                 break;
             case 7:
                 Drawable image7 = getResources().getDrawable(R.drawable.david_wall_7);
-                img.setBackground(image7);
+                img.setImageDrawable(image7);
 
                 img.setDrawingCacheEnabled(true);
 

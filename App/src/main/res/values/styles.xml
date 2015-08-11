@@ -17,6 +17,11 @@
         <item name="android:dropDownSelector">#000000</item>
     </style>
 
+    <style name="WallpaperViewerTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/PhoneViewerPrimary</item>
+        <item name="colorPrimaryDark">@color/PhoneViewerPrimaryDark</item>
+    </style>
+
     <style name="NewMaterial" parent="AppThemeNavDrawer">
         <item name="windowActionModeOverlay">true</item>
     </style>
