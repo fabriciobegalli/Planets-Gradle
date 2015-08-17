@@ -12,6 +12,36 @@
         android:padding="30dp">
 
         <com.pkmmte.view.CircularImageView
+            android:id="@+id/anas_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/anas"
+            android:layout_gravity="center"
+            app:border="true"
+            app:border_color="#000000"
+            app:border_width="2dp"
+            app:shadow="true" />
+
+        <TextView
+            android:id="@+id/anas_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Anas Khan"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/anas_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="20dp"
+            android:text="I'm Anas Khan and I helped contribute some wallpapers to this awesome app. I design random stuff in my free time. I believe you can do anything as long as you have the will to."
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <com.pkmmte.view.CircularImageView
             android:id="@+id/david_image"
             android:layout_width="100dp"
             android:layout_height="100dp"

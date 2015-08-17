@@ -99,13 +99,13 @@ public class Tab1 extends Fragment {
             inflater = LayoutInflater.from(getActivity().getApplicationContext());
 
             //Traditional
-            items.add(new Item("Orbit", R.drawable.david_wall_1));
-            items.add(new Item("Rocket", R.drawable.david_wall_2));
-            items.add(new Item("Liftoff", R.drawable.david_wall_3));
-            items.add(new Item("Outside", R.drawable.david_wall_4));
-            items.add(new Item("Earth", R.drawable.david_wall_5));
-            items.add(new Item("Flyby", R.drawable.david_wall_6));
-            items.add(new Item("Liftoff 2", R.drawable.david_wall_7));
+            items.add(new Item("Orbit", R.drawable.david_wall_1_small));
+            items.add(new Item("Rocket", R.drawable.david_wall_2_small));
+            items.add(new Item("Liftoff", R.drawable.david_wall_3_small));
+            items.add(new Item("Outside", R.drawable.david_wall_4_small));
+            items.add(new Item("Earth", R.drawable.david_wall_5_small));
+            items.add(new Item("Flyby", R.drawable.david_wall_6_small));
+            items.add(new Item("Liftoff 2", R.drawable.david_wall_7_small));
         }
 
         @Override

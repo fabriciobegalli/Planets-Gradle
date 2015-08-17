@@ -70,7 +70,7 @@ public class WallpaperViewerAnas extends ActionBarActivity {
                 // Without it the view will have a dimension of 0,0 and the bitmap will be null
                 img.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
                         View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
-                img.layout(0, 0, img.getMeasuredWidth(), img.getMeasuredHeight());
+                img.layout(img.getMeasuredWidth() / 2, img.getMeasuredHeight() / 2, img.getMeasuredWidth(), img.getMeasuredHeight());
 
                 img.buildDrawingCache(true);
                 b = Bitmap.createBitmap(img.getDrawingCache());
@@ -79,7 +79,6 @@ public class WallpaperViewerAnas extends ActionBarActivity {
                 img.setOnLongClickListener(new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View view) {
-
                         try {
                             WallpaperManager.getInstance(getBaseContext()).setBitmap(b);
                             Toast.makeText(getBaseContext(), "Done!", Toast.LENGTH_SHORT).show();
@@ -87,7 +86,6 @@ public class WallpaperViewerAnas extends ActionBarActivity {
                         } catch (IOException | NullPointerException e) {
                             e.printStackTrace();
                         }
-
                         return true;
                     }
                 });
@@ -102,7 +100,7 @@ public class WallpaperViewerAnas extends ActionBarActivity {
                 // Without it the view will have a dimension of 0,0 and the bitmap will be null
                 img.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
                         View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
-                img.layout(0, 0, img.getMeasuredWidth(), img.getMeasuredHeight());
+                img.layout(img.getMeasuredWidth() / 2, img.getMeasuredHeight() / 2, img.getMeasuredWidth(), img.getMeasuredHeight());
 
                 img.buildDrawingCache(true);
                 b = Bitmap.createBitmap(img.getDrawingCache());
@@ -111,7 +109,6 @@ public class WallpaperViewerAnas extends ActionBarActivity {
                 img.setOnLongClickListener(new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View view) {
-
                         try {
                             WallpaperManager.getInstance(getBaseContext()).setBitmap(b);
                             Toast.makeText(getBaseContext(), "Done!", Toast.LENGTH_SHORT).show();
@@ -119,11 +116,371 @@ public class WallpaperViewerAnas extends ActionBarActivity {
                         } catch (IOException | NullPointerException e) {
                             e.printStackTrace();
                         }
-
                         return true;
                     }
                 });
                 break;
+            case 3:
+                Drawable image3 = getResources().getDrawable(R.drawable.anas_wall_3);
+                img.setImageDrawable(image3);
+
+                img.setDrawingCacheEnabled(true);
+
+                // this is the important code :)
+                // Without it the view will have a dimension of 0,0 and the bitmap will be null
+                img.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                        View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+                img.layout(img.getMeasuredWidth() / 2, img.getMeasuredHeight() / 2, img.getMeasuredWidth(), img.getMeasuredHeight());
+
+                img.buildDrawingCache(true);
+                b = Bitmap.createBitmap(img.getDrawingCache());
+                img.setDrawingCacheEnabled(false); // clear drawing cache
+
+                img.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        try {
+                            WallpaperManager.getInstance(getBaseContext()).setBitmap(b);
+                            Toast.makeText(getBaseContext(), "Done!", Toast.LENGTH_SHORT).show();
+                            finish();
+                        } catch (IOException | NullPointerException e) {
+                            e.printStackTrace();
+                        }
+                        return true;
+                    }
+                });
+                break;
+            case 4:
+                Drawable image4 = getResources().getDrawable(R.drawable.anas_wall_4);
+                img.setImageDrawable(image4);
+
+                img.setDrawingCacheEnabled(true);
+
+                // this is the important code :)
+                // Without it the view will have a dimension of 0,0 and the bitmap will be null
+                img.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                        View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+                img.layout(img.getMeasuredWidth() / 2, img.getMeasuredHeight() / 2, img.getMeasuredWidth(), img.getMeasuredHeight());
+
+                img.buildDrawingCache(true);
+                b = Bitmap.createBitmap(img.getDrawingCache());
+                img.setDrawingCacheEnabled(false); // clear drawing cache
+
+                img.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        try {
+                            WallpaperManager.getInstance(getBaseContext()).setBitmap(b);
+                            Toast.makeText(getBaseContext(), "Done!", Toast.LENGTH_SHORT).show();
+                            finish();
+                        } catch (IOException | NullPointerException e) {
+                            e.printStackTrace();
+                        }
+                        return true;
+                    }
+                });
+                break;
+            case 5:
+                Drawable image5 = getResources().getDrawable(R.drawable.anas_wall_5);
+                img.setImageDrawable(image5);
+
+                img.setDrawingCacheEnabled(true);
+
+                // this is the important code :)
+                // Without it the view will have a dimension of 0,0 and the bitmap will be null
+                img.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                        View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+                img.layout(img.getMeasuredWidth() / 2, img.getMeasuredHeight() / 2, img.getMeasuredWidth(), img.getMeasuredHeight());
+
+                img.buildDrawingCache(true);
+                b = Bitmap.createBitmap(img.getDrawingCache());
+                img.setDrawingCacheEnabled(false); // clear drawing cache
+
+                img.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        try {
+                            WallpaperManager.getInstance(getBaseContext()).setBitmap(b);
+                            Toast.makeText(getBaseContext(), "Done!", Toast.LENGTH_SHORT).show();
+                            finish();
+                        } catch (IOException | NullPointerException e) {
+                            e.printStackTrace();
+                        }
+                        return true;
+                    }
+                });
+                break;
+            case 6:
+                Drawable image6 = getResources().getDrawable(R.drawable.anas_wall_6);
+                img.setImageDrawable(image6);
+
+                img.setDrawingCacheEnabled(true);
+
+                // this is the important code :)
+                // Without it the view will have a dimension of 0,0 and the bitmap will be null
+                img.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                        View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+                img.layout(img.getMeasuredWidth() / 2, img.getMeasuredHeight() / 2, img.getMeasuredWidth(), img.getMeasuredHeight());
+
+                img.buildDrawingCache(true);
+                b = Bitmap.createBitmap(img.getDrawingCache());
+                img.setDrawingCacheEnabled(false); // clear drawing cache
+
+                img.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        try {
+                            WallpaperManager.getInstance(getBaseContext()).setBitmap(b);
+                            Toast.makeText(getBaseContext(), "Done!", Toast.LENGTH_SHORT).show();
+                            finish();
+                        } catch (IOException | NullPointerException e) {
+                            e.printStackTrace();
+                        }
+                        return true;
+                    }
+                });
+                break;
+            case 7:
+                Drawable image7 = getResources().getDrawable(R.drawable.anas_wall_7);
+                img.setImageDrawable(image7);
+
+                img.setDrawingCacheEnabled(true);
+
+                // this is the important code :)
+                // Without it the view will have a dimension of 0,0 and the bitmap will be null
+                img.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                        View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+                img.layout(img.getMeasuredWidth() / 2, img.getMeasuredHeight() / 2, img.getMeasuredWidth(), img.getMeasuredHeight());
+
+                img.buildDrawingCache(true);
+                b = Bitmap.createBitmap(img.getDrawingCache());
+                img.setDrawingCacheEnabled(false); // clear drawing cache
+
+                img.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        try {
+                            WallpaperManager.getInstance(getBaseContext()).setBitmap(b);
+                            Toast.makeText(getBaseContext(), "Done!", Toast.LENGTH_SHORT).show();
+                            finish();
+                        } catch (IOException | NullPointerException e) {
+                            e.printStackTrace();
+                        }
+                        return true;
+                    }
+                });
+                break;
+            case 8:
+                Drawable image8 = getResources().getDrawable(R.drawable.anas_wall_8);
+                img.setImageDrawable(image8);
+
+                img.setDrawingCacheEnabled(true);
+
+                // this is the important code :)
+                // Without it the view will have a dimension of 0,0 and the bitmap will be null
+                img.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                        View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+                img.layout(img.getMeasuredWidth() / 2, img.getMeasuredHeight() / 2, img.getMeasuredWidth(), img.getMeasuredHeight());
+
+                img.buildDrawingCache(true);
+                b = Bitmap.createBitmap(img.getDrawingCache());
+                img.setDrawingCacheEnabled(false); // clear drawing cache
+
+                img.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        try {
+                            WallpaperManager.getInstance(getBaseContext()).setBitmap(b);
+                            Toast.makeText(getBaseContext(), "Done!", Toast.LENGTH_SHORT).show();
+                            finish();
+                        } catch (IOException | NullPointerException e) {
+                            e.printStackTrace();
+                        }
+                        return true;
+                    }
+                });
+                break;
+            case 9:
+                Drawable image9 = getResources().getDrawable(R.drawable.anas_wall_9);
+                img.setImageDrawable(image9);
+
+                img.setDrawingCacheEnabled(true);
+
+                // this is the important code :)
+                // Without it the view will have a dimension of 0,0 and the bitmap will be null
+                img.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                        View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+                img.layout(img.getMeasuredWidth() / 2, img.getMeasuredHeight() / 2, img.getMeasuredWidth(), img.getMeasuredHeight());
+
+                img.buildDrawingCache(true);
+                b = Bitmap.createBitmap(img.getDrawingCache());
+                img.setDrawingCacheEnabled(false); // clear drawing cache
+
+                img.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        try {
+                            WallpaperManager.getInstance(getBaseContext()).setBitmap(b);
+                            Toast.makeText(getBaseContext(), "Done!", Toast.LENGTH_SHORT).show();
+                            finish();
+                        } catch (IOException | NullPointerException e) {
+                            e.printStackTrace();
+                        }
+                        return true;
+                    }
+                });
+                break;
+            case 10:
+                Drawable image10 = getResources().getDrawable(R.drawable.anas_wall_10);
+                img.setImageDrawable(image10);
+
+                img.setDrawingCacheEnabled(true);
+
+                // this is the important code :)
+                // Without it the view will have a dimension of 0,0 and the bitmap will be null
+                img.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                        View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+                img.layout(img.getMeasuredWidth() / 2, img.getMeasuredHeight() / 2, img.getMeasuredWidth(), img.getMeasuredHeight());
+
+                img.buildDrawingCache(true);
+                b = Bitmap.createBitmap(img.getDrawingCache());
+                img.setDrawingCacheEnabled(false); // clear drawing cache
+
+                img.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        try {
+                            WallpaperManager.getInstance(getBaseContext()).setBitmap(b);
+                            Toast.makeText(getBaseContext(), "Done!", Toast.LENGTH_SHORT).show();
+                            finish();
+                        } catch (IOException | NullPointerException e) {
+                            e.printStackTrace();
+                        }
+                        return true;
+                    }
+                });
+                break;
+            case 11:
+                Drawable image11 = getResources().getDrawable(R.drawable.anas_wall_11);
+                img.setImageDrawable(image11);
+
+                img.setDrawingCacheEnabled(true);
+
+                // this is the important code :)
+                // Without it the view will have a dimension of 0,0 and the bitmap will be null
+                img.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                        View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+                img.layout(img.getMeasuredWidth() / 2, img.getMeasuredHeight() / 2, img.getMeasuredWidth(), img.getMeasuredHeight());
+
+                img.buildDrawingCache(true);
+                b = Bitmap.createBitmap(img.getDrawingCache());
+                img.setDrawingCacheEnabled(false); // clear drawing cache
+
+                img.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        try {
+                            WallpaperManager.getInstance(getBaseContext()).setBitmap(b);
+                            Toast.makeText(getBaseContext(), "Done!", Toast.LENGTH_SHORT).show();
+                            finish();
+                        } catch (IOException | NullPointerException e) {
+                            e.printStackTrace();
+                        }
+                        return true;
+                    }
+                });
+                break;
+            case 12:
+                Drawable image12 = getResources().getDrawable(R.drawable.anas_wall_12);
+                img.setImageDrawable(image12);
+
+                img.setDrawingCacheEnabled(true);
+
+                // this is the important code :)
+                // Without it the view will have a dimension of 0,0 and the bitmap will be null
+                img.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                        View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+                img.layout(img.getMeasuredWidth() / 2, img.getMeasuredHeight() / 2, img.getMeasuredWidth(), img.getMeasuredHeight());
+
+                img.buildDrawingCache(true);
+                b = Bitmap.createBitmap(img.getDrawingCache());
+                img.setDrawingCacheEnabled(false); // clear drawing cache
+
+                img.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        try {
+                            WallpaperManager.getInstance(getBaseContext()).setBitmap(b);
+                            Toast.makeText(getBaseContext(), "Done!", Toast.LENGTH_SHORT).show();
+                            finish();
+                        } catch (IOException | NullPointerException e) {
+                            e.printStackTrace();
+                        }
+                        return true;
+                    }
+                });
+                break;
+            case 13:
+                Drawable image13 = getResources().getDrawable(R.drawable.anas_wall_13);
+                img.setImageDrawable(image13);
+
+                img.setDrawingCacheEnabled(true);
+
+                // this is the important code :)
+                // Without it the view will have a dimension of 0,0 and the bitmap will be null
+                img.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                        View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+                img.layout(img.getMeasuredWidth() / 2, img.getMeasuredHeight() / 2, img.getMeasuredWidth(), img.getMeasuredHeight());
+
+                img.buildDrawingCache(true);
+                b = Bitmap.createBitmap(img.getDrawingCache());
+                img.setDrawingCacheEnabled(false); // clear drawing cache
+
+                img.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        try {
+                            WallpaperManager.getInstance(getBaseContext()).setBitmap(b);
+                            Toast.makeText(getBaseContext(), "Done!", Toast.LENGTH_SHORT).show();
+                            finish();
+                        } catch (IOException | NullPointerException e) {
+                            e.printStackTrace();
+                        }
+                        return true;
+                    }
+                });
+                break;
+            case 14:
+                Drawable image14 = getResources().getDrawable(R.drawable.anas_wall_14);
+                img.setImageDrawable(image14);
+
+                img.setDrawingCacheEnabled(true);
+
+                // this is the important code :)
+                // Without it the view will have a dimension of 0,0 and the bitmap will be null
+                img.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                        View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+                img.layout(img.getMeasuredWidth() / 2, img.getMeasuredHeight() / 2, img.getMeasuredWidth(), img.getMeasuredHeight());
+
+                img.buildDrawingCache(true);
+                b = Bitmap.createBitmap(img.getDrawingCache());
+                img.setDrawingCacheEnabled(false); // clear drawing cache
+
+                img.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        try {
+                            WallpaperManager.getInstance(getBaseContext()).setBitmap(b);
+                            Toast.makeText(getBaseContext(), "Done!", Toast.LENGTH_SHORT).show();
+                            finish();
+                        } catch (IOException | NullPointerException e) {
+                            e.printStackTrace();
+                        }
+                        return true;
+                    }
+                });
+                break;
+
         }
     }
 
@@ -132,6 +489,31 @@ public class WallpaperViewerAnas extends ActionBarActivity {
             return 1;
         else if (receivedID.equals("image_2"))
             return 2;
+        else if (receivedID.equals("image_3"))
+            return 3;
+        else if (receivedID.equals("image_4"))
+            return 4;
+        else if (receivedID.equals("image_5"))
+            return 5;
+        else if (receivedID.equals("image_6"))
+            return 6;
+        else if (receivedID.equals("image_7"))
+            return 7;
+        else if (receivedID.equals("image_8"))
+            return 8;
+        else if (receivedID.equals("image_9"))
+            return 9;
+        else if (receivedID.equals("image_10"))
+            return 10;
+        else if (receivedID.equals("image_11"))
+            return 11;
+        else if (receivedID.equals("image_12"))
+            return 12;
+        else if (receivedID.equals("image_13"))
+            return 13;
+        else if (receivedID.equals("image_14"))
+            return 14;
+
         else return 1;
     }
 }
