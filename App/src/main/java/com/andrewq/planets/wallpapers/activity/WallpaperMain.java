@@ -78,14 +78,13 @@ public class WallpaperMain extends ActionBarActivity {
         if (id == R.id.infoButton) {
             new MaterialDialog.Builder(this)
                     .title("About This Feature")
-                    .content("This feature is still in testing. If you're on a tablet, please refrain from using phone wallpapers " +
-                            "and vice versa." +
-                            "This will be addressed in future updates." +
+                    .content("This feature is still in testing. Design of this feature is apt to change as testing continues." +
+                            "Please be patient!" +
                             "\n\n" +
                             "All wallpapers are given to the app developer (Andrew Quebe) and credit is shown below each wallpaper. " +
                             "If you'd like to submit your own wallpapers, please contact the developer. Wallpapers must be space " +
-                            "related and made by you. Please " +
-                            "don't send photos that you found on Google. Be creative :)\n\n" +
+                            "related and made by you. Please don't send photos that you found on Google Images. " +
+                            "Be creative :)\n\n" +
                             "Enjoy!")
                     .neutralText("Close")
                     .show();
