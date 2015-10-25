@@ -1,3 +1,6 @@
+<h1>PLEASE NOTE</h1>
+Planets has been deprecated since October 25th, 2015. It is no longer being maintained by the developer but open source contributions are welcome. Thank you.
+
 <h1><b>Welcome to the Planets README</b></h1>
 
 Planets is an application which uses a sleek card layout to display information about all the planets in the solar system. Planets is in production and open to the general public. It is still undergoing development but I want it out in production for ratings and feedback. The Google+ community (See [Helpful Links](https://github.com/AMQTech/Planets#helpful-links)) is still active so feel free to join. <br>
